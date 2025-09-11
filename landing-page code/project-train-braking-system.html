@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Engineering of a Train Braking System | Donfack Fortune</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-train-braking-system.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-flex">
+            <div class="header-left">
+                <h1 class="logo">Donfack Fortune</h1>
+            </div>
+            <nav class="header-center" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="code-html.html">Projects</a></li>
+                    <li><a href="../Teaching-page/code-teach.html">Teaching</a></li>
+                    <li><a href="../About page/code-about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-right social-icons">
+                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD" target="_blank" rel="noopener">
+                    <span class="fab fa-grabcad"
+                        style="display:inline-block;vertical-align:middle;width:1.2em;height:1.2em;">
+                        <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
+                            <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
+                                font-family="Arial, sans-serif">GC</text>
+                        </svg>
+                    </span>
+                </a>
+                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" aria-label="LinkedIn"
+                    target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <h2 class="project-title">Reverse Engineering of Train Braking Systems</h2>
+        <div class="project-year">2023</div>
+        <hr class="project-divider">
+
+        <div class="project-section-row">
+            <section class="project-section-card">
+                <h3>CONTEXT</h3>
+                <p>For our work on the brake triangle, I was part of a team of four engineers tasked with reproducing
+                    new brake triangles compatible with the CC2200 and CC3300AC locomotives. We were required to
+                    manufacture two different brake triangles to address the problem of stock shortages, as these
+                    locomotives were very old and their spare parts were no longer available on the market. It was
+                    therefore necessary to produce their components locally.</p>
+                <p>The objective was to design a system that closely matched and remained fully compatible with these
+                    locomotives while ensuring acceptable durability and functional performance comparable to the
+                    original imported parts.</p>
+                <p>As part of the project requirements, we transitioned from the older Shielded Metal Arc Welding (SMAW)
+                    method—commonly known as arc welding with coated electrodes—to more advanced welding techniques:
+                    MIG-MAG (Metal Inert Gas – Metal Active Gas). This shift aimed to improve weld quality, structural
+                    integrity, and compliance with the structural standards and regulations of the Cameroonian railway
+                    system.</p>
+                <p>To facilitate this change, we were equipped with the Lincoln Electric Power MIG 360MP and 2 Fronius
+                    TransSteel 2700.</p>
+                <p>My specific objective in this project was to produce detailed 2D diagrams and 3D models, ensuring
+                    that all dimensions and tolerances remained within acceptable limits. This was essential to
+                    guarantee that the brake triangles could be easily integrated into the locomotives and perform the
+                    same function as the reference components. The task was conducted as a reverse engineering project,
+                    taking into account existing designs, spatial constraints, functional requirements, and local
+                    material availability.</p>
+            </section>
+
+            <section class="project-section-card">
+                <h3>CONTENT</h3>
+                <p>In this project, our team of four (consisting of Gille team lead, Mbella Jacques chief technician and
+                    his assistant Ricardo) produced two brake triangles: one for the <strong>CC2200</strong> locomotives
+                    and one for the <strong>CC3300-AC</strong> locomotives. Each brake triangle had distinct
+                    specifications, including different diameters and dimensions, which required careful planning and
+                    collaboration within the team.</p>
+                <p>For the <strong>CC3300</strong>, we utilized UPN profiles, which we bent and cut into the required
+                    shapes. Our team added end caps to achieve the correct mass while maintaining the necessary
+                    diameter. Following this, we reproduced the front shoes. I was responsible for creating detailed 2D
+                    drawings and 3D models of the front shoes. Using calipers, measuring tapes, and other traditional
+                    reverse engineering methods, I ensured that these components were not only accurately reproducible
+                    but also fully manufacturable, in alignment with our project objectives.</p>
+                <p>For the <strong>CC3300-AC</strong>, we machined rectangular iron bars and shaped them into circular
+                    forms, closely matching the existing brake triangles. By applying traditional reverse engineering
+                    techniques—including manual measurement, geometric analysis, precise dimensioning, and tolerance
+                    verification—I produced precise and manufacturable 2D drawings. This approach ensured that each
+                    assembly fit accurately and that the components could fully reproduce their intended function.</p>
+                <p>During the project, I worked closely with my team. I helped in the organization of tasks. I also
+                    shared ideas and suggestions to help the project move forward (the ideas for the end caps were
+                    mine). By working together, we completed all the steps—from machining the raw material, welding the
+                    different components, to testing them—to ensure they matched the function and characteristics of the
+                    original brake triangles.</p>
+            </section>
+
+            <section class="project-section-card">
+                <h3>CONCLUSION</h3>
+                <p>Through this project, I learned an important lesson about the value of collaboration between
+                    designers and manufacturers. In my experience, when working in a design office, it is easy to assume
+                    that theoretical work—such as 3D modeling and detailed drawings—is sufficient to produce a
+                    component. We sometimes think we can complete a design without consulting the manufacturer.</p>
+                <p>However, this project demonstrated how critical the role of the manufacturer is. They not only help
+                    you understand appropriate tolerances based on the materials and machinery available but also enable
+                    you to complete the work more efficiently. For example, during the reproduction of the front shoes
+                    for the <strong>CC3300-AC</strong> locomotives, I initially applied tolerances that were not
+                    suitable for manufacturing because I assumed that their tools and capabilities were the same as
+                    those I had encountered in previous workplaces.</p>
+                <p>This approach cost the team a significant amount of time, as we constantly had to review details and
+                    ensure that the dimensions were both acceptable and manufacturable. From this experience, I gained a
+                    deeper understanding of practical dimensioning techniques and learned how to work humbly and
+                    effectively with the manufacturer. By consulting them during the design process, we were able to
+                    reduce errors and save time.</p>
+                <p><strong>As the saying goes, “If you want to go fast, go alone; if you want to go far, go together.”
+                        In my case, especially , working alone often led to mistakes, whereas collaborating closely with
+                        the team and manufacturers resulted in fewer errors and faster, more accurate outcomes.</strong>
+                </p>
+            </section>
+        </div>
+
+        <!-- Main Project Image -->
+        <section class="project-main-image">
+            <div class="main-image-container">
+                <img src="/images/braking shoes of the CC2200.png" alt="Train Braking System" class="main-img">
+                <div class="main-image-caption">Braking Shoes of the CC2200 Locomotive</div>
+            </div>
+        </section>
+
+        <!-- Project Gallery -->
+        <section class="project-gallery">
+            <div class="gallery-item">
+                <img src="/images/TBS 1.jpg " alt="Braking Shoes of the CC2200 Locomotive" class="gallery-img">
+                <div class="gallery-caption">Image of the CC3300-AC brake triangle after it has successfully travelled
+                    from Douala to Yaounde passing by Esseka and back. 2023</div>
+            </div>
+            <div class="gallery-item">
+                <img src="/images/BRAKING SHOES FOR CC_2200 LOCOMOTIVES.jpg" alt="CC_2200 Braking Shoes"
+                    class="gallery-img">
+                <div class="gallery-caption">Braking shoes for CC_2200</div>
+            </div>
+
+
+
+
+        </section>
+
+        <a href="code-html.html" class="to-teaching-btn">&#8592; Back to Projects</a>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© Donfack Fortune 2025</p>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" title="Back to Top">&#8679;</button>
+
+    <script>
+        // Show/hide button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        };
+        // Smooth scroll to top
+        backToTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+
+</html>

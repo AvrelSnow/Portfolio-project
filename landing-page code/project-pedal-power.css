@@ -1,0 +1,231 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+/* ===== Project Section Layout ===== */
+.project-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 48px;
+    margin: 64px 0;
+}
+
+.project-section.reverse {
+    flex-direction: row-reverse;
+}
+
+/* ===== Project Section Image 1 ===== */
+.project-section-img1 {
+    flex: 1 1 225px;
+    min-width: 280px;
+    max-width: 480px;
+    margin: 32px auto 24px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Project Section Image Main ===== */
+.project-section-img {
+    flex: 1 1 340px;
+    min-width: 280px;
+    max-width: 480px;
+    padding-top: 75px;
+}
+
+/* ===== Project Section Image Main IMG ===== */
+.project-section-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Project Section Image 2 ===== */
+.project-section-img2 {
+    width: 100%;
+    display: block;
+    margin: 32px auto 24px auto;
+    padding-top: 75px;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Project Section Image 3 ===== */
+.project-section-img3 {
+    display: block;
+    width: 100%;
+    margin: 32px auto 24px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Project Section Content ===== */
+.project-section-content {
+    flex: 2 1 340px;
+    min-width: 280px;
+}
+
+/* Title inside project content */
+.ppmpc-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 1.7rem;
+    /* corrected from 17rem -> 1.7rem */
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.project-section-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+/* Paragraphs and lists */
+.project-section-content p,
+.project-section-content ul {
+    font-size: 1.08rem;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.project-section-content ul {
+    padding-left: 20px;
+}
+
+/* ===== Back to Projects Button ===== */
+.to-teaching-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 2rem 0;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    /* Ensure visibility if overlapping */
+    position: relative;
+    z-index: 2;
+}
+
+/* Hover */
+.to-teaching-btn:hover {
+    background: #a01410;
+    transform: translateY(-2px);
+}
+
+/* ===== Download Button Styles ===== */
+.ppmpc-btn {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+/* ===== GrabCAD Icon Styles ===== */
+.fab.fa-grabcad {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* Test validation images */
+.test-validation-images {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.test-validation-img-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.test-validation-img {
+    max-width: 340px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: auto;
+}
+
+.test-validation-caption {
+    margin-top: 12px;
+    font-size: 1.08rem;
+    color: #444;
+    text-align: center;
+}
+
+.test-validation-analysis-row {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 36px;
+    flex-wrap: wrap;
+}
+
+.test-validation-analysis-text {
+    flex: 2 1 340px;
+    min-width: 260px;
+    max-width: 600px;
+}
+
+.test-validation-analysis-img {
+    flex: 1 1 280px;
+    min-width: 220px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 900px) {
+
+    .project-section,
+    .project-section.reverse {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .project-section-img,
+    .project-section-content {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .test-validation-images {
+        gap: 18px;
+    }
+
+    .test-validation-img {
+        max-width: 100%;
+    }
+
+    .test-validation-analysis-row {
+        flex-direction: column;
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .test-validation-analysis-img {
+        max-width: 100%;
+    }
+}

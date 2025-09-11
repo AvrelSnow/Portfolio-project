@@ -1,0 +1,444 @@
+/* --- General Body Styles --- */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Header Styles --- */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 1rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #e74c3c;
+}
+
+.social-icons a {
+    color: #000000;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #e74c3c;
+}
+
+/* --- Main Content Styles --- */
+.main-content {
+    margin-top: 120px;
+    padding: 4rem 0;
+}
+
+.project-title {
+    font-size: 2.5rem;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.project-year {
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.project-divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Project Section Cards */
+.project-section-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.project-section-card {
+    flex: 1;
+    min-width: 280px;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-section-card h3 {
+    color: #e74c3c;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.project-section-card h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: #e74c3c;
+}
+
+.project-section-card p {
+    color: #000000;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+/* Main Project Image */
+.project-main-image {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.main-image-container {
+    max-width: 100%;
+    width: 100%;
+    height: 0;
+    padding-bottom: 70.7%;
+    /* 210/297 = ~0.707 (A4 aspect ratio) */
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.5s ease;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.main-image-container:hover .main-img {
+    transform: scale(1.02);
+}
+
+.main-image-caption {
+    font-style: italic;
+    color: #49494971;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Project Gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(585px, 585px));
+    gap: 1.5rem;
+    margin: 10rem 0.2;
+}
+
+.gallery-item {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: #080808;
+    text-align: center;
+    background: #fff;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+/* Back to Projects Button */
+.to-teaching-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 2rem 0;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.to-teaching-btn:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: #ffffff;
+    color: #7c7f80;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #e74c3c;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#backToTopBtn:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Project Gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(585px, 585px));
+    gap: 1.5rem;
+    margin: 10rem 0.2;
+}
+
+.gallery-item {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: #080808;
+    text-align: center;
+    background: #fff;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+/* Back to Projects Button */
+.to-teaching-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 2rem 0;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.to-teaching-btn:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: #ffffff;
+    color: #7c7f80;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .project-section-row {
+        flex-direction: column;
+    }
+
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-flex {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .header-center {
+        margin: 1rem 0;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-list li {
+        margin: 0.5rem;
+    }
+
+    .main-content {
+        margin-top: 180px;
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 2rem;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .header,
+    .footer,
+    #backToTopBtn {
+        display: none;
+    }
+
+    .main-content {
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .project-section-card {
+        page-break-inside: avoid;
+    }
+
+    .project-gallery {
+        page-break-before: always;
+    }
+}

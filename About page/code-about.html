@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Donfack Fortune</title>
+    <link rel="stylesheet" href="Css-about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-flex">
+            <h1 class="logo">Donfack Fortune</h1>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../landing-page code/code-html.html">Projects</a></li>
+                    <li><a href="#" class="active">About</a></li>
+                    <li><a href="../Teaching-page/code-teach.html">Teaching</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="about-main container">
+        <section class="about-section">
+            <div class="about-content centered">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hi, I'm Donfack Fortune! After graduating from ENSET, I have combined my training as a mechanical
+                        engineer and educator to address diverse technical challenges within Cameroon's industrial
+                        sector. My expertise lies in Mechanical engineering design and Finite Element Analysis (FEA),
+                        which I apply to validate and optimize mechanical systems contributing to improved
+                        efficiency and reliability in the diverse sectors.</p>
+                    <p>In addition to my work as a Mechanical engineer, I serve as a teacher at the Technical High
+                        School
+                        Fongo Tongo, where my focus is on improving education in Cameroon, making
+                        Technical education more
+                        accessible and fun, and developing sustainable solutions that support local communities.</p>
+                    <p>I address the challenges of today by making tangible, user-centric solutions that bridge the gap
+                        between engineering theory and practical application. Looking ahead, I'm eager to apply my
+                        technical and educational skills to impactful projects at the intersection of transport,
+                        agriculture, and education—empowering others and contributing to meaningful, sustainable
+                        progress.</p>
+                    <p>In my free time, you'll find me playing games, enjoying sports, volunteering for the TKC
+                        community, or honing my public speaking skills at the University of Dschang and ENSET Douala
+                        where I
+                        usually give CAD classes in amphitheaters .</p>
+                    <p>Take a look at the Projects,Teaching and contact me if you would like more information.</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Center-Yaounde_Simbock_mbalgong</span>
+        </section>
+        <section class="get-in-touch">
+            <h2>Get in Touch</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="send-btn">Send Message</button>
+            </form>
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var name = document.getElementById('name').value;
+                    var email = document.getElementById('email').value;
+                    var message = document.getElementById('message').value;
+                    var subject = encodeURIComponent('Message from ' + name + ' (' + email + ')');
+                    var body = encodeURIComponent(message);
+                    window.location.href = 'mailto:fortunedonfack05@gmail.com?subject=' + subject + '&body=' + body;
+                });
+            </script>
+        </section>
+    </main>
+</body>
+
+</html>

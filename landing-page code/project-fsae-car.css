@@ -1,0 +1,77 @@
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+.project-hero-img {
+    max-width: 340px;
+    width: 100%;
+    display: block;
+    margin: 32px auto 24px auto;
+}
+.project-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 48px;
+    margin: 64px 0;
+}
+.project-section.reverse {
+    flex-direction: row-reverse;
+}
+.project-section-img {
+    flex: 1 1 340px;
+    min-width: 280px;
+    max-width: 480px;
+}
+.project-section-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.project-section-content {
+    flex: 2 1 340px;
+    min-width: 280px;
+}
+.project-section-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+.project-section-content p, .project-section-content ul {
+    font-size: 1.08rem;
+    color: #222;
+    margin-bottom: 12px;
+}
+.project-section-content ul {
+    padding-left: 20px;
+}
+.to-teaching-btn {
+    display: inline-block;
+    background: #e02b20;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-top: 32px;
+}
+.to-teaching-btn:hover {
+    background: #b81d16;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+@media (max-width: 900px) {
+    .project-section, .project-section.reverse {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .project-section-img, .project-section-content {
+        min-width: 0;
+        max-width: 100%;
+    }
+} 

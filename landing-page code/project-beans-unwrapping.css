@@ -1,0 +1,486 @@
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+.BUR-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+
+.project-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 48px;
+    margin: 64px 0;
+}
+
+.project-section-img1 {
+    flex: 1 1 225px;
+    min-width: 280px;
+    max-width: 480px;
+    margin: 32px auto 24px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-section-img {
+    flex: 1 1 340px;
+    min-width: 280px;
+    max-width: 480px;
+    padding-top: 75px;
+}
+
+.project-section-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-section-img2 {
+    width: 100%;
+    display: block;
+    margin: 32px auto 24px auto;
+    padding-top: 75px;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-section-img3 {
+    display: block;
+    width: 100%;
+    margin: 32px auto 24px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-section-content {
+    flex: 2 1 340px;
+    min-width: 280px;
+}
+
+.project-section-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+.project-section-content p,
+.project-section-content ul {
+    font-size: 1.08rem;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.project-section-content ul {
+    padding-left: 20px;
+}
+
+.to-teaching-btn {
+    display: inline-block;
+    background: #e02b20;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-top: 32px;
+}
+
+.to-teaching-btn:hover {
+    background: #b81d16;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+/* Download button styles */
+.BUR-btn {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background: #e02b20;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-top: 32px;
+}
+.BUR-btn:hover {
+    background: #b81d16;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+/* GrabCAD icon styles */
+.fab.fa-grabcad {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.test-validation-images {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.test-validation-img-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.test-validation-img {
+    max-width: 340px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: auto;
+}
+
+.test-validation-caption {
+    margin-top: 12px;
+    font-size: 1.08rem;
+    color: #444;
+    text-align: center;
+}
+
+.test-validation-analysis-row {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 36px;
+    flex-wrap: wrap;
+}
+
+.test-validation-analysis-text {
+    flex: 2 1 340px;
+    min-width: 260px;
+    max-width: 600px;
+}
+
+.test-validation-analysis-img {
+    flex: 1 1 280px;
+    min-width: 220px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+
+    .project-section,
+    .project-section.reverse {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .project-section-img,
+    .project-section-content {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .test-validation-images {
+        gap: 18px;
+    }
+
+    .test-validation-img {
+        max-width: 100%;
+    }
+
+    .test-validation-analysis-row {
+        flex-direction: column;
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .test-validation-analysis-img {
+        max-width: 100%;
+    }
+}
+
+
+.project-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 48px;
+    margin: 64px 0;
+}
+
+.project-section-img1 {
+    flex: 1 1 225px;
+    min-width: 280px;
+    max-width: 480px;
+    margin: 32px auto 24px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-section-img {
+    flex: 1 1 340px;
+    min-width: 280px;
+    max-width: 480px;
+    padding-top: 75px;
+}
+
+.project-section-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-section-img2 {
+
+    width: 100%;
+    display: block;
+    margin: 32px auto 24px auto;
+    padding-top: 75px;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-section-img3 {
+    display: block;
+    width: 100%;
+    display: block;
+    margin: 32px auto 24px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-section-content {
+    flex: 2 1 340px;
+    min-width: 280px;
+}
+
+.project-section-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+.project-section-content p,
+.project-section-content ul {
+    font-size: 1.08rem;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.project-section-content ul {
+    padding-left: 20px;
+}
+
+.to-teaching-btn {
+    display: inline-block;
+    background: #e02b20;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-top: 32px;
+}
+
+.to-teaching-btn:hover {
+    background: #b81d16;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+
+
+/* GrabCAD icon styles */
+.fab.fa-grabcad {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.test-validation-images {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.test-validation-img-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.test-validation-img {
+    max-width: 340px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: auto;
+}
+
+.test-validation-caption {
+    margin-top: 12px;
+    font-size: 1.08rem;
+    color: #444;
+    text-align: center;
+}
+
+.test-validation-analysis-row {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 36px;
+    flex-wrap: wrap;
+}
+
+.test-validation-analysis-text {
+    flex: 2 1 340px;
+    min-width: 260px;
+    max-width: 600px;
+}
+
+.test-validation-analysis-img {
+    flex: 1 1 280px;
+    min-width: 220px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+
+    .project-section,
+    .project-section.reverse {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .project-section-img,
+    .project-section-content {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .test-validation-images {
+        gap: 18px;
+    }
+
+    .test-validation-img {
+        max-width: 100%;
+    }
+
+    .test-validation-analysis-row {
+        flex-direction: column;
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .test-validation-analysis-img {
+        max-width: 100%;
+    }
+}
+
+/* ===== Collaborations & Contributions Section ===== */
+.BUR-contrib-collab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 32px 0 24px 0;
+    text-align: center;
+}
+
+.BUR-contrib-collab-cols {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 64px;
+}
+
+.BUR-section-label {
+    letter-spacing: 2px;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+}
+
+.BUR-list {
+    color: #888;
+    font-size: 1.08rem;
+    text-align: left;
+}
+
+.BUR-btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 32px 0 0 0;
+}
+
+.BUR-divider {
+    margin: 40px 0 10px 0;
+    border: none;
+    border-top: 2.5px solid #bbb;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .BUR-contrib-collab-cols {
+        flex-direction: column;
+        gap: 36px;
+        align-items: stretch;
+    }
+}
+
+/* Download button styles */
+.BUR-btn {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background: #e02b20;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-top: 32px;
+}
+.BUR-btn:hover {
+    background: #b81d16;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
