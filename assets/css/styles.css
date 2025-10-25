@@ -1,4 +1,6 @@
-/* Base Styles & Variables */
+/* ============================================
+   BASE STYLES & VARIABLES
+   ============================================ */
 :root {
     --primary-color: #070707;
     --secondary-color: #000000;
@@ -32,7 +34,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Typography */
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
 h1,
 h2,
 h3,
@@ -57,7 +61,9 @@ a:hover {
     color: var(--primary-color);
 }
 
-/* Layout Utilities */
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
 .container {
     width: 90%;
     max-width: 1300px;
@@ -69,7 +75,9 @@ a:hover {
     padding: calc(var(--spacing-unit) * 3) 0;
 }
 
-/* Header Styles */
+/* ============================================
+   HEADER STYLES
+   ============================================ */
 .header {
     border-bottom: 1px solid #eee;
     background: #fff;
@@ -82,6 +90,7 @@ a:hover {
     justify-content: space-between;
 }
 
+/* Header Left - Logo */
 .header-left .logo {
     font-size: 2.2rem;
     font-weight: 700;
@@ -89,6 +98,7 @@ a:hover {
     letter-spacing: 0.5px;
 }
 
+/* Header Center - Navigation */
 .header-center {
     flex: 1;
     display: flex;
@@ -119,6 +129,7 @@ a:hover {
     color: #111;
 }
 
+/* Header Right - Social Icons */
 .header-right.social-icons {
     display: flex;
     gap: 20px;
@@ -143,10 +154,18 @@ a:hover {
 
 .social-icons a:hover {
     color: #e02b20;
-    /* GrabCAD red for hover, or #888 for others */
 }
 
-/* About Section */
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+.main-content {
+    padding: 56px 0 40px 0;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
 .about-section {
     padding: calc(var(--spacing-unit) * 4) 0;
     background-color: white;
@@ -189,104 +208,9 @@ a:hover {
     margin-bottom: calc(var(--spacing-unit) * 1.5);
 }
 
-/* Footer Styles */
-.footer {
-    border-top: 1px solid #eee;
-    background: #fff;
-    text-align: center;
-    padding: 28px 0 18px 0;
-    font-size: 1.08rem;
-    color: #888;
-}
-
-.copyright p {
-    margin-bottom: calc(var(--spacing-unit) * 0.5);
-}
-
-.footer p {
-    transition: color 0.2s;
-    cursor: pointer;
-}
-
-.footer p:hover {
-    color: #e02b20;
-}
-
-/* Accessibility */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .hero-section {
-        padding: 1.5rem 0;
-    }
-
-    .hero-image {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 1rem 0;
-    }
-
-    .hero-image {
-        border-radius: 4px;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-image {
-        max-width: 100%;
-        box-shadow: none;
-        border-radius: 0;
-    }
-
-    .hero-section {
-        padding: 0;
-        background-color: transparent;
-    }
-}
-
-/* Performance Optimizations */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Print Styles */
-@media print {
-    body {
-        font-size: 12pt;
-        line-height: 1.5;
-        color: #000;
-        background: none;
-    }
-
-    .header,
-    .footer {
-        background: none;
-        color: #000;
-    }
-
-    a {
-        text-decoration: underline;
-    }
-}
-
-/* Hero Image Section */
+/* ============================================
+   HERO IMAGE SECTION
+   ============================================ */
 .hero-section {
     padding: 2rem 0;
     background-color: #f8f9fa;
@@ -306,13 +230,11 @@ img {
     display: block;
     object-fit: cover;
     aspect-ratio: 16/9;
-    /* Adjust this to match your image proportions */
 }
 
-.main-content {
-    padding: 56px 0 40px 0;
-}
-
+/* ============================================
+   PROJECTS GRID SECTION
+   ============================================ */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -369,38 +291,34 @@ img {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
 }
 
-@media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 36px 18px;
-    }
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+.footer {
+    border-top: 1px solid #eee;
+    background: #fff;
+    text-align: center;
+    padding: 28px 0 18px 0;
+    font-size: 1.08rem;
+    color: #888;
 }
 
-@media (max-width: 700px) {
-    .header-flex {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .header-center {
-        justify-content: flex-start;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 28px 0;
-    }
-
-    .project-item {
-        max-width: 100%;
-    }
-
-    .main-content {
-        padding: 28px 0 18px 0;
-    }
+.copyright p {
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
 }
 
-/* Back to Top Button */
+.footer p {
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.footer p:hover {
+    color: #e02b20;
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
 #backToTopBtn {
     display: none;
     position: fixed;
@@ -422,13 +340,12 @@ img {
     background: #b81d16;
 }
 
-@media (max-width: 600px) {
-    #backToTopBtn {
-        bottom: 16px;
-        right: 16px;
-        padding: 10px 13px;
-        font-size: 1rem;
-    }
+/* ============================================
+   PEDAL POWER PROJECT PAGE STYLES
+   ============================================ */
+.ppmpc-title {
+    text-align: center;
+    margin-top: 32px;
 }
 
 .ppmpc-btn {
@@ -447,159 +364,6 @@ img {
 .ppmpc-btn:hover {
     background: #b81d16;
 }
-
-/* Pedal Power Project Page Styles */
-.ppmpc-title {
-    text-align: center;
-    margin-top: 32px;
-}
-
-/* --- A4 Landscape Image Section (TBS) --- */
-.a4-landscape-section {
-    margin: 58px auto 48px auto;
-    max-width: 1200px;
-    background: #f6faff;
-    border-radius: 18px;
-    box-shadow: 0 6px 36px rgba(0, 0, 0, 0.09);
-    padding: 28px 0 38px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2.5px solid #e0e7ef;
-}
-
-.a4-landscape-label {
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: #0a2a43;
-    margin-bottom: 22px;
-    letter-spacing: 1.2px;
-    text-align: center;
-}
-
-.a4-landscape-image-wrapper {
-    width: 100%;
-    max-width: 1300px;
-    display: flex;
-    justify-content: center;
-}
-
-.a4-landscape-img {
-    width: 100%;
-    max-width: 1200px;
-    aspect-ratio: 297/210;
-    border-radius: 12px;
-    border: 2.5px solid #c4d4e5;
-    box-shadow: 0 4px 32px rgba(0, 123, 255, 0.09);
-    background: #fff;
-    object-fit: contain;
-}
-
-@media (max-width: 1100px) {
-    .a4-landscape-image-wrapper {
-        max-width: 98vw;
-    }
-
-    .a4-landscape-img {
-        max-width: 92vw;
-    }
-}
-
-@media (max-width: 700px) {
-    .a4-landscape-section {
-        padding: 20px 0 22px 0;
-    }
-
-    .a4-landscape-label {
-        font-size: 1.08rem;
-    }
-
-    .a4-landscape-img {
-        max-width: 99vw;
-        border-radius: 8px;
-    }
-}
-
-/* --- Four Small Images Row (TBS) --- */
-.tbs-small-images-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 36px;
-    margin: 34px auto 48px auto;
-    max-width: 1200px;
-    padding: 0 10px;
-}
-
-.tbs-small-img-card {
-    background: #f8fafc;
-    border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-    padding: 14px 14px 22px 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 210px;
-    width: 100%;
-    transition: transform 0.18s, box-shadow 0.18s;
-}
-
-.tbs-small-img-card:hover {
-    transform: translateY(-5px) scale(1.04);
-    box-shadow: 0 8px 32px rgba(0, 123, 255, 0.13);
-    z-index: 2;
-}
-
-.tbs-small-img {
-    width: 180px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid #c4d4e5;
-    background: #fff;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
-    margin-bottom: 8px;
-}
-
-@media (max-width: 950px) {
-    .tbs-small-images-row {
-        gap: 18px;
-        max-width: 98vw;
-    }
-
-    .tbs-small-img {
-        width: 140px;
-        height: 90px;
-    }
-
-    .tbs-small-img-card {
-        max-width: 150px;
-        padding: 10px 10px 16px 10px;
-    }
-}
-
-@media (max-width: 700px) {
-    .tbs-small-images-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-        margin: 24px auto 32px auto;
-    }
-
-    .tbs-small-img-card {
-        max-width: 98vw;
-        width: 100%;
-    }
-
-    .tbs-small-img {
-        width: 98vw;
-        height: 30vw;
-        max-width: 340px;
-        max-height: 140px;
-    }
-}
-
 
 .ppmpc-contrib-collab {
     display: flex;
@@ -642,10 +406,297 @@ img {
     width: 100%;
 }
 
+/* ============================================
+   A4 LANDSCAPE IMAGE SECTION (TBS)
+   ============================================ */
+.a4-landscape-section {
+    margin: 58px auto 48px auto;
+    max-width: 1200px;
+    background: #f6faff;
+    border-radius: 18px;
+    box-shadow: 0 6px 36px rgba(0, 0, 0, 0.09);
+    padding: 28px 0 38px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2.5px solid #e0e7ef;
+}
+
+.a4-landscape-label {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #0a2a43;
+    margin-bottom: 22px;
+    letter-spacing: 1.2px;
+    text-align: center;
+}
+
+.a4-landscape-image-wrapper {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: center;
+}
+
+.a4-landscape-img {
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 297/210;
+    border-radius: 12px;
+    border: 2.5px solid #c4d4e5;
+    box-shadow: 0 4px 32px rgba(0, 123, 255, 0.09);
+    background: #fff;
+    object-fit: contain;
+}
+
+/* ============================================
+   FOUR SMALL IMAGES ROW (TBS)
+   ============================================ */
+.tbs-small-images-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 36px;
+    margin: 34px auto 48px auto;
+    max-width: 1200px;
+    padding: 0 10px;
+}
+
+.tbs-small-img-card {
+    background: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    padding: 14px 14px 22px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 210px;
+    width: 100%;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.tbs-small-img-card:hover {
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(0, 123, 255, 0.13);
+    z-index: 2;
+}
+
+.tbs-small-img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #c4d4e5;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+    margin-bottom: 8px;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET (max-width: 992px)
+   ============================================ */
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 1.5rem 0;
+    }
+
+    .hero-image {
+        max-width: 90%;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET (max-width: 950px)
+   ============================================ */
+@media (max-width: 950px) {
+    .tbs-small-images-row {
+        gap: 18px;
+        max-width: 98vw;
+    }
+
+    .tbs-small-img {
+        width: 140px;
+        height: 90px;
+    }
+
+    .tbs-small-img-card {
+        max-width: 150px;
+        padding: 10px 10px 16px 10px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET (max-width: 900px)
+   ============================================ */
 @media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px 18px;
+    }
+
     .ppmpc-contrib-collab-cols {
         flex-direction: column;
         gap: 36px;
         align-items: stretch;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 1rem 0;
+    }
+
+    .hero-image {
+        border-radius: 4px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (max-width: 700px)
+   ============================================ */
+@media (max-width: 700px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .header-center {
+        justify-content: flex-start;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 28px 0;
+    }
+
+    .project-item {
+        max-width: 100%;
+    }
+
+    .main-content {
+        padding: 28px 0 18px 0;
+    }
+
+    .tbs-small-images-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin: 24px auto 32px auto;
+    }
+
+    .tbs-small-img-card {
+        max-width: 98vw;
+        width: 100%;
+    }
+
+    .tbs-small-img {
+        width: 98vw;
+        height: 30vw;
+        max-width: 340px;
+        max-height: 140px;
+    }
+
+    .a4-landscape-section {
+        padding: 20px 0 22px 0;
+    }
+
+    .a4-landscape-label {
+        font-size: 1.08rem;
+    }
+
+    .a4-landscape-img {
+        max-width: 99vw;
+        border-radius: 8px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (max-width: 600px)
+   ============================================ */
+@media (max-width: 600px) {
+    #backToTopBtn {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 13px;
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (max-width: 576px)
+   ============================================ */
+@media (max-width: 576px) {
+    .hero-image {
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .hero-section {
+        padding: 0;
+        background-color: transparent;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - A4 LANDSCAPE (max-width: 1100px)
+   ============================================ */
+@media (max-width: 1100px) {
+    .a4-landscape-image-wrapper {
+        max-width: 98vw;
+    }
+
+    .a4-landscape-img {
+        max-width: 92vw;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: none;
+    }
+
+    .header,
+    .footer {
+        background: none;
+        color: #000;
+    }
+
+    a {
+        text-decoration: underline;
     }
 }
