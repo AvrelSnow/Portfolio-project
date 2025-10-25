@@ -15,13 +15,208 @@ body {
    ============================================ */
 .container {
     width: 90%;
-    max-width: 1300px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 0 8px 0;
 }
 
 /* ============================================
-   HEADER STYLES
+   HEADER STYLES (ORIGINAL)
    ============================================ */
+.header {
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    padding: 36px 0 28px 0;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.main-nav .nav-list {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .nav-list li a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    font-size: 1.18rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border 0.2s, color 0.2s;
+}
+
+.main-nav .nav-list li a.active,
+.main-nav .nav-list li a:hover {
+    border-bottom: 2px solid #111;
+    color: #111;
+}
+
+/* ============================================
+   ABOUT PAGE MAIN CONTENT
+   ============================================ */
+.about-main {
+    padding: 56px 0 40px 0;
+}
+
+.about-section {
+    margin-bottom: 48px;
+}
+
+/* About Content Layout */
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 56px;
+    justify-content: space-between;
+}
+
+/* About Text Section */
+.about-text {
+    flex: 2;
+    text-align: left;
+    max-width: 700px;
+    margin: 0;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.about-text p {
+    font-size: 1.18rem;
+    margin-bottom: 22px;
+    color: #222;
+    letter-spacing: 0.01em;
+    line-height: 1.7;
+}
+
+/* About Image Section */
+.about-image {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 280px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+    object-fit: cover;
+}
+
+/* ============================================
+   CONTACT INFO SECTION
+   ============================================ */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.15rem;
+    color: #444;
+    margin: 40px 0 32px 0;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.contact-info i {
+    color: #e02b20;
+    font-size: 1.4em;
+}
+
+/* ============================================
+   GET IN TOUCH SECTION (CONTACT FORM)
+   ============================================ */
+.get-in-touch {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 40px 28px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    max-width: 600px;
+    margin: 32px 0 0 0;
+}
+
+.get-in-touch h2 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-form label {
+    font-weight: 500;
+    color: #333;
+    font-size: 1.08rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 1.08rem;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #e02b20;
+}
+
+/* Send Button */
+.send-btn {
+    background: #e02b20;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 14px 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.send-btn:hover {
+    background: #b81d16;
+}
+
+/* ============================================
+   HEADER STYLES (UPDATED FOR NEW STRUCTURE)
+   ============================================ */
+/* Header Styles */
 .header {
     border-bottom: 1px solid #eee;
     background: #fff;
@@ -42,26 +237,11 @@ body {
     letter-spacing: 0.5px;
 }
 
-.logo {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 0.5px;
-}
-
 /* Header Center - Navigation */
 .header-center {
     flex: 1;
     display: flex;
     justify-content: center;
-}
-
-.main-nav .nav-list {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-list {
@@ -72,7 +252,6 @@ body {
     padding: 0;
 }
 
-.main-nav .nav-list li a,
 .nav-list li a {
     text-decoration: none;
     color: #111;
@@ -83,8 +262,6 @@ body {
     transition: border 0.2s, color 0.2s;
 }
 
-.main-nav .nav-list li a.active,
-.main-nav .nav-list li a:hover,
 .nav-list li a.active,
 .nav-list li a:hover {
     border-bottom: 2px solid #111;
@@ -114,104 +291,51 @@ body {
     vertical-align: middle;
 }
 
+
 .social-icons a:hover {
     color: #e02b20;
-}
+    /* GrabCAD red for hover, or #888 for others */
 
-/* ============================================
-   TEACHING PAGE MAIN CONTENT
-   ============================================ */
-.teaching-main {
-    padding: 56px 0 40px 0;
-}
+    @media (max-width: 900px) {
+        .about-content {
+            flex-direction: column;
+            gap: 36px;
+            align-items: stretch;
+        }
 
-/* ============================================
-   TEACHING INTRO SECTION
-   ============================================ */
-.teaching-intro {
-    margin-bottom: 56px;
-    padding: 0 0 8px 0;
-}
+        .about-image {
+            justify-content: flex-start;
+        }
 
-.teaching-intro h3 {
-    margin-top: 32px;
-    margin-bottom: 12px;
-    font-size: 1.32rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-}
+        .about-content.centered {
+            gap: 0;
+        }
+    }
 
-.teaching-intro ul {
-    margin: 0 0 18px 32px;
-    padding: 0;
-    font-size: 1.13rem;
-}
+    @media (max-width: 600px) {
+        .header-flex {
+            flex-direction: column;
+            gap: 18px;
+        }
 
-.teaching-intro ul li {
-    margin-bottom: 8px;
-    line-height: 1.7;
-}
+        .about-main {
+            padding: 28px 0 18px 0;
+        }
 
-.teaching-intro p {
-    font-size: 1.15rem;
-    margin-bottom: 22px;
-    color: #222;
-    letter-spacing: 0.01em;
-}
+        .get-in-touch {
+            padding: 22px 10px;
+        }
 
-/* ============================================
-   TEACHING PROJECTS GRID
-   ============================================ */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 48px 36px;
-    justify-items: center;
-    margin-top: 32px;
-}
-
-/* Project Card Styles */
-.project-item {
-    width: 100%;
-    max-width: 420px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
-    text-align: left;
-    transition: box-shadow 0.3s;
-}
-
-.project-item img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px 10px 0 0;
-    filter: grayscale(100%) brightness(0.95);
-    transition: filter 0.4s, box-shadow 0.3s;
-}
-
-.project-item:hover {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
-}
-
-.project-item:hover img {
-    filter: grayscale(0%) brightness(1.08);
-}
-
-.project-item p {
-    margin: 22px 18px 22px 18px;
-    font-size: 1.18rem;
-    font-weight: 600;
-    color: #181818;
-    line-height: 1.6;
-    letter-spacing: 0.01em;
+        .about-section {
+            margin-bottom: 28px;
+        }
+    }
 }
 
 /* ============================================
    BACK TO TOP BUTTON
    ============================================ */
+/* Back to Top Button */
 #backToTopBtn {
     display: none;
     position: fixed;
@@ -234,41 +358,9 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE DESIGN - TABLET (max-width: 900px)
-   ============================================ */
-@media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 36px 18px;
-    }
-}
-
-/* ============================================
    RESPONSIVE DESIGN - MOBILE (max-width: 600px)
    ============================================ */
 @media (max-width: 600px) {
-    .header-flex {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .teaching-main {
-        padding: 28px 0 18px 0;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 28px 0;
-    }
-
-    .project-item {
-        max-width: 100%;
-    }
-
-    .teaching-intro {
-        margin-bottom: 32px;
-    }
-
     #backToTopBtn {
         bottom: 16px;
         right: 16px;
