@@ -18,29 +18,229 @@ body {
     background: #fff;
     padding: 36px 0 28px 0;
 }
+
 .header-flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .logo {
     font-size: 2.2rem;
     font-weight: 700;
     margin: 0;
     letter-spacing: 0.5px;
 }
+
 .main-nav .nav-list {
     display: flex;
-    gap: 36極速一键整理
+    gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
-Document packs many editing tools into极速一键整理
+.main-nav .nav-list li a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    font-size: 1.18rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border 0.2s, color 0.2s;
+}
 
-Document packs many editing tools into a single, accessible interface. Outstanding image, audio, and PDF conversion abilities, coupled with automatic category-based sorting, make Document a powerful resource for content creators and digital archivists. Ergonomic design and efficient hotkey support further enhance workflow acceleration.
+.main-nav .nav-list li a.active,
+.main-nav .nav-list li a:hover {
+    border-bottom: 2px solid #111;
+    color: #111;
+}
 
-1)
-2))
-3)))))}
-4)<z>
-5)b
-6)<html></html>
-6]
+.teaching-main {
+    padding: 56px 0 40px 0;
+}
+
+.teaching-intro {
+    margin-bottom: 56px;
+    padding: 0 0 8px 0;
+}
+
+.teaching-intro h3 {
+    margin-top: 32px;
+    margin-bottom: 12px;
+    font-size: 1.32rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.teaching-intro ul {
+    margin: 0 0 18px 32px;
+    padding: 0;
+    font-size: 1.13rem;
+}
+
+.teaching-intro ul li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+.teaching-intro p {
+    font-size: 1.15rem;
+    margin-bottom: 22px;
+    color: #222;
+    letter-spacing: 0.01em;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 48px 36px;
+    justify-items: center;
+    margin-top: 32px;
+}
+
+.project-item {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    text-align: left;
+    transition: box-shadow 0.3s;
+}
+
+.project-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px 10px 0 0;
+    filter: grayscale(100%) brightness(0.95);
+    transition: filter 0.4s, box-shadow 0.3s;
+}
+
+.project-item:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+}
+
+.project-item:hover img {
+    filter: grayscale(0%) brightness(1.08);
+}
+
+.project-item p {
+    margin: 22px 18px 22px 18px;
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: #181818;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .teaching-main {
+        padding: 28px 0 18px 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 28px 0;
+    }
+
+    .project-item {
+        max-width: 100%;
+    }
+
+    .teaching-intro {
+        margin-bottom: 32px;
+    }
+}
+
+/* Header Styles */
+.header {
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    padding: 36px 0 28px 0;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left .logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    font-size: 1.18rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border 0.2s, color 0.2s;
+}
+
+.nav-list li a.active,
+.nav-list li a:hover {
+    border-bottom: 2px solid #111;
+    color: #111;
+}
+
+.header-right.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #111;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.social-icons a .fa-grabcad {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.social-icons a:hover {
+    color: #e02b20;
+    /* GrabCAD red for hover, or #888 for others */
+}
