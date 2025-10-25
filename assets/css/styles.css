@@ -98,11 +98,26 @@ a:hover {
     letter-spacing: 0.5px;
 }
 
+.logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
 /* Header Center - Navigation */
 .header-center {
     flex: 1;
     display: flex;
     justify-content: center;
+}
+
+.main-nav .nav-list {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-list {
@@ -113,6 +128,7 @@ a:hover {
     padding: 0;
 }
 
+.main-nav .nav-list li a,
 .nav-list li a {
     text-decoration: none;
     color: #111;
@@ -123,6 +139,8 @@ a:hover {
     transition: border 0.2s, color 0.2s;
 }
 
+.main-nav .nav-list li a.active,
+.main-nav .nav-list li a:hover,
 .nav-list li a.active,
 .nav-list li a:hover {
     border-bottom: 2px solid #111;
