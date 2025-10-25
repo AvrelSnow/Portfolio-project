@@ -190,37 +190,113 @@ body {
     background: #b81d16;
 }
 
-@media (max-width: 900px) {
-    .about-content {
-        flex-direction: column;
-        gap: 36px;
-        align-items: stretch;
-    }
-
-    .about-image {
-        justify-content: flex-start;
-    }
-
-    .about-content.centered {
-        gap: 0;
-    }
+/* Header Styles */
+.header {
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    padding: 36px 0 28px 0;
 }
 
-@media (max-width: 600px) {
-    .header-flex {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .about-main {
-        padding: 28px 0 18px 0;
-    }
-
-    .get-in-touch {
-        padding: 22px 10px;
-    }
-
-    .about-section {
-        margin-bottom: 28px;
-    }
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.header-left .logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    font-size: 1.18rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border 0.2s, color 0.2s;
+}
+
+.nav-list li a.active,
+.nav-list li a:hover {
+    border-bottom: 2px solid #111;
+    color: #111;
+}
+
+.header-right.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #111;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.social-icons a .fa-grabcad {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.social-icons a:hover {
+    color: #e02b20;
+    /* GrabCAD red for hover, or #888 for others */
+
+    @media (max-width: 900px) {
+        .about-content {
+            flex-direction: column;
+            gap: 36px;
+            align-items: stretch;
+        }
+
+        .about-image {
+            justify-content: flex-start;
+        }
+
+        .about-content.centered {
+            gap: 0;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .header-flex {
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .about-main {
+            padding: 28px 0 18px 0;
+        }
+
+        .get-in-touch {
+            padding: 22px 10px;
+        }
+
+        .about-section {
+            margin-bottom: 28px;
+        }
+    }
