@@ -302,3 +302,34 @@ body {
         }
     }
 }
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1000;
+    padding: 14px 18px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50%;
+    background: #e02b20;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#backToTopBtn:hover {
+    background: #b81d16;
+}
+
+@media (max-width: 600px) {
+    #backToTopBtn {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 13px;
+        font-size: 1rem;
+    }
+}

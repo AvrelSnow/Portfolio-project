@@ -106,6 +106,22 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
+        <button id="backToTopBtn" title="Back to Top">&#8679;</button>
+        <script>
+          // Show/hide button
+          const backToTopBtn = document.getElementById('backToTopBtn');
+          window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+              backToTopBtn.style.display = 'block';
+            } else {
+              backToTopBtn.style.display = 'none';
+            }
+          };
+          // Smooth scroll to top
+          backToTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          };
+        </script>
         <button type="submit" class="send-btn">Send Message</button>
       </form>
       <script>
