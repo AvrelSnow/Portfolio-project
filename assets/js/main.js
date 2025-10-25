@@ -1,24 +1,62 @@
 //Smooth scrooling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (极速一键整理
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-Document packs many editing tools into a single, accessible interface. Outstanding image, audio, and PDF conversion abilities, coupled with automatic category-based sorting, make Document a powerful resource for content creators and digital archivists. Ergonomic design and efficient hotkey support further enhance workflow acceleration.
+// Lazy loading for potential future images
+document.addEventListener("DOMContentLoaded", function () {
+    if ('loading' in HTMLImageElement.prototype) {
+        // Native lazy loading is supported
+        const lazyImages = document.querySelectorAll("img[loading='lazy']");
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    } else {
+        // Fallback for browsers without native lazy loading
+        const lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+        });
+    }
 
-1)
-2))
-3)))))}
-4)<极速一键整理
+    // Service worker registration for PWA capabilities
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').then(registration => {
+                console.log('ServiceWorker registration successful');
+            }).catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+});
 
-Document packs many editing tools into a single, accessible interface. Outstanding image, audio, and PDF conversion abilities, coupled with automatic category-based sorting, make Document极速一键整理
+// Highlight active nav link
+const navLinks = document.querySelectorAll('.nav-list li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        // Prevent default if using # links
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+        }
+    });
+});
 
-Document packs many editing tools into a single, accessible interface. Outstanding image, audio, and PDF conversion abilities, coupled with automatic category-based sorting, make Document a powerful resource for content creators and digital archivists. Ergonomic design and efficient hot极速一键整理
-
-Document packs many editing tools into a single, accessible interface. Outstanding image, audio, and PDF conversion abilities, coupled with automatic category-based sorting, make Document a powerful resource for content creators and digital archivists. Ergonomic design and efficient hotkey support further enhance workflow acceleration.
-
-1)
-2))
-3)))))}
-4)<z>
-5)b
-6)<html></html>
-6]
+// Optional: Smooth scroll for anchor links
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
+anchorLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
