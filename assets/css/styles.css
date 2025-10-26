@@ -731,49 +731,12 @@ img {
 }
 
 /* ============================================
-   RESPONSIVE BREAKPOINTS
-   Mobile-first responsive design
+   RESPONSIVE DESIGN - TABLETS
+   Breakpoint: 900px and below
    ============================================ */
-
-/* Tablet Large (1100px and below) */
-@media (max-width: 1100px) {
-    .a4-landscape-image-wrapper {
-        max-width: 98vw;
-    }
-
-    .a4-landscape-img {
-        max-width: 92vw;
-    }
-}
-
-/* Tablet (992px and below) */
-@media (max-width: 992px) {
-    .hero-section {
-        padding: 1.5rem 0;
-    }
-
-    .hero-image {
-        max-width: 90%;
-    }
-}
-
-/* Tablet Small (950px and below) */
-@media (max-width: 950px) {
-    .tbs-small-images-row {
-        gap: 18px;
-    }
-}
-
-/* Tablet Portrait (900px and below) */
 @media (max-width: 900px) {
 
-    /* Projects Grid - 2 columns */
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 36px 18px;
-    }
-
-    /* About Content - Stack vertically */
+    /* Stack content vertically on tablets */
     .about-content {
         flex-direction: column;
         gap: 36px;
@@ -784,97 +747,30 @@ img {
         justify-content: flex-start;
     }
 
-    /* Project Details - Stack columns */
-    .ppmpc-contrib-collab-cols {
-        flex-direction: column;
-        gap: 36px;
-        align-items: stretch;
+    /* Centered variation */
+    .about-content.centered {
+        gap: 0;
     }
 }
 
-/* Mobile Large (768px and below) */
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 1rem 0;
-    }
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE
+   Breakpoint: 600px and below
+   ============================================ */
+@media (max-width: 600px) {
 
-    .hero-image {
-        border-radius: 4px;
-    }
-}
-
-/* Mobile Medium (700px and below) */
-@media (max-width: 700px) {
-
-    /* Header - Stack navigation */
+    /* Stack header elements */
     .header-flex {
         flex-direction: column;
         gap: 18px;
     }
 
-    .header-center {
-        justify-content: flex-start;
-        width: 100%;
-    }
-
-    .nav-list {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-
-    /* Projects Grid - Single column */
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .project-item {
-        max-width: 100%;
-    }
-
-    /* Reduce spacing */
-    .main-content,
-    .about-main,
-    .teaching-main {
+    /* Reduce main content padding */
+    .about-main {
         padding: 28px 0 18px 0;
     }
 
-    /* Small images - Stack vertically */
-    .tbs-small-images-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
-
-    .tbs-small-img-card {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    /* A4 Landscape adjustments */
-    .a4-landscape-section {
-        padding: 20px 10px 22px;
-        margin: 32px auto;
-    }
-
-    .a4-landscape-img {
-        max-width: 99vw;
-        border-radius: 8px;
-    }
-}
-
-/* Mobile Small (600px and below) */
-@media (max-width: 600px) {
-
-    /* Back to top button - Smaller */
-    #backToTopBtn {
-        bottom: 16px;
-        right: 16px;
-        padding: 10px 13px;
-        font-size: 1rem;
-    }
-
-    /* Contact form - Reduce padding */
+    /* Compact form on mobile */
     .get-in-touch {
         padding: 22px 10px;
     }
@@ -882,25 +778,133 @@ img {
     /* Reduce section spacing */
     .about-section {
         margin-bottom: 28px;
-        padding: var(--spacing-lg) 0;
     }
 
-    .teaching-intro {
-        margin-bottom: 32px;
+    /* Smaller back to top button */
+    #backToTopBtn {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 13px;
+        font-size: 1rem;
+    }
+
+    /* Full-width images on mobile */
+    .about-image img {
+        max-width: 100%;
+    }
+
+    /* Reduce text sizes slightly */
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 1.08rem;
     }
 }
 
-/* Mobile Extra Small (576px and below) */
-@media (max-width: 576px) {
-    .hero-image {
-        max-width: 100%;
-        box-shadow: none;
-        border-radius: 0;
+/* ============================================
+   RESPONSIVE DESIGN - SMALL MOBILE
+   Breakpoint: 480px and below
+   ============================================ */
+@media (max-width: 480px) {
+
+    /* Reduce container padding */
+    .container {
+        width: 95%;
     }
 
-    .hero-section {
+    /* Compact navigation */
+    .main-nav .nav-list,
+    .nav-list {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav .nav-list li a,
+    .nav-list li a {
+        font-size: 1.05rem;
+    }
+
+    /* Smaller logo */
+    .header-left .logo {
+        font-size: 1.8rem;
+    }
+
+    /* Compact form elements */
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+
+    .send-btn {
+        font-size: 1.05rem;
+        padding: 12px 0;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - LANDSCAPE MOBILE
+   Orientation: Landscape phones
+   ============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+
+    /* Reduce vertical spacing */
+    .about-main {
+        padding: 20px 0;
+    }
+
+    .about-section {
+        margin-bottom: 20px;
+    }
+
+    .header {
+        padding: 20px 0 15px 0;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   Optimized for printing
+   ============================================ */
+@media print {
+
+    /* Hide interactive elements */
+    #backToTopBtn,
+    .social-icons,
+    .contact-form {
+        display: none;
+    }
+
+    /* Simplify colors for print */
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    .header,
+    .footer {
+        border: none;
+    }
+
+    /* Expand content width */
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Stack layout for print */
+    .about-content {
+        flex-direction: column;
+    }
+
+    /* Remove shadows and backgrounds */
+    .get-in-touch {
+        background: none;
+        box-shadow: none;
         padding: 0;
-        background-color: transparent;
     }
 }
 
