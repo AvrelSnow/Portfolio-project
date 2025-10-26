@@ -361,7 +361,7 @@
        PERFORMANCE MONITORING (Optional)
        Uncomment to track Core Web Vitals
        ============================================ -->
-  <!--
+
   <script>
     // Measure First Contentful Paint
     new PerformanceObserver((list) => {
@@ -369,7 +369,7 @@
         console.log('FCP:', entry.startTime);
       }
     }).observe({ entryTypes: ['paint'] });
-    
+
     // Measure Largest Contentful Paint
     new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
@@ -377,7 +377,7 @@
       }
     }).observe({ entryTypes: ['largest-contentful-paint'] });
   </script>
-  -->
+
 </body>
 
 </html>
