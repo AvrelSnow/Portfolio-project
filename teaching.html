@@ -2,58 +2,159 @@
 <html lang="en">
 
 <head>
+  <!-- ============================================
+       META TAGS & SEO OPTIMIZATION
+       Enhanced metadata for teaching portfolio page
+       ============================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Donfack Fortune's teaching portfolio - 12 engineering courses taught, innovative pedagogy, and student-centered learning experiences at Technical High School Fongo Tongo and ENSET." />
+  <meta name="keywords"
+    content="engineering educator, teaching portfolio, mechanical engineering courses, project-based learning, Cameroon education" />
+  <meta name="author" content="Donfack Fortune" />
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Teaching | Donfack Fortune" />
+  <meta property="og:description"
+    content="Engineering educator with experience teaching 12 courses across multiple institutions" />
+  <meta property="og:type" content="website" />
+
   <title>Teaching | Donfack Fortune</title>
-  <link rel="stylesheet" href="assets/css/teaching.css" />
-  <link rel="stylesheet" href="./assets/css/main.js" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ============================================
+       PERFORMANCE OPTIMIZATION: Resource Hints
+       Preconnect to external domains for faster loading
+       ============================================ -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ============================================
+       CRITICAL CSS: Inline essential styles
+       Improves initial render performance
+       ============================================ -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    .header {
+      border-bottom: 1px solid #eee;
+      background: #fff;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  </style>
+
+  <!-- ============================================
+       FONT LOADING: Async font loading strategy
+       ============================================ -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <!-- ============================================
+       STYLESHEETS: Optimized CSS loading
+       ============================================ -->
+  <link rel="stylesheet" href="assets/css/main.css" media="all" />
+  <link rel="stylesheet" href="assets/css/teaching.css" media="all" />
+
+  <!-- ============================================
+       ICON LIBRARY: Deferred loading
+       ============================================ -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  </noscript>
 </head>
 
 <body>
-  <header class="header">
+  <!-- ============================================
+       ACCESSIBILITY: Skip navigation link
+       ============================================ -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- ============================================
+       HEADER NAVIGATION
+       Consistent site-wide navigation
+       ============================================ -->
+  <header class="header" role="banner">
     <div class="container header-flex">
+
+      <!-- Site Logo/Brand -->
       <div class="header-left">
-        <h1 class="logo">Donfack Fortune</h1>
+        <h1 class="logo">
+          <a href="index.html" style="text-decoration: none; color: inherit;">
+            Donfack Fortune
+          </a>
+        </h1>
       </div>
-      <nav class="header-center" aria-label="Main navigation">
+
+      <!-- Main Navigation -->
+      <nav class="header-center" aria-label="Main navigation" role="navigation">
         <ul class="nav-list">
           <li><a href="index.html">Projects</a></li>
-          <li><a href="#" class="active">Teaching</a></li>
+          <li><a href="teaching.html" class="active" aria-current="page">Teaching</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
-      <div class="header-right social-icons">
-        <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD" target="_blank" rel="noopener">
-          <span class="fab fa-grabcad" style="
-                display: inline-block;
-                vertical-align: middle;
-                width: 1.2em;
-                height: 1.2em;
-              ">
+
+      <!-- Social Media Links -->
+      <div class="header-right social-icons" role="complementary" aria-label="Social media links">
+        <a href="https://grabcad.com/donfack.fortune-1" aria-label="Visit Donfack Fortune's GrabCAD profile"
+          target="_blank" rel="noopener noreferrer">
+          <span class="fab fa-grabcad" role="img" aria-hidden="true">
             <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-              <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff" font-family="Arial, sans-serif">
-                GC
-              </text>
+              <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
+                font-family="Arial, sans-serif">GC</text>
             </svg>
           </span>
         </a>
-        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-          aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+          aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="teaching-main container">
-    <section class="teaching-intro">
+  <!-- ============================================
+       MAIN CONTENT: Teaching Portfolio
+       ============================================ -->
+  <main class="teaching-main container" id="main-content" role="main">
+
+    <!-- ============================================
+         TEACHING INTRODUCTION
+         Overview of teaching experience and philosophy
+         ============================================ -->
+    <section class="teaching-intro" aria-labelledby="teaching-intro-heading">
+      <!-- Screen reader heading -->
+      <h2 id="teaching-intro-heading" class="sr-only">Teaching Experience Overview</h2>
+
+      <!-- Opening Statement -->
       <p>
         I have taught twelve engineering and design courses, as an instructor,
         lecturer, mentor, or teaching assistant.
       </p>
+
+      <!-- ============================================
+           COURSES AT FONGO TONGO
+           Technical High School course list
+           ============================================ -->
       <h3>At Fongo Tongo:</h3>
-      <ul>
+      <ul role="list">
         <li>Introduction to Mechanical Prototyping</li>
         <li>Design Nature</li>
         <li>Design for Manufacturing</li>
@@ -61,8 +162,13 @@
         <li>Collaborative Design</li>
         <li>Mechanical Solids & Structures</li>
       </ul>
+
+      <!-- ============================================
+           COURSES AT ENSET
+           Higher education course list
+           ============================================ -->
       <h3>At ENSET:</h3>
-      <ul>
+      <ul role="list">
         <li>2.009: Product Engineering Processes</li>
         <li>2.007: Design & Manufacturing I</li>
         <li>2.00b: Toy Product Design</li>
@@ -70,71 +176,164 @@
         <li>2.76: Global Engineering</li>
         <li>2.000: Explorations in Mechanical Engineering</li>
       </ul>
+
+      <!-- ============================================
+           TEACHING PHILOSOPHY
+           Educational approach and innovation
+           ============================================ -->
       <p>
         These courses have taken many forms—introductory to graduate,
         project-based to lecture-based, 12 students to 150 students,
         student-centered to impact-centered—so I am familiar with the
         structures, goals, and challenges of many forms of teaching practice.
       </p>
+
       <p>
         Even with this familiarity, I treat my courses as opportunities for
         innovation.
       </p>
     </section>
-    <section class="teaching-projects">
+
+    <!-- ============================================
+         TEACHING PROJECTS SHOWCASE
+         Visual portfolio of teaching activities
+         ============================================ -->
+    <section class="teaching-projects" aria-labelledby="teaching-projects-heading">
+      <h2 id="teaching-projects-heading" class="sr-only">Teaching Projects Gallery</h2>
+
+      <!-- Responsive Grid Layout -->
       <div class="projects-grid">
-        <div class="project-item">
-          <img src="../landing-page code/My-image.jpg" alt="Guiding students through the product development process" />
-          <p>Guiding students through the product development process</p>
-        </div>
-        <div class="project-item">
-          <img src="../landing-page code/My-image.jpg"
-            alt="Redesigning a mechanical design course for remote, project-based learning" />
-          <p>
-            Redesigning a mechanical design course for remote, project-based
-            learning
-          </p>
-        </div>
-        <div class="project-item">
-          <img src="../landing-page code/My-image.jpg"
-            alt="Building tools, resources, and spaces to enable accessible, integrated learning experiences" />
-          <p>
-            Building tools, resources, and spaces to enable accessible,
-            integrated learning experiences
-          </p>
-        </div>
-        <div class="project-item">
-          <img src="../landing-page code/My-image.jpg" alt="Project-based learning in action" />
-          <p>Project-based learning in action</p>
-        </div>
+
+        <!-- Teaching Project 1: Product Development -->
+        <article class="project-card">
+          <div class="project-item">
+            <!-- OPTIMIZATION: Lazy loading for below-the-fold images -->
+            <img src="assets/images/My-image.jpg"
+              alt="Instructor guiding engineering students through hands-on product development process in classroom"
+              loading="lazy" width="420" height="260" decoding="async" />
+            <p>Guiding students through the product development process</p>
+          </div>
+        </article>
+
+        <!-- Teaching Project 2: Remote Learning Innovation -->
+        <article class="project-card">
+          <div class="project-item">
+            <img src="assets/images/My-image.jpg"
+              alt="Digital classroom setup for remote mechanical design course with project-based learning methodology"
+              loading="lazy" width="420" height="260" decoding="async" />
+            <p>
+              Redesigning a mechanical design course for remote, project-based
+              learning
+            </p>
+          </div>
+        </article>
+
+        <!-- Teaching Project 3: Learning Resources Development -->
+        <article class="project-card">
+          <div class="project-item">
+            <img src="assets/images/My-image.jpg"
+              alt="Educational tools and maker space facilities designed for accessible integrated engineering learning"
+              loading="lazy" width="420" height="260" decoding="async" />
+            <p>
+              Building tools, resources, and spaces to enable accessible,
+              integrated learning experiences
+            </p>
+          </div>
+        </article>
+
+        <!-- Teaching Project 4: Active Learning Implementation -->
+        <article class="project-card">
+          <div class="project-item">
+            <img src="assets/images/My-image.jpg"
+              alt="Students actively engaged in hands-on engineering project work in collaborative learning environment"
+              loading="lazy" width="420" height="260" decoding="async" />
+            <p>Project-based learning in action</p>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <!-- ============================================
+       FOOTER
+       Site footer with copyright
+       ============================================ -->
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <p>© Donfack Fortune 2025</p>
+      <p>&copy; Donfack Fortune <span id="current-year">2025</span></p>
     </div>
   </footer>
-  <button id="backToTopBtn" title="Back to Top">&#8679;</button>
-  <script>
-    // Show/hide button
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    window.onscroll = function () {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        backToTopBtn.style.display = 'block';
-      } else {
-        backToTopBtn.style.display = 'none';
-      }
-    };
-    // Smooth scroll to top
-    backToTopBtn.onclick = function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-  </script>
-  <!-- Load main JS file -->
-  <script src="assets/js/main.js" defer></script>
 
+  <!-- ============================================
+       BACK TO TOP BUTTON
+       Accessibility-enhanced floating button
+       ============================================ -->
+  <button id="backToTopBtn" title="Back to Top" aria-label="Scroll back to top of page" type="button">
+    &#8679;
+  </button>
+
+  <!-- ============================================
+       JAVASCRIPT: Optimized script loading
+       ============================================ -->
+  <script>
+    // Dynamic year update
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Performance-optimized scroll handler
+    (function () {
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      let scrolling = false;
+
+      // Throttled scroll event with requestAnimationFrame
+      window.addEventListener('scroll', function () {
+        if (!scrolling) {
+          window.requestAnimationFrame(function () {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            backToTopBtn.style.display = scrollTop > 200 ? 'block' : 'none';
+            scrolling = false;
+          });
+          scrolling = true;
+        }
+      }, { passive: true });
+
+      // Smooth scroll with accessibility support
+      backToTopBtn.addEventListener('click', function () {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+      });
+    })();
+  </script>
+
+  <!-- ============================================
+       PROGRESSIVE IMAGE LOADING
+       Intersection Observer for lazy-loaded images
+       ============================================ -->
+  <script>
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.addEventListener('load', () => {
+              img.style.opacity = '1';
+            });
+            observer.unobserve(img);
+          }
+        });
+      }, {
+        rootMargin: '50px'
+      });
+
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s';
+        imageObserver.observe(img);
+      });
+    }
+  </script>
 </body>
 
 </html>

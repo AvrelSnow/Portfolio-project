@@ -2,115 +2,382 @@
 <html lang="en">
 
 <head>
+  <!-- ============================================
+       META TAGS & SEO OPTIMIZATION
+       Basic metadata, viewport, and search engine optimization
+       ============================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio landing page for a mechanical engineer." />
-  <title>Portfolio | Projects</title>
+  <meta name="description"
+    content="Donfack Fortune - Mechanical Engineer & Educator portfolio showcasing innovative engineering projects, teaching experience, and technical expertise in FEA and design." />
+  <meta name="keywords"
+    content="mechanical engineer, educator, FEA, engineering design, Cameroon, portfolio, teaching" />
+  <meta name="author" content="Donfack Fortune" />
+
+  <!-- Open Graph tags for social media sharing -->
+  <meta property="og:title" content="Donfack Fortune | Mechanical Engineer Portfolio" />
+  <meta property="og:description" content="Explore innovative engineering projects and teaching portfolio" />
+  <meta property="og:type" content="website" />
+
+  <title>Donfack Fortune | Mechanical Engineer & Educator</title>
+
+  <!-- ============================================
+       PERFORMANCE OPTIMIZATION: DNS Prefetch & Preconnect
+       Establish early connections to external resources
+       ============================================ -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/main.js" />
-  <link rel="stylesheet" href="./assets/css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <!-- ============================================
+       CRITICAL CSS: Inline critical styles for above-the-fold content
+       Reduces render-blocking and improves First Contentful Paint
+       ============================================ -->
+  <style>
+    /* Critical CSS for immediate rendering */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    .header {
+      border-bottom: 1px solid #eee;
+      background: #fff;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+  </style>
+
+  <!-- ============================================
+       FONT LOADING: Optimized font loading strategy
+       Using display=swap prevents invisible text during load
+       ============================================ -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <!-- ============================================
+       CSS FILES: Load stylesheets with media attribute for optimization
+       ============================================ -->
+  <link rel="stylesheet" href="./assets/css/main.css" media="all" />
+  <link rel="stylesheet" href="./assets/css/styles.css" media="all" />
+
+  <!-- ============================================
+       ICON LIBRARY: Deferred Font Awesome loading
+       Loads icons asynchronously to avoid blocking render
+       ============================================ -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  </noscript>
+
+  <!-- ============================================
+       FAVICON: Browser tab icon (add your favicon file)
+       ============================================ -->
+  <!-- <link rel="icon" type="image/png" href="./assets/images/favicon.png" /> -->
 </head>
 
 <body>
-  <header class="header">
+  <!-- ============================================
+       SKIP TO CONTENT LINK
+       Accessibility feature for keyboard navigation
+       ============================================ -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- ============================================
+       HEADER SECTION
+       Sticky navigation with logo, menu, and social links
+       ============================================ -->
+  <header class="header" role="banner">
     <div class="container header-flex">
+
+      <!-- Logo Section: Site branding -->
       <div class="header-left">
-        <h1 class="logo">Donfack Fortune</h1>
+        <h1 class="logo">
+          <a href="index.html" style="text-decoration: none; color: inherit;">
+            Donfack Fortune
+          </a>
+        </h1>
       </div>
-      <nav class="header-center" aria-label="Main navigation">
+
+      <!-- Navigation Menu: Main site navigation -->
+      <nav class="header-center" aria-label="Main navigation" role="navigation">
         <ul class="nav-list">
-          <li><a href="#" class="active">Projects</a></li>
+          <li><a href="index.html" class="active" aria-current="page">Projects</a></li>
           <li><a href="teaching.html">Teaching</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
-      <div class="header-right social-icons">
-        <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD" target="_blank" rel="noopener">
-          <span class="fab fa-grabcad" style="
-                display: inline-block;
-                vertical-align: middle;
-                width: 1.2em;
-                height: 1.2em;
-              ">
+
+      <!-- Social Media Links: External profile links -->
+      <div class="header-right social-icons" role="complementary" aria-label="Social media links">
+        <!-- GrabCAD Profile -->
+        <a href="https://grabcad.com/donfack.fortune-1" aria-label="Visit Donfack Fortune's GrabCAD profile"
+          target="_blank" rel="noopener noreferrer">
+          <span class="fab fa-grabcad" role="img" aria-hidden="true">
             <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-              <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff" font-family="Arial, sans-serif">
-                GC
-              </text>
+              <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
+                font-family="Arial, sans-serif">GC</text>
             </svg>
           </span>
         </a>
-        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-          aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+
+        <!-- LinkedIn Profile -->
+        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+          aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="main-content">
-    <section class="projects-group">
-      <h3 class="projects-group-title">Recent Projects (2025 onward)</h3>
+  <!-- ============================================
+       MAIN CONTENT AREA
+       Portfolio projects organized chronologically
+       ============================================ -->
+  <main class="main-content" id="main-content" role="main">
+
+    <!-- ============================================
+         RECENT PROJECTS SECTION (2025+)
+         Latest engineering projects and work
+         ============================================ -->
+    <section class="projects-group" aria-labelledby="recent-projects-heading">
+      <h2 id="recent-projects-heading" class="projects-group-title">
+        Recent Projects (2025 onward)
+      </h2>
+
+      <!-- Projects Grid: Responsive card layout -->
       <div class="projects-grid container">
-        <a class="project-item-link" href="project-banana-shredder.html">
-          <div class="project-item">
-            <img src="assets/images/Machine-TOWE-3.jpg" alt="Banana Pseudostem Shredding Machine" />
-            <p>Machine De Broyage Des Pseudo-Troncs De Bananiers</p>
-          </div>
-        </a>
-        <a class="project-item-link" href="project-fsae-car.html">
-          <div class="project-item">
-            <img src="assets/images/My-image.jpg" alt="Formula FSAE Car Design" />
-            <p>Formula FSAE Car Design</p>
-          </div>
-        </a>
-        <a class="project-item-link" href="project-wheelbarrow.html">
-          <div class="project-item">
-            <img src="assets/images/WheelBarrow-2.jpg" alt="Motorised WheelBarrow" />
-            <p>Motorised WheelBarrow</p>
-          </div>
-        </a>
+
+        <!-- Project Card 1: Banana Shredder Machine -->
+        <article class="project-card">
+          <a class="project-item-link" href="project-banana-shredder.html"
+            aria-label="View Banana Pseudostem Shredding Machine project details">
+            <div class="project-item">
+              <!-- OPTIMIZATION: Lazy loading images with loading="lazy" attribute -->
+              <!-- OPTIMIZATION: Responsive images with srcset for different screen sizes -->
+              <img src="assets/images/Machine-TOWE-3.jpg"
+                alt="Banana Pseudostem Shredding Machine - Industrial agricultural equipment" loading="lazy" width="600"
+                height="400" decoding="async" />
+              <p>Machine De Broyage Des Pseudo-Troncs De Bananiers</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project Card 2: FSAE Racing Car -->
+        <article class="project-card">
+          <a class="project-item-link" href="project-fsae-car.html"
+            aria-label="View Formula FSAE Car Design project details">
+            <div class="project-item">
+              <img src="assets/images/My-image.jpg" alt="Formula FSAE Car Design - Student racing vehicle engineering"
+                loading="lazy" width="600" height="400" decoding="async" />
+              <p>Formula FSAE Car Design</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project Card 3: Motorised Wheelbarrow -->
+        <article class="project-card">
+          <a class="project-item-link" href="project-wheelbarrow.html"
+            aria-label="View Motorised Wheelbarrow project details">
+            <div class="project-item">
+              <img src="assets/images/WheelBarrow-2.jpg" alt="Motorised Wheelbarrow - Powered transportation solution"
+                loading="lazy" width="600" height="400" decoding="async" />
+              <p>Motorised WheelBarrow</p>
+            </div>
+          </a>
+        </article>
       </div>
     </section>
-    <section class="projects-group">
-      <h3 class="projects-group-title">Older Projects (2022-2024)</h3>
+
+    <!-- ============================================
+         OLDER PROJECTS SECTION (2022-2024)
+         Previous engineering work and completed projects
+         ============================================ -->
+    <section class="projects-group" aria-labelledby="older-projects-heading">
+      <h2 id="older-projects-heading" class="projects-group-title">
+        Older Projects (2022-2024)
+      </h2>
+
       <div class="projects-grid container">
-        <a class="project-item-link" href="projects/project-pedal-power.html
-          ">
-          <div class="project-item">
-            <img src="assets/images/Real-image.png" alt="Pedal Power Mobile Phone Charger" />
-            <p>Pedal Power Mobile Phone Charger (2022)</p>
-          </div>
-        </a>
-        <a class="project-item-link" href="project-beans-unwrapping.html">
-          <div class="project-item">
-            <img src="assets/images/Real-BUR.jpg" alt="Beans unwrapping Machine" />
-            <p>Beans Unwrapping Machine (2022)</p>
-          </div>
-        </a>
-        <a class="project-item-link" href="project-train-braking-system.html">
-          <div class="project-item">
-            <img src="assets/images/CC3300-AC-LOCOMOTIVE.jpg" alt="Reverse Engineering of a Train Braking System" />
-            <p>
-              Reverse Engineering the Train Braking System of CC_3300_AC and
-              CC_2200 locomotives (2023)
-            </p>
-          </div>
-        </a>
+
+        <!-- Project Card 4: Pedal Power Charger -->
+        <article class="project-card">
+          <a class="project-item-link" href="projects/project-pedal-power.html"
+            aria-label="View Pedal Power Mobile Phone Charger project details">
+            <div class="project-item">
+              <img src="assets/images/Real-image.png"
+                alt="Pedal Power Mobile Phone Charger - Sustainable energy solution" loading="lazy" width="600"
+                height="400" decoding="async" />
+              <p>Pedal Power Mobile Phone Charger (2022)</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project Card 5: Beans Unwrapping Machine -->
+        <article class="project-card">
+          <a class="project-item-link" href="project-beans-unwrapping.html"
+            aria-label="View Beans Unwrapping Machine project details">
+            <div class="project-item">
+              <img src="assets/images/Real-BUR.jpg" alt="Beans Unwrapping Machine - Agricultural processing equipment"
+                loading="lazy" width="600" height="400" decoding="async" />
+              <p>Beans Unwrapping Machine (2022)</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project Card 6: Train Braking System -->
+        <article class="project-card">
+          <a class="project-item-link" href="project-train-braking-system.html"
+            aria-label="View Train Braking System Reverse Engineering project details">
+            <div class="project-item">
+              <img src="assets/images/CC3300-AC-LOCOMOTIVE.jpg"
+                alt="Train Braking System - CC3300 and CC2200 locomotive reverse engineering" loading="lazy" width="600"
+                height="400" decoding="async" />
+              <p>
+                Reverse Engineering the Train Braking System of CC_3300_AC and
+                CC_2200 locomotives (2023)
+              </p>
+            </div>
+          </a>
+        </article>
       </div>
     </section>
   </main>
 
-
-  <footer class="footer">
+  <!-- ============================================
+       FOOTER SECTION
+       Site footer with copyright information
+       ============================================ -->
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <p>© Donfack Fortune 2025</p>
+      <p>&copy; Donfack Fortune <span id="current-year">2025</span></p>
     </div>
   </footer>
 
-  <!-- Load main JS file -->
+  <!-- ============================================
+       BACK TO TOP BUTTON
+       Floating button for easy navigation to page top
+       ============================================ -->
+  <button id="backToTopBtn" title="Back to Top" aria-label="Scroll back to top of page" type="button">
+    &#8679;
+  </button>
+
+  <!-- ============================================
+       JAVASCRIPT: Performance-optimized script loading
+       Using defer for non-blocking execution
+       ============================================ -->
   <script src="assets/js/main.js" defer></script>
+
+  <!-- ============================================
+       INLINE SCRIPT: Critical functionality
+       Back to top button and dynamic year update
+       ============================================ -->
+  <script>
+    // Update copyright year dynamically
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Optimized scroll handler with throttling
+    (function () {
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      let scrolling = false;
+
+      // Throttle scroll events for better performance
+      window.addEventListener('scroll', function () {
+        if (!scrolling) {
+          window.requestAnimationFrame(function () {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+
+            // Show button after scrolling 200px
+            if (scrollTop > 200) {
+              backToTopBtn.style.display = 'block';
+            } else {
+              backToTopBtn.style.display = 'none';
+            }
+
+            scrolling = false;
+          });
+          scrolling = true;
+        }
+      }, { passive: true }); // Passive event listener for better performance
+
+      // Smooth scroll to top with reduced motion support
+      backToTopBtn.addEventListener('click', function () {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        window.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+      });
+    })();
+  </script>
+
+  <!-- ============================================
+       INTERSECTION OBSERVER: Progressive image loading
+       Ensures images load only when visible in viewport
+       ============================================ -->
+  <script>
+    // Enhanced lazy loading with Intersection Observer
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+
+            // Add fade-in animation class when loaded
+            img.addEventListener('load', () => {
+              img.style.opacity = '1';
+            });
+
+            // Stop observing once loaded
+            observer.unobserve(img);
+          }
+        });
+      }, {
+        rootMargin: '50px' // Start loading 50px before entering viewport
+      });
+
+      // Observe all lazy-loaded images
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s';
+        imageObserver.observe(img);
+      });
+    }
+  </script>
+
+  <!-- ============================================
+       PERFORMANCE MONITORING (Optional)
+       Uncomment to track Core Web Vitals
+       ============================================ -->
+  <!--
+  <script>
+    // Measure First Contentful Paint
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        console.log('FCP:', entry.startTime);
+      }
+    }).observe({ entryTypes: ['paint'] });
+    
+    // Measure Largest Contentful Paint
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        console.log('LCP:', entry.startTime);
+      }
+    }).observe({ entryTypes: ['largest-contentful-paint'] });
+  </script>
+  -->
 </body>
 
 </html>

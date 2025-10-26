@@ -1,5 +1,11 @@
 /* ============================================
+   ABOUT PAGE STYLESHEET
+   Styles specific to the About page layout
+   ============================================ */
+
+/* ============================================
    BASE STYLES
+   Core typography and colors
    ============================================ */
 body {
     font-family: 'Montserrat', Arial, sans-serif;
@@ -11,7 +17,8 @@ body {
 }
 
 /* ============================================
-   LAYOUT UTILITIES
+   LAYOUT CONTAINER
+   Main content wrapper
    ============================================ */
 .container {
     width: 90%;
@@ -21,7 +28,8 @@ body {
 }
 
 /* ============================================
-   HEADER STYLES (ORIGINAL)
+   HEADER NAVIGATION
+   Site header with logo and navigation
    ============================================ */
 .header {
     border-bottom: 1px solid #eee;
@@ -35,13 +43,16 @@ body {
     justify-content: space-between;
 }
 
+/* Logo Styles */
 .header-left .logo {
     font-size: 2.2rem;
     font-weight: 700;
     margin: 0;
     letter-spacing: 0.5px;
+    color: #111;
 }
 
+/* Navigation Menu */
 .main-nav .nav-list {
     display: flex;
     gap: 36px;
@@ -64,177 +75,6 @@ body {
 .main-nav .nav-list li a:hover {
     border-bottom: 2px solid #111;
     color: #111;
-}
-
-/* ============================================
-   ABOUT PAGE MAIN CONTENT
-   ============================================ */
-.about-main {
-    padding: 56px 0 40px 0;
-}
-
-.about-section {
-    margin-bottom: 48px;
-}
-
-/* About Content Layout */
-.about-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 56px;
-    justify-content: space-between;
-}
-
-/* About Text Section */
-.about-text {
-    flex: 2;
-    text-align: left;
-    max-width: 700px;
-    margin: 0;
-}
-
-.about-text h2 {
-    font-size: 2.2rem;
-    margin-bottom: 24px;
-    font-weight: 700;
-}
-
-.about-text p {
-    font-size: 1.18rem;
-    margin-bottom: 22px;
-    color: #222;
-    letter-spacing: 0.01em;
-    line-height: 1.7;
-}
-
-/* About Image Section */
-.about-image {
-    flex: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.about-image img {
-    max-width: 280px;
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
-    object-fit: cover;
-}
-
-/* ============================================
-   CONTACT INFO SECTION
-   ============================================ */
-.contact-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.15rem;
-    color: #444;
-    margin: 40px 0 32px 0;
-    justify-content: flex-start;
-    text-align: left;
-}
-
-.contact-info i {
-    color: #e02b20;
-    font-size: 1.4em;
-}
-
-/* ============================================
-   GET IN TOUCH SECTION (CONTACT FORM)
-   ============================================ */
-.get-in-touch {
-    background: #fafafa;
-    border-radius: 12px;
-    padding: 40px 28px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    max-width: 600px;
-    margin: 32px 0 0 0;
-}
-
-.get-in-touch h2 {
-    margin-top: 0;
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 22px;
-}
-
-/* Contact Form Styles */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.contact-form label {
-    font-weight: 500;
-    color: #333;
-    font-size: 1.08rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 12px 14px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 1.08rem;
-    font-family: inherit;
-    resize: vertical;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #e02b20;
-}
-
-/* Send Button */
-.send-btn {
-    background: #e02b20;
-    color: #fff;
-    border: none;
-    border-radius: 7px;
-    padding: 14px 0;
-    font-size: 1.15rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.send-btn:hover {
-    background: #b81d16;
-}
-
-/* ============================================
-   HEADER STYLES (UPDATED FOR NEW STRUCTURE)
-   ============================================ */
-/* Header Styles */
-.header {
-    border-bottom: 1px solid #eee;
-    background: #fff;
-    padding: 36px 0 28px 0;
-}
-
-.header-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Header Left - Logo */
-.header-left .logo {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 0.5px;
 }
 
 /* Header Center - Navigation */
@@ -268,7 +108,7 @@ body {
     color: #111;
 }
 
-/* Header Right - Social Icons */
+/* Social Icons */
 .header-right.social-icons {
     display: flex;
     gap: 20px;
@@ -292,51 +132,173 @@ body {
     vertical-align: middle;
 }
 
-
 .social-icons a:hover {
     color: #e02b20;
-    /* GrabCAD red for hover, or #888 for others */
+}
 
-    @media (max-width: 900px) {
-        .about-content {
-            flex-direction: column;
-            gap: 36px;
-            align-items: stretch;
-        }
+/* ============================================
+   ABOUT PAGE MAIN CONTENT
+   Primary content area for about page
+   ============================================ */
+.about-main {
+    padding: 56px 0 40px 0;
+}
 
-        .about-image {
-            justify-content: flex-start;
-        }
+.about-section {
+    margin-bottom: 48px;
+}
 
-        .about-content.centered {
-            gap: 0;
-        }
-    }
+/* ============================================
+   ABOUT CONTENT LAYOUT
+   Two-column layout: Text + Image
+   ============================================ */
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 56px;
+    justify-content: space-between;
+}
 
-    @media (max-width: 600px) {
-        .header-flex {
-            flex-direction: column;
-            gap: 18px;
-        }
+/* Text Content (Left Column) */
+.about-text {
+    flex: 2;
+    text-align: left;
+    max-width: 700px;
+    margin: 0;
+}
 
-        .about-main {
-            padding: 28px 0 18px 0;
-        }
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+    font-weight: 700;
+    color: #111;
+}
 
-        .get-in-touch {
-            padding: 22px 10px;
-        }
+.about-text p {
+    font-size: 1.18rem;
+    margin-bottom: 22px;
+    color: #222;
+    letter-spacing: 0.01em;
+    line-height: 1.7;
+}
 
-        .about-section {
-            margin-bottom: 28px;
-        }
-    }
+/* Image Content (Right Column) */
+.about-image {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 280px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+    object-fit: cover;
+}
+
+/* ============================================
+   CONTACT INFO SECTION
+   Contact details with icon
+   ============================================ */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.15rem;
+    color: #444;
+    margin: 40px 0 32px 0;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.contact-info i {
+    color: #e02b20;
+    font-size: 1.4em;
+}
+
+/* ============================================
+   GET IN TOUCH SECTION
+   Contact form container
+   ============================================ */
+.get-in-touch {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 40px 28px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    max-width: 600px;
+    margin: 32px 0 0 0;
+}
+
+.get-in-touch h2 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    color: #111;
+}
+
+/* ============================================
+   CONTACT FORM STYLES
+   Form inputs and submission button
+   ============================================ */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-form label {
+    font-weight: 500;
+    color: #333;
+    font-size: 1.08rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 1.08rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #e02b20;
+}
+
+/* Submit Button */
+.send-btn {
+    background: #e02b20;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 14px 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.send-btn:hover {
+    background: #b81d16;
 }
 
 /* ============================================
    BACK TO TOP BUTTON
+   Floating scroll-to-top button
    ============================================ */
-/* Back to Top Button */
 #backToTopBtn {
     display: none;
     position: fixed;
@@ -359,19 +321,8 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE DESIGN - MOBILE (max-width: 600px)
-   ============================================ */
-@media (max-width: 600px) {
-    #backToTopBtn {
-        bottom: 16px;
-        right: 16px;
-        padding: 10px 13px;
-        font-size: 1rem;
-    }
-}
-
-/* ============================================
-   FOOTER STYLES
+   FOOTER
+   Page footer with copyright
    ============================================ */
 .footer {
     border-top: 1px solid #eee;
@@ -383,7 +334,7 @@ body {
 }
 
 .copyright p {
-    margin-bottom: calc(var(--spacing-unit) * 0.5);
+    margin-bottom: 0.5rem;
 }
 
 .footer p {
@@ -394,3 +345,8 @@ body {
 .footer p:hover {
     color: #e02b20;
 }
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLETS
+   Breakpoint: 900px and below
+   ============================================
