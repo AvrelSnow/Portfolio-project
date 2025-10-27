@@ -1,80 +1,189 @@
-/* ============================================
-   ABOUT PAGE STYLESHEET
-   Styles specific to the About page layout
-   ============================================ */
+/* ================================================
+   ABOUT PAGE - MODERNIZED STYLESHEET
+   File: about.css
+   Author: Donfack Fortune
+   Description: Optimized styles for About/Contact page
+   ================================================ */
 
-/* ============================================
-   BASE STYLES
-   Core typography and colors
-   ============================================ */
-body {
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: #fff;
-    color: #222;
+/* ================================================
+   CSS RESET & BOX MODEL
+   ================================================ */
+
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.7;
+    box-sizing: border-box;
 }
 
-/* ============================================
+/* ================================================
+   CSS CUSTOM PROPERTIES (Variables)
+   ================================================ */
+
+:root {
+    /* === Color Palette === */
+    --primary-color: #e74c3c;
+    --primary-dark: #a01410;
+    --primary-light: #ff6b5a;
+
+    --text-dark: #222;
+    --text-medium: #444;
+    --text-light: #666;
+    --text-muted: #999;
+
+    --background-white: #fff;
+    --background-light: #f8f9fa;
+    --background-gray: #e9ecef;
+
+    --border-color: #e0e0e0;
+    --border-light: #eee;
+
+    /* === Shadow Definitions === */
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.12);
+    --shadow-heavy: rgba(0, 0, 0, 0.16);
+
+    /* === Typography === */
+    --font-primary: 'Montserrat', Arial, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-large: 1.08rem;
+    --font-size-xlarge: 1.18rem;
+    --font-size-h4: 1.2rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h2: 1.7rem;
+    --font-size-h1: 2rem;
+    --line-height-base: 1.7;
+    --line-height-heading: 1.3;
+
+    /* === Spacing System === */
+    --spacing-xs: 0.5rem;
+    /* 8px */
+    --spacing-sm: 1rem;
+    /* 16px */
+    --spacing-md: 1.5rem;
+    /* 24px */
+    --spacing-lg: 2rem;
+    /* 32px */
+    --spacing-xl: 3rem;
+    /* 48px */
+    --spacing-xxl: 4rem;
+    /* 64px */
+
+    /* === Border Radius === */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+    --radius-xl: 12px;
+    --radius-round: 50%;
+
+    /* === Transitions === */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* === Layout Widths === */
+    --container-max-width: 1200px;
+    --content-max-width: 800px;
+}
+
+/* ================================================
+   BASE STYLES
+   ================================================ */
+
+body {
+    font-family: var(--font-primary);
+    background: var(--background-white);
+    color: var(--text-dark);
+    line-height: var(--line-height-base);
+    font-size: var(--font-size-base);
+    overflow-x: hidden;
+}
+
+/* Typography Base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: var(--line-height-heading);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Link Base Styles */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-medium);
+}
+
+/* List Styles */
+ul {
+    list-style-position: outside;
+}
+
+/* ================================================
    LAYOUT CONTAINER
-   Main content wrapper
-   ============================================ */
+   ================================================ */
+
 .container {
-    width: 90%;
-    max-width: 1100px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 0 8px 0;
+    padding: 0 var(--spacing-lg);
 }
 
-/* ============================================
-   HEADER NAVIGATION
-   Site header with logo and navigation
-   ============================================ */
+/* ================================================
+   HEADER & NAVIGATION - EMPHASIZED
+   ================================================ */
+
 .header {
-    border-bottom: 1px solid #eee;
-    background: #fff;
-    padding: 36px 0 28px 0;
+    background: var(--background-white);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--spacing-md) 0;
+    text-align: center;
 }
 
+/* Header Flex Layout */
 .header-flex {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
 }
 
-/* Logo Styles */
+/* Logo Styles - EMPHASIZED */
 .header-left .logo {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    cursor: pointer;
+    transition: color var(--transition-medium);
     margin: 0;
-    letter-spacing: 0.5px;
-    color: #111;
 }
 
-/* Navigation Menu */
-.main-nav .nav-list {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.main-nav .nav-list li a {
+.header-left .logo a {
+    color: inherit;
     text-decoration: none;
-    color: #111;
-    font-weight: 500;
-    font-size: 1.18rem;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: border 0.2s, color 0.2s;
 }
 
-.main-nav .nav-list li a.active,
-.main-nav .nav-list li a:hover {
-    border-bottom: 2px solid #111;
-    color: #111;
+.header-left .logo:hover {
+    color: var(--primary-color);
 }
 
 /* Header Center - Navigation */
@@ -84,165 +193,222 @@ body {
     justify-content: center;
 }
 
+/* Navigation Menu - EMPHASIZED */
+.header-center .nav-list,
+.main-nav .nav-list,
 .nav-list {
     display: flex;
-    gap: 36px;
     list-style: none;
+    gap: var(--spacing-lg);
     margin: 0;
     padding: 0;
 }
 
+.header-center .nav-list li,
+.main-nav .nav-list li,
+.nav-list li {
+    margin: 0;
+}
+
+.header-center .nav-list a,
+.main-nav .nav-list a,
 .nav-list li a {
-    text-decoration: none;
-    color: #111;
     font-weight: 500;
-    font-size: 1.18rem;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: border 0.2s, color 0.2s;
+    color: var(--text-medium);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-medium);
+    display: block;
+    font-size: var(--font-size-base);
 }
 
-.nav-list li a.active,
-.nav-list li a:hover {
-    border-bottom: 2px solid #111;
-    color: #111;
+.header-center .nav-list a:hover,
+.header-center .nav-list a:focus,
+.header-center .nav-list a.active,
+.main-nav .nav-list a:hover,
+.main-nav .nav-list a:focus,
+.main-nav .nav-list a.active,
+.nav-list li a:hover,
+.nav-list li a:focus,
+.nav-list li a.active {
+    color: var(--primary-color);
+    background: rgba(231, 76, 60, 0.08);
 }
 
-/* Social Icons */
-.header-right.social-icons {
+/* Social Media Icons - EMPHASIZED */
+.header-right.social-icons,
+.social-icons {
     display: flex;
-    gap: 20px;
+    gap: var(--spacing-md);
+    align-items: center;
 }
 
 .social-icons a {
-    color: #111;
-    font-size: 1.2rem;
-    transition: color 0.2s;
-    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle;
-    text-decoration: none;
+    border-radius: var(--radius-round);
+    background: var(--background-light);
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    transition: all var(--transition-medium);
 }
 
+.social-icons a:hover,
+.social-icons a:focus {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+/* Custom GrabCAD SVG Icon */
+.fab.fa-grabcad,
 .social-icons a .fa-grabcad {
     width: 1.2em;
     height: 1.2em;
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.social-icons a:hover {
-    color: #e02b20;
+.fab.fa-grabcad svg {
+    width: 1.2em;
+    height: 1.2em;
 }
 
-/* ============================================
-   ABOUT PAGE MAIN CONTENT
-   Primary content area for about page
-   ============================================ */
+/* ================================================
+   MAIN CONTENT AREA
+   ================================================ */
+
 .about-main {
-    padding: 56px 0 40px 0;
+    padding: var(--spacing-xxl) 0;
+    min-height: calc(100vh - 200px);
 }
 
 .about-section {
     margin-bottom: 48px;
 }
 
-/* ============================================
+/* ================================================
    ABOUT CONTENT LAYOUT
    Two-column layout: Text + Image
-   ============================================ */
+   ================================================ */
+
 .about-content {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
-    gap: 56px;
-    justify-content: space-between;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xxl) 0;
 }
 
 /* Text Content (Left Column) */
 .about-text {
-    flex: 2;
-    text-align: left;
-    max-width: 700px;
-    margin: 0;
+    flex: 2 1 340px;
+    min-width: 280px;
 }
 
 .about-text h2 {
-    font-size: 2.2rem;
-    margin-bottom: 24px;
-    font-weight: 700;
-    color: #111;
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
 .about-text p {
-    font-size: 1.18rem;
-    margin-bottom: 22px;
-    color: #222;
-    letter-spacing: 0.01em;
-    line-height: 1.7;
+    font-size: var(--font-size-large);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    line-height: var(--line-height-base);
+}
+
+.about-text strong {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.about-text abbr {
+    text-decoration: none;
+    border-bottom: 1px dotted var(--text-medium);
+    cursor: help;
+}
+
+.about-text a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.about-text a:hover {
+    color: var(--primary-dark);
 }
 
 /* Image Content (Right Column) */
 .about-image {
-    flex: 1;
+    flex: 1 1 340px;
+    min-width: 280px;
+    max-width: 480px;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-image img {
-    max-width: 280px;
     width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
-    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 16px var(--shadow-light);
+    transition: transform var(--transition-medium);
 }
 
-/* ============================================
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+/* ================================================
    CONTACT INFO SECTION
-   Contact details with icon
-   ============================================ */
+   ================================================ */
+
 .contact-info {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 1.15rem;
-    color: #444;
-    margin: 40px 0 32px 0;
-    justify-content: flex-start;
-    text-align: left;
+    font-size: var(--font-size-large);
+    color: var(--text-medium);
+    margin: var(--spacing-xl) 0 var(--spacing-lg) 0;
 }
 
 .contact-info i {
-    color: #e02b20;
+    color: var(--primary-color);
     font-size: 1.4em;
 }
 
-/* ============================================
+/* ================================================
    GET IN TOUCH SECTION
-   Contact form container
-   ============================================ */
+   ================================================ */
+
 .get-in-touch {
-    background: #fafafa;
-    border-radius: 12px;
-    padding: 40px 28px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    background: var(--background-light);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl) 28px;
+    box-shadow: 0 2px 12px var(--shadow-light);
     max-width: 600px;
-    margin: 32px 0 0 0;
+    margin: var(--spacing-lg) 0 0 0;
 }
 
 .get-in-touch h2 {
     margin-top: 0;
-    font-size: 1.6rem;
+    font-size: var(--font-size-h4);
     font-weight: 600;
     margin-bottom: 22px;
-    color: #111;
+    color: var(--text-dark);
 }
 
-/* ============================================
+/* ================================================
    CONTACT FORM STYLES
-   Form inputs and submission button
-   ============================================ */
+   ================================================ */
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -257,128 +423,232 @@ body {
 
 .contact-form label {
     font-weight: 500;
-    color: #333;
-    font-size: 1.08rem;
+    color: var(--text-medium);
+    font-size: var(--font-size-large);
 }
 
 .contact-form input,
 .contact-form textarea {
     padding: 12px 14px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 1.08rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-large);
     font-family: inherit;
     resize: vertical;
-    transition: border-color 0.2s;
+    transition: border-color var(--transition-fast);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #e02b20;
+    border-color: var(--primary-color);
+}
+
+/* Error Message Styles */
+.error-message {
+    display: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Success Message */
+#successMessage {
+    display: none;
+    color: green;
+    margin-top: var(--spacing-sm);
+    text-align: center;
 }
 
 /* Submit Button */
 .send-btn {
-    background: #e02b20;
-    color: #fff;
-    border: none;
-    border-radius: 7px;
-    padding: 14px 0;
-    font-size: 1.15rem;
-    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-medium);
+    text-align: center;
     cursor: pointer;
-    transition: background 0.2s;
+    border: 2px solid transparent;
+    font-size: var(--font-size-base);
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
-.send-btn:hover {
-    background: #b81d16;
+.send-btn:hover,
+.send-btn:focus {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
 }
 
-/* ============================================
+.send-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ================================================
    BACK TO TOP BUTTON
-   Floating scroll-to-top button
-   ============================================ */
+   ================================================ */
+
 #backToTopBtn {
     display: none;
     position: fixed;
-    bottom: 32px;
-    right: 32px;
-    z-index: 1000;
-    padding: 14px 18px;
-    font-size: 1.2rem;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
     border: none;
-    border-radius: 50%;
-    background: #e02b20;
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+    background-color: rgb(245, 41, 41);
+    color: white;
     cursor: pointer;
-    transition: background 0.2s;
+    padding: 10px;
+    border-radius: var(--radius-round);
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    transition: all var(--transition-medium);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#backToTopBtn:hover {
-    background: #b81d16;
+#backToTopBtn:hover,
+#backToTopBtn:focus {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px var(--shadow-medium);
 }
 
-/* ============================================
+/* ================================================
    FOOTER
-   Page footer with copyright
-   ============================================ */
+   ================================================ */
+
 .footer {
-    border-top: 1px solid #eee;
-    background: #fff;
+    background: var(--background-light);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xxl);
     text-align: center;
-    padding: 28px 0 18px 0;
-    font-size: 1.08rem;
-    color: #888;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    margin: 0;
 }
 
 .copyright p {
     margin-bottom: 0.5rem;
 }
 
-.footer p {
-    transition: color 0.2s;
-    cursor: pointer;
-}
-
-.footer p:hover {
-    color: #e02b20;
-}
-
-/* ============================================
+/* ================================================
    RESPONSIVE DESIGN - TABLETS
-   Breakpoint: 900px and below
-   ============================================ */
+   ================================================ */
+
 @media (max-width: 900px) {
 
-    /* Stack content vertically on tablets */
+    /* Adjust spacing for tablets */
+    .header-flex {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    :root {
+        --spacing-xxl: 3rem;
+        --spacing-xl: 2rem;
+    }
+
+    /* Stack content vertically */
     .about-content {
         flex-direction: column;
-        gap: 36px;
-        align-items: stretch;
+        gap: var(--spacing-lg);
     }
 
     .about-image {
-        justify-content: flex-start;
+        max-width: 100%;
+    }
+
+    .about-text {
+        max-width: 100%;
     }
 
     /* Centered variation */
     .about-content.centered {
         gap: 0;
     }
+
+    /* Full width form */
+    .get-in-touch {
+        max-width: 100%;
+    }
 }
 
-/* ============================================
+/* ================================================
    RESPONSIVE DESIGN - MOBILE
-   Breakpoint: 600px and below
-   ============================================ */
+   ================================================ */
+
 @media (max-width: 600px) {
 
-    /* Stack header elements */
+    /* Adjust typography for mobile */
+    :root {
+        --font-size-h2: 1.5rem;
+        --font-size-h3: 1.3rem;
+        --font-size-h4: 1.1rem;
+        --font-size-large: 1rem;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.5rem;
+        --spacing-xxl: 2rem;
+    }
+
+    /* Container padding for mobile */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Header mobile layout */
     .header-flex {
         flex-direction: column;
-        gap: 18px;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .header-center {
+        width: 100%;
+    }
+
+    /* Vertical navigation on mobile */
+    .header-center .nav-list,
+    .main-nav .nav-list,
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        width: 100%;
+    }
+
+    .header-center .nav-list a,
+    .main-nav .nav-list a,
+    .nav-list li a {
+        display: block;
+        width: 100%;
+    }
+
+    /* Logo sizing */
+    .header-left .logo {
+        font-size: 1.2rem;
+    }
+
+    /* Social icons sizing */
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
     }
 
     /* Reduce main content padding */
@@ -396,108 +666,69 @@ body {
         margin-bottom: 28px;
     }
 
-    /* Smaller back to top button */
+    /* Adjust back to top button */
     #backToTopBtn {
-        bottom: 16px;
-        right: 16px;
-        padding: 10px 13px;
-        font-size: 1rem;
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        padding: 12px;
+        font-size: 1.2rem;
     }
 
-    /* Full-width images on mobile */
-    .about-image img {
+    /* Full width images */
+    .about-image {
         max-width: 100%;
     }
 
-    /* Reduce text sizes slightly */
-    .about-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .about-text p {
-        font-size: 1.08rem;
+    .about-image img {
+        max-width: 100%;
     }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - SMALL MOBILE
-   Breakpoint: 480px and below
-   ============================================ */
-@media (max-width: 480px) {
+/* ================================================
+   RESPONSIVE DESIGN - EXTRA SMALL MOBILE
+   ================================================ */
 
-    /* Reduce container padding */
+@media (max-width: 400px) {
+    :root {
+        --font-size-h2: 1.3rem;
+        --font-size-h3: 1.2rem;
+        --spacing-md: 1rem;
+    }
+
+    .header-left .logo {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.95rem;
+    }
+
     .container {
         width: 95%;
     }
-
-    /* Compact navigation */
-    .main-nav .nav-list,
-    .nav-list {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .main-nav .nav-list li a,
-    .nav-list li a {
-        font-size: 1.05rem;
-    }
-
-    /* Smaller logo */
-    .header-left .logo {
-        font-size: 1.8rem;
-    }
-
-    /* Compact form elements */
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 1rem;
-        padding: 10px 12px;
-    }
-
-    .send-btn {
-        font-size: 1.05rem;
-        padding: 12px 0;
-    }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - LANDSCAPE MOBILE
-   Orientation: Landscape phones
-   ============================================ */
-@media (max-height: 500px) and (orientation: landscape) {
-
-    /* Reduce vertical spacing */
-    .about-main {
-        padding: 20px 0;
-    }
-
-    .about-section {
-        margin-bottom: 20px;
-    }
-
-    .header {
-        padding: 20px 0 15px 0;
-    }
-}
-
-/* ============================================
+/* ================================================
    PRINT STYLES
-   Optimized for printing
-   ============================================ */
+   ================================================ */
+
 @media print {
 
-    /* Hide interactive elements */
+    /* Hide non-essential elements when printing */
     #backToTopBtn,
     .social-icons,
     .contact-form {
         display: none;
     }
 
-    /* Simplify colors for print */
+    /* Optimize for print */
     body {
-        color: #000;
-        background: #fff;
+        background: white;
+        color: black;
     }
 
     .header,
@@ -522,4 +753,129 @@ body {
         box-shadow: none;
         padding: 0;
     }
+
+    .about-image img {
+        box-shadow: none;
+    }
 }
+
+/* ================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================================ */
+
+/* Focus Styles for Keyboard Navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+.btn:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Improve text readability */
+::selection {
+    background: var(--primary-light);
+    color: white;
+}
+
+/* Screenreader-only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Reduced Motion for Users with Preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ================================================
+   UTILITY CLASSES
+   ================================================ */
+
+/* Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Margin Utilities */
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-sm {
+    margin-top: var(--spacing-sm);
+}
+
+.mt-md {
+    margin-top: var(--spacing-md);
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xl);
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-sm {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mb-xl {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Display Utilities */
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/* ================================================
+   END OF STYLESHEET
+   ================================================ */
