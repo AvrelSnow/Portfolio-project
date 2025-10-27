@@ -1,25 +1,44 @@
 /* ============================================
+   DONFACK FORTUNE PORTFOLIO - MAIN STYLESHEET
+   File: main.css
+   Author: Donfack Fortune
+   Description: Core styles for portfolio homepage
+   Last Updated: 2025
+   ============================================ */
+
+/* ============================================
    CSS VARIABLES & DESIGN TOKENS
    Best Practice: Centralize all design values for easy maintenance
    ============================================ */
 :root {
-    /* Color Palette */
+    /* === Color Palette === */
     --primary-color: #070707;
     --secondary-color: #000000;
     --accent-color: #0493f3;
     --text-color: #000000;
-    --light-text: #888;
+    --text-dark: #111;
+    --text-medium: #222;
+    --text-light: #888;
     --brand-red: #e02b20;
     --brand-red-dark: #b81d16;
+    --brand-red-light: #ff3b2f;
+    --bg-white: #ffffff;
     --bg-light: #f8f9fa;
     --bg-card: #fafafa;
     --border-color: #eee;
+    --border-light: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.06);
+    --shadow-hover: rgba(0, 0, 0, 0.13);
 
-    /* Typography */
+    /* === Typography === */
     --font-main: 'Open Sans', sans-serif;
     --font-heading: 'Montserrat', sans-serif;
+    --font-size-base: 1rem;
+    --font-size-large: 1.18rem;
+    --line-height-base: 1.7;
+    --line-height-heading: 1.2;
 
-    /* Spacing System (8px base) */
+    /* === Spacing System (8px base) === */
     --spacing-xs: 0.5rem;
     /* 8px */
     --spacing-sm: 1rem;
@@ -33,22 +52,28 @@
     --spacing-2xl: 4rem;
     /* 64px */
 
-    /* Layout */
+    /* === Layout === */
     --max-width: 1200px;
     --max-width-lg: 1300px;
     --border-radius: 4px;
-    --border-radius-lg: 12px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 10px;
+    --border-radius-xl: 12px;
 
-    /* Transitions */
+    /* === Transitions === */
     --transition-fast: 0.2s ease;
     --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --transition-bounce: 0.18s cubic-bezier(.4, 1.3, .6, 1);
 }
 
 /* ============================================
    RESET & BASE STYLES
    Best Practice: Normalize browser defaults
    ============================================ */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -58,15 +83,17 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     /* Base font size for rem calculations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     font-family: var(--font-heading), Arial, sans-serif;
-    margin: 0;
-    background: #fff;
-    color: #111;
-    line-height: 1.7;
+    background: var(--bg-white);
+    color: var(--text-dark);
+    line-height: var(--line-height-base);
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 /* ============================================
@@ -76,11 +103,14 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: var(--line-height-heading);
     margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
 }
 
 h1 {
@@ -95,9 +125,14 @@ h3 {
     font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
+h4 {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
 p {
     margin-bottom: calc(var(--spacing-sm) * 0.75);
-    font-size: clamp(1rem, 2vw, 1.18rem);
+    font-size: clamp(1rem, 2vw, var(--font-size-large));
+    line-height: var(--line-height-base);
 }
 
 a {
@@ -108,6 +143,12 @@ a {
 
 a:hover {
     color: var(--primary-color);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* ============================================
@@ -126,587 +167,8 @@ a:hover {
 }
 
 /* ============================================
-   HEADER NAVIGATION
-   Responsive navigation with mobile menu support
-   ============================================ */
-.header {
-    border-bottom: 1px solid var(--border-color);
-    background: #fff;
-    padding: 36px 0 28px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.header-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--spacing-md);
-}
-
-/* Logo */
-.header-left .logo,
-.logo {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 0.5px;
-    color: #111;
-    text-decoration: none;
-}
-
-/* Navigation Menu */
-.header-center {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.main-nav .nav-list,
-.nav-list {
-    display: flex;
-    gap: clamp(20px, 3vw, 36px);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.main-nav .nav-list li a,
-.nav-list li a {
-    text-decoration: none;
-    color: #111;
-    font-weight: 500;
-    font-size: clamp(1rem, 2vw, 1.18rem);
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: border var(--transition-fast), color var(--transition-fast);
-    white-space: nowrap;
-}
-
-.main-nav .nav-list li a.active,
-.main-nav .nav-list li a:hover,
-.nav-list li a.active,
-.nav-list li a:hover {
-    border-bottom: 2px solid #111;
-    color: #111;
-}
-
-/* Social Icons */
-.header-right.social-icons {
-    display: flex;
-    gap: 20px;
-}
-
-.social-icons a {
-    color: #111;
-    font-size: 1.2rem;
-    transition: color var(--transition-fast);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-icons a:hover {
-    color: var(--brand-red);
-}
-
-/* ============================================
-   MAIN CONTENT AREAS
-   Shared content section styles
-   ============================================ */
-.main-content,
-.about-main,
-.teaching-main {
-    padding: 56px 0 40px 0;
-}
-
-/* ============================================
-   ABOUT SECTION
-   Profile and biography layout
-   ============================================ */
-.about-section {
-    padding: var(--spacing-2xl) 0;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 48px;
-}
-
-.about-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 56px;
-    justify-content: space-between;
-}
-
-.about-text {
-    flex: 2;
-    text-align: left;
-    max-width: 700px;
-}
-
-.about-text p {
-    font-size: clamp(1rem, 2vw, 1.18rem);
-    margin-bottom: 22px;
-    color: #222;
-    letter-spacing: 0.01em;
-}
-
-.about-image {
-    flex: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.about-image img {
-    max-width: 280px;
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
-    object-fit: cover;
-}
-
-/* Section Titles */
-.section-title {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    color: var(--secondary-color);
-    text-align: center;
-    margin-bottom: var(--spacing-md);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    font-weight: 600;
-    color: var(--secondary-color);
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-    text-transform: uppercase;
-}
-
-.intro-text {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    max-width: 800px;
-    margin: 0 auto var(--spacing-lg);
-    text-align: center;
-    font-weight: 600;
-}
-
-/* ============================================
-   HERO IMAGE SECTION
-   Featured image display
-   ============================================ */
-.hero-section {
-    padding: 2rem 0;
-    background-color: var(--bg-light);
-}
-
-.hero-image {
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    aspect-ratio: 16/9;
-}
-
-/* ============================================
-   PROJECTS GRID
-   Responsive card grid layout
-   ============================================ */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-    gap: 48px 36px;
-    justify-items: center;
-    margin-top: 32px;
-}
-
-.projects-group-title {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: 0.5px;
-    padding: 0 5%;
-}
-
-/* Project Cards */
-.project-item {
-    width: 100%;
-    max-width: 600px;
-    text-align: left;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
-    transition: box-shadow var(--transition-medium), transform 0.18s cubic-bezier(.4, 1.3, .6, 1);
-}
-
-.project-item img {
-    width: 100%;
-    height: auto;
-    min-height: 200px;
-    max-height: 300px;
-    object-fit: cover;
-    display: block;
-    filter: grayscale(100%);
-    border-radius: 10px 10px 0 0;
-    transition: filter var(--transition-medium), box-shadow var(--transition-medium);
-}
-
-.project-item:hover {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
-}
-
-.project-item:hover img {
-    filter: grayscale(0%);
-}
-
-.project-item p {
-    margin: 22px 18px;
-    font-size: clamp(1rem, 2vw, 1.18rem);
-    font-weight: 600;
-    color: #181818;
-    line-height: 1.6;
-    letter-spacing: 0.01em;
-}
-
-.project-item-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-.project-item-link:hover .project-item {
-    transform: scale(1.03);
-}
-
-/* ============================================
-   TEACHING PAGE SPECIFIC STYLES
-   ============================================ */
-.teaching-intro {
-    margin-bottom: 56px;
-    padding: 0 0 8px 0;
-}
-
-.teaching-intro h3 {
-    margin-top: 32px;
-    margin-bottom: 12px;
-    font-size: clamp(1.1rem, 2.5vw, 1.32rem);
-    font-weight: 600;
-}
-
-.teaching-intro ul {
-    margin: 0 0 18px 32px;
-    padding: 0;
-    font-size: clamp(1rem, 2vw, 1.13rem);
-}
-
-.teaching-intro ul li {
-    margin-bottom: 8px;
-}
-
-/* ============================================
-   CONTACT SECTION
-   Form and contact information
-   ============================================ */
-.contact-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    color: #444;
-    margin: 40px 0 32px 0;
-    flex-wrap: wrap;
-}
-
-.contact-info i {
-    color: var(--brand-red);
-    font-size: 1.4em;
-}
-
-.get-in-touch {
-    background: var(--bg-card);
-    border-radius: var(--border-radius-lg);
-    padding: 40px clamp(18px, 3vw, 28px);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    max-width: 600px;
-    margin: 32px 0 0 0;
-}
-
-.get-in-touch h2 {
-    margin-top: 0;
-    font-size: clamp(1.3rem, 3vw, 1.6rem);
-    font-weight: 600;
-    margin-bottom: 22px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.contact-form label {
-    font-weight: 500;
-    color: #333;
-    font-size: clamp(1rem, 2vw, 1.08rem);
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 12px 14px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: clamp(1rem, 2vw, 1.08rem);
-    font-family: inherit;
-    resize: vertical;
-    width: 100%;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--brand-red);
-}
-
-/* ============================================
-   BUTTONS
-   Reusable button styles
-   ============================================ */
-.ppmpc-btn,
-.send-btn {
-    background: var(--brand-red);
-    color: #fff;
-    border: none;
-    border-radius: 7px;
-    padding: 14px 28px;
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    font-weight: 600;
-    cursor: pointer;
-    transition: background var(--transition-fast);
-    width: 100%;
-    max-width: 300px;
-}
-
-.ppmpc-btn:hover,
-.send-btn:hover {
-    background: var(--brand-red-dark);
-}
-
-.ppmpc-btn-row {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin: 32px 0 0 0;
-    flex-wrap: wrap;
-}
-
-/* ============================================
-   PROJECT DETAILS PAGE
-   Specific styling for individual project pages
-   ============================================ */
-.ppmpc-title {
-    text-align: center;
-    margin-top: 32px;
-}
-
-.ppmpc-contrib-collab {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 32px 0 24px 0;
-    text-align: center;
-}
-
-.ppmpc-contrib-collab-cols {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 64px;
-    flex-wrap: wrap;
-}
-
-.ppmpc-section-label {
-    letter-spacing: 2px;
-    font-size: clamp(0.95rem, 2vw, 1.05rem);
-    margin-bottom: 18px;
-    text-transform: uppercase;
-}
-
-.ppmpc-list {
-    color: var(--light-text);
-    font-size: clamp(1rem, 2vw, 1.08rem);
-    text-align: left;
-}
-
-.ppmpc-divider {
-    margin: 40px 0 10px 0;
-    border: none;
-    border-top: 2.5px solid #bbb;
-    width: 100%;
-}
-
-/* ============================================
-   A4 LANDSCAPE IMAGE SECTION
-   Technical drawing/document display
-   ============================================ */
-.a4-landscape-section {
-    margin: 58px auto 48px auto;
-    max-width: 1200px;
-    background: #f6faff;
-    border-radius: 18px;
-    box-shadow: 0 6px 36px rgba(0, 0, 0, 0.09);
-    padding: 28px clamp(10px, 2vw, 0) 38px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2.5px solid #e0e7ef;
-}
-
-.a4-landscape-label {
-    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-    font-weight: 600;
-    color: #0a2a43;
-    margin-bottom: 22px;
-    letter-spacing: 1.2px;
-    text-align: center;
-}
-
-.a4-landscape-image-wrapper {
-    width: 100%;
-    max-width: 1300px;
-    display: flex;
-    justify-content: center;
-}
-
-.a4-landscape-img {
-    width: 100%;
-    max-width: 1200px;
-    aspect-ratio: 297/210;
-    border-radius: 12px;
-    border: 2.5px solid #c4d4e5;
-    box-shadow: 0 4px 32px rgba(0, 123, 255, 0.09);
-    background: #fff;
-    object-fit: contain;
-}
-
-/* ============================================
-   SMALL IMAGES GALLERY
-   Multi-image display row
-   ============================================ */
-.tbs-small-images-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 36px;
-    margin: 34px auto 48px auto;
-    max-width: 1200px;
-    padding: 0 10px;
-    flex-wrap: wrap;
-}
-
-.tbs-small-img-card {
-    background: #f8fafc;
-    border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-    padding: 14px 14px 22px 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 210px;
-    width: 100%;
-    min-width: 150px;
-    transition: transform 0.18s, box-shadow 0.18s;
-}
-
-.tbs-small-img-card:hover {
-    transform: translateY(-5px) scale(1.04);
-    box-shadow: 0 8px 32px rgba(0, 123, 255, 0.13);
-}
-
-.tbs-small-img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3/2;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid #c4d4e5;
-    background: #fff;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
-}
-
-/* ============================================
-   BACK TO TOP BUTTON
-   Floating action button
-   ============================================ */
-#backToTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    z-index: 1000;
-    padding: 14px 18px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 50%;
-    background: var(--brand-red);
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    transition: background var(--transition-fast), transform 0.2s;
-}
-
-#backToTopBtn:hover {
-    background: var(--brand-red-dark);
-    transform: translateY(-2px);
-}
-
-/* ============================================
-   FOOTER
-   Site footer with copyright
-   ============================================ */
-.footer {
-    border-top: 1px solid var(--border-color);
-    background: #fff;
-    text-align: center;
-    padding: 28px 0 18px 0;
-    font-size: clamp(1rem, 2vw, 1.08rem);
-    color: var(--light-text);
-}
-
-.footer p {
-    transition: color var(--transition-fast);
-    cursor: pointer;
-    margin-bottom: var(--spacing-xs);
-}
-
-.footer p:hover {
-    color: var(--brand-red);
-}
-
-/* ============================================
    ACCESSIBILITY
-   Screen reader only content
+   Screen reader only content and focus states
    ============================================ */
 .sr-only {
     position: absolute;
@@ -720,14 +182,379 @@ a:hover {
     border-width: 0;
 }
 
+/* Skip to content link - visible on focus */
+a.sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: var(--spacing-sm);
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    background: var(--brand-red);
+    color: white;
+    z-index: 10000;
+    display: block;
+    text-align: center;
+}
+
 /* ============================================
-   PERFORMANCE OPTIMIZATIONS
-   Image optimization
+   HEADER NAVIGATION
+   Sticky header with logo, navigation, and social icons
+   Matches Pedal Power project style
+   ============================================ */
+.header {
+    background: var(--bg-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--spacing-md) 0;
+    text-align: center;
+}
+
+/* Header Layout - Three Column Design */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+
+}
+
+/* Logo Section - Left Column */
+.header-left {
+    flex: 0 1 auto;
+}
+
+.header-left .logo,
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+    color: var(--text-dark);
+    transition: color var(--transition-medium);
+
+}
+
+.logo a {
+    color: inherit;
+    text-decoration: none;
+
+
+}
+
+.logo a:hover {
+    color: var(--brand-red);
+}
+
+/* Navigation Menu - Center Column */
+.header-center {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0;
+}
+
+.nav-list li a {
+    font-weight: 500;
+    color: var(--text-medium);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-medium);
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Active and Hover States */
+.nav-list li a:hover,
+.nav-list li a:focus,
+.nav-list li a.active,
+.nav-list li a[aria-current="page"] {
+    color: var(--brand-red);
+    background: rgba(224, 43, 32, 0.08);
+}
+
+/* Navigation Focus State */
+.nav-list li a:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 2px;
+}
+
+/* Social Icons Section - Right Column */
+.header-right.social-icons {
+    flex: 0 1 auto;
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    transition: all var(--transition-medium);
+    text-decoration: none;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    background: var(--brand-red);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(224, 43, 32, 0.3);
+}
+
+.social-icons a:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 2px;
+}
+
+/* GrabCAD Custom Icon */
+.fab.fa-grabcad svg {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* ============================================
+   MAIN CONTENT AREAS
+   Shared content section styles
+   ============================================ */
+.main-content {
+    padding: 56px 0 40px 0;
+    min-height: calc(100vh - 200px);
+}
+
+/* ============================================
+   PROJECTS GRID SECTION
+   Responsive card grid layout for project showcase
+   ============================================ */
+
+/* Projects Group Container */
+.projects-group {
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Section Heading */
+.projects-group-title {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+    padding: 0 5%;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-dark);
+}
+
+/* Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 48px 36px;
+    justify-items: center;
+    margin-top: 32px;
+}
+
+/* ============================================
+   PROJECT CARDS
+   Individual project card styling
+   ============================================ */
+
+/* Project Card Container */
+.project-card {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Project Item Link - Full card clickable */
+.project-item-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-item-link:focus-visible {
+    outline: 3px solid var(--brand-red);
+    outline-offset: 4px;
+    border-radius: var(--border-radius-lg);
+}
+
+/* Project Item Card */
+.project-item {
+    width: 100%;
+    text-align: left;
+    background: var(--bg-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 16px var(--shadow-color);
+    overflow: hidden;
+    transition: box-shadow var(--transition-medium),
+        transform var(--transition-bounce);
+    position: relative;
+}
+
+/* Card Hover Effect */
+.project-item:hover {
+    box-shadow: 0 8px 32px var(--shadow-hover);
+}
+
+.project-item-link:hover .project-item {
+    transform: scale(1.03);
+}
+
+/* Project Image */
+.project-item img {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    transition: filter var(--transition-medium);
+}
+
+/* Image Hover Effect - Remove grayscale */
+.project-item:hover img,
+.project-item-link:focus-visible .project-item img {
+    filter: grayscale(0%);
+}
+
+/* Project Title/Description */
+.project-item p {
+    margin: 22px 18px;
+    font-size: clamp(1rem, 2vw, var(--font-size-large));
+    font-weight: 600;
+    color: #181818;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   Floating action button - Matches Pedal Power style
+   ============================================ */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--brand-red);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    transition: all var(--transition-medium);
+    box-shadow: 0 4px 12px rgba(224, 43, 32, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTopBtn:hover,
+#backToTopBtn:focus {
+    background-color: var(--brand-red-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(224, 43, 32, 0.4);
+}
+
+#backToTopBtn:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Show button when scrolled */
+#backToTopBtn.visible {
+    display: flex;
+}
+
+/* ============================================
+   FOOTER
+   Site footer with copyright information
+   ============================================ */
+.footer {
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-white);
+    text-align: center;
+    padding: 28px 0 18px 0;
+    font-size: clamp(1rem, 2vw, 1.08rem);
+    color: var(--text-light);
+    margin-top: var(--spacing-2xl);
+}
+
+.footer p {
+    transition: color var(--transition-fast);
+    cursor: default;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer p:hover {
+    color: var(--brand-red);
+}
+
+/* ============================================
+   IMAGE OPTIMIZATION
+   Lazy loading and performance enhancements
    ============================================ */
 img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Fade-in animation for lazy-loaded images */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* ============================================
+   PERFORMANCE: REDUCED MOTION
+   Respect user preferences for motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* ============================================
@@ -736,20 +563,50 @@ img {
    ============================================ */
 @media (max-width: 900px) {
 
-    /* Stack content vertically on tablets */
-    .about-content {
-        flex-direction: column;
-        gap: 36px;
-        align-items: stretch;
+    /* Adjust spacing for tablets */
+    .header-right.social-icons {
+        justify-content: center;
+        width: 100%;
     }
 
-    .about-image {
-        justify-content: flex-start;
+
+
+    /* Adjust project grid gaps */
+    .projects-grid {
+        gap: 36px 24px;
     }
 
-    /* Centered variation */
-    .about-content.centered {
-        gap: 0;
+    /* Stack header elements if needed */
+    .header-flex {
+        gap: var(--spacing-md);
+    }
+
+    /* Adjust header padding */
+    .header {
+        padding: var(--spacing-sm) 0;
+    }
+
+    /* Smaller logo on tablets */
+    .header-left .logo {
+        font-size: 1.3rem;
+    }
+
+    /* Adjust navigation spacing */
+    .nav-list {
+        gap: var(--spacing-md);
+    }
+
+    .nav-list li a {
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
+
+    /* Adjust social icons */
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+
     }
 }
 
@@ -759,47 +616,78 @@ img {
    ============================================ */
 @media (max-width: 600px) {
 
-    /* Stack header elements */
+    /* Stack header elements vertically */
     .header-flex {
         flex-direction: column;
-        gap: 18px;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+
+    .logo {
+        text-align: center;
+
+    }
+
+    .header-left {
+        width: 100%;
+    }
+
+    .header-center {
+        width: 100%;
+    }
+
+    /* Vertical navigation on mobile */
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .nav-list li {
+        width: 100%;
+    }
+
+    .nav-list li a {
+        display: block;
+        width: 100%;
+        padding: 10px 12px;
     }
 
     /* Reduce main content padding */
-    .about-main {
+    .main-content {
         padding: 28px 0 18px 0;
     }
 
-    /* Compact form on mobile */
-    .get-in-touch {
-        padding: 22px 10px;
-    }
-
-    /* Reduce section spacing */
-    .about-section {
-        margin-bottom: 28px;
+    /* Adjust project grid */
+    .projects-grid {
+        gap: 28px 18px;
+        grid-template-columns: 1fr;
     }
 
     /* Smaller back to top button */
     #backToTopBtn {
-        bottom: 16px;
-        right: 16px;
-        padding: 10px 13px;
-        font-size: 1rem;
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        padding: 12px;
+        font-size: 1.2rem;
     }
 
-    /* Full-width images on mobile */
-    .about-image img {
-        max-width: 100%;
+    /* Reduce header padding */
+    .header {
+        padding: var(--spacing-md) 0;
     }
 
-    /* Reduce text sizes slightly */
-    .about-text h2 {
-        font-size: 1.8rem;
+    /* Adjust container width */
+    .container {
+        width: 95%;
     }
 
-    .about-text p {
-        font-size: 1.08rem;
+    /* Smaller logo */
+    .header-left .logo {
+        font-size: 1.2rem;
     }
 }
 
@@ -809,39 +697,58 @@ img {
    ============================================ */
 @media (max-width: 480px) {
 
-    /* Reduce container padding */
+    /* Further reduce spacing */
     .container {
         width: 95%;
+        padding: 0;
     }
 
-    /* Compact navigation */
-    .main-nav .nav-list,
-    .nav-list {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 
-    .main-nav .nav-list li a,
-    .nav-list li a {
-        font-size: 1.05rem;
+    /* Compact header */
+    .header {
+        padding: 12px 0;
     }
 
     /* Smaller logo */
     .header-left .logo {
-        font-size: 1.8rem;
+        font-size: 1.1rem;
     }
 
-    /* Compact form elements */
-    .contact-form input,
-    .contact-form textarea {
+    /* Compact navigation */
+    .nav-list li a {
+        font-size: 0.95rem;
+        padding: 8px 10px;
+    }
+
+    /* Adjust social icons */
+    .social-icons {
+        gap: 12px;
+    }
+
+    .social-icons a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    /* Full-width project cards */
+    .project-item {
+        max-width: 100%;
+    }
+
+    /* Adjust section spacing */
+    .projects-group {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    /* Smaller back to top button */
+    #backToTopBtn {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
         font-size: 1rem;
-        padding: 10px 12px;
-    }
-
-    .send-btn {
-        font-size: 1.05rem;
-        padding: 12px 0;
     }
 }
 
@@ -852,16 +759,25 @@ img {
 @media (max-height: 500px) and (orientation: landscape) {
 
     /* Reduce vertical spacing */
-    .about-main {
+    .main-content {
         padding: 20px 0;
     }
 
-    .about-section {
-        margin-bottom: 20px;
-    }
 
     .header {
         padding: 20px 0 15px 0;
+    }
+
+    .projects-group {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Compact back to top button */
+    #backToTopBtn {
+        width: 40px;
+        height: 40px;
+        bottom: 12px;
+        right: 12px;
     }
 }
 
@@ -874,8 +790,8 @@ img {
     /* Hide interactive elements */
     #backToTopBtn,
     .social-icons,
-    .contact-form {
-        display: none;
+    .header-center {
+        display: none !important;
     }
 
     /* Simplify colors for print */
@@ -887,6 +803,7 @@ img {
     .header,
     .footer {
         border: none;
+        background: none;
     }
 
     /* Expand content width */
@@ -895,53 +812,133 @@ img {
         max-width: none;
     }
 
-    /* Stack layout for print */
-    .about-content {
-        flex-direction: column;
+    /* Optimize images for print */
+    .project-item img {
+        filter: none !important;
+        page-break-inside: avoid;
     }
 
-    /* Remove shadows and backgrounds */
-    .get-in-touch {
-        background: none;
+    /* Prevent page breaks inside cards */
+    .project-item,
+    .project-card {
+        page-break-inside: avoid;
+    }
+
+    /* Remove shadows */
+    .project-item {
         box-shadow: none;
-        padding: 0;
+        border: 1px solid #ccc;
+    }
+
+    /* Adjust grid for print */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
 /* ============================================
-   PRINT STYLES
-   Optimized for printing
+   DARK MODE SUPPORT (Optional - Future Enhancement)
+   Respects user's system preference
    ============================================ */
-@media print {
-    body {
-        font-size: 12pt;
-        line-height: 1.5;
-        color: #000;
-        background: none;
+@media (prefers-color-scheme: dark) {
+    /* Uncomment to enable dark mode
+    :root {
+        --primary-color: #f0f0f0;
+        --text-dark: #e0e0e0;
+        --bg-white: #1a1a1a;
+        --bg-card: #2a2a2a;
+        --border-color: #444;
+    }
+    */
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   Accessibility for high contrast users
+   ============================================ */
+@media (prefers-contrast: high) {
+    .nav-list li a {
+        border-bottom-width: 3px;
     }
 
-    .header,
-    .footer {
-        background: none;
-        color: #000;
-        border: none;
+    .project-item {
+        border: 2px solid var(--text-dark);
     }
 
-    /* Hide interactive elements */
-    #backToTopBtn,
-    .social-icons,
-    button {
-        display: none !important;
-    }
-
-    a {
-        text-decoration: underline;
-    }
-
-    /* Prevent page breaks inside elements */
-    .project-item,
-    .about-content,
-    img {
-        page-break-inside: avoid;
+    a:focus-visible {
+        outline-width: 3px;
     }
 }
+
+/* ============================================
+   UTILITY CLASSES
+   Reusable helper classes
+   ============================================ */
+
+/* Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Display Utilities */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+/* Spacing Utilities */
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-sm {
+    margin-top: var(--spacing-sm);
+}
+
+.mt-md {
+    margin-top: var(--spacing-md);
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-sm {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   END OF STYLESHEET
+   ============================================ */

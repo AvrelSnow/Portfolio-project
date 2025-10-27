@@ -1,19 +1,71 @@
 /* ============================================
    TEACHING PAGE STYLESHEET
-   Styles specific to the Teaching/Projects page
+   File: teaching.css
+   Author: Donfack Fortune
+   Description: Styles specific to the Teaching page
+   Matches Pedal Power project header and button style
    ============================================ */
 
 /* ============================================
-   BASE STYLES
-   Core typography and colors
+   CSS VARIABLES & DESIGN TOKENS
+   Centralized design values for consistency
    ============================================ */
-body {
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: #fff;
-    color: #222;
+:root {
+    /* Color Palette */
+    --primary-color: #070707;
+    --secondary-color: #000000;
+    --text-dark: #111;
+    --text-medium: #222;
+    --text-light: #888;
+    --brand-red: #e02b20;
+    --brand-red-dark: #b81d16;
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    --border-color: #eee;
+
+    /* Typography */
+    --font-heading: 'Montserrat', Arial, sans-serif;
+    --line-height-base: 1.7;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Layout */
+    --max-width: 1300px;
+    --border-radius: 4px;
+    --border-radius-lg: 10px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    line-height: 1.7;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-heading);
+    background: var(--bg-white);
+    color: var(--text-medium);
+    line-height: var(--line-height-base);
+    overflow-x: hidden;
 }
 
 /* ============================================
@@ -22,39 +74,59 @@ body {
    ============================================ */
 .container {
     width: 90%;
-    max-width: 1300px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 
 /* ============================================
    HEADER NAVIGATION
-   Site header with logo, nav, and social links
+   Sticky header matching Pedal Power style
    ============================================ */
 .header {
-    border-bottom: 1px solid #eee;
-    background: #fff;
-    padding: 36px 0 28px 0;
+    background: var(--bg-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--spacing-md) 0;
 }
 
+/* Header Layout - Three Column Design */
 .header-flex {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
 }
 
-/* Logo Styles */
+/* Logo Section - Left Column */
+.header-left {
+    flex: 0 1 auto;
+}
+
 .header-left .logo,
 .logo {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     font-weight: 700;
     margin: 0;
-    letter-spacing: 0.5px;
-    color: #111;
+    letter-spacing: -0.5px;
+    color: var(--text-dark);
+    transition: color var(--transition-medium);
 }
 
-/* Header Center - Navigation */
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: var(--brand-red);
+}
+
+/* Navigation Menu - Center Column */
 .header-center {
-    flex: 1;
+    flex: 1 1 auto;
     display: flex;
     justify-content: center;
 }
@@ -62,57 +134,90 @@ body {
 .main-nav .nav-list,
 .nav-list {
     display: flex;
-    gap: 36px;
     list-style: none;
+    gap: var(--spacing-lg);
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0;
 }
 
 .main-nav .nav-list li a,
 .nav-list li a {
-    text-decoration: none;
-    color: #111;
     font-weight: 500;
-    font-size: 1.18rem;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: border 0.2s, color 0.2s;
+    color: var(--text-medium);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-medium);
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    font-size: 1rem;
 }
 
-.main-nav .nav-list li a.active,
+/* Active and Hover States */
 .main-nav .nav-list li a:hover,
+.main-nav .nav-list li a:focus,
+.main-nav .nav-list li a.active,
+.nav-list li a:hover,
+.nav-list li a:focus,
 .nav-list li a.active,
-.nav-list li a:hover {
-    border-bottom: 2px solid #111;
-    color: #111;
+.nav-list li a[aria-current="page"] {
+    color: var(--brand-red);
+    background: rgba(224, 43, 32, 0.08);
 }
 
-/* Social Icons */
+/* Navigation Focus State */
+.nav-list li a:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 2px;
+}
+
+/* Social Icons Section - Right Column */
 .header-right.social-icons {
+    flex: 0 1 auto;
     display: flex;
-    gap: 20px;
+    gap: var(--spacing-md);
+    align-items: center;
 }
 
 .social-icons a {
-    color: #111;
-    font-size: 1.2rem;
-    transition: color 0.2s;
-    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle;
+    border-radius: 50%;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    transition: all var(--transition-medium);
     text-decoration: none;
 }
 
+.social-icons a:hover,
+.social-icons a:focus {
+    background: var(--brand-red);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(224, 43, 32, 0.3);
+}
+
+.social-icons a:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 2px;
+}
+
+/* GrabCAD Custom Icon */
 .social-icons a .fa-grabcad {
     width: 1.2em;
     height: 1.2em;
     display: inline-block;
     vertical-align: middle;
-}
-
-.social-icons a:hover {
-    color: #e02b20;
 }
 
 /* ============================================
@@ -121,6 +226,7 @@ body {
    ============================================ */
 .teaching-main {
     padding: 56px 0 40px 0;
+    min-height: calc(100vh - 200px);
 }
 
 /* ============================================
@@ -138,7 +244,7 @@ body {
     font-size: 1.32rem;
     font-weight: 600;
     letter-spacing: 0.01em;
-    color: #111;
+    color: var(--text-dark);
 }
 
 .teaching-intro ul {
@@ -149,14 +255,14 @@ body {
 
 .teaching-intro ul li {
     margin-bottom: 8px;
-    line-height: 1.7;
-    color: #222;
+    line-height: var(--line-height-base);
+    color: var(--text-medium);
 }
 
 .teaching-intro p {
     font-size: 1.15rem;
     margin-bottom: 22px;
-    color: #222;
+    color: var(--text-medium);
     letter-spacing: 0.01em;
 }
 
@@ -179,12 +285,12 @@ body {
 .project-item {
     width: 100%;
     max-width: 420px;
-    background: #fff;
-    border-radius: 10px;
+    background: var(--bg-white);
+    border-radius: var(--border-radius-lg);
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
     overflow: hidden;
     text-align: left;
-    transition: box-shadow 0.3s, transform 0.2s;
+    transition: box-shadow var(--transition-medium), transform var(--transition-fast);
 }
 
 /* Project Image */
@@ -193,9 +299,9 @@ body {
     height: 260px;
     object-fit: cover;
     display: block;
-    border-radius: 10px 10px 0 0;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
     filter: grayscale(100%) brightness(0.95);
-    transition: filter 0.4s, box-shadow 0.3s;
+    transition: filter 0.4s, box-shadow var(--transition-medium);
 }
 
 /* Hover Effects */
@@ -220,27 +326,45 @@ body {
 
 /* ============================================
    BACK TO TOP BUTTON
-   Floating scroll-to-top button
+   Floating button matching Pedal Power style
    ============================================ */
 #backToTopBtn {
     display: none;
     position: fixed;
-    bottom: 32px;
-    right: 32px;
-    z-index: 1000;
-    padding: 14px 18px;
-    font-size: 1.2rem;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
     border: none;
-    border-radius: 50%;
-    background: #e02b20;
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+    background-color: var(--brand-red);
+    color: white;
     cursor: pointer;
-    transition: background 0.2s;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    transition: all var(--transition-medium);
+    box-shadow: 0 4px 12px rgba(224, 43, 32, 0.3);
+    align-items: center;
+    justify-content: center;
 }
 
-#backToTopBtn:hover {
-    background: #b81d16;
+#backToTopBtn:hover,
+#backToTopBtn:focus {
+    background-color: var(--brand-red-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(224, 43, 32, 0.4);
+}
+
+#backToTopBtn:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 2px;
+}
+
+/* Show button when scrolled */
+#backToTopBtn.visible {
+    display: flex;
 }
 
 /* ============================================
@@ -248,25 +372,34 @@ body {
    Page footer with copyright
    ============================================ */
 .footer {
-    border-top: 1px solid #eee;
-    background: #fff;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-white);
     text-align: center;
     padding: 28px 0 18px 0;
     font-size: 1.08rem;
-    color: #888;
+    color: var(--text-light);
+    margin-top: var(--spacing-xl);
 }
 
-.copyright p {
-    margin-bottom: 0.5rem;
-}
-
+.copyright p,
 .footer p {
-    transition: color 0.2s;
-    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: color var(--transition-fast);
+    cursor: default;
 }
 
 .footer p:hover {
-    color: #e02b20;
+    color: var(--brand-red);
+}
+
+/* ============================================
+   ACCESSIBILITY
+   Focus states and screen reader support
+   ============================================ */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 2px;
 }
 
 /* ============================================
@@ -281,9 +414,41 @@ body {
         gap: 36px 18px;
     }
 
+    .header-right.social-icons {
+        justify-content: center;
+        width: 100%;
+    }
+
     /* Adjust intro margins */
     .teaching-intro {
         margin-bottom: 40px;
+    }
+
+    /* Adjust header padding */
+    .header {
+        padding: var(--spacing-sm) 0;
+    }
+
+    /* Smaller logo on tablets */
+    .header-left .logo {
+        font-size: 1.3rem;
+    }
+
+    /* Adjust navigation spacing */
+    .nav-list {
+        gap: var(--spacing-md);
+    }
+
+    .nav-list li a {
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
+
+    /* Adjust social icons */
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
     }
 }
 
@@ -298,6 +463,20 @@ body {
         gap: 32px 16px;
     }
 
+    .header-flex {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-right.social-icons {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
     /* Adjust image height for tablets */
     .project-item img {
         height: 220px;
@@ -310,10 +489,44 @@ body {
    ============================================ */
 @media (max-width: 600px) {
 
-    /* Stack header elements */
+    /* Stack header elements vertically */
     .header-flex {
         flex-direction: column;
-        gap: 18px;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+
+    .header-right.social-icons {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .header-left {
+        width: 100%;
+    }
+
+    .header-center {
+        width: 100%;
+    }
+
+    /* Vertical navigation on mobile */
+    .main-nav .nav-list,
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .nav-list li {
+        width: 100%;
+    }
+
+    .nav-list li a {
+        display: block;
+        width: 100%;
+        padding: 10px 12px;
     }
 
     /* Reduce main content padding */
@@ -344,15 +557,32 @@ body {
 
     /* Smaller back to top button */
     #backToTopBtn {
-        bottom: 16px;
-        right: 16px;
-        padding: 10px 13px;
-        font-size: 1rem;
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        padding: 12px;
+        font-size: 1.2rem;
     }
 
     /* Adjust list indentation */
     .teaching-intro ul {
         margin-left: 24px;
+    }
+
+    /* Reduce header padding */
+    .header {
+        padding: var(--spacing-md) 0;
+    }
+
+    /* Adjust container width */
+    .container {
+        width: 95%;
+    }
+
+    /* Smaller logo */
+    .header-left .logo {
+        font-size: 1.2rem;
     }
 }
 
@@ -367,23 +597,38 @@ body {
         width: 95%;
     }
 
-    /* Compact navigation */
-    .main-nav .nav-list,
-    .nav-list {
-        gap: 20px;
-        flex-wrap: wrap;
+    .header-right.social-icons {
         justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
-    .main-nav .nav-list li a,
-    .nav-list li a {
-        font-size: 1.05rem;
+    /* Compact header */
+    .header {
+        padding: 12px 0;
     }
 
     /* Smaller logo */
     .header-left .logo,
     .logo {
-        font-size: 1.8rem;
+        font-size: 1.1rem;
+    }
+
+    /* Compact navigation */
+    .nav-list li a {
+        font-size: 0.95rem;
+        padding: 8px 10px;
+    }
+
+    /* Adjust social icons */
+    .social-icons {
+        gap: 12px;
+    }
+
+    .social-icons a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
     }
 
     /* Adjust text sizes */
@@ -409,6 +654,16 @@ body {
     .project-item img {
         height: 200px;
     }
+
+    /* Smaller back to top button */
+    #backToTopBtn {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        font-size: 1rem;
+    }
 }
 
 /* ============================================
@@ -418,9 +673,13 @@ body {
 @media (max-width: 360px) {
 
     /* Reduce header padding */
-    .header {
-        padding: 24px 0 18px 0;
+    .header-right.social-icons {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
+
+
 
     /* Further reduce spacing */
     .teaching-main {
@@ -454,12 +713,20 @@ body {
     }
 
     .header {
-        padding: 20px 0 15px 0;
+        padding: 15px 0 12px 0;
     }
 
     /* Smaller project images in landscape */
     .project-item img {
         height: 180px;
+    }
+
+    /* Compact back to top button */
+    #backToTopBtn {
+        width: 40px;
+        height: 40px;
+        bottom: 12px;
+        right: 12px;
     }
 }
 
@@ -471,8 +738,9 @@ body {
 
     /* Hide interactive elements */
     #backToTopBtn,
-    .social-icons {
-        display: none;
+    .social-icons,
+    .header-center {
+        display: none !important;
     }
 
     /* Simplify colors for print */
@@ -484,6 +752,8 @@ body {
     .header,
     .footer {
         border: none;
+        background: none;
+        box-shadow: none;
     }
 
     /* Expand content width */
@@ -506,7 +776,7 @@ body {
     }
 
     .project-item img {
-        filter: none;
+        filter: none !important;
     }
 
     /* Avoid breaking cards across pages */
@@ -514,3 +784,38 @@ body {
         break-inside: avoid;
     }
 }
+
+/* ============================================
+   PERFORMANCE: REDUCED MOTION
+   Respect user preferences for motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   Accessibility for high contrast users
+   ============================================ */
+@media (prefers-contrast: high) {
+    .project-item {
+        border: 2px solid var(--text-dark);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+        outline-width: 3px;
+    }
+}
+
+/* ============================================
+   END OF STYLESHEET
+   ============================================ */
