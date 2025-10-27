@@ -150,6 +150,7 @@ ul {
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
+
 }
 
 /* ================================================
@@ -163,6 +164,8 @@ ul {
     top: 0;
     z-index: 100;
     padding: var(--spacing-md) 0;
+    text-align: center;
+
 }
 
 /* Header Flex Layout */
@@ -182,6 +185,7 @@ ul {
     letter-spacing: -0.5px;
     cursor: pointer;
     transition: color var(--transition-medium);
+
 }
 
 .header-left .logo:hover {
@@ -655,6 +659,11 @@ ul {
 @media (max-width: 900px) {
 
     /* Adjust spacing for tablets */
+    .header-flex {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
     :root {
         --spacing-xxl: 3rem;
         --spacing-xl: 2rem;
@@ -725,7 +734,7 @@ ul {
     /* Header mobile layout */
     .header-flex {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: var(--spacing-md);
     }
 
