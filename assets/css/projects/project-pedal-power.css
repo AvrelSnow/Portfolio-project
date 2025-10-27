@@ -1,37 +1,362 @@
-/* ===== Base Styles ===== */
-body {
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: #fff;
-    color: #222;
+/* ================================================
+   PROJECT PEDAL POWER - CUSTOM STYLESHEET
+   File: project-pedal-power-optimized.css
+   Author: Donfack Fortune
+   Description: Optimized styles for Pedal Power project page
+   ================================================ */
+
+/* ================================================
+   CSS RESET & BOX MODEL
+   ================================================ */
+
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.7;
+    box-sizing: border-box;
 }
 
-/* ===== Project Section Layout ===== */
+/* ================================================
+   CSS CUSTOM PROPERTIES (Variables)
+   ================================================ */
+
+:root {
+    /* === Color Palette === */
+    --primary-color: #e74c3c;
+    --primary-dark: #a01410;
+    --primary-light: #ff6b5a;
+
+    --text-dark: #222;
+    --text-medium: #444;
+    --text-light: #666;
+    --text-muted: #999;
+
+    --background-white: #fff;
+    --background-light: #f8f9fa;
+    --background-gray: #e9ecef;
+
+    --border-color: #e0e0e0;
+    --border-light: #eee;
+
+    /* === Shadow Definitions === */
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.12);
+    --shadow-heavy: rgba(0, 0, 0, 0.16);
+
+    /* === Typography === */
+    --font-primary: 'Montserrat', Arial, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-large: 1.08rem;
+    --font-size-h4: 1.2rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h2: 1.7rem;
+    --font-size-h1: 2rem;
+    --line-height-base: 1.7;
+    --line-height-heading: 1.3;
+
+    /* === Spacing System === */
+    --spacing-xs: 0.5rem;
+    /* 8px */
+    --spacing-sm: 1rem;
+    /* 16px */
+    --spacing-md: 1.5rem;
+    /* 24px */
+    --spacing-lg: 2rem;
+    /* 32px */
+    --spacing-xl: 3rem;
+    /* 48px */
+    --spacing-xxl: 4rem;
+    /* 64px */
+
+    /* === Border Radius === */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+    --radius-xl: 12px;
+    --radius-round: 50%;
+
+    /* === Transitions === */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* === Layout Widths === */
+    --container-max-width: 1200px;
+    --content-max-width: 800px;
+}
+
+/* ================================================
+   BASE STYLES
+   ================================================ */
+
+body {
+    font-family: var(--font-primary);
+    background: var(--background-white);
+    color: var(--text-dark);
+    line-height: var(--line-height-base);
+    font-size: var(--font-size-base);
+    overflow-x: hidden;
+}
+
+/* Typography Base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: var(--line-height-heading);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Link Base Styles */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-medium);
+}
+
+/* External Links */
+.external-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.external-link:hover {
+    color: var(--primary-dark);
+}
+
+/* List Styles */
+ul {
+    list-style-position: outside;
+}
+
+/* ================================================
+   LAYOUT CONTAINER
+   ================================================ */
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ================================================
+   HEADER & NAVIGATION
+   ================================================ */
+
+.header {
+    background: var(--background-white);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--spacing-md) 0;
+}
+
+/* Header Flex Layout */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+/* Logo Styles */
+.header-left .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    cursor: pointer;
+    transition: color var(--transition-medium);
+}
+
+.header-left .logo:hover {
+    color: var(--primary-color);
+}
+
+/* Navigation Menu */
+.header-center .nav-list {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+    margin: 0;
+}
+
+.header-center .nav-list li {
+    margin: 0;
+}
+
+.header-center .nav-list a {
+    font-weight: 500;
+    color: var(--text-medium);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-medium);
+    display: block;
+}
+
+.header-center .nav-list a:hover,
+.header-center .nav-list a:focus {
+    color: var(--primary-color);
+    background: rgba(231, 76, 60, 0.08);
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-round);
+    background: var(--background-light);
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    transition: all var(--transition-medium);
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+/* Custom GrabCAD SVG Icon */
+.fab.fa-grabcad svg {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* ================================================
+   MAIN CONTENT AREA
+   ================================================ */
+
+.main-content {
+    padding: var(--spacing-xxl) 0;
+    min-height: calc(100vh - 200px);
+}
+
+/* ================================================
+   PAGE TITLE
+   ================================================ */
+
+.page-title {
+    text-align: center;
+    font-size: var(--font-size-h2);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+    letter-spacing: -0.5px;
+    color: var(--text-dark);
+}
+
+/* ================================================
+   PROJECT SECTIONS
+   ================================================ */
+
 .project-section {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 48px;
-    margin: 64px 0;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xxl) 0;
 }
 
+/* Reverse Layout (Image on Left) */
 .project-section.reverse {
     flex-direction: row-reverse;
 }
 
-/* ===== Project Section Image 1 ===== */
-.project-section-img1 {
-    flex: 1 1 225px;
+/* Section Content (Text Container) */
+.project-section-content {
+    flex: 2 1 340px;
     min-width: 280px;
-    max-width: 480px;
-    margin: 32px auto 24px auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== Project Section Image Main ===== */
+.project-section-content h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.project-section-content h4 {
+    font-size: var(--font-size-h4);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.project-section-content p {
+    font-size: var(--font-size-large);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Feature List Styles */
+.feature-list {
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-list li {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+}
+
+.refinement-list {
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.refinement-list li {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+}
+
+/* Strong Emphasis */
+.project-section-content strong {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Note Style */
+.note {
+    padding: var(--spacing-md);
+    background: var(--background-light);
+    border-left: 4px solid var(--primary-color);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-md);
+}
+
+/* ================================================
+   PROJECT IMAGES
+   ================================================ */
+
+/* Side Image Container */
 .project-section-img {
     flex: 1 1 340px;
     min-width: 280px;
@@ -39,155 +364,220 @@ body {
     padding-top: 75px;
 }
 
-/* ===== Project Section Image Main IMG ===== */
 .project-section-img img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 16px var(--shadow-light);
+    transition: transform var(--transition-medium);
 }
 
-/* ===== Project Section Image 2 ===== */
-.project-section-img2 {
+.project-section-img img:hover {
+    transform: scale(1.02);
+}
+
+/* Full-Width Images Section */
+.full-width-images {
+    margin: var(--spacing-xl) 0;
+}
+
+.image-container {
+    margin: var(--spacing-xl) 0;
+}
+
+.full-width-img {
     width: 100%;
-    display: block;
-    margin: 32px auto 24px auto;
-    padding-top: 75px;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 16px var(--shadow-light);
+    margin-bottom: var(--spacing-sm);
 }
 
-/* ===== Project Section Image 3 ===== */
-.project-section-img3 {
-    display: block;
-    width: 100%;
-    margin: 32px auto 24px auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-}
-
-/* ===== Project Section Content ===== */
-.project-section-content {
-    flex: 2 1 340px;
-    min-width: 280px;
-}
-
-/* Title inside project content */
-.ppmpc-title {
+.image-container figcaption {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    font-size: 1.7rem;
-    /* corrected from 17rem -> 1.7rem */
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    margin-top: var(--spacing-sm);
+    font-style: italic;
+}
+
+/* ================================================
+   CONTRIBUTIONS & COLLABORATORS SECTION
+   ================================================ */
+
+.contrib-collab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Section Labels */
+.section-label {
+    font-size: 0.9rem;
     font-weight: 700;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.5px;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
 }
 
-.project-section-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 18px;
+/* Info Lists */
+.info-list {
+    list-style: none;
+    padding: 0;
 }
 
-/* Paragraphs and lists */
-.project-section-content p,
-.project-section-content ul {
-    font-size: 1.08rem;
-    color: #222;
-    margin-bottom: 12px;
+.info-list li {
+    padding: var(--spacing-xs) 0;
+    font-size: var(--font-size-large);
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-light);
 }
 
-.project-section-content ul {
-    padding-left: 20px;
+.info-list li:last-child {
+    border-bottom: none;
 }
 
-/* ===== Back to Projects Button ===== */
-.to-teaching-btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: #e74c3c;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 2rem 0;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    /* Ensure visibility if overlapping */
-    position: relative;
-    z-index: 2;
-}
+/* ================================================
+   DOWNLOAD BUTTONS
+   ================================================ */
 
-/* Hover */
-.to-teaching-btn:hover {
-    background: #a01410;
-    transform: translateY(-2px);
-}
-
-/* ===== Download Button Styles ===== */
-.ppmpc-btn {
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-}
-
-/* ===== GrabCAD Icon Styles ===== */
-.fab.fa-grabcad {
-    display: inline-block;
-    vertical-align: middle;
-    width: 1.2em;
-    height: 1.2em;
-}
-
-/* Test validation images */
-.test-validation-images {
+.download-buttons {
     display: flex;
-    gap: 32px;
-    justify-content: center;
-    margin-top: 32px;
     flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
 }
 
-.test-validation-img-section {
+/* Button Base Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-medium);
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-size: var(--font-size-base);
+}
+
+/* Download Button Style */
+.btn-download {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-download:hover,
+.btn-download:focus {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+/* Back Button Style */
+.btn-back {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    margin: var(--spacing-lg) 0;
+}
+
+.btn-back:hover,
+.btn-back:focus {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+/* Button Icons */
+.btn i {
+    font-size: 1rem;
+}
+
+/* ================================================
+   SECTION DIVIDER
+   ================================================ */
+
+.section-divider {
+    border: none;
+    border-top: 2px solid var(--border-light);
+    margin: var(--spacing-xl) 0;
+}
+
+/* ================================================
+   TEST & VALIDATION SECTION
+   ================================================ */
+
+/* Validation Images Grid (3 columns) */
+.validation-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+}
+
+.validation-item {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.test-validation-img {
-    max-width: 340px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.validation-img {
     width: 100%;
-    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: transform var(--transition-medium);
 }
 
-.test-validation-caption {
-    margin-top: 12px;
-    font-size: 1.08rem;
-    color: #444;
+.validation-img:hover {
+    transform: scale(1.02);
+}
+
+.validation-item figcaption {
+    margin-top: var(--spacing-md);
+    font-size: var(--font-size-large);
+    color: var(--text-medium);
     text-align: center;
 }
 
-.test-validation-analysis-row {
+/* ================================================
+   ANALYSIS ROW SECTION
+   ================================================ */
+
+.analysis-row {
     display: flex;
-    gap: 36px;
+    gap: var(--spacing-xl);
     align-items: flex-start;
-    justify-content: center;
-    margin-top: 36px;
+    justify-content: space-between;
+    margin-top: var(--spacing-xl);
     flex-wrap: wrap;
 }
 
-.test-validation-analysis-text {
+/* Analysis Text Container */
+.analysis-text {
     flex: 2 1 340px;
     min-width: 260px;
     max-width: 600px;
 }
 
-.test-validation-analysis-img {
+.analysis-text h4 {
+    font-size: var(--font-size-h4);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+}
+
+.analysis-text p {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Analysis Image Container */
+.analysis-img {
     flex: 1 1 280px;
     min-width: 220px;
     max-width: 380px;
@@ -196,36 +586,358 @@ body {
     align-items: center;
 }
 
-/* ===== Responsive Styles ===== */
+.analysis-img figcaption {
+    margin-top: var(--spacing-md);
+    font-size: var(--font-size-large);
+    color: var(--text-medium);
+    text-align: center;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+
+.footer {
+    background: var(--background-light);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xxl);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ================================================
+   BACK TO TOP BUTTON
+   ================================================ */
+
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: var(--radius-round);
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    transition: all var(--transition-medium);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+#backToTopBtn:hover,
+#backToTopBtn:focus {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px var(--shadow-medium);
+}
+
+#backToTopBtn i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================================================
+   RESPONSIVE DESIGN - TABLETS
+   ================================================ */
+
 @media (max-width: 900px) {
 
+    /* Adjust spacing for tablets */
+    :root {
+        --spacing-xxl: 3rem;
+        --spacing-xl: 2rem;
+    }
+
+    /* Stack project sections vertically */
     .project-section,
     .project-section.reverse {
         flex-direction: column;
-        gap: 24px;
+        gap: var(--spacing-lg);
     }
 
-    .project-section-img,
+    /* Remove side padding on images */
+    .project-section-img {
+        padding-top: 0;
+        max-width: 100%;
+    }
+
     .project-section-content {
-        min-width: 0;
         max-width: 100%;
     }
 
-    .test-validation-images {
-        gap: 18px;
+    /* Adjust validation images grid */
+    .validation-images-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-md);
     }
 
-    .test-validation-img {
-        max-width: 100%;
-    }
-
-    .test-validation-analysis-row {
+    /* Stack analysis row vertically */
+    .analysis-row {
         flex-direction: column;
-        gap: 18px;
-        align-items: stretch;
+        gap: var(--spacing-md);
     }
 
-    .test-validation-analysis-img {
+    .analysis-img {
         max-width: 100%;
+    }
+
+    /* Adjust contributions grid */
+    .contrib-collab-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 }
+
+/* ================================================
+   RESPONSIVE DESIGN - MOBILE
+   ================================================ */
+
+@media (max-width: 600px) {
+
+    /* Adjust typography for mobile */
+    :root {
+        --font-size-h2: 1.5rem;
+        --font-size-h3: 1.3rem;
+        --font-size-h4: 1.1rem;
+        --font-size-large: 1rem;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.5rem;
+        --spacing-xxl: 2rem;
+    }
+
+    /* Container padding for mobile */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Header mobile layout */
+    .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .header-center {
+        width: 100%;
+    }
+
+    /* Vertical navigation on mobile */
+    .header-center .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        width: 100%;
+    }
+
+    .header-center .nav-list a {
+        display: block;
+        width: 100%;
+    }
+
+    /* Stack download buttons vertically */
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .btn-download {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Full-width validation images */
+    .validation-images-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust back to top button */
+    #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        padding: 12px;
+        font-size: 1.2rem;
+    }
+
+    /* Reduce spacing in lists */
+    .feature-list,
+    .refinement-list {
+        padding-left: var(--spacing-md);
+    }
+
+    /* Full width back button */
+    .btn-back {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ================================================
+   RESPONSIVE DESIGN - EXTRA SMALL MOBILE
+   ================================================ */
+
+@media (max-width: 400px) {
+    :root {
+        --font-size-h2: 1.3rem;
+        --font-size-h3: 1.2rem;
+        --spacing-md: 1rem;
+    }
+
+    .header-left .logo {
+        font-size: 1.2rem;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+/* ================================================
+   PRINT STYLES
+   ================================================ */
+
+@media print {
+
+    /* Hide non-essential elements when printing */
+    .header,
+    .footer,
+    #backToTopBtn,
+    .download-buttons,
+    .btn-back {
+        display: none;
+    }
+
+    /* Optimize for print */
+    body {
+        background: white;
+        color: black;
+    }
+
+    .project-section {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+}
+
+/* ================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================================ */
+
+/* Focus Styles for Keyboard Navigation */
+a:focus,
+button:focus,
+.btn:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Improve text readability */
+::selection {
+    background: var(--primary-light);
+    color: white;
+}
+
+/* Reduced Motion for Users with Preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ================================================
+   UTILITY CLASSES
+   ================================================ */
+
+/* Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Margin Utilities */
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-sm {
+    margin-top: var(--spacing-sm);
+}
+
+.mt-md {
+    margin-top: var(--spacing-md);
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xl);
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-sm {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mb-xl {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Display Utilities */
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/* ================================================
+   END OF STYLESHEET
+   ================================================ */
