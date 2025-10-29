@@ -300,10 +300,14 @@ ul {
 
 .project-section-content h3 {
     font-size: var(--font-size-h3);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    gap: var(--spacing-lg);
     color: var(--text-dark);
     font-weight: 600;
+
 }
+
+
 
 .project-section-content h4 {
     font-size: var(--font-size-h4);
@@ -734,6 +738,7 @@ ul {
         --spacing-xxl: 2rem;
     }
 
+
     /* Container padding for mobile */
     .container {
         padding: 0 var(--spacing-md);
@@ -814,6 +819,7 @@ ul {
     .header-left .logo {
         font-size: 1.2rem;
     }
+
 
     .social-icons a {
         width: 35px;
