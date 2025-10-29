@@ -1,221 +1,393 @@
-/* --- General Body Styles --- */
-body {
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: #fff;
-    color: #222;
-    line-height: 1.7;
+/* ================================================
+   PROJECT TRAIN BRAKING SYSTEM - CUSTOM STYLESHEET
+   File: project-train-braking-system.css
+   Author: Donfack Fortune
+   Description: Optimized styles for Train Braking System project page
+   ================================================ */
+
+/* ================================================
+   CSS RESET & BOX MODEL
+   ================================================ */
+
+* {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    box-sizing: border-box;
 }
+
+/* ================================================
+   CSS CUSTOM PROPERTIES (Variables)
+   ================================================ */
+
+:root {
+    /* === Color Palette === */
+    --primary-color: #e74c3c;
+    --primary-dark: #a01410;
+    --primary-light: #ff6b5a;
+
+    --text-dark: #222;
+    --text-medium: #444;
+    --text-light: #666;
+    --text-muted: #999;
+
+    --background-white: #fff;
+    --background-light: #f8f9fa;
+    --background-gray: #e9ecef;
+
+    --border-color: #e0e0e0;
+    --border-light: #eee;
+
+    /* === Shadow Definitions === */
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.12);
+    --shadow-heavy: rgba(0, 0, 0, 0.16);
+
+    /* === Typography === */
+    --font-primary: 'Montserrat', Arial, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-large: 1.08rem;
+    --font-size-h4: 1.2rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h2: 1.7rem;
+    --font-size-h1: 2rem;
+    --line-height-base: 1.7;
+    --line-height-heading: 1.3;
+
+    /* === Spacing System === */
+    --spacing-xs: 0.5rem;
+    /* 8px */
+    --spacing-sm: 1rem;
+    /* 16px */
+    --spacing-md: 1.5rem;
+    /* 24px */
+    --spacing-lg: 2rem;
+    /* 32px */
+    --spacing-xl: 3rem;
+    /* 48px */
+    --spacing-xxl: 4rem;
+    /* 64px */
+
+    /* === Border Radius === */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+    --radius-xl: 12px;
+    --radius-round: 50%;
+
+    /* === Transitions === */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* === Layout Widths === */
+    --container-max-width: 1200px;
+    --content-max-width: 800px;
+}
+
+/* ================================================
+   BASE STYLES
+   ================================================ */
+
+body {
+    font-family: var(--font-primary);
+    background: var(--background-white);
+    color: var(--text-dark);
+    line-height: var(--line-height-base);
+    font-size: var(--font-size-base);
+    overflow-x: hidden;
+}
+
+/* Typography Base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: var(--line-height-heading);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Link Base Styles */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-medium);
+}
+
+/* List Styles */
+ul {
+    list-style-position: outside;
+}
+
+/* ================================================
+   LAYOUT CONTAINER
+   ================================================ */
 
 .container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 var(--spacing-lg);
 }
 
-/* --- Header Styles --- */
+/* ================================================
+   HEADER & NAVIGATION
+   ================================================ */
+
 .header {
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
+    background: var(--background-white);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
+    padding: var(--spacing-md) 0;
+    text-align: center;
 }
 
+/* Header Flex Layout */
 .header-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
 }
 
-.logo {
-    font-size: 1.5rem;
+/* Logo Styles */
+.header-left .logo {
+    font-size: 1.4rem;
     font-weight: 700;
-    color: #000000;
-    margin: 0;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    cursor: pointer;
+    transition: color var(--transition-medium);
 }
 
-.nav-list {
+.header-left .logo:hover {
+    color: var(--primary-color);
+}
+
+/* Navigation Menu */
+.header-center .nav-list {
     display: flex;
     list-style: none;
+    gap: var(--spacing-lg);
     margin: 0;
-    padding: 0;
 }
 
-.nav-list li {
-    margin: 0 1rem;
+.header-center .nav-list li {
+    margin: 0;
 }
 
-.nav-list a {
-    text-decoration: none;
-    color: #000000;
+.header-center .nav-list a {
     font-weight: 500;
-    transition: color 0.3s ease;
+    color: var(--text-medium);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-medium);
+    display: block;
 }
 
-.nav-list a:hover {
-    color: #e74c3c;
+.header-center .nav-list a:hover,
+.header-center .nav-list a:focus {
+    color: var(--primary-color);
+    background: rgba(231, 76, 60, 0.08);
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
 }
 
 .social-icons a {
-    color: #000000;
-    margin-left: 1rem;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-round);
+    background: var(--background-light);
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    transition: all var(--transition-medium);
 }
 
-.social-icons a:hover {
-    color: #e74c3c;
+.social-icons a:hover,
+.social-icons a:focus {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
 }
 
-/* --- Main Content Styles --- */
+/* Custom GrabCAD SVG Icon */
+.fab.fa-grabcad svg {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* ================================================
+   MAIN CONTENT AREA
+   ================================================ */
+
 .main-content {
-    margin-top: 120px;
-    padding: 4rem 0;
+    padding: var(--spacing-xxl) 0;
+    min-height: calc(100vh - 200px);
 }
 
-.project-title {
-    font-size: 2.5rem;
-    color: #000000;
+/* ================================================
+   PAGE TITLE & PROJECT YEAR
+   ================================================ */
+
+.page-title {
     text-align: center;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: var(--font-size-h2);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.5px;
+    color: var(--text-dark);
 }
 
 .project-year {
-    color: #7f8c8d;
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-lg);
 }
 
-.project-divider {
-    border: 0;
-    height: 1px;
-    background: #e0e0e0;
-    margin: 2rem auto;
+/* ================================================
+   SECTION DIVIDER
+   ================================================ */
+
+.section-divider {
+    border: none;
+    border-top: 2px solid var(--border-light);
+    margin: var(--spacing-xl) auto;
     width: 80%;
     max-width: 800px;
 }
 
-/* Project Section Cards */
-.project-section-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 3rem 0;
+/* ================================================
+   PROJECT SECTIONS
+   ================================================ */
+
+.project-section {
+    margin: var(--spacing-xxl) 0;
 }
 
-.project-section-card {
-    flex: 1;
-    min-width: 280px;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-section-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.project-section-card h3 {
-    color: #e74c3c;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    font-size: 1.4rem;
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.project-section-card h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 3px;
-    background: #e74c3c;
-}
-
-.project-section-card p {
-    color: #000000;
-    line-height: 1.8;
-    margin-bottom: 1.2rem;
-}
-
-/* Main Project Image */
-.project-main-image {
-    margin: 3rem 0;
-    text-align: center;
-}
-
-.main-image-container {
-    max-width: 100%;
-    width: 100%;
-    height: 0;
-    padding-bottom: 70.7%;
-    /* 210/297 = ~0.707 (A4 aspect ratio) */
-    position: relative;
-    overflow: hidden;
+/* Section Content (Text Container) */
+.project-section-content {
+    max-width: var(--content-max-width);
     margin: 0 auto;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.main-img {
-    position: absolute;
-    top: 0;
-    left: 0;
+.project-section-content h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.project-section-content h4 {
+    font-size: var(--font-size-h4);
+    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.project-section-content p {
+    font-size: var(--font-size-large);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Strong Emphasis */
+.project-section-content strong {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Note Style */
+.note {
+    padding: var(--spacing-md);
+    background: var(--background-light);
+    border-left: 4px solid var(--primary-color);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-md);
+}
+
+/* ================================================
+   FULL-WIDTH IMAGES SECTION
+   ================================================ */
+
+.full-width-images {
+    margin: var(--spacing-xxl) 0;
+}
+
+.image-container {
+    margin: var(--spacing-xl) 0;
+}
+
+.full-width-img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.5s ease;
-    padding: 1rem;
-    box-sizing: border-box;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 16px var(--shadow-light);
+    margin-bottom: var(--spacing-sm);
+    transition: transform var(--transition-medium);
 }
 
-.main-image-container:hover .main-img {
-    transform: scale(1.02);
+.full-width-img:hover {
+    transform: scale(1.01);
 }
 
-.main-image-caption {
-    font-style: italic;
-    color: #49494971;
+.image-container figcaption {
     text-align: center;
-    margin-top: 1rem;
+    color: var(--text-medium);
     font-size: 0.95rem;
+    margin-top: var(--spacing-sm);
+    font-style: italic;
 }
 
-/* Project Gallery */
+/* ================================================
+   PROJECT GALLERY
+   ================================================ */
+
 .project-gallery {
+    margin: var(--spacing-xxl) 0;
+}
+
+.gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(585px, 585px));
-    gap: 1.5rem;
-    margin: 10rem 0.2;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: var(--spacing-xl);
 }
 
 .gallery-item {
-    background: #ffffff;
-    border-radius: 8px;
+    background: var(--background-white);
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
 }
 
 .gallery-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 24px var(--shadow-medium);
 }
 
 .gallery-img {
@@ -225,12 +397,12 @@ body {
     display: block;
 }
 
-.gallery-caption {
-    padding: 1.5rem;
-    font-size: 1rem;
-    color: #080808;
+.gallery-item figcaption {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-large);
+    color: var(--text-dark);
     text-align: center;
-    background: #fff;
+    background: var(--background-white);
     min-height: 100px;
     display: flex;
     align-items: center;
@@ -238,43 +410,68 @@ body {
     line-height: 1.6;
 }
 
-/* Back to Projects Button */
-.to-teaching-btn {
-    display: inline-block;
+/* ================================================
+   BUTTONS
+   ================================================ */
+
+/* Button Base Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
     padding: 0.8rem 1.5rem;
-    background-color: #e74c3c;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
     font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 2rem 0;
-    border: none;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-medium);
+    text-align: center;
     cursor: pointer;
-    text-align: center;
+    border: 2px solid transparent;
+    font-size: var(--font-size-base);
 }
 
-.to-teaching-btn:hover {
-    background-color: #000000;
-    transform: translateY(-2px);
+/* Back Button Style */
+.btn-back {
+    background: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
+    margin: var(--spacing-xl) 0;
 }
 
-/* Footer */
+.btn-back:hover,
+.btn-back:focus {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+/* Button Icons */
+.btn i {
+    font-size: 1rem;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+
 .footer {
-    background-color: #ffffff;
-    color: #7c7f80;
-    padding: 2rem 0;
+    background: var(--background-light);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xxl);
     text-align: center;
-    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
     margin: 0;
-    font-size: 1.1rem;
 }
 
-/* Back to Top Button */
+/* ================================================
+   BACK TO TOP BUTTON
+   ================================================ */
+
 #backToTopBtn {
     display: none;
     position: fixed;
@@ -283,85 +480,305 @@ body {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #e74c3c;
-    color: rgb(255, 255, 255);
+    background-color: #e02b20;
+    color: white;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
+    padding: 10px;
     border-radius: 50%;
     font-size: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    transition: all var(--transition-medium);
+    box-shadow: 0 4px 12px rgba(224, 43, 32, 0.3);
+    align-items: center;
+    justify-content: center;
 }
 
-#backToTopBtn:hover {
-    background-color: #c0392b;
+#backToTopBtn:hover,
+#backToTopBtn:focus {
+    background-color: #b81d16;
     transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(224, 43, 32, 0.4);
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .project-section-row {
-        flex-direction: column;
-    }
-
-    .project-gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
+#backToTopBtn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
-@media (max-width: 768px) {
+/* ================================================
+   RESPONSIVE DESIGN - TABLETS
+   ================================================ */
+
+@media (max-width: 900px) {
+
+    /* Adjust spacing for tablets */
     .header-flex {
         flex-direction: column;
-        padding: 1rem;
+        gap: var(--spacing-lg);
+    }
+
+    :root {
+        --spacing-xxl: 3rem;
+        --spacing-xl: 2rem;
+    }
+
+    /* Adjust gallery grid */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: var(--spacing-lg);
+    }
+
+    /* Adjust section divider */
+    .section-divider {
+        width: 90%;
+    }
+}
+
+/* ================================================
+   RESPONSIVE DESIGN - MOBILE
+   ================================================ */
+
+@media (max-width: 600px) {
+
+    /* Adjust typography for mobile */
+    :root {
+        --font-size-h2: 1.5rem;
+        --font-size-h3: 1.3rem;
+        --font-size-h4: 1.1rem;
+        --font-size-large: 1rem;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.5rem;
+        --spacing-xxl: 2rem;
+    }
+
+    /* Container padding for mobile */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Header mobile layout */
+    .header-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
     }
 
     .header-center {
-        margin: 1rem 0;
+        width: 100%;
     }
 
-    .nav-list {
-        flex-wrap: wrap;
+    /* Vertical navigation on mobile */
+    .header-center .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        width: 100%;
+    }
+
+    .header-center .nav-list a {
+        display: block;
+        width: 100%;
+    }
+
+    /* Adjust gallery for mobile */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .gallery-img {
+        height: 250px;
+    }
+
+    /* Adjust back to top button */
+    #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        padding: 12px;
+        font-size: 1.2rem;
+    }
+
+    /* Full width back button */
+    .btn-back {
+        width: 100%;
         justify-content: center;
     }
 
-    .nav-list li {
-        margin: 0.5rem;
-    }
-
-    .main-content {
-        margin-top: 180px;
-        padding: 1rem;
-    }
-
-    .project-title {
-        font-size: 2rem;
-    }
-
-    .project-gallery {
-        grid-template-columns: 1fr;
+    /* Adjust section divider */
+    .section-divider {
+        width: 100%;
     }
 }
 
-/* Print Styles */
+/* ================================================
+   RESPONSIVE DESIGN - EXTRA SMALL MOBILE
+   ================================================ */
+
+@media (max-width: 400px) {
+    :root {
+        --font-size-h2: 1.3rem;
+        --font-size-h3: 1.2rem;
+        --spacing-md: 1rem;
+    }
+
+    .header-left .logo {
+        font-size: 1.2rem;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .gallery-img {
+        height: 200px;
+    }
+}
+
+/* ================================================
+   PRINT STYLES
+   ================================================ */
+
 @media print {
 
+    /* Hide non-essential elements when printing */
     .header,
     .footer,
-    #backToTopBtn {
+    #backToTopBtn,
+    .btn-back {
         display: none;
     }
 
-    .main-content {
-        margin-top: 0;
-        padding: 0;
+    /* Optimize for print */
+    body {
+        background: white;
+        color: black;
     }
 
-    .project-section-card {
+    .project-section {
         page-break-inside: avoid;
     }
 
-    .project-gallery {
-        page-break-before: always;
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+
+    .gallery-grid {
+        display: block;
+    }
+
+    .gallery-item {
+        page-break-inside: avoid;
+        margin-bottom: var(--spacing-lg);
     }
 }
+
+/* ================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================================ */
+
+/* Focus Styles for Keyboard Navigation */
+a:focus,
+button:focus,
+.btn:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Improve text readability */
+::selection {
+    background: var(--primary-light);
+    color: white;
+}
+
+/* Reduced Motion for Users with Preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ================================================
+   UTILITY CLASSES
+   ================================================ */
+
+/* Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Margin Utilities */
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-sm {
+    margin-top: var(--spacing-sm);
+}
+
+.mt-md {
+    margin-top: var(--spacing-md);
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xl);
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-sm {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mb-xl {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Display Utilities */
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/* ================================================
+   END OF STYLESHEET
+   ================================================ */
