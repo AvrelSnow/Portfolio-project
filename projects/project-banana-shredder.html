@@ -192,7 +192,7 @@
                     <figure class="centered-figure">
                         <img src="/images/Diagramme FAST TOWE.jpg"
                             alt="Diagramme FAST montrant l'analyse fonctionnelle du système de broyage"
-                            class="responsive-img" loading="lazy" />
+                            class="responsive-img" />
                         <figcaption class="img-caption">Diagramme FAST du système de broyage</figcaption>
                     </figure>
 
@@ -247,13 +247,12 @@
 
                     <figure class="centered-figure">
                         <img src="/images/schema cinematique TOWE.jpg"
-                            alt="Schéma cinématique détaillé du broyeur mono-disque" class="responsive-img"
-                            loading="lazy" />
+                            alt="Schéma cinématique détaillé du broyeur mono-disque" class="responsive-img" />
                         <figcaption class="img-caption">Schéma cinématique du broyeur</figcaption>
                     </figure>
 
                     <h3 class="subsection-heading">Principe de broyage intégré</h3>
-                    <h4 class="subsection-subheading">Considérons d'abord l'essai de pendule pesant:</h4>
+                    <h4 clas-s="subsectionsubheading">Considérons d'abord l'essai de pendule pesant:</h4>
                     <p>
                         Un banc d'essai basé sur un pendule pesant a été conçu pour quantifier la force de cisaillement
                         nécessaire au tranchage du pseudo-tronc de bananier à une profondeur donnée. La figure présente
@@ -271,7 +270,7 @@
                     <figure class="centered-figure">
                         <img src="/images/l'essai de la pendule pesant TOWE.jpg"
                             alt="Dispositif expérimental du pendule pesant pour mesurer la force de cisaillement"
-                            class="responsive-img" loading="lazy" />
+                            class="responsive-img" />
                         <figcaption class="img-caption">Dispositif d'essai de pendule pesant</figcaption>
                     </figure>
 
@@ -298,8 +297,8 @@
 
                     <figure class="centered-figure">
                         <img src="/images/Resultat essai TOWE.jpg"
-                            alt="Tableau des résultats expérimentaux de l'essai de cisaillement" class="responsive-img"
-                            loading="lazy" />
+                            alt="Tableau des résultats expérimentaux de l'essai de cisaillement"
+                            class="responsive-img" />
                         <figcaption class="img-caption">Résultats de l'essai de cisaillement</figcaption>
                     </figure>
 
@@ -313,7 +312,7 @@
                     <figure class="centered-figure">
                         <img src="/images/Principe de broyage TOWE.jpg"
                             alt="Schéma du principe de broyage par cisaillement et force centrifuge"
-                            class="responsive-img" loading="lazy" />
+                            class="responsive-img" />
                         <figcaption class="img-caption">Principe de broyage par cisaillement et force centrifuge
                         </figcaption>
                     </figure>
@@ -376,8 +375,8 @@
 
                     <article class="gallery-item">
                         <img src="/images/Machine TOWE 1.jpg"
-                            alt="Machine de broyage dans le laboratoire avant peinture et finition" class="gallery-img"
-                            loading="lazy" />
+                            alt="Machine de broyage dans le laboratoire avant peinture et finition"
+                            class="gallery-img" />
                         <p class="gallery-caption">
                             Image of the banana shredder in the High Technical Teacher Training College Lab
                             before the painting and the finishing.
@@ -386,7 +385,7 @@
 
                     <article class="gallery-item">
                         <img src="/images/Machine TOWE 2.jpg" alt="Vue latérale de la machine de broyage assemblée"
-                            class="gallery-img" loading="lazy" />
+                            class="gallery-img" />
                         <p class="gallery-caption">
                             Image of the banana shredder in the High Technical Teacher Training College Lab
                             before the painting and the finishing.
@@ -395,7 +394,7 @@
 
                     <article class="gallery-item">
                         <img src="/images/Machine TOWE 3.jpg" alt="Système de transmission par courroie de la machine"
-                            class="gallery-img" loading="lazy" />
+                            class="gallery-img" />
                         <p class="gallery-caption">
                             Image of the banana shredder in the High Technical Teacher Training College Lab
                             before the painting and the finishing.
@@ -404,7 +403,7 @@
 
                     <article class="gallery-item">
                         <img src="/images/Machine TOWE 4.jpg" alt="Vue d'ensemble du prototype final de la machine"
-                            class="gallery-img" loading="lazy" />
+                            class="gallery-img" />
                         <p class="gallery-caption">
                             Image of the banana shredder in the High Technical Teacher Training College Lab
                             before the painting and the finishing.
@@ -464,24 +463,7 @@
             });
         })();
 
-        // Lazy loading fallback for older browsers
-        if ('loading' in HTMLImageElement.prototype) {
-            // Native lazy loading supported
-        } else {
-            // Fallback for older browsers
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.src;
-                        img.removeAttribute('loading');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-            images.forEach(img => imageObserver.observe(img));
-        }
+
     </script>
 </body>
 

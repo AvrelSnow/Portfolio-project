@@ -2,404 +2,418 @@
 <html lang="en">
 
 <head>
-    <!-- ================================================
-         META TAGS & SEO
-         ================================================ -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Pedal Power Mobile Phone Charger - A sustainable energy solution designed by Donfack Fortune">
-    <meta name="keywords" content="mechanical engineering, sustainable energy, product design, CAD, SolidWorks">
-    <meta name="author" content="Donfack Fortune">
+        content="Pedal Power Mobile Phone Charger - A sustainable human-powered energy solution designed by Donfack Fortune for communities with unreliable electricity access." />
+    <meta name="keywords"
+        content="pedal power, sustainable energy, human power, mobile charger, mechanical engineering, SolidWorks, FEA analysis, renewable energy" />
+    <meta name="author" content="Donfack Fortune" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pedal Power Mobile Phone Charger | Donfack Fortune" />
+    <meta property="og:description"
+        content="Innovative human-powered mobile phone charging solution for energy-scarce communities" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="../assets/images/real one ppmpc.273.png" />
 
     <title>Pedal Power Mobile Phone Charger | Donfack Fortune</title>
-    <!-- ==========================
-       HEADER SCROLL BEHAVIOUR
-       =========================== -->
-    <script src="../assets/js/header-project-scroll.js" defer></script>
 
-    <!-- ================================================
-         EXTERNAL STYLESHEETS & FONTS
-         ================================================ -->
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Font Loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet" />
+    </noscript>
 
-    <!-- Custom CSS - Link to your external stylesheet -->
-    <link rel="stylesheet" href="../assets/css/projects/project-pedal-power.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/projects/project-pedal-power.css" />
+
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </noscript>
 </head>
 
 <body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ================================================
-         HEADER & NAVIGATION
-         ================================================ -->
-    <header class="header">
-        <div class="container header-flex">
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-flex">
+                <!-- Logo -->
+                <div class="header-left">
+                    <h1 class="logo">
+                        <a href="../index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
+                    </h1>
+                </div>
 
-            <!-- Logo / Site Title -->
-            <div class="header-left">
-                <h1 class="logo">Donfack Fortune</h1>
+                <!-- Navigation -->
+                <nav class="header-center" aria-label="Main navigation" role="navigation">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link active" aria-current="page">Projects</a></li>
+                        <li><a href="../teaching.html" class="nav-link">Teaching</a></li>
+                        <li><a href="../about.html" class="nav-link">About</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Social Links -->
+                <div class="header-right" role="complementary" aria-label="Social media links">
+                    <div class="social-icons">
+                        <a href="https://grabcad.com/donfack.fortune-1"
+                            aria-label="Visit Donfack Fortune's GrabCAD profile" target="_blank"
+                            rel="noopener noreferrer" class="social-link">
+                            <span class="social-icon" aria-hidden="true">
+                                <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
+                                    <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
+                                        font-family="Arial">GC</text>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+                            aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank"
+                            rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <!-- Main Navigation Menu -->
-            <nav class="header-center" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="../index.html">Projects</a></li>
-                    <li><a href="../teaching.html">Teaching</a></li>
-                    <li><a href="../about.html">About</a></li>
-                </ul>
-            </nav>
-
-            <!-- Social Media Links -->
-            <div class="header-right social-icons">
-                <!-- GrabCAD Link -->
-                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD Profile" target="_blank"
-                    rel="noopener">
-                    <span class="fab fa-grabcad">
-                        <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-                            <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
-                                font-family="Arial, sans-serif">GC</text>
-                        </svg>
-                    </span>
-                </a>
-
-                <!-- LinkedIn Link -->
-                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
-                    aria-label="LinkedIn Profile" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-
         </div>
     </header>
 
-    <!-- ================================================
-         MAIN CONTENT AREA
-         ================================================ -->
-    <main class="main-content container">
+    <!-- Main Content -->
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
 
-        <!-- Project Page Title -->
+            <!-- Page Title -->
+            <h2 class="page-title">Pedal Power Mobile Phone Charger</h2>
 
-        <h2 class="page-title">Pedal Power Mobile Phone Charger</h2>
+            <!-- Quick Animation Section -->
+            <section class="project-section" id="animation" aria-labelledby="animation-heading">
+                <div class="section-content">
+                    <h3 id="animation-heading" class="section-heading">Quick Animation</h3>
+                    <p>
+                        <a href="https://www.linkedin.com/posts/donfack-fortune-476904231_solidworks-keyshot-adobe-activity-7118455344791445504-MQvG"
+                            target="_blank" rel="noopener noreferrer" class="external-link"
+                            aria-label="View animated demonstration on LinkedIn">
+                            Quick animation of the PPMPC machine with a clear description of its functioning
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </div>
+            </section>
 
-        <!-- ================================================
-             SECTION: QUICK ANIMATION
-             ================================================ -->
-        <section class="project-section" id="animation">
-            <div class="project-section-content">
+            <!-- Context Section -->
+            <section class="project-section" id="context" aria-labelledby="context-heading">
+                <div class="section-content">
+                    <h3 id="context-heading" class="section-heading">Context</h3>
+                    <p>
+                        The pedal power mobile phone charger (PPMPC) is a machine which uses human power to generate
+                        electricity to charge mobile phones. As the initiator of the project and leader of an
+                        interdisciplinary team comprising of 3 bachelor's students at the Higher Technical Teachers
+                        Training
+                        College (HTTTC), I played a pivotal role in conceptualizing and implementing the PPMPC project.
+                    </p>
+                    <p>
+                        This project was conceived in response to the acute energy scarcity faced by the local
+                        communities of Ange Raphael and the University of Douala as a whole. My primary objective in
+                        initiating this project was to provide an alternative to the unreliable national grid supply in
+                        the
+                        university, thereby ensuring that students have access to a reliable source of power for
+                        charging
+                        their devices and facilitating their research endeavours. This project was completed in 3 weeks,
+                        from February to March.
+                    </p>
 
-                <h3>Quick Animation</h3>
-                <p>
-                    <a href="https://www.linkedin.com/posts/donfack-fortune-476904231_solidworks-keyshot-adobe-activity-7118455344791445504-MQvG"
-                        target="_blank" rel="noopener" class="external-link">
-                        Quick animation of the PPMPC machine with a clear description of its functioning
-                    </a>
-                </p>
-            </div>
-        </section>
+                    <ul class="feature-list">
+                        <li>Implemented DFM (Design for Manufacturing) principles to reduce product assembly costs</li>
+                        <li>Used the <strong>Empathize-Define-Ideate-Prototype-Test</strong> strategies when working on
+                            this
+                            design</li>
+                        <li>The assembly was designed using SolidWorks; rendering and animation were done with KeyShot;
+                            Premiere Pro and Adobe After Effects were used to create the video</li>
+                    </ul>
+                </div>
+            </section>
 
-        <!-- ================================================
-             SECTION: PROJECT CONTEXT
-             ================================================ -->
-        <section class="project-section" id="context">
-            <div class="project-section-content">
-                <h3>Context</h3>
-                <p>
-                    The pedal power mobile phone charger (PPMPC) is a machine which uses human power to generate
-                    electricity to charge mobile phones. As the initiator of the project and leader of an
-                    interdisciplinary team comprising of 3 bachelor's students at the Higher Technical Teachers Training
-                    College (HTTTC), I played a pivotal role in conceptualizing and implementing the PPMPC project.
-                </p>
-                <p>
-                    This project was conceived in response to the acute energy scarcity faced by the local
-                    communities of Ange Raphael and the University of Douala as a whole. My primary objective in
-                    initiating this project was to provide an alternative to the unreliable national grid supply in the
-                    university, thereby ensuring that students have access to a reliable source of power for charging
-                    their devices and facilitating their research endeavours. This project was completed in 3 weeks,
-                    from February to March.
-                </p>
+            <!-- Contributions & Collaborators Section -->
+            <section class="project-section" id="contributions" aria-labelledby="contributions-heading">
+                <div class="section-content">
+                    <h3 id="contributions-heading" class="visually-hidden">Contributions and Collaborators</h3>
 
-                <!-- Key Project Features -->
-                <ul class="feature-list">
-                    <li>Implemented DFM (Design for Manufacturing) principles to reduce product assembly costs</li>
-                    <li>Used the <strong>Empathize-Define-Ideate-Prototype-Test</strong> strategies when working on this
-                        design</li>
-                    <li>The assembly was designed using SolidWorks; rendering and animation were done with KeyShot;
-                        Premiere Pro and Adobe After Effects were used to create the video</li>
-                </ul>
-            </div>
-        </section>
+                    <div class="contrib-collab-grid">
+                        <!-- Contributions Column -->
+                        <div class="contrib-column">
+                            <h4 class="section-label">Contributions</h4>
+                            <ul class="info-list">
+                                <li>Problem Definition</li>
+                                <li>Concept Development</li>
+                                <li>Detailed Design</li>
+                                <li>CAD Modeling</li>
+                                <li>Design Optimization</li>
+                            </ul>
+                        </div>
 
-        <!-- ================================================
-             SECTION: CONTRIBUTIONS & COLLABORATORS
-             ================================================ -->
-        <section class="project-section" id="contributions">
-            <div class="project-section-content">
-
-                <!-- Two-Column Layout for Contributions and Collaborators -->
-                <div class="contrib-collab-grid">
-
-                    <!-- Contributions Column -->
-                    <div class="contrib-column">
-                        <h4 class="section-label">Contributions</h4>
-                        <ul class="info-list">
-                            <li>Problem Definition</li>
-                            <li>Concept Development</li>
-                            <li>Detailed Design</li>
-                            <li>CAD</li>
-                            <li>Design Optimization</li>
-                        </ul>
+                        <!-- Collaborators Column -->
+                        <div class="collab-column">
+                            <h4 class="section-label">Collaborators</h4>
+                            <ul class="info-list">
+                                <li>Teboh Tina Kah</li>
+                                <li>Teboh Tina Kah</li>
+                                <li>Tchoffo Cyrille</li>
+                                <li>Nintendem Zebaze Frank Loic</li>
+                                <li>Tchoffo Cyrille</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <!-- Collaborators Column -->
-                    <div class="collab-column">
-                        <h4 class="section-label">Collaborators</h4>
-                        <ul class="info-list">
-                            <li>Teboh Tina Kah</li>
-                            <li>Teboh Tina Kah</li>
-                            <li>Tchoffo Cyrille</li>
-                            <li>Nintendem Zebaze Frank Loic</li>
-                            <li>Tchoffo Cyrille</li>
-                        </ul>
+                    <!-- Download Buttons -->
+                    <div class="downloads-section">
+                        <div class="btn-row">
+                            <a href="../images/Pedal power charger Documentation.pdf"
+                                download="Pedal_power_charger_Documentation.pdf" class="download-btn"
+                                aria-label="Download project documentation PDF">
+                                <i class="fas fa-file-pdf" aria-hidden="true"></i> Documentation
+                            </a>
+                            <a href="../images/SIMULATION OF PEDAL POWER MOBILE PHONE CHARGER PPMPC SUPPORT.docx"
+                                download="PPMPC_Simulation.docx" class="download-btn"
+                                aria-label="Download simulation document">
+                                <i class="fas fa-file-word" aria-hidden="true"></i> Simulation
+                            </a>
+                            <a href="../images/Manufacturing Drawings.zip" download="Manufacturing_Drawings.zip"
+                                class="download-btn" aria-label="Download manufacturing drawings archive">
+                                <i class="fas fa-file-archive" aria-hidden="true"></i> Manufacturing Drawings
+                            </a>
+                            <a href="../images/Pedal power mobile phone charger.zip" download="PPMPC_3D_Model.zip"
+                                class="download-btn" aria-label="Download 3D model files">
+                                <i class="fas fa-cube" aria-hidden="true"></i> Download 3D Model
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Design & Build Section -->
+            <section class="project-section design-build-section" id="design" aria-labelledby="design-heading">
+                <div class="section-content">
+                    <h3 id="design-heading" class="section-heading">Design & Build</h3>
+                    <p>
+                        The design and manufacturing process involved numerous sketches, rough proofs-of-concept,
+                        calibration and precision in the mounting of the different electronic components. Furthermore, I
+                        took a lot of
+                        time on the design of the frame of the machine because I emphasized mostly the user's comfort.
+                        CAD
+                        designs of the PPMPC as well as the electronic setup were constantly revised to meet the needs
+                        of
+                        the team and user specifications.
+                    </p>
+                    <p>
+                        I conducted the entire research, ideation, and prototyping process, including learning weldment
+                        designs and SolidWorks advanced part design over the course of 1 week. After completing my
+                        course,
+                        the team hired me to finish the first working prototype of the frame and the mountings of the
+                        different electronic parts for a presentation at the HTTTC Science and Engineering Festival, and
+                        the
+                        mechanical engineering department's new bees welcoming.
+                    </p>
+                </div>
+
+                <figure class="section-image">
+                    <img src="/images/real one ppmpc.273.png"
+                        alt="3D CAD model of the Pedal Power Mobile Phone Charger showing frame structure and components"
+                        class="responsive-img" />
+                    <figcaption class="img-caption">Complete 3D CAD assembly of the PPMPC</figcaption>
+                </figure>
+            </section>
+
+            <!-- Additional Design Images -->
+            <section class="full-width-images" aria-label="Engineering calculations and circuit design">
+                <figure class="image-container">
+                    <img src="/images/calculation pic 1.png"
+                        alt="Engineering calculations showing power transmission and gear ratio analysis"
+                        class="full-width-img" />
+                    <figcaption class="img-caption">Engineering calculations and power transmission analysis
+                    </figcaption>
+                </figure>
+
+                <figure class="image-container">
+                    <img src="/images/circuit image.png"
+                        alt="Electrical circuit diagram showing charging system components and connections"
+                        class="full-width-img" />
+                    <figcaption class="img-caption">Circuit diagram and electrical component layout</figcaption>
+                </figure>
+            </section>
+
+            <!-- Test & Validation Section -->
+            <section class="project-section" id="testing" aria-labelledby="testing-heading">
+                <div class="section-content">
+                    <h3 id="testing-heading" class="section-heading">Test & Validation</h3>
+                    <p>
+                        Testing and validation was performed to ensure that the charger meets performance and safety
+                        standards.
+                    </p>
+                    <p>
+                        In this analysis, we examine the effort exerted by both the bike frame and the rider's body, and
+                        how these forces impact the support structure and special bolt. To achieve this, a static
+                        structural
+                        analysis was conducted using SOLIDWORKS.
+                    </p>
+
+                    <!-- Validation Images Grid -->
+                    <div class="validation-images-grid">
+                        <figure class="validation-item">
+                            <img src="/images/The design simplification for the  simulation.jpg"
+                                alt="Simplified CAD model prepared for finite element analysis simulation"
+                                class="validation-img" />
+                            <figcaption class="img-caption">Design simplification for FEA simulation</figcaption>
+                        </figure>
+
+                        <figure class="validation-item">
+                            <img src="/images/support description.png"
+                                alt="Detailed view of support structure showing critical load-bearing components"
+                                class="validation-img" />
+                            <figcaption class="img-caption">Support structure description</figcaption>
+                        </figure>
+
+                        <figure class="validation-item">
+                            <img src="/images/support description-2.png"
+                                alt="Alternative perspective of support structure highlighting connection points"
+                                class="validation-img" />
+                            <figcaption class="img-caption">Support structure - alternate view</figcaption>
+                        </figure>
                     </div>
 
-                </div>
+                    <!-- Analysis Results -->
+                    <div class="analysis-section">
+                        <div class="analysis-content">
+                            <h4 class="subsection-heading">Simulation Results</h4>
+                            <p>
+                                For this analysis, appropriate boundary conditions and support constraints were applied
+                                to
+                                the model to ensure realistic behavior under loading. The Von Mises stress chart
+                                confirms
+                                that the support structure is capable of withstanding a load exceeding 800 N without
+                                failure.
+                            </p>
+                            <div class="note-box">
+                                <p class="note">
+                                    <strong>Note:</strong> For detailed information regarding the case study and the
+                                    assumptions made during the simulation, please download the simulation document
+                                    provided
+                                    above.
+                                </p>
+                            </div>
+                        </div>
 
-                <!-- Download Buttons -->
-                <div class="download-buttons">
-                    <a href="../images/Pedal power charger Documentation.pdf"
-                        download="Pedal_power_charger_Documentation.pdf" class="btn btn-download">
-                        <i class="fas fa-file-pdf"></i> Documentation
-                    </a>
-                    <a href="../images/SIMULATION OF PEDAL POWER MOBILE PHONE CHARGER PPMPC SUPPORT.docx"
-                        download="PPMPC_Simulation.docx" class="btn btn-download">
-                        <i class="fas fa-file-word"></i> Simulation
-                    </a>
-                    <a href="../images/Manufacturing Drawings.zip" download="Manufacturing_Drawings.zip"
-                        class="btn btn-download">
-                        <i class="fas fa-file-archive"></i> Manufacturing Drawings
-                    </a>
-                    <a href="../images/Pedal power mobile phone charger.zip" download="PPMPC_3D_Model.zip"
-                        class="btn btn-download">
-                        <i class="fas fa-cube"></i> Download 3D Model
-                    </a>
-                </div>
-
-                <!-- Section Divider -->
-                <hr class="section-divider">
-
-            </div>
-        </section>
-
-        <!-- ================================================
-             SECTION: DESIGN & BUILD (with images)
-             ================================================ -->
-        <section class="project-section reverse" id="design">
-
-            <!-- Text Content -->
-            <div class="project-section-content">
-                <h3>Design & Build</h3>
-                <p>
-                    The design and manufacturing process involved numerous sketches, rough proofs-of-concept,
-                    calibration
-                    and precision in the mounting of the different electronic components. Furthermore, I took a lot of
-                    time on the design of the frame of the machine because I emphasized mostly the user's comfort. CAD
-                    designs of the PPMPC as well as the electronic setup were constantly revised to meet the needs of
-                    the team and user specifications.
-                </p>
-                <p>
-                    I conducted the entire research, ideation, and prototyping process, including learning weldment
-                    designs and SolidWorks advanced part design over the course of 1 week. After completing my course,
-                    the team hired me to finish the first working prototype of the frame and the mountings of the
-                    different electronic parts for a presentation at the HTTTC Science and Engineering Festival, and the
-                    mechanical engineering department's new bees welcoming.
-                </p>
-            </div>
-
-            <!-- Main Design Image (side by side on desktop) -->
-            <div class="project-section-img">
-                <img src="/images/real one ppmpc.273.png" alt="Pedal Power Design and Build - 3D CAD Model">
-            </div>
-
-        </section>
-
-        <!-- Additional Full-Width Images for Design Section -->
-        <section class="full-width-images">
-            <figure class="image-container">
-                <img src="/images/calculation pic 1.png" alt="Pedal Power engineering calculations"
-                    class="full-width-img">
-                <figcaption>Engineering calculations and analysis</figcaption>
-            </figure>
-
-            <figure class="image-container">
-                <img src="/images/circuit image.png" alt="Pedal Power circuit diagram" class="full-width-img">
-                <figcaption>Circuit diagram and electrical components</figcaption>
-            </figure>
-        </section>
-
-        <!-- ================================================
-             SECTION: TEST & VALIDATION
-             ================================================ -->
-        <section class="project-section" id="testing">
-            <div class="project-section-content">
-                <h3>Test & Validation</h3>
-                <p>
-                    Testing and validation was performed to ensure that the charger meets performance and safety
-                    standards.
-                </p>
-                <p>
-                    In this analysis, we examine the effort exerted by both the bike frame and the rider's body, and
-                    how these forces impact the support structure and special bolt. To achieve this, a static structural
-                    analysis was conducted using SOLIDWORKS.
-                </p>
-
-                <!-- Three-Column Image Grid -->
-                <div class="validation-images-grid">
-
-                    <figure class="validation-item">
-                        <img src="/images/The design simplification for the  simulation.jpg"
-                            alt="Design simplification for FEA simulation" class="validation-img">
-                        <figcaption>Design simplification for simulation</figcaption>
-                    </figure>
-
-                    <figure class="validation-item">
-                        <img src="/images/support description.png" alt="Support structure description"
-                            class="validation-img">
-                        <figcaption>Support structure description</figcaption>
-                    </figure>
-
-                    <figure class="validation-item">
-                        <img src="/images/support description-2.png" alt="Support structure alternate view"
-                            class="validation-img">
-                        <figcaption>Support structure - alternate view</figcaption>
-                    </figure>
-
-                </div>
-
-                <!-- Analysis Results Section -->
-                <div class="analysis-row">
-
-                    <!-- Analysis Text -->
-                    <div class="analysis-text">
-                        <h4>Simulation Results</h4>
-                        <p>
-                            For this analysis, appropriate boundary conditions and support constraints were applied to
-                            the model to ensure realistic behavior under loading. The Von Mises stress chart confirms
-                            that the support structure is capable of withstanding a load exceeding 800 N without
-                            failure.
-                        </p>
-                        <p class="note">
-                            <strong>Note:</strong> For detailed information regarding the case study and the
-                            assumptions made during the simulation, please download the simulation document provided
-                            above.
-                        </p>
+                        <figure class="analysis-image">
+                            <img src="/images/Von mises stress.png"
+                                alt="Von Mises stress distribution chart showing stress levels across support structure"
+                                class="validation-img" />
+                            <figcaption class="img-caption">Von Mises stress distribution analysis</figcaption>
+                        </figure>
                     </div>
-
-                    <!-- Analysis Result Image -->
-                    <figure class="analysis-img">
-                        <img src="/images/Von mises stress.png" alt="Von Mises stress analysis result"
-                            class="validation-img">
-                        <figcaption>Von Mises stress distribution chart</figcaption>
-                    </figure>
-
                 </div>
+            </section>
 
-            </div>
-        </section>
+            <!-- Refine & Optimization Section -->
+            <section class="project-section" id="refinement" aria-labelledby="refinement-heading">
+                <div class="section-content">
+                    <h3 id="refinement-heading" class="section-heading">Refine</h3>
+                    <p>
+                        Based on the simulation results and on-site testing of the model, design improvements were
+                        implemented.
+                    </p>
 
-        <!-- ================================================
-             SECTION: REFINE & OPTIMIZATION
-             ================================================ -->
-        <section class="project-section reverse" id="refinement">
-            <div class="project-section-content">
-                <h3>Refine</h3>
-                <p>
-                    Based on the simulation results and on-site testing of the model, design improvements were
-                    implemented.
-                </p>
+                    <ul class="refinement-list">
+                        <li>
+                            <strong>Ergonomic Adjustment:</strong>
+                            The design was optimized by determining an appropriate height that ensures user comfort
+                            while
+                            accommodating a wide range of riders, from the <strong>5th percentile female</strong> to the
+                            <strong>95th percentile male</strong>.
+                        </li>
+                        <li>
+                            <strong>Structural Reinforcement:</strong>
+                            Gussets were strategically added to critical joints to minimize the risk of fatigue failure
+                            and
+                            enhance overall durability of the support system.
+                        </li>
+                        <li>
+                            <strong>Weight Optimization:</strong>
+                            The design was refined to maintain a <strong>weight of 40 kg</strong>, ensuring portability
+                            without compromising structural stability.
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-                <!-- Refinement List -->
-                <ul class="refinement-list">
-                    <li>
-                        <strong>Ergonomic Adjustment:</strong>
-                        The design was optimized by determining an appropriate height that ensures user comfort while
-                        accommodating a wide range of riders, from the <strong>5th percentile female</strong> to the
-                        <strong>95th percentile male</strong>.
-                    </li>
-                    <li>
-                        <strong>Structural Reinforcement:</strong>
-                        Gussets were strategically added to critical joints to minimize the risk of fatigue failure and
-                        enhance overall durability of the support system.
-                    </li>
-                    <li>
-                        <strong>Weight Optimization:</strong>
-                        The design was refined to maintain a <strong>weight of 40 kg</strong>, ensuring portability
-                        without compromising structural stability.
-                    </li>
-                </ul>
-            </div>
-        </section>
+            <!-- Back to Projects Button -->
+            <a href="../index.html" class="back-btn" aria-label="Return to projects page">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
+            </a>
 
-        <!-- ================================================
-             BACK TO PROJECTS BUTTON
-             ================================================ -->
-        <a href="../index.html" class="btn btn-back">
-            <i class="fas fa-arrow-left"></i> Back to Projects
-        </a>
-
+        </div>
     </main>
 
-    <!-- ================================================
-         FOOTER
-         ================================================ -->
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>&copy; 2025 Donfack Fortune. All rights reserved.</p>
+            <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ================================================
-         BACK TO TOP BUTTON
-         ================================================ -->
-    <button id="backToTopBtn" aria-label="Back to top" title="Back to Top">
-        <i class="fas fa-chevron-up"></i>
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
-    <!-- ================================================
-         JAVASCRIPT
-         ================================================ -->
+    <!-- Scripts -->
     <script>
-        // ==========================================
-        // Back to Top Button Functionality
-        // ==========================================
+        // Dynamic year update
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        const backToTopBtn = document.getElementById('backToTopBtn');
+        // Back to top button functionality
+        (function () {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            let isScrolling = false;
 
-        // Show button when user scrolls down 200px
-        window.addEventListener('scroll', function () {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        });
+            window.addEventListener('scroll', function () {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(function () {
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        backToTopBtn.classList.toggle('visible', scrollTop > 300);
+                        isScrolling = false;
+                    });
+                    isScrolling = true;
+                }
+            }, { passive: true });
 
-        // Smooth scroll to top when button is clicked
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            backToTopBtn.addEventListener('click', function () {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                window.scrollTo({
+                    top: 0,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
             });
-        });
-    </script>
+        })();
 
+
+    </script>
 </body>
 
 </html>
