@@ -106,7 +106,7 @@
               <div class="project-image-wrapper">
                 <img src="assets/images/Machine-TOWE-3.jpg"
                   alt="Banana Pseudostem Shredding Machine - Industrial agricultural equipment" class="project-image"
-                  loading="lazy" width="600" height="400" />
+                  width="600" height="400" />
               </div>
               <div class="project-content">
                 <h3 class="project-title">Machine De Broyage Des Pseudo-Troncs De Bananiers</h3>
@@ -120,7 +120,7 @@
               aria-label="View Formula FSAE Car Design project details">
               <div class="project-image-wrapper">
                 <img src="assets/images/My-image.jpg" alt="Formula FSAE Car Design - Student racing vehicle engineering"
-                  class="project-image" loading="lazy" width="600" height="400" />
+                  class="project-image" width="600" height="400" />
               </div>
               <div class="project-content">
                 <h3 class="project-title">Formula FSAE Car Design</h3>
@@ -134,7 +134,7 @@
               aria-label="View Motorised Wheelbarrow project details">
               <div class="project-image-wrapper">
                 <img src="assets/images/WheelBarrow-2.jpg" alt="Motorised Wheelbarrow - Powered transportation solution"
-                  class="project-image" loading="lazy" width="600" height="400" />
+                  class="project-image" width="600" height="400" />
               </div>
               <div class="project-content">
                 <h3 class="project-title">Motorised WheelBarrow</h3>
@@ -159,8 +159,8 @@
               aria-label="View Pedal Power Mobile Phone Charger project details">
               <div class="project-image-wrapper">
                 <img src="assets/images/Real-image.png"
-                  alt="Pedal Power Mobile Phone Charger - Sustainable energy solution" class="project-image"
-                  loading="lazy" width="600" height="400" />
+                  alt="Pedal Power Mobile Phone Charger - Sustainable energy solution" class="project-image" width="600"
+                  height="400" />
               </div>
               <div class="project-content">
                 <h3 class="project-title">Pedal Power Mobile Phone Charger (2022)</h3>
@@ -174,7 +174,7 @@
               aria-label="View Beans Unwrapping Machine project details">
               <div class="project-image-wrapper">
                 <img src="assets/images/Real-BUR.jpg" alt="Beans Unwrapping Machine - Agricultural processing equipment"
-                  class="project-image" loading="lazy" width="600" height="400" />
+                  class="project-image" width="600" height="400" />
               </div>
               <div class="project-content">
                 <h3 class="project-title">Beans Unwrapping Machine (2022)</h3>
@@ -189,7 +189,7 @@
               <div class="project-image-wrapper">
                 <img src="assets/images/CC3300-AC-LOCOMOTIVE.jpg"
                   alt="Train Braking System - CC3300 and CC2200 locomotive reverse engineering" class="project-image"
-                  loading="lazy" width="600" height="400" />
+                  width="600" height="400" />
               </div>
               <div class="project-content">
                 <h3 class="project-title">Reverse Engineering the Train Braking System of CC_3300_AC and CC_2200
@@ -247,24 +247,8 @@
       });
     })();
 
-    // Lazy loading intersection observer
-    if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.classList.add('loaded');
-            imageObserver.unobserve(img);
-          }
-        });
-      }, {
-        rootMargin: '50px'
-      });
 
-      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-        imageObserver.observe(img);
-      });
-    }
+
   </script>
 </body>
 

@@ -162,7 +162,7 @@
               <div class="image-wrapper">
                 <img src="assets/images/My-image.jpg"
                   alt="Instructor guiding engineering students through hands-on product development process in classroom"
-                  class="gallery-image" loading="lazy" width="420" height="280" />
+                  class="gallery-image" width="420" height="280" />
               </div>
               <div class="card-content">
                 <p class="card-text">Guiding students through the product development process</p>
@@ -176,7 +176,7 @@
               <div class="image-wrapper">
                 <img src="assets/images/My-image.jpg"
                   alt="Digital classroom setup for remote mechanical design course with project-based learning methodology"
-                  class="gallery-image" loading="lazy" width="420" height="280" />
+                  class="gallery-image" width="420" height="280" />
               </div>
               <div class="card-content">
                 <p class="card-text">Redesigning a mechanical design course for remote, project-based learning</p>
@@ -190,7 +190,7 @@
               <div class="image-wrapper">
                 <img src="assets/images/My-image.jpg"
                   alt="Educational tools and maker space facilities designed for accessible integrated engineering learning"
-                  class="gallery-image" loading="lazy" width="420" height="280" />
+                  class="gallery-image" width="420" height="280" />
               </div>
               <div class="card-content">
                 <p class="card-text">Building tools, resources, and spaces to enable accessible, integrated learning
@@ -205,7 +205,7 @@
               <div class="image-wrapper">
                 <img src="assets/images/My-image.jpg"
                   alt="Students actively engaged in hands-on engineering project work in collaborative learning environment"
-                  class="gallery-image" loading="lazy" width="420" height="280" />
+                  class="gallery-image" width="420" height="280" />
               </div>
               <div class="card-content">
                 <p class="card-text">Project-based learning in action</p>
@@ -261,24 +261,9 @@
       });
     })();
 
-    // Lazy loading intersection observer
-    if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.classList.add('loaded');
-            imageObserver.unobserve(img);
-          }
-        });
-      }, {
-        rootMargin: '50px'
-      });
 
-      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-        imageObserver.observe(img);
-      });
-    }
+
+
   </script>
 </body>
 
