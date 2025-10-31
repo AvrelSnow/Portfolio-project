@@ -2,187 +2,323 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Motorised Wheelbarrow - A practical human-centered engineering solution designed by Donfack Fortune for construction, farming, and market activities in Cameroon." />
+    <meta name="keywords"
+        content="motorised wheelbarrow, mechanical engineering, ergonomic design, Cameroon, practical engineering, user-centered design" />
+    <meta name="author" content="Donfack Fortune" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Motorised Wheelbarrow | Donfack Fortune" />
+    <meta property="og:description"
+        content="Practical motorised wheelbarrow solution for Cameroonian construction and farming" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="../assets/images/WheelBarrow-2.jpg" />
+
     <title>Motorised Wheelbarrow | Donfack Fortune</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/projects/project-wheelbarrow.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font Loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+            rel="stylesheet" />
+    </noscript>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/projects/project-wheelbarrow.css" />
+
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </noscript>
 </head>
 
 <body>
-    <header class="header">
-        <div class="container header-flex">
-            <div class="header-left">
-                <h1 class="logo">Donfack Fortune</h1>
-            </div>
-            <nav class="header-center" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="../index.html">Projects</a></li>
-                    <li><a href="../teaching.html">Teaching</a></li>
-                    <li><a href="../about.html">About</a></li>
-                </ul>
-            </nav>
-            <div class="header-right social-icons">
-                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD" target="_blank" rel="noopener">
-                    <span class="fab fa-grabcad"
-                        style="display:inline-block;vertical-align:middle;width:1.2em;height:1.2em;">
-                        <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-                            <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
-                                font-family="Arial, sans-serif">GC</text>
-                        </svg>
-                    </span>
-                </a>
-                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" aria-label="LinkedIn"
-                    target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-flex">
+                <!-- Logo -->
+                <div class="header-left">
+                    <h1 class="logo">
+                        <a href="../index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
+                    </h1>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="header-center" aria-label="Main navigation" role="navigation">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link active" aria-current="page">Projects</a></li>
+                        <li><a href="../teaching.html" class="nav-link">Teaching</a></li>
+                        <li><a href="../about.html" class="nav-link">About</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Social Links -->
+                <div class="header-right" role="complementary" aria-label="Social media links">
+                    <div class="social-icons">
+                        <a href="https://grabcad.com/donfack.fortune-1"
+                            aria-label="Visit Donfack Fortune's GrabCAD profile" target="_blank"
+                            rel="noopener noreferrer" class="social-link">
+                            <span class="social-icon" aria-hidden="true">
+                                <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
+                                    <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
+                                        font-family="Arial">GC</text>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+                            aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank"
+                            rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-    <main class="main-content container">
-        <h2 class="project-title">Motorised Wheelbarrow</h2>
-        <div class="project-year">2023</div>
-        <hr class="project-divider">
 
-        <div class="project-section-row">
-            <section class="project-section-card">
-                <h3>CONTEXT</h3>
-                <p>
-                    In Cameroon, wheelbarrows are important for construction, farming, and market activities, but
-                    traditional ones require heavy manual effort. Our goal was simple but ambitious: design a motorized
-                    wheelbarrow that is easy to use, comfortable, and adaptable to users of different heights, while
-                    working with limited resources and without relying on 3D modeling or simulations. Everything had to
-                    come from our hands, minds, and experience.
-                    <br><br>The first challenge was finding the right motor. We quickly realized that automotive motors,
-                    like those from Nissan or Toyota bikes, were too bulky, non-automatic, and hard to integrate with a
-                    human-friendly wheelbarrow height. So, we chose a reconditioned e-scooter motor, which came
-                    pre-mounted with a wheel <strong>(~35–40 cm)</strong>. This was perfect for ergonomics, easier
-                    handling, and
-                    integration with our wheelbarrow design.
-                    <br><br>It took <strong>three weeks</strong> to source a reliable motor within our tight budget.
-                    Tchoffo and I
-                    handled
-                    the electrical refurbishment, fixing the motor so it could reliably start and run under load.
-                </p>
+    <!-- Main Content -->
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+
+            <!-- Page Title -->
+            <h2 class="page-title">Motorised Wheelbarrow</h2>
+
+            <!-- Context Section -->
+            <section class="project-section" id="context" aria-labelledby="context-heading">
+                <div class="section-content">
+                    <h3 id="context-heading" class="section-heading">Context</h3>
+                    <p>
+                        In Cameroon, wheelbarrows are important for construction, farming, and market activities, but
+                        traditional ones require heavy manual effort. Our goal was simple but ambitious: design a
+                        motorized
+                        wheelbarrow that is easy to use, comfortable, and adaptable to users of different heights, while
+                        working with limited resources and without relying on 3D modeling or simulations. Everything had
+                        to
+                        come from our hands, minds, and experience.
+                    </p>
+                    <p>
+                        The first challenge was finding the right motor. We quickly realized that automotive motors,
+                        like
+                        those from Nissan or Toyota bikes, were too bulky, non-automatic, and hard to integrate with a
+                        human-friendly wheelbarrow height. So, we chose a reconditioned e-scooter motor, which came
+                        pre-mounted with a wheel <strong>(~35–40 cm)</strong>. This was perfect for ergonomics, easier
+                        handling, and integration with our wheelbarrow design.
+                    </p>
+                    <p>
+                        It took <strong>three weeks</strong> to source a reliable motor within our tight budget. Tchoffo
+                        and
+                        I handled the electrical refurbishment, fixing the motor so it could reliably start and run
+                        under
+                        load.
+                    </p>
+                </div>
             </section>
 
-            <section class="project-section-card">
-                <h3>CONTENT</h3>
-                <p>
-                    Building the wheelbarrow was purely hands-on engineering: welding, cutting, and assembling the
-                    frame. <strong>No CAD, no simulations—just experience, measurement, and iterative thinking.</strong>
-                    We focused on
-                    the battery and oil tank placement ensuring it is secured yet accessible for maintenance. We
-                    emphasized on the wheel and handle configuration making it comfortable and suitable for users from
-                    1.5 m to 1.9 m, whether male or female. A motor integration with handles in such a way that starting
-                    the motor felt like riding a motorized bike, intuitive for the user. In this journey, collaboration
-                    was key. For instance, Badou suggested adding an adjustable “elevator” system so shorter users could
-                    stand comfortably. On the contrary, Tchoffo opposed it due to budget limits.it posed a serious
-                    issues cause as the team lead, I had to figure out an equitable outcome to this problem. My proposal
-                    was to use larger wheels, which raised the user slightly, balancing comfort and cost.
-                    <br><br>User-centered design was crucial. We continuously tested the wheelbarrow with each team
-                    member to ensure ergonomic comfort and safe handling, adjusting measurements to accommodate
-                    everyone.
-                </p>
+            <!-- Design & Build Section -->
+            <section class="project-section design-build-section" id="design" aria-labelledby="design-heading">
+                <div class="section-content">
+                    <h3 id="design-heading" class="section-heading">Design & Build</h3>
+                    <p>
+                        Building the wheelbarrow was purely hands-on engineering: welding, cutting, and assembling the
+                        frame. <strong>No CAD, no simulations—just experience, measurement, and iterative
+                            thinking.</strong> We focused on several key aspects:
+                    </p>
+
+                    <ul class="feature-list">
+                        <li><strong>Battery and oil tank placement:</strong> Ensuring it is secured yet accessible for
+                            maintenance</li>
+                        <li><strong>Wheel and handle configuration:</strong> Making it comfortable and suitable for
+                            users
+                            from 1.5 m to 1.9 m, whether male or female</li>
+                        <li><strong>Motor integration:</strong> Handles positioned so that starting the motor felt like
+                            riding a motorized bike, intuitive for the user</li>
+                    </ul>
+                </div>
+
+                <figure class="section-image">
+                    <div class="video-container">
+                        <video controls class="responsive-video" poster="../images/WheelBarrow-2.jpg" preload="metadata"
+                            playsinline webkit-playsinline aria-label="Motorised Wheelbarrow demonstration video">
+                            <source src="../images/WheelBarrow 1.mp4" type="video/mp4">
+                            <source src="../images/WheelBarrow 1.webm" type="video/webm">
+                            <source src="../images/WheelBarrow 1.ogv" type="video/ogg">
+                            Your browser does not support HTML5 video.
+                            <a href="../images/WheelBarrow 1.mp4">Download the video</a> instead.
+                        </video>
+                    </div>
+                    <figcaption class="img-caption">Motorised Wheelbarrow demonstration</figcaption>
+                </figure>
             </section>
 
-            <section class="project-section-card">
-                <h3>CONCLUSION</h3>
-                <p>
-                    The motorized wheelbarrow was successfully completed in three weeks. It comfortably supports:
-                <ul>
-                    <li>Male users: 1.75–1.90 m</li>
-                    <li>Female users: 1.50–1.90 m </li>
-                </ul><br>
-                Hands-on measurement and practical iteration allowed us to finish the project faster than creating 3D
-                models, 2D plans, and simulations, which could have taken 4–6 weeks longer given our team’s resources.
-                Some of the key lessons learned here was that.<br><br>
-                <ul>
-                    <li><strong>Not all projects need CAD or simulation:</strong> Real-world iteration works, and
-                        sometimes faster;</li>
-                    <li><strong>Collaboration matters:</strong> Understanding each team member’s perspective ensures
-                        designs are
-                        functional, inclusive, and cost-effective;</li>
-                    <li><strong>Ergonomics and comfort are essential:</strong> A mechanical design is only useful if the
-                        user can operate
-                        it safely and easily:</li>
-                    <li><strong>Resourcefulness drives innovation:</strong> Limited budget pushed us to find creative,
-                        practical
-                        solutions, like the larger wheels instead of an expensive adjustable platform.</li>
-                </ul>
-                This project refined my mechanical design, electrical troubleshooting, and collaborative engineering
-                skills.
-                </p>
+            <!-- Full-width subsections -->
+            <section class="project-section" aria-labelledby="collaboration-heading">
+                <div class="section-content">
+                    <h4 id="collaboration-heading" class="subsection-heading">Collaborative Problem-Solving</h4>
+                    <p>
+                        In this journey, collaboration was key. For instance, Badou suggested adding an adjustable
+                        "elevator" system so shorter users could stand comfortably. On the contrary, Tchoffo opposed it
+                        due
+                        to budget limits. It posed a serious issue because as the team lead, I had to figure out an
+                        equitable outcome to this problem. My proposal was to use larger wheels, which raised the user
+                        slightly, balancing comfort and cost.
+                    </p>
+                </div>
             </section>
+
+            <section class="project-section" aria-labelledby="user-centered-heading">
+                <div class="section-content">
+                    <h4 id="user-centered-heading" class="subsection-heading">User-Centered Design</h4>
+                    <p>
+                        User-centered design was crucial. We continuously tested the wheelbarrow with each team member
+                        to
+                        ensure ergonomic comfort and safe handling, adjusting measurements to accommodate everyone.
+                    </p>
+                </div>
+            </section>
+            <!-- Project Gallery -->
+            <section class="full-width-images" aria-labelledby="gallery-heading">
+                <h3 id="gallery-heading" class="section-heading">Project Gallery</h3>
+
+                <div class="validation-images-grid">
+                    <figure class="validation-item">
+                        <img src="../images/WheelBarrow 2.jpg"
+                            alt="Complete view of the motorised wheelbarrow showing frame and motor assembly"
+                            class="validation-img" />
+                        <figcaption class="img-caption">The Motorised Wheelbarrow</figcaption>
+                    </figure>
+
+                    <figure class="validation-item">
+                        <img src="../images/WheelBarrow 5.jpg"
+                            alt="Detailed view of the wheelbarrow frame structure and welding" class="validation-img" />
+                        <figcaption class="img-caption">The Wheelbarrow's Frame</figcaption>
+                    </figure>
+
+                    <figure class="validation-item">
+                        <img src="../images/WheelBarrow 8.jpg"
+                            alt="Oil tank installation showing secure mounting and accessibility"
+                            class="validation-img" />
+                        <figcaption class="img-caption">The Oil Tank</figcaption>
+                    </figure>
+
+                    <figure class="validation-item">
+                        <img src="../images/WheelBarrow 9.jpg" alt="Support stand mechanism for parking the wheelbarrow"
+                            class="validation-img" />
+                        <figcaption class="img-caption">The Stand</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Conclusion Section -->
+            <section class="project-section" id="conclusion" aria-labelledby="conclusion-heading">
+                <div class="section-content">
+                    <h3 id="conclusion-heading" class="section-heading">Conclusion</h3>
+                    <p>
+                        The motorized wheelbarrow was successfully completed in three weeks. It comfortably supports:
+                    </p>
+
+                    <ul class="feature-list">
+                        <li>Male users: 1.75–1.90 m</li>
+                        <li>Female users: 1.50–1.90 m</li>
+                    </ul>
+
+                    <p>
+                        Hands-on measurement and practical iteration allowed us to finish the project faster than
+                        creating
+                        3D models, 2D plans, and simulations, which could have taken 4–6 weeks longer given our team's
+                        resources.
+                    </p>
+
+                    <h4 class="subsection-heading">Key Lessons Learned</h4>
+                    <ul class="feature-list">
+                        <li><strong>Not all projects need CAD or simulation:</strong> Real-world iteration works, and
+                            sometimes faster</li>
+                        <li><strong>Collaboration matters:</strong> Understanding each team member's perspective ensures
+                            designs are functional, inclusive, and cost-effective</li>
+                        <li><strong>Ergonomics and comfort are essential:</strong> A mechanical design is only useful if
+                            the
+                            user can operate it safely and easily</li>
+                        <li><strong>Resourcefulness drives innovation:</strong> Limited budget pushed us to find
+                            creative,
+                            practical solutions, like the larger wheels instead of an expensive adjustable platform</li>
+                    </ul>
+
+                    <p>
+                        This project refined my mechanical design, electrical troubleshooting, and collaborative
+                        engineering
+                        skills.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Back to Projects Button -->
+            <a href="../index.html" class="back-btn" aria-label="Return to projects page">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
+            </a>
+
         </div>
-
-        <!-- Main Project Image -->
-        <section class="project-main-image">
-            <div class="main-image-container" style="padding-bottom: 56.25%;">
-                <video controls class="main-img" style="object-fit: contain;" poster="path-to-poster-image.jpg"
-                    preload="metadata" playsinline webkit-playsinline>
-                    <!-- Add multiple sources for better compatibility -->
-                    <source src="/images/WheelBarrow 1.mp4" type="video/mp4">
-                    <source src="/images/WheelBarrow 1.webm" type="video/webm">
-                    <source src="/images/WheelBarrow 1.ogv" type="video/ogg">
-                    <!-- Fallback text if no video formats are supported -->
-                    Your browser does not support HTML5 video.
-                    <a href="/images/WheelBarrow 1.mp4">Download the video</a> instead.
-                </video>
-            </div>
-        </section>
-
-        <!-- Project Gallery -->
-        <section class="project-gallery">
-            <div class="gallery-item">
-                <img src="/images/WheelBarrow 2.jpg" alt="The Full Image Of The Motorised Wheelbarrow"
-                    class="gallery-img">
-                <div class="gallery-caption">The Motorised Wheelbarrow</div>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/WheelBarrow 5.jpg" alt="Motor and Drive System" class="gallery-img">
-                <div class="gallery-caption">The Wheelbarrow's Frame</div>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/WheelBarrow 8.jpg" alt="oil tank" class="gallery-img">
-                <div class="gallery-caption">The Oil Tank </div>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/WheelBarrow 9.jpg" alt="The Stand" class="gallery-img">
-                <div class="gallery-caption">The Stand </div>
-            </div>
-
-        </section>
-
-        <a href="../index.html" class="to-teaching-btn">&#8592; Back to Projects</a>
     </main>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>&copy; Donfack Fortune 2025</p>
+            <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
         </div>
     </footer>
 
-    <button id="backToTopBtn" title="Back to Top">&#8679;</button>
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
 
+    <!-- Scripts -->
     <script>
-        // Show/hide button
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        window.onscroll = function () {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        };
-        // Smooth scroll to top
-        backToTopBtn.onclick = function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
+        // Dynamic year update
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Back to top button functionality
+        (function () {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            let isScrolling = false;
+
+            window.addEventListener('scroll', function () {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(function () {
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        backToTopBtn.classList.toggle('visible', scrollTop > 300);
+                        isScrolling = false;
+                    });
+                    isScrolling = true;
+                }
+            }, { passive: true });
+
+            backToTopBtn.addEventListener('click', function () {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                window.scrollTo({
+                    top: 0,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
+            });
+        })();
     </script>
 </body>
 
