@@ -2,10 +2,7 @@
 <html lang="en">
 
 <head>
-  <!-- ============================================
-       META TAGS & SEO OPTIMIZATION
-       Enhanced metadata for About/Contact page
-       ============================================ -->
+  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
@@ -14,7 +11,7 @@
     content="mechanical engineer, educator, FEA specialist, Cameroon, engineering consultant, contact" />
   <meta name="author" content="Donfack Fortune" />
 
-  <!-- Open Graph for social sharing -->
+  <!-- Open Graph -->
   <meta property="og:title" content="About Donfack Fortune | Mechanical Engineer & Educator" />
   <meta property="og:description"
     content="Learn about my journey combining mechanical engineering and education in Cameroon" />
@@ -22,60 +19,23 @@
 
   <title>About Me | Donfack Fortune</title>
 
-  <!-- ============================================
-       PERFORMANCE OPTIMIZATION: Resource Hints
-       ============================================ -->
+  <!-- DNS Prefetch & Preconnect -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- ==========================
-       HEADER SCROLL BEHAVIOUR
-       =========================== -->
-  <script src="assets/js/header-scroll.js" defer></script>
-
-  <!-- ============================================
-       CRITICAL CSS: Inline for faster first paint
-       ============================================ -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', Arial, sans-serif;
-      line-height: 1.7;
-      color: #222;
-    }
-
-    .header {
-      border-bottom: 1px solid #eee;
-      background: #fff;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-  </style>
-
-  <!-- ============================================
-       FONT LOADING: Async with fallback
-       ============================================ -->
+  <!-- Font Loading -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   </noscript>
 
-  <!-- ============================================
-       STYLESHEETS
-       ============================================ -->
-  <link rel="stylesheet" href="assets/css/main.css" media="all" />
-  <link rel="stylesheet" href="assets/css/about.css" media="all" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/about.css" />
 
-  <!-- ============================================
-       ICON LIBRARY: Deferred loading
-       ============================================ -->
+  <!-- Font Awesome -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
@@ -84,203 +44,197 @@
 </head>
 
 <body>
-  <!-- ============================================
-       ACCESSIBILITY: Skip to content
-       ============================================ -->
-  <a href="#main-content" class="sr-only">Skip to main content</a>
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ============================================
-       HEADER NAVIGATION
-       ============================================ -->
+  <!-- Header -->
   <header class="header" role="banner">
-    <div class="container header-flex">
+    <div class="container">
+      <div class="header-wrapper">
+        <!-- Logo -->
+        <div class="header-logo">
+          <h1 class="logo">
+            <a href="index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
+          </h1>
+        </div>
 
-      <!-- Site Logo -->
-      <div class="header-left">
-        <h1 class="logo">
-          <a href="index.html" style="text-decoration: none; color: inherit;">
-            Donfack Fortune
+        <!-- Navigation -->
+        <nav class="header-nav" aria-label="Main navigation" role="navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Projects</a></li>
+            <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+            <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
+          </ul>
+        </nav>
+
+        <!-- Social Links -->
+        <div class="header-social" role="complementary" aria-label="Social media links">
+          <a href="https://grabcad.com/donfack.fortune-1" aria-label="Visit Donfack Fortune's GrabCAD profile"
+            target="_blank" rel="noopener noreferrer" class="social-link">
+            <span class="social-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
+                <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff" font-family="Arial">GC</text>
+              </svg>
+            </span>
           </a>
-        </h1>
-      </div>
 
-      <!-- Main Navigation -->
-      <nav class="header-center" aria-label="Main navigation" role="navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Projects</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="about.html" class="active" aria-current="page">About</a></li>
-        </ul>
-      </nav>
-
-      <!-- Social Media Links -->
-      <div class="header-right social-icons" role="complementary" aria-label="Social media links">
-        <a href="https://grabcad.com/donfack.fortune-1" aria-label="Visit Donfack Fortune's GrabCAD profile"
-          target="_blank" rel="noopener noreferrer">
-          <span class="fab fa-grabcad" role="img" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-              <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
-                font-family="Arial, sans-serif">GC</text>
-            </svg>
-          </span>
-        </a>
-        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
-          aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-        </a>
+          <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+            aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank" rel="noopener noreferrer"
+            class="social-link">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- ============================================
-       MAIN CONTENT: Biography and Contact
-       ============================================ -->
-  <main class="about-main container" id="main-content" role="main">
+  <!-- Main Content -->
+  <main class="main-content" id="main-content" role="main">
+    <div class="container">
 
-    <!-- ============================================
-         ABOUT SECTION: Personal Biography
-         ============================================ -->
-    <section class="about-section" aria-labelledby="about-heading">
-      <div class="about-content centered">
-        <div class="about-text">
-          <h2 id="about-heading">About Me</h2>
+      <!-- About Section -->
+      <section class="about-section" aria-labelledby="about-heading">
+        <div class="about-content">
 
-          <!-- Biography Content: Structured for readability and SEO -->
-          <p>
-            Hi, I'm <strong>Donfack Fortune</strong>! After graduating from
-            <abbr title="École Normale Supérieure d'Enseignement Technique">ENSET</abbr>,
-            I have combined my training as a mechanical engineer and educator to
-            address diverse technical challenges within Cameroon's industrial
-            sector. My expertise lies in Mechanical engineering design and
-            <abbr title="Finite Element Analysis">FEA</abbr>, which I apply to
-            validate and optimize mechanical systems contributing to improved
-            efficiency and reliability in diverse sectors.
-          </p>
+          <!-- Text Content -->
+          <div class="about-text">
+            <h2 id="about-heading">About Me</h2>
 
-          <p>
-            In addition to my work as a Mechanical engineer, I serve as a
-            teacher at the Technical High School Fongo Tongo, where my focus
-            is on improving education in Cameroon, making Technical education
-            more accessible and fun, and developing sustainable solutions that
-            support local communities.
-          </p>
+            <p>
+              Hi, I'm <strong>Donfack Fortune</strong>! After graduating from
+              <abbr title="École Normale Supérieure d'Enseignement Technique">ENSET</abbr>,
+              I have combined my training as a mechanical engineer and educator to
+              address diverse technical challenges within Cameroon's industrial
+              sector. My expertise lies in Mechanical engineering design and
+              <abbr title="Finite Element Analysis">FEA</abbr>, which I apply to
+              validate and optimize mechanical systems contributing to improved
+              efficiency and reliability in diverse sectors.
+            </p>
 
-          <p>
-            I address the challenges of today by making tangible, user-centric
-            solutions that bridge the gap between engineering theory and
-            practical application. Looking ahead, I'm eager to apply my
-            technical and educational skills to impactful projects at the
-            intersection of <strong>transport, agriculture, and education</strong>—empowering
-            others and contributing to meaningful, sustainable progress.
-          </p>
+            <p>
+              In addition to my work as a Mechanical engineer, I serve as a
+              teacher at the Technical High School Fongo Tongo, where my focus
+              is on improving education in Cameroon, making Technical education
+              more accessible and fun, and developing sustainable solutions that
+              support local communities.
+            </p>
 
-          <p>
-            In my free time, you'll find me playing games, enjoying sports,
-            volunteering for the <abbr title="Toastmasters Klubhouse Cameroon">TKC</abbr>
-            community, or honing my public speaking skills at the University of
-            Dschang and ENSET Douala where I usually give CAD classes in amphitheaters.
-          </p>
+            <p>
+              I address the challenges of today by making tangible, user-centric
+              solutions that bridge the gap between engineering theory and
+              practical application. Looking ahead, I'm eager to apply my
+              technical and educational skills to impactful projects at the
+              intersection of <strong>transport, agriculture, and education</strong>—empowering
+              others and contributing to meaningful, sustainable progress.
+            </p>
 
-          <p>
-            Take a look at the <a href="index.html">Projects</a> and
-            <a href="teaching.html">Teaching</a> pages, and contact me if you would
-            like more information.
-          </p>
+            <p>
+              In my free time, you'll find me playing games, enjoying sports,
+              volunteering for the <abbr title="Toastmasters Klubhouse Cameroon">TKC</abbr>
+              community, or honing my public speaking skills at the University of
+              Dschang and ENSET Douala where I usually give CAD classes in amphitheaters.
+            </p>
+
+            <p>
+              Take a look at the <a href="index.html">Projects</a> and
+              <a href="teaching.html">Teaching</a> pages, and contact me if you would
+              like more information.
+            </p>
+          </div>
+
+          <!-- Image Content (Optional) -->
+          <div class="about-image">
+            <img src="assets/images/profile.jpg" alt="Donfack Fortune - Mechanical Engineer and Educator" loading="lazy"
+              width="400" height="500" />
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============================================
-         CONTACT INFO: Location Display
-         ============================================ -->
-    <section class="contact-info" aria-label="Location information">
-      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-      <span>Center-Yaounde, Simbock, Mbalgong</span>
-    </section>
-
-    <!-- ============================================
-         CONTACT FORM: Get in Touch Section
-         ============================================ -->
-    <section class="get-in-touch" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Get in Touch</h2>
-
-      <!-- Contact Form with Validation and Accessibility -->
-      <form class="contact-form" id="contactForm" novalidate>
-
-        <!-- Name Input Field -->
-        <div class="form-group">
-          <label for="name">
-            Name <span aria-label="required">*</span>
-          </label>
-          <input type="text" id="name" name="name" required aria-required="true" autocomplete="name"
-            placeholder="Your full name" minlength="2" maxlength="100" />
-          <span class="error-message" id="name-error" role="alert"></span>
+      <!-- Location Info -->
+      <section class="location-section" aria-label="Location information">
+        <div class="location-info">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <span>Center-Yaounde, Simbock, Mbalgong</span>
         </div>
+      </section>
 
-        <!-- Email Input Field with Pattern Validation -->
-        <div class="form-group">
-          <label for="email">
-            Email <span aria-label="required">*</span>
-          </label>
-          <input type="email" id="email" name="email" required aria-required="true" autocomplete="email"
-            placeholder="your.email@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
-          <span class="error-message" id="email-error" role="alert"></span>
+      <!-- Contact Form Section -->
+      <section class="contact-section" aria-labelledby="contact-heading">
+        <div class="contact-wrapper">
+          <h2 id="contact-heading" class="section-title">Get in Touch</h2>
+
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="name" class="form-label">
+                Name <span class="required" aria-label="required">*</span>
+              </label>
+              <input type="text" id="name" name="name" class="form-input" required aria-required="true"
+                autocomplete="name" placeholder="Your full name" minlength="2" maxlength="100" />
+              <span class="error-message" id="name-error" role="alert"></span>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email" class="form-label">
+                Email <span class="required" aria-label="required">*</span>
+              </label>
+              <input type="email" id="email" name="email" class="form-input" required aria-required="true"
+                autocomplete="email" placeholder="your.email@example.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+              <span class="error-message" id="email-error" role="alert"></span>
+            </div>
+
+            <!-- Message Field -->
+            <div class="form-group">
+              <label for="message" class="form-label">
+                Message <span class="required" aria-label="required">*</span>
+              </label>
+              <textarea id="message" name="message" class="form-textarea" rows="6" required aria-required="true"
+                placeholder="Your message here..." minlength="10" maxlength="1000"></textarea>
+              <span class="error-message" id="message-error" role="alert"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <span class="btn-text" id="btnText">Send Message</span>
+              <span class="btn-loader" id="btnLoader">
+                <i class="fas fa-spinner fa-spin"></i> Sending...
+              </span>
+            </button>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" role="status" aria-live="polite">
+              <i class="fas fa-check-circle"></i> Message prepared! Your email client will open.
+            </div>
+          </form>
         </div>
+      </section>
 
-        <!-- Message Textarea -->
-        <div class="form-group">
-          <label for="message">
-            Message <span aria-label="required">*</span>
-          </label>
-          <textarea id="message" name="message" rows="5" required aria-required="true"
-            placeholder="Your message here..." minlength="10" maxlength="1000"></textarea>
-          <span class="error-message" id="message-error" role="alert"></span>
-        </div>
-
-        <!-- Submit Button with Loading State -->
-        <button type="submit" class="send-btn" id="submitBtn" aria-label="Send message to Donfack Fortune">
-          <span id="btnText">Send Message</span>
-          <span id="btnLoader" style="display:none;">Sending...</span>
-        </button>
-
-        <!-- Success Message -->
-        <div id="successMessage" style="display:none; color: green; margin-top: 1rem; text-align: center;" role="status"
-          aria-live="polite">
-          ✓ Message prepared! Your email client will open.
-        </div>
-      </form>
-    </section>
+    </div>
   </main>
 
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
+  <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <p>&copy; Donfack Fortune <span id="current-year">2025</span></p>
+      <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ================================================
-         BACK TO TOP BUTTON
-         ================================================ -->
-  <button id="backToTopBtn" aria-label="Back to top" title="Back to Top">
-    <i class="fas fa-chevron-up"></i>
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
   </button>
 
-  <!-- ============================================
-       JAVASCRIPT: Enhanced Form Handling
-       Client-side validation with improved UX
-       ============================================ -->
+  <!-- Scripts -->
   <script>
     // Dynamic year update
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // ============================================
-    // FORM VALIDATION & SUBMISSION
-    // Enhanced with real-time validation feedback
-    // ============================================
+    // Form Validation & Submission
     (function () {
       const form = document.getElementById('contactForm');
       const nameInput = document.getElementById('name');
@@ -291,7 +245,7 @@
       const btnLoader = document.getElementById('btnLoader');
       const successMessage = document.getElementById('successMessage');
 
-      // Validation helper functions
+      // Validation rules
       const validators = {
         name: (value) => {
           if (!value.trim()) return 'Name is required';
@@ -311,21 +265,18 @@
         }
       };
 
-      // Show error message
+      // Show error
       function showError(input, message) {
         const errorElement = document.getElementById(`${input.id}-error`);
         if (errorElement) {
           errorElement.textContent = message;
-          errorElement.style.color = '#e02b20';
-          errorElement.style.fontSize = '0.9rem';
-          errorElement.style.marginTop = '0.25rem';
           errorElement.style.display = 'block';
         }
         input.setAttribute('aria-invalid', 'true');
-        input.style.borderColor = '#e02b20';
+        input.classList.add('error');
       }
 
-      // Clear error message
+      // Clear error
       function clearError(input) {
         const errorElement = document.getElementById(`${input.id}-error`);
         if (errorElement) {
@@ -333,10 +284,10 @@
           errorElement.style.display = 'none';
         }
         input.setAttribute('aria-invalid', 'false');
-        input.style.borderColor = '';
+        input.classList.remove('error');
       }
 
-      // Real-time validation on blur
+      // Real-time validation
       [nameInput, emailInput, messageInput].forEach(input => {
         input.addEventListener('blur', function () {
           const error = validators[this.id](this.value);
@@ -347,7 +298,6 @@
           }
         });
 
-        // Clear error on input
         input.addEventListener('input', function () {
           if (this.getAttribute('aria-invalid') === 'true') {
             clearError(this);
@@ -355,11 +305,10 @@
         });
       });
 
-      // Form submission handler
+      // Form submission
       form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        // Validate all fields
         let isValid = true;
         const fields = [
           { input: nameInput, validator: validators.name },
@@ -377,19 +326,15 @@
           }
         });
 
-        // If validation passes, prepare email
         if (isValid) {
-          // Show loading state
           btnText.style.display = 'none';
-          btnLoader.style.display = 'inline';
+          btnLoader.style.display = 'inline-flex';
           submitBtn.disabled = true;
 
-          // Prepare email data
           const name = nameInput.value.trim();
           const email = emailInput.value.trim();
           const message = messageInput.value.trim();
 
-          // Encode for URL
           const subject = encodeURIComponent(`Message from ${name} (${email})`);
           const body = encodeURIComponent(
             `Name: ${name}\n` +
@@ -399,27 +344,20 @@
             `Sent from portfolio contact form`
           );
 
-          // Small delay for UX (simulate processing)
           setTimeout(() => {
-            // Open email client
             window.location.href = `mailto:fortunedonfack05@gmail.com?subject=${subject}&body=${body}`;
 
-            // Show success message
-            successMessage.style.display = 'block';
-
-            // Reset button state
+            successMessage.style.display = 'flex';
             btnText.style.display = 'inline';
             btnLoader.style.display = 'none';
             submitBtn.disabled = false;
 
-            // Optional: Reset form after successful submission
             setTimeout(() => {
               form.reset();
               successMessage.style.display = 'none';
             }, 3000);
           }, 500);
         } else {
-          // Focus on first error field
           const firstError = fields.find(({ input, validator }) =>
             validator(input.value) !== ''
           );
@@ -430,22 +368,19 @@
       });
     })();
 
-    // ============================================
-    // BACK TO TOP BUTTON
-    // Performance-optimized scroll handler
-    // ============================================
+    // Back to top button
     (function () {
       const backToTopBtn = document.getElementById('backToTopBtn');
-      let scrolling = false;
+      let isScrolling = false;
 
       window.addEventListener('scroll', function () {
-        if (!scrolling) {
+        if (!isScrolling) {
           window.requestAnimationFrame(function () {
-            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-            backToTopBtn.style.display = scrollTop > 200 ? 'block' : 'none';
-            scrolling = false;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            backToTopBtn.classList.toggle('visible', scrollTop > 300);
+            isScrolling = false;
           });
-          scrolling = true;
+          isScrolling = true;
         }
       }, { passive: true });
 
@@ -458,24 +393,6 @@
       });
     })();
   </script>
-
-  <!-- ============================================
-       ANALYTICS (Optional)
-       Uncomment to add tracking
-       ============================================ -->
-
-  <script defer>
-    // Track form submissions
-    document.getElementById('contactForm').addEventListener('submit', function () {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'form_submit', {
-          'event_category': 'Contact',
-          'event_label': 'Contact Form'
-        });
-      }
-    });
-  </script>
-
 </body>
 
 </html>

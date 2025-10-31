@@ -2,10 +2,7 @@
 <html lang="en">
 
 <head>
-  <!-- ============================================
-       META TAGS & SEO OPTIMIZATION
-       Enhanced metadata for teaching portfolio page
-       ============================================ -->
+  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
@@ -14,50 +11,31 @@
     content="engineering educator, teaching portfolio, mechanical engineering courses, project-based learning, Cameroon education" />
   <meta name="author" content="Donfack Fortune" />
 
-  <!-- Open Graph for social sharing -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Teaching | Donfack Fortune" />
   <meta property="og:description"
     content="Engineering educator with experience teaching 12 courses across multiple institutions" />
   <meta property="og:type" content="website" />
 
   <title>Teaching | Donfack Fortune</title>
-  <!-- ==========================
-       HEADER SCROLL BEHAVIOUR
-       =========================== -->
-  <script src="assets/js/header-project-scroll.js" defer></script>
 
-  <!-- ============================================
-       PERFORMANCE OPTIMIZATION: Resource Hints
-       Preconnect to external domains for faster loading
-       ============================================ -->
+  <!-- DNS Prefetch & Preconnect -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- ============================================
-       CRITICAL CSS: Inline essential styles
-       Improves initial render performance
-       ============================================ -->
-
-  <!-- ============================================
-       FONT LOADING: Async font loading strategy
-       ============================================ -->
+  <!-- Font Loading -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   </noscript>
 
-  <!-- ============================================
-       STYLESHEETS: Optimized CSS loading
-       ============================================ -->
-  <link rel="stylesheet" href="assets/css/main.css" media="all" />
-  <link rel="stylesheet" href="assets/css/teaching.css" media="all" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/teaching.css" />
 
-  <!-- ============================================
-       ICON LIBRARY: Deferred loading
-       ============================================ -->
+  <!-- Font Awesome -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
@@ -66,222 +44,214 @@
 </head>
 
 <body>
-  <!-- ============================================
-       ACCESSIBILITY: Skip navigation link
-       ============================================ -->
-  <a href="#main-content" class="sr-only">Skip to main content</a>
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ============================================
-       HEADER NAVIGATION
-       Consistent site-wide navigation
-       ============================================ -->
+  <!-- Header -->
   <header class="header" role="banner">
-    <div class="container header-flex">
+    <div class="container">
+      <div class="header-wrapper">
+        <!-- Logo -->
+        <div class="header-logo">
+          <h1 class="logo">
+            <a href="index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
+          </h1>
+        </div>
 
-      <!-- Site Logo/Brand -->
-      <div class="header-left">
-        <h1 class="logo">
-          <a href="index.html" style="text-decoration: none; color: inherit;">
-            Donfack Fortune
+        <!-- Navigation -->
+        <nav class="header-nav" aria-label="Main navigation" role="navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Projects</a></li>
+            <li><a href="teaching.html" class="nav-link active" aria-current="page">Teaching</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+
+        <!-- Social Links -->
+        <div class="header-social" role="complementary" aria-label="Social media links">
+          <a href="https://grabcad.com/donfack.fortune-1" aria-label="Visit Donfack Fortune's GrabCAD profile"
+            target="_blank" rel="noopener noreferrer" class="social-link">
+            <span class="social-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
+                <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff" font-family="Arial">GC</text>
+              </svg>
+            </span>
           </a>
-        </h1>
-      </div>
 
-      <!-- Main Navigation -->
-      <nav class="header-center" aria-label="Main navigation" role="navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Projects</a></li>
-          <li><a href="teaching.html" class="active" aria-current="page">Teaching</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-
-      <!-- Social Media Links -->
-      <div class="header-right social-icons" role="complementary" aria-label="Social media links">
-        <a href="https://grabcad.com/donfack.fortune-1" aria-label="Visit Donfack Fortune's GrabCAD profile"
-          target="_blank" rel="noopener noreferrer">
-          <span class="fab fa-grabcad" role="img" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-              <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
-                font-family="Arial, sans-serif">GC</text>
-            </svg>
-          </span>
-        </a>
-        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
-          aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-        </a>
+          <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+            aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank" rel="noopener noreferrer"
+            class="social-link">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- ============================================
-       MAIN CONTENT: Teaching Portfolio
-       ============================================ -->
-  <main class="teaching-main container" id="main-content" role="main">
+  <!-- Main Content -->
+  <main class="main-content" id="main-content" role="main">
+    <div class="container">
 
-    <!-- ============================================
-         TEACHING INTRODUCTION
-         Overview of teaching experience and philosophy
-         ============================================ -->
-    <section class="teaching-intro" aria-labelledby="teaching-intro-heading">
-      <!-- Screen reader heading -->
-      <h2 id="teaching-intro-heading" class="sr-only">Teaching Experience Overview</h2>
+      <!-- Teaching Introduction -->
+      <section class="teaching-intro" aria-labelledby="teaching-intro-heading">
+        <h2 id="teaching-intro-heading" class="visually-hidden">Teaching Experience Overview</h2>
 
-      <!-- Opening Statement -->
-      <p>
-        I have taught twelve engineering and design courses, as an instructor,
-        lecturer, mentor, or teaching assistant.
-      </p>
+        <div class="intro-text">
+          <p class="lead-text">
+            I have taught twelve engineering and design courses, as an instructor,
+            lecturer, mentor, or teaching assistant.
+          </p>
+        </div>
 
-      <!-- ============================================
-           COURSES AT FONGO TONGO
-           Technical High School course list
-           ============================================ -->
-      <h3>At Fongo Tongo:</h3>
-      <ul role="list">
-        <li>Introduction to Mechanical Prototyping</li>
-        <li>Design Nature</li>
-        <li>Design for Manufacturing</li>
-        <li>Principles of Integrated Engineering</li>
-        <li>Collaborative Design</li>
-        <li>Mechanical Solids & Structures</li>
-      </ul>
+        <!-- Course Lists -->
+        <div class="courses-wrapper">
 
-      <!-- ============================================
-           COURSES AT ENSET
-           Higher education course list
-           ============================================ -->
-      <h3>At ENSET:</h3>
-      <ul role="list">
-        <li>2.009: Product Engineering Processes</li>
-        <li>2.007: Design & Manufacturing I</li>
-        <li>2.00b: Toy Product Design</li>
-        <li>2.00: Introduction to Design</li>
-        <li>2.76: Global Engineering</li>
-        <li>2.000: Explorations in Mechanical Engineering</li>
-      </ul>
-
-      <!-- ============================================
-           TEACHING PHILOSOPHY
-           Educational approach and innovation
-           ============================================ -->
-      <p>
-        These courses have taken many forms—introductory to graduate,
-        project-based to lecture-based, 12 students to 150 students,
-        student-centered to impact-centered—so I am familiar with the
-        structures, goals, and challenges of many forms of teaching practice.
-      </p>
-
-      <p>
-        Even with this familiarity, I treat my courses as opportunities for
-        innovation.
-      </p>
-    </section>
-
-    <!-- ============================================
-         TEACHING PROJECTS SHOWCASE
-         Visual portfolio of teaching activities
-         ============================================ -->
-    <section class="teaching-projects" aria-labelledby="teaching-projects-heading">
-      <h2 id="teaching-projects-heading" class="sr-only">Teaching Projects Gallery</h2>
-
-      <!-- Responsive Grid Layout -->
-      <div class="projects-grid">
-
-        <!-- Teaching Project 1: Product Development -->
-        <article class="project-card">
-          <div class="project-item">
-            <!-- OPTIMIZATION: Lazy loading for below-the-fold images -->
-            <img src="assets/images/My-image.jpg"
-              alt="Instructor guiding engineering students through hands-on product development process in classroom"
-              width="420" height="260" decoding="async" />
-            <p>Guiding students through the product development process</p>
+          <!-- Fongo Tongo Courses -->
+          <div class="course-group">
+            <h3 class="course-heading">At Fongo Tongo:</h3>
+            <ul class="course-list" role="list">
+              <li>Introduction to Mechanical Prototyping</li>
+              <li>Design Nature</li>
+              <li>Design for Manufacturing</li>
+              <li>Principles of Integrated Engineering</li>
+              <li>Collaborative Design</li>
+              <li>Mechanical Solids & Structures</li>
+            </ul>
           </div>
-        </article>
 
-        <!-- Teaching Project 2: Remote Learning Innovation -->
-        <article class="project-card">
-          <div class="project-item">
-            <img src="assets/images/My-image.jpg"
-              alt="Digital classroom setup for remote mechanical design course with project-based learning methodology"
-              width="420" height="260" decoding="async" />
-            <p>
-              Redesigning a mechanical design course for remote, project-based
-              learning
-            </p>
+          <!-- ENSET Courses -->
+          <div class="course-group">
+            <h3 class="course-heading">At ENSET:</h3>
+            <ul class="course-list" role="list">
+              <li>2.009: Product Engineering Processes</li>
+              <li>2.007: Design & Manufacturing I</li>
+              <li>2.00b: Toy Product Design</li>
+              <li>2.00: Introduction to Design</li>
+              <li>2.76: Global Engineering</li>
+              <li>2.000: Explorations in Mechanical Engineering</li>
+            </ul>
           </div>
-        </article>
+        </div>
 
-        <!-- Teaching Project 3: Learning Resources Development -->
-        <article class="project-card">
-          <div class="project-item">
-            <img src="assets/images/My-image.jpg"
-              alt="Educational tools and maker space facilities designed for accessible integrated engineering learning"
-              width="420" height="260" decoding="async" />
-            <p>
-              Building tools, resources, and spaces to enable accessible,
-              integrated learning experiences
-            </p>
-          </div>
-        </article>
+        <!-- Teaching Philosophy -->
+        <div class="philosophy-text">
+          <p>
+            These courses have taken many forms—introductory to graduate,
+            project-based to lecture-based, 12 students to 150 students,
+            student-centered to impact-centered—so I am familiar with the
+            structures, goals, and challenges of many forms of teaching practice.
+          </p>
 
-        <!-- Teaching Project 4: Active Learning Implementation -->
-        <article class="project-card">
-          <div class="project-item">
-            <img src="assets/images/My-image.jpg"
-              alt="Students actively engaged in hands-on engineering project work in collaborative learning environment"
-              width="420" height="260" decoding="async" />
-            <p>Project-based learning in action</p>
-          </div>
-        </article>
-      </div>
-    </section>
+          <p>
+            Even with this familiarity, I treat my courses as opportunities for
+            innovation.
+          </p>
+        </div>
+      </section>
+
+      <!-- Teaching Projects Gallery -->
+      <section class="teaching-gallery" aria-labelledby="teaching-gallery-heading">
+        <h2 id="teaching-gallery-heading" class="section-title">Teaching in Action</h2>
+
+        <div class="gallery-grid">
+
+          <!-- Gallery Item 1 -->
+          <article class="gallery-item">
+            <div class="gallery-card">
+              <div class="image-wrapper">
+                <img src="assets/images/My-image.jpg"
+                  alt="Instructor guiding engineering students through hands-on product development process in classroom"
+                  class="gallery-image" loading="lazy" width="420" height="280" />
+              </div>
+              <div class="card-content">
+                <p class="card-text">Guiding students through the product development process</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Gallery Item 2 -->
+          <article class="gallery-item">
+            <div class="gallery-card">
+              <div class="image-wrapper">
+                <img src="assets/images/My-image.jpg"
+                  alt="Digital classroom setup for remote mechanical design course with project-based learning methodology"
+                  class="gallery-image" loading="lazy" width="420" height="280" />
+              </div>
+              <div class="card-content">
+                <p class="card-text">Redesigning a mechanical design course for remote, project-based learning</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Gallery Item 3 -->
+          <article class="gallery-item">
+            <div class="gallery-card">
+              <div class="image-wrapper">
+                <img src="assets/images/My-image.jpg"
+                  alt="Educational tools and maker space facilities designed for accessible integrated engineering learning"
+                  class="gallery-image" loading="lazy" width="420" height="280" />
+              </div>
+              <div class="card-content">
+                <p class="card-text">Building tools, resources, and spaces to enable accessible, integrated learning
+                  experiences</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Gallery Item 4 -->
+          <article class="gallery-item">
+            <div class="gallery-card">
+              <div class="image-wrapper">
+                <img src="assets/images/My-image.jpg"
+                  alt="Students actively engaged in hands-on engineering project work in collaborative learning environment"
+                  class="gallery-image" loading="lazy" width="420" height="280" />
+              </div>
+              <div class="card-content">
+                <p class="card-text">Project-based learning in action</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <!-- ============================================
-       FOOTER
-       Site footer with copyright
-       ============================================ -->
+  <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <p>&copy; Donfack Fortune <span id="current-year">2025</span></p>
+      <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ================================================
-         BACK TO TOP BUTTON
-         ================================================ -->
-  <button id="backToTopBtn" aria-label="Back to top" title="Back to Top">
-    <i class="fas fa-chevron-up"></i>
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
   </button>
 
-  <!-- ============================================
-       JAVASCRIPT: Optimized script loading
-       ============================================ -->
+  <!-- Scripts -->
   <script>
     // Dynamic year update
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Performance-optimized scroll handler
+    // Back to top button functionality
     (function () {
       const backToTopBtn = document.getElementById('backToTopBtn');
-      let scrolling = false;
+      let isScrolling = false;
 
-      // Throttled scroll event with requestAnimationFrame
       window.addEventListener('scroll', function () {
-        if (!scrolling) {
+        if (!isScrolling) {
           window.requestAnimationFrame(function () {
-            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-            backToTopBtn.style.display = scrollTop > 200 ? 'block' : 'none';
-            scrolling = false;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            backToTopBtn.classList.toggle('visible', scrollTop > 300);
+            isScrolling = false;
           });
-          scrolling = true;
+          isScrolling = true;
         }
       }, { passive: true });
 
-      // Smooth scroll with accessibility support
       backToTopBtn.addEventListener('click', function () {
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({
@@ -290,22 +260,15 @@
         });
       });
     })();
-  </script>
 
-  <!-- ============================================
-       PROGRESSIVE IMAGE LOADING
-       Intersection Observer for lazy-loaded images
-       ============================================ -->
-  <script>
+    // Lazy loading intersection observer
     if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries, observer) => {
+      const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const img = entry.target;
-            img.addEventListener('load', () => {
-              img.style.opacity = '1';
-            });
-            observer.unobserve(img);
+            img.classList.add('loaded');
+            imageObserver.unobserve(img);
           }
         });
       }, {
@@ -313,8 +276,6 @@
       });
 
       document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s';
         imageObserver.observe(img);
       });
     }
