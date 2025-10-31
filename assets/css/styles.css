@@ -1,17 +1,18 @@
 /* ============================================
-   DONFACK FORTUNE PORTFOLIO - MAIN STYLESHEET
-   File: main.css
+   DONFACK FORTUNE PORTFOLIO - REFACTORED STYLESHEET
+   File: main.css (refactored)
    Author: Donfack Fortune
-   Description: Core styles for portfolio homepage
+   Notes: Consolidated redundant media queries and repeated rules.
+          Kept original design tokens and behavior.
    Last Updated: 2025
    ============================================ */
 
-/* ============================================
-   CSS VARIABLES & DESIGN TOKENS
-   Best Practice: Centralize all design values for easy maintenance
-   ============================================ */
+/* --------------------------------------------
+   DESIGN TOKENS / VARIABLES
+   Centralized for easy maintenance
+   -------------------------------------------- */
 :root {
-    /* === Color Palette === */
+    /* Colors */
     --primary-color: #070707;
     --secondary-color: #000000;
     --accent-color: #0493f3;
@@ -30,7 +31,7 @@
     --shadow-color: rgba(0, 0, 0, 0.06);
     --shadow-hover: rgba(0, 0, 0, 0.13);
 
-    /* === Typography === */
+    /* Typography */
     --font-main: 'Open Sans', sans-serif;
     --font-heading: 'Montserrat', sans-serif;
     --font-size-base: 1rem;
@@ -38,7 +39,7 @@
     --line-height-base: 1.7;
     --line-height-heading: 1.2;
 
-    /* === Spacing System (8px base) === */
+    /* Spacing (8px base) */
     --spacing-xs: 0.5rem;
     /* 8px */
     --spacing-sm: 1rem;
@@ -52,7 +53,7 @@
     --spacing-2xl: 4rem;
     /* 64px */
 
-    /* === Layout === */
+    /* Layout */
     --max-width: 1200px;
     --max-width-lg: 1300px;
     --border-radius: 4px;
@@ -60,17 +61,17 @@
     --border-radius-lg: 10px;
     --border-radius-xl: 12px;
 
-    /* === Transitions === */
+    /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-medium: 0.3s ease;
     --transition-slow: 0.5s ease;
     --transition-bounce: 0.18s cubic-bezier(.4, 1.3, .6, 1);
 }
 
-/* ============================================
-   RESET & BASE STYLES
-   Best Practice: Normalize browser defaults
-   ============================================ */
+/* --------------------------------------------
+   RESET + BASE
+   Normalize and base typographic rules
+   -------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -82,7 +83,6 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    /* Base font size for rem calculations */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -96,10 +96,7 @@ body {
     min-height: 100vh;
 }
 
-/* ============================================
-   TYPOGRAPHY
-   Mobile-first approach with scalable text
-   ============================================ */
+/* Headings */
 h1,
 h2,
 h3,
@@ -151,10 +148,7 @@ a:focus-visible {
     border-radius: 2px;
 }
 
-/* ============================================
-   LAYOUT UTILITIES
-   Reusable container classes
-   ============================================ */
+/* Utility containers */
 .container {
     width: 90%;
     max-width: var(--max-width-lg);
@@ -166,10 +160,7 @@ a:focus-visible {
     padding: var(--spacing-xl) 0;
 }
 
-/* ============================================
-   ACCESSIBILITY
-   Screen reader only content and focus states
-   ============================================ */
+/* Accessibility - Screen reader only */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -182,7 +173,6 @@ a:focus-visible {
     border-width: 0;
 }
 
-/* Skip to content link - visible on focus */
 a.sr-only:focus {
     position: static;
     width: auto;
@@ -193,17 +183,16 @@ a.sr-only:focus {
     clip: auto;
     white-space: normal;
     background: var(--brand-red);
-    color: white;
+    color: #fff;
     z-index: 10000;
     display: block;
     text-align: center;
 }
 
-/* ============================================
-   HEADER NAVIGATION
-   Sticky header with logo, navigation, and social icons
-   Matches Pedal Power project style
-   ============================================ */
+/* --------------------------------------------
+   HEADER (base)
+   Sticky header with three-column layout by default
+   -------------------------------------------- */
 .header {
     background: var(--bg-white);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -214,44 +203,36 @@ a.sr-only:focus {
     text-align: center;
 }
 
-/* Header Layout - Three Column Design */
+/* Default header layout (3 columns) */
 .header-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-lg);
     flex-wrap: wrap;
-
 }
 
-/* Logo Section - Left Column */
-.header-left {
-    flex: 0 1 auto;
-}
-
-.header-left .logo,
-.logo {
+/* Logo */
+.logo,
+.header-left .logo {
     font-size: 1.4rem;
     font-weight: 700;
     margin: 0;
     letter-spacing: -0.5px;
     color: var(--text-dark);
     transition: color var(--transition-medium);
-
 }
 
 .logo a {
     color: inherit;
     text-decoration: none;
-
-
 }
 
 .logo a:hover {
     color: var(--brand-red);
 }
 
-/* Navigation Menu - Center Column */
+/* Navigation (center) */
 .header-center {
     flex: 1 1 auto;
     display: flex;
@@ -283,7 +264,6 @@ a.sr-only:focus {
     white-space: nowrap;
 }
 
-/* Active and Hover States */
 .nav-list li a:hover,
 .nav-list li a:focus,
 .nav-list li a.active,
@@ -292,13 +272,12 @@ a.sr-only:focus {
     background: rgba(224, 43, 32, 0.08);
 }
 
-/* Navigation Focus State */
 .nav-list li a:focus-visible {
     outline: 2px solid var(--brand-red);
     outline-offset: 2px;
 }
 
-/* Social Icons Section - Right Column */
+/* Social icons (right) */
 .header-right.social-icons {
     flex: 0 1 auto;
     display: flex;
@@ -323,7 +302,7 @@ a.sr-only:focus {
 .social-icons a:hover,
 .social-icons a:focus {
     background: var(--brand-red);
-    color: white;
+    color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(224, 43, 32, 0.3);
 }
@@ -333,32 +312,24 @@ a.sr-only:focus {
     outline-offset: 2px;
 }
 
-/* GrabCAD Custom Icon */
+/* GrabCAD icon tweak (kept) */
 .fab.fa-grabcad svg {
     width: 1.2em;
     height: 1.2em;
 }
 
-/* ============================================
-   MAIN CONTENT AREAS
-   Shared content section styles
-   ============================================ */
+/* --------------------------------------------
+   MAIN CONTENT / PROJECTS
+   -------------------------------------------- */
 .main-content {
     padding: 56px 0 40px 0;
     min-height: calc(100vh - 200px);
 }
 
-/* ============================================
-   PROJECTS GRID SECTION
-   Responsive card grid layout for project showcase
-   ============================================ */
-
-/* Projects Group Container */
 .projects-group {
     margin-bottom: var(--spacing-2xl);
 }
 
-/* Section Heading */
 .projects-group-title {
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: 700;
@@ -369,7 +340,6 @@ a.sr-only:focus {
     color: var(--text-dark);
 }
 
-/* Grid Layout */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
@@ -378,18 +348,12 @@ a.sr-only:focus {
     margin-top: 32px;
 }
 
-/* ============================================
-   PROJECT CARDS
-   Individual project card styling
-   ============================================ */
-
-/* Project Card Container */
+/* Project cards */
 .project-card {
     width: 100%;
     max-width: 600px;
 }
 
-/* Project Item Link - Full card clickable */
 .project-item-link {
     display: block;
     text-decoration: none;
@@ -402,7 +366,6 @@ a.sr-only:focus {
     border-radius: var(--border-radius-lg);
 }
 
-/* Project Item Card */
 .project-item {
     width: 100%;
     text-align: left;
@@ -410,12 +373,10 @@ a.sr-only:focus {
     border-radius: var(--border-radius-lg);
     box-shadow: 0 2px 16px var(--shadow-color);
     overflow: hidden;
-    transition: box-shadow var(--transition-medium),
-        transform var(--transition-bounce);
+    transition: box-shadow var(--transition-medium), transform var(--transition-bounce);
     position: relative;
 }
 
-/* Card Hover Effect */
 .project-item:hover {
     box-shadow: 0 8px 32px var(--shadow-hover);
 }
@@ -424,7 +385,6 @@ a.sr-only:focus {
     transform: scale(1.03);
 }
 
-/* Project Image */
 .project-item img {
     width: 100%;
     height: auto;
@@ -437,13 +397,11 @@ a.sr-only:focus {
     transition: filter var(--transition-medium);
 }
 
-/* Image Hover Effect - Remove grayscale */
 .project-item:hover img,
 .project-item-link:focus-visible .project-item img {
     filter: grayscale(0%);
 }
 
-/* Project Title/Description */
 .project-item p {
     margin: 22px 18px;
     font-size: clamp(1rem, 2vw, var(--font-size-large));
@@ -453,10 +411,10 @@ a.sr-only:focus {
     letter-spacing: 0.01em;
 }
 
-/* ============================================
-   BACK TO TOP BUTTON
-   Floating action button - Matches Pedal Power style
-   ============================================ */
+/* --------------------------------------------
+   BACK TO TOP (FAB)
+   Consolidated and deduplicated
+   -------------------------------------------- */
 #backToTopBtn {
     display: none;
     position: fixed;
@@ -465,8 +423,7 @@ a.sr-only:focus {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #e02b20;
-    ;
+    background-color: var(--brand-red);
     color: white;
     cursor: pointer;
     padding: 10px;
@@ -476,7 +433,6 @@ a.sr-only:focus {
     height: 50px;
     transition: all var(--transition-medium);
     box-shadow: 0 4px 12px rgba(224, 43, 32, 0.3);
-    display: none;
     align-items: center;
     justify-content: center;
 }
@@ -493,15 +449,13 @@ a.sr-only:focus {
     outline-offset: 2px;
 }
 
-/* Show button when scrolled */
 #backToTopBtn.visible {
     display: flex;
 }
 
-/* ============================================
+/* --------------------------------------------
    FOOTER
-   Site footer with copyright information
-   ============================================ */
+   -------------------------------------------- */
 .footer {
     border-top: 1px solid var(--border-color);
     background: var(--bg-white);
@@ -522,17 +476,15 @@ a.sr-only:focus {
     color: var(--brand-red);
 }
 
-/* ============================================
-   IMAGE OPTIMIZATION
-   Lazy loading and performance enhancements
-   ============================================ */
+/* --------------------------------------------
+   IMAGES + LAZY LOAD
+   -------------------------------------------- */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* Fade-in animation for lazy-loaded images */
 img[loading="lazy"] {
     opacity: 0;
     transition: opacity 0.3s ease-in;
@@ -542,10 +494,9 @@ img[loading="lazy"].loaded {
     opacity: 1;
 }
 
-/* ============================================
-   PERFORMANCE: REDUCED MOTION
-   Respect user preferences for motion
-   ============================================ */
+/* --------------------------------------------
+   REDUCED MOTION (accessibility)
+   -------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
 
     *,
@@ -558,115 +509,93 @@ img[loading="lazy"].loaded {
     }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - TABLETS
-   Breakpoint: 900px and below
-   ============================================ */
+/* --------------------------------------------
+   RESPONSIVE RULES (consolidated)
+   - Tablet first (<=900px)
+   - Mobile (<=600px)
+   - Small mobile (<=480px) -> single column header as requested
+   -------------------------------------------- */
+
+/* Tablet adjustments */
 @media (max-width: 900px) {
 
-    /* Adjust spacing for tablets */
+    /* Slightly stack header and tighten spacing */
+    .header-flex {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-list {
+        gap: var(--spacing-md);
+    }
+
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
     .header-right.social-icons {
         justify-content: center;
         width: 100%;
     }
 
-
-
-    /* Adjust project grid gaps */
     .projects-grid {
         gap: 36px 24px;
     }
 
-    /* Stack header elements if needed */
-    .header-flex {
-        gap: var(--spacing-md);
-    }
-
-    /* Adjust header padding */
     .header {
         padding: var(--spacing-sm) 0;
     }
-
-    /* Smaller logo on tablets */
-    .header-left .logo {
-        font-size: 1.3rem;
-    }
-
-    /* Adjust navigation spacing */
-    .nav-list {
-        gap: var(--spacing-md);
-    }
-
-    .nav-list li a {
-        padding: 6px 12px;
-        font-size: 1rem;
-    }
-
-    /* Adjust social icons */
-    .social-icons a {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-
-    }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - MOBILE
-   Breakpoint: 600px and below
-   ============================================ */
+/* Mobile adjustments */
 @media (max-width: 600px) {
-
-    /* Stack header elements vertically */
     .header-flex {
-        flex-direction: column;
-        gap: var(--spacing-md);
-        align-items: flex-start;
+        gap: var(--spacing-sm);
     }
 
     .logo {
-        text-align: center;
-
+        font-size: 1.3rem;
     }
 
-    .header-left {
-        width: 100%;
-    }
-
-    .header-center {
-        width: 100%;
-    }
-
-    /* Vertical navigation on mobile */
     .nav-list {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);
         width: 100%;
         align-items: flex-start;
-    }
-
-    .nav-list li {
-        width: 100%;
     }
 
     .nav-list li a {
         display: block;
         width: 100%;
-        padding: 10px 12px;
+        padding: 10px;
     }
 
-    /* Reduce main content padding */
+    .social-icons {
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+
+    .social-icons a {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+
     .main-content {
         padding: 28px 0 18px 0;
     }
 
-    /* Adjust project grid */
     .projects-grid {
         gap: 28px 18px;
         grid-template-columns: 1fr;
     }
 
-    /* Smaller back to top button */
     #backToTopBtn {
         bottom: 20px;
         right: 20px;
@@ -676,73 +605,74 @@ img[loading="lazy"].loaded {
         font-size: 1.2rem;
     }
 
-    /* Reduce header padding */
-    .header {
-        padding: var(--spacing-md) 0;
-    }
-
-    /* Adjust container width */
     .container {
         width: 95%;
     }
 
-    /* Smaller logo */
     .header-left .logo {
         font-size: 1.2rem;
     }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - SMALL MOBILE
-   Breakpoint: 480px and below
-   ============================================ */
+/* Small mobile (<=480px) - SINGLE COLUMN HEADER (logo > nav > social icons) */
 @media (max-width: 480px) {
-
-    /* Further reduce spacing */
-    .container {
-        width: 95%;
-        padding: 0;
+    .header-flex {
+        display: flex;
+        flex-direction: column;
+        /* stack vertically */
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-md);
     }
 
-
-    /* Compact header */
-    .header {
-        padding: 12px 0;
-    }
-
-    /* Smaller logo */
-    .header-left .logo {
+    .logo {
         font-size: 1.1rem;
+        text-align: center;
     }
 
-    /* Compact navigation */
+    /* Navigation becomes vertical and centered */
+    .header-center {
+        width: 100%;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: var(--spacing-xs);
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
     .nav-list li a {
+        display: block;
+        width: 100%;
+        font-weight: 500;
         font-size: 0.95rem;
+        color: var(--text-medium);
         padding: 8px 10px;
+        border-radius: var(--border-radius);
+        text-decoration: none;
     }
 
-    /* Adjust social icons */
     .social-icons {
-        gap: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-sm);
+        flex-wrap: wrap;
     }
 
     .social-icons a {
         width: 32px;
         height: 32px;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
-    /* Full-width project cards */
-    .project-item {
-        max-width: 100%;
-    }
-
-    /* Adjust section spacing */
-    .projects-group {
-        margin-bottom: var(--spacing-xl);
-    }
-
-    /* Smaller back to top button */
     #backToTopBtn {
         bottom: 16px;
         right: 16px;
@@ -753,17 +683,11 @@ img[loading="lazy"].loaded {
     }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - LANDSCAPE MOBILE
-   Orientation: Landscape phones
-   ============================================ */
-@media (max-height: 500px) and (orientation: landscape) {
-
-    /* Reduce vertical spacing */
+/* Landscape phones - reduce vertical spacing */
+@media (max-height:500px) and (orientation:landscape) {
     .main-content {
         padding: 20px 0;
     }
-
 
     .header {
         padding: 20px 0 15px 0;
@@ -773,7 +697,6 @@ img[loading="lazy"].loaded {
         margin-bottom: var(--spacing-lg);
     }
 
-    /* Compact back to top button */
     #backToTopBtn {
         width: 40px;
         height: 40px;
@@ -782,20 +705,15 @@ img[loading="lazy"].loaded {
     }
 }
 
-/* ============================================
-   PRINT STYLES
-   Optimized for printing
-   ============================================ */
+/* Print rules - keep concise */
 @media print {
 
-    /* Hide interactive elements */
     #backToTopBtn,
     .social-icons,
     .header-center {
         display: none !important;
     }
 
-    /* Simplify colors for print */
     body {
         color: #000;
         background: #fff;
@@ -807,57 +725,33 @@ img[loading="lazy"].loaded {
         background: none;
     }
 
-    /* Expand content width */
     .container {
         width: 100%;
         max-width: none;
     }
 
-    /* Optimize images for print */
     .project-item img {
         filter: none !important;
         page-break-inside: avoid;
     }
 
-    /* Prevent page breaks inside cards */
     .project-item,
     .project-card {
         page-break-inside: avoid;
     }
 
-    /* Remove shadows */
     .project-item {
         box-shadow: none;
         border: 1px solid #ccc;
     }
 
-    /* Adjust grid for print */
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 }
 
-/* ============================================
-   DARK MODE SUPPORT (Optional - Future Enhancement)
-   Respects user's system preference
-   ============================================ */
-@media (prefers-color-scheme: dark) {
-    /* Uncomment to enable dark mode
-    :root {
-        --primary-color: #f0f0f0;
-        --text-dark: #e0e0e0;
-        --bg-white: #1a1a1a;
-        --bg-card: #2a2a2a;
-        --border-color: #444;
-    }
-    */
-}
-
-/* ============================================
-   HIGH CONTRAST MODE
-   Accessibility for high contrast users
-   ============================================ */
+/* High contrast accessibility tweaks */
 @media (prefers-contrast: high) {
     .nav-list li a {
         border-bottom-width: 3px;
@@ -872,12 +766,10 @@ img[loading="lazy"].loaded {
     }
 }
 
-/* ============================================
+/* --------------------------------------------
    UTILITY CLASSES
-   Reusable helper classes
-   ============================================ */
-
-/* Text Alignment */
+   -------------------------------------------- */
+/* Text alignment */
 .text-center {
     text-align: center;
 }
@@ -890,13 +782,13 @@ img[loading="lazy"].loaded {
     text-align: right;
 }
 
-/* Display Utilities */
+/* Display */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .visible {
-    display: block;
+    display: block !important;
 }
 
 .flex {
@@ -907,7 +799,7 @@ img[loading="lazy"].loaded {
     display: grid;
 }
 
-/* Spacing Utilities */
+/* Spacing utilities */
 .mt-0 {
     margin-top: 0;
 }
@@ -940,6 +832,4 @@ img[loading="lazy"].loaded {
     margin-bottom: var(--spacing-lg);
 }
 
-/* ============================================
-   END OF STYLESHEET
-   ============================================ */
+/* End of refactored stylesheet */

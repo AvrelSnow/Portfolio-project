@@ -2,22 +2,52 @@
 <html lang="en">
 
 <head>
+    <!-- ================================================
+         META TAGS & SEO
+         ================================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banana Pseudostem Shredding Machine | Donfack Fortune</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Banana Pseudostem Shredding Machine - A sustainable agricultural solution designed by Donfack Fortune">
+    <meta name="keywords" content="mechanical engineering, agricultural machinery, product design, CAD, SolidWorks">
+    <meta name="author" content="Donfack Fortune">
 
+    <title>Banana Pseudostem Shredding Machine | Donfack Fortune</title>
+
+    <!-- ==========================
+       HEADER SCROLL BEHAVIOUR
+       =========================== -->
+    <script src="../assets/js/header-project-scroll.js" defer></script>
+
+    <!-- ================================================
+         EXTERNAL STYLESHEETS & FONTS
+         ================================================ -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Custom CSS - Link to your external stylesheet -->
+    <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
 </head>
 
 <body>
+
+    <!-- ================================================
+         HEADER & NAVIGATION
+         ================================================ -->
     <header class="header">
         <div class="container header-flex">
+
+            <!-- Logo / Site Title -->
             <div class="header-left">
                 <h1 class="logo">Donfack Fortune</h1>
             </div>
+
+            <!-- Main Navigation Menu -->
             <nav class="header-center" aria-label="Main navigation">
                 <ul class="nav-list">
                     <li><a href="../index.html">Projects</a></li>
@@ -25,10 +55,13 @@
                     <li><a href="../about.html">About</a></li>
                 </ul>
             </nav>
+
+            <!-- Social Media Links -->
             <div class="header-right social-icons">
-                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD" target="_blank" rel="noopener">
-                    <span class="fab fa-grabcad"
-                        style="display:inline-block;vertical-align:middle;width:1.2em;height:1.2em;">
+                <!-- GrabCAD Link -->
+                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD Profile" target="_blank"
+                    rel="noopener">
+                    <span class="fab fa-grabcad">
                         <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
@@ -37,17 +70,28 @@
                         </svg>
                     </span>
                 </a>
-                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                    aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
 
+                <!-- LinkedIn Link -->
+                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+                    aria-label="LinkedIn Profile" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
+
         </div>
     </header>
+
+    <!-- ================================================
+         MAIN CONTENT AREA
+         ================================================ -->
     <main class="main-content container">
-        <h2 class="BUR-title">Machine De Broyage Des Pseudo-Troncs De Bananiers</h2>
 
+        <!-- Project Page Title -->
+        <h2 class="page-title">Machine De Broyage Des Pseudo-Troncs De Bananiers</h2>
 
-        <!-- Section: Context -->
+        <!-- ================================================
+             SECTION: PROJECT CONTEXT
+             ================================================ -->
         <section class="project-section">
             <div class="project-section-content">
                 <h3>CONTEXTE</h3>
@@ -288,13 +332,61 @@
                     Lab
                     before the painting and the finishing.</div>
             </div>
-            <a href="../index.html" class="to-teaching-btn">&#8592; Back to Projects</a>
+            <!-- ================================================
+             BACK TO PROJECTS BUTTON
+             ================================================ -->
+            <a href="../index.html" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+
+        </section>
+
     </main>
+
+    <!-- ================================================
+         FOOTER
+         ================================================ -->
     <footer class="footer">
         <div class="container">
-            <p> Donfack Fortune 2025</p>
+            <p>&copy; 2025 Donfack Fortune. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- ================================================
+         BACK TO TOP BUTTON
+         ================================================ -->
+    <button id="backToTopBtn" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ================================================
+         JAVASCRIPT
+         ================================================ -->
+    <script>
+        // ==========================================
+        // Back to Top Button Functionality
+        // ==========================================
+
+        const backToTopBtn = document.getElementById('backToTopBtn');
+
+        // Show button when user scrolls down 200px
+        window.addEventListener('scroll', function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+
+        // Smooth scroll to top when button is clicked
+        backToTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
 </body>
 
 </html>
