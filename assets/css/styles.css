@@ -555,8 +555,11 @@ img[loading="lazy"].loaded {
 
 /* Mobile adjustments */
 @media (max-width: 600px) {
+
+    /* Slightly stack header and tighten spacing */
     .header-flex {
-        gap: var(--spacing-sm);
+        flex-direction: column;
+        gap: var(--spacing-md);
     }
 
     .logo {
@@ -564,37 +567,28 @@ img[loading="lazy"].loaded {
     }
 
     .nav-list {
-        flex-direction: column;
-        gap: var(--spacing-xs);
-        width: 100%;
-        align-items: flex-start;
-    }
-
-    .nav-list li a {
-        display: block;
-        width: 100%;
-        padding: 10px;
-    }
-
-    .social-icons {
-        flex-wrap: wrap;
-        gap: var(--spacing-sm);
+        gap: var(--spacing-md);
     }
 
     .social-icons a {
-        width: 34px;
-        height: 34px;
+        width: 36px;
+        height: 36px;
         font-size: 1rem;
     }
 
-    .main-content {
-        padding: 28px 0 18px 0;
+    .header-right.social-icons {
+        justify-content: center;
+        width: 100%;
     }
 
     .projects-grid {
-        gap: 28px 18px;
-        grid-template-columns: 1fr;
+        gap: 36px 24px;
     }
+
+    .header {
+        padding: var(--spacing-sm) 0;
+    }
+
 
     #backToTopBtn {
         bottom: 20px;
@@ -614,8 +608,74 @@ img[loading="lazy"].loaded {
     }
 }
 
-/* Small mobile (<=480px) - SINGLE COLUMN HEADER (logo > nav > social icons) */
+/* Small mobile (<=480px) */
 @media (max-width: 480px) {
+
+    /* Slightly stack header and tighten spacing */
+    .header-flex {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .nav-list {
+        gap: var(--spacing-md);
+    }
+
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 0.78rem;
+    }
+
+    .header-right.social-icons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .projects-grid {
+        gap: 36px 24px;
+    }
+
+    .header {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .nav-list li a {
+        display: block;
+        width: 100%;
+        font-weight: 500;
+        font-size: 0.75rem;
+        color: var(--text-medium);
+        padding: 8px 8px;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+    }
+
+
+    #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        padding: 12px;
+        font-size: 1.2rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .header-left .logo {
+        font-size: 1.2rem;
+    }
+}
+
+/* Small mobile (<=300px) */
+@media (max-width: 300px) {
     .header-flex {
         display: flex;
         flex-direction: column;
@@ -626,7 +686,7 @@ img[loading="lazy"].loaded {
     }
 
     .logo {
-        font-size: 1.1rem;
+        font-size: 0.6rem;
         text-align: center;
     }
 
@@ -651,9 +711,9 @@ img[loading="lazy"].loaded {
         display: block;
         width: 100%;
         font-weight: 500;
-        font-size: 0.95rem;
+        font-size: 0.7rem;
         color: var(--text-medium);
-        padding: 8px 10px;
+        padding: 8px 8px;
         border-radius: var(--border-radius);
         text-decoration: none;
     }
@@ -670,7 +730,7 @@ img[loading="lazy"].loaded {
     .social-icons a {
         width: 32px;
         height: 32px;
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     #backToTopBtn {
@@ -682,6 +742,7 @@ img[loading="lazy"].loaded {
         font-size: 1rem;
     }
 }
+
 
 /* Landscape phones - reduce vertical spacing */
 @media (max-height:500px) and (orientation:landscape) {
