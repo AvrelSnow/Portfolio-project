@@ -41,6 +41,19 @@
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   </noscript>
+
+  <style>
+    /* Critical CSS for above-the-fold content */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    }
+
+    .header {
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+  </style>
 </head>
 
 <body>
@@ -98,7 +111,7 @@
         <div class="about-content">
 
           <!-- Text Content -->
-          <div class="about-text">
+          <article class="about-text">
             <h2 id="about-heading">About Me</h2>
 
             <p>
@@ -141,7 +154,13 @@
               <a href="teaching.html">Teaching</a> pages, and contact me if you would
               like more information.
             </p>
-          </div>
+          </article>
+
+          <!-- Profile Image -->
+          <aside class="about-image">
+            <img src="assets/images/profile.jpg" alt="Donfack Fortune - Mechanical Engineer and Educator" width="320"
+              height="427" loading="lazy" decoding="async" />
+          </aside>
         </div>
       </section>
 
@@ -195,13 +214,13 @@
             <button type="submit" class="submit-btn" id="submitBtn">
               <span class="btn-text" id="btnText">Send Message</span>
               <span class="btn-loader" id="btnLoader">
-                <i class="fas fa-spinner fa-spin"></i> Sending...
+                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...
               </span>
             </button>
 
             <!-- Success Message -->
             <div id="successMessage" class="success-message" role="status" aria-live="polite">
-              <i class="fas fa-check-circle"></i> Message prepared! Your email client will open.
+              <i class="fas fa-check-circle" aria-hidden="true"></i> Message prepared! Your email client will open.
             </div>
           </form>
         </div>
@@ -384,6 +403,16 @@
           behavior: prefersReducedMotion ? 'auto' : 'smooth'
         });
       });
+    })();
+
+    // Lazy load image with fade-in effect
+    (function () {
+      const profileImg = document.querySelector('.about-image img');
+      if (profileImg && profileImg.loading === 'lazy') {
+        profileImg.addEventListener('load', function () {
+          this.classList.add('loaded');
+        });
+      }
     })();
   </script>
 </body>
