@@ -1,8 +1,8 @@
 /* ============================================
    BANANA PSEUDOSTEM SHREDDER PROJECT PAGE
-   File: project-banana-shredder.css (OPTIMIZED)
+   File: project-banana-shredder.css (TABLET OPTIMIZED)
    Author: Donfack Fortune
-   Description: Fully responsive project detail page
+   Description: Fully responsive with enhanced tablet support
    Last Updated: 2025
    ============================================ */
 
@@ -37,7 +37,7 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
 
-    /* Spacing Scale (8px base) */
+    /* Spacing Scale */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -201,7 +201,7 @@ a:focus-visible {
 /* Responsive container padding */
 @media (min-width: 768px) {
     :root {
-        --container-padding: 4%;
+        --container-padding: 3.5%;
     }
 }
 
@@ -226,7 +226,7 @@ a:focus-visible {
     z-index: var(--z-sticky);
     background: var(--color-bg-white);
     box-shadow: var(--shadow-sm);
-    padding: clamp(1rem, 3vw, 1.5rem) 0;
+    padding: clamp(1rem, 2.5vw, 1.5rem) 0;
     transition: all var(--transition-base);
 }
 
@@ -234,13 +234,13 @@ a:focus-visible {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(1rem, 3vw, 2rem);
-    flex-wrap: wrap;
+    gap: clamp(1rem, 2.5vw, 2rem);
 }
 
 /* Logo */
 .header-left {
     flex-shrink: 0;
+    min-width: fit-content;
 }
 
 .logo {
@@ -253,6 +253,8 @@ a:focus-visible {
 .logo a {
     color: var(--color-text-dark);
     transition: color var(--transition-base);
+    display: inline-block;
+    padding: var(--space-2) 0;
 }
 
 .logo a:hover {
@@ -264,29 +266,38 @@ a:focus-visible {
     flex: 1;
     display: flex;
     justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.header-center::-webkit-scrollbar {
+    display: none;
 }
 
 .nav-list {
     display: flex;
     list-style: none;
-    gap: clamp(0.75rem, 2.5vw, 2rem);
+    gap: clamp(0.5rem, 2vw, 1.5rem);
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
+    white-space: nowrap;
 }
 
 .nav-list li {
     margin: 0;
+    flex-shrink: 0;
 }
 
 .nav-list a {
     display: inline-block;
-    padding: clamp(0.5rem, 1.5vw, 0.625rem) clamp(0.875rem, 2.5vw, 1rem);
+    padding: clamp(0.5rem, 1.2vw, 0.625rem) clamp(0.875rem, 2vw, 1.25rem);
     color: var(--color-text-medium);
     font-weight: var(--font-weight-semibold);
-    font-size: clamp(0.875rem, 1.2vw + 0.25rem, 1rem);
+    font-size: clamp(0.875rem, 1.1vw + 0.25rem, 1rem);
     border-radius: var(--radius-md);
     transition: all var(--transition-base);
     white-space: nowrap;
@@ -302,14 +313,14 @@ a:focus-visible {
 /* Social Icons */
 .header-right {
     display: flex;
-    gap: var(--space-4);
+    gap: clamp(0.75rem, 1.5vw, 1rem);
     align-items: center;
     flex-shrink: 0;
 }
 
 .social-icons {
     display: flex;
-    gap: clamp(0.75rem, 2vw, 1rem);
+    gap: clamp(0.5rem, 1.5vw, 0.875rem);
     align-items: center;
 }
 
@@ -317,13 +328,14 @@ a:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(2.25rem, 4.5vw, 2.5rem);
-    height: clamp(2.25rem, 4.5vw, 2.5rem);
+    width: clamp(2.25rem, 4vw, 2.5rem);
+    height: clamp(2.25rem, 4vw, 2.5rem);
     border-radius: var(--radius-full);
     background: var(--color-bg-light);
     color: var(--color-text-dark);
-    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    font-size: clamp(1rem, 1.6vw, 1.125rem);
     transition: all var(--transition-base);
+    flex-shrink: 0;
 }
 
 .social-icons a:hover,
@@ -342,7 +354,7 @@ a:focus-visible {
    MAIN CONTENT
    ============================================ */
 .main-content {
-    padding: clamp(3rem, 8vw, 4rem) 0;
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
     min-height: calc(100vh - 300px);
 }
 
@@ -353,7 +365,7 @@ a:focus-visible {
     text-align: center;
     font-size: clamp(1.75rem, 4vw + 0.5rem, 2.5rem);
     font-weight: var(--font-weight-bold);
-    margin: clamp(1.5rem, 4vw, 2rem) auto clamp(2rem, 5vw, 3rem);
+    margin: clamp(1.5rem, 3vw, 2rem) auto clamp(2rem, 4vw, 3rem);
     letter-spacing: -0.5px;
     line-height: var(--line-height-heading);
     max-width: 95%;
@@ -365,7 +377,7 @@ a:focus-visible {
    PROJECT SECTIONS
    ============================================ */
 .project-section {
-    margin: clamp(2.5rem, 6vw, 4rem) 0;
+    margin: clamp(2rem, 5vw, 4rem) 0;
 }
 
 .section-content {
@@ -375,7 +387,7 @@ a:focus-visible {
 .section-heading {
     font-size: clamp(1.5rem, 3.5vw + 0.5rem, 2rem);
     font-weight: var(--font-weight-bold);
-    margin-bottom: clamp(1.25rem, 3vw, 1.5rem);
+    margin-bottom: clamp(1.25rem, 2.5vw, 1.5rem);
     color: var(--color-text-dark);
     position: relative;
     padding-bottom: var(--space-3);
@@ -386,7 +398,7 @@ a:focus-visible {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: clamp(50px, 10vw, 60px);
+    width: clamp(50px, 8vw, 60px);
     height: 3px;
     background: var(--color-primary);
     border-radius: var(--radius-sm);
@@ -395,15 +407,46 @@ a:focus-visible {
 .subsection-heading {
     font-size: clamp(1.25rem, 2.5vw + 0.5rem, 1.5rem);
     font-weight: var(--font-weight-semibold);
-    margin: clamp(1.5rem, 4vw, 2rem) 0 clamp(1rem, 2.5vw, 1.25rem);
+    margin: clamp(1.5rem, 3.5vw, 2rem) 0 clamp(1rem, 2vw, 1.25rem);
     color: var(--color-text-dark);
 }
 
 .subsection-subheading {
     font-size: clamp(1.1rem, 2vw + 0.5rem, 1.25rem);
     font-weight: var(--font-weight-semibold);
-    margin: clamp(1.25rem, 3vw, 1.5rem) 0 clamp(0.875rem, 2vw, 1rem);
+    margin: clamp(1.25rem, 2.5vw, 1.5rem) 0 clamp(0.875rem, 1.5vw, 1rem);
     color: var(--color-text-medium);
+}
+
+/* ============================================
+   ABOUT SECTION (TABLET OPTIMIZED)
+   ============================================ */
+.about-section {
+    margin: clamp(2.5rem, 5vw, 4rem) 0;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
 }
 
 /* ============================================
@@ -411,9 +454,9 @@ a:focus-visible {
    ============================================ */
 .downloads-section {
     background: var(--color-bg-section);
-    padding: clamp(1.5rem, 5vw, 2.5rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
     border-radius: var(--radius-lg);
-    margin: clamp(2rem, 6vw, 3rem) 0;
+    margin: clamp(2rem, 5vw, 3rem) 0;
     box-shadow: var(--shadow-sm);
 }
 
@@ -421,7 +464,7 @@ a:focus-visible {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: clamp(1rem, 3vw, 1.5rem);
+    gap: clamp(1rem, 2.5vw, 1.5rem);
     flex-wrap: wrap;
 }
 
@@ -435,9 +478,9 @@ a:focus-visible {
     background: var(--color-primary);
     color: var(--color-bg-white);
     font-weight: var(--font-weight-semibold);
-    padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1.25rem, 4vw, 1.75rem);
+    padding: clamp(0.75rem, 1.8vw, 0.875rem) clamp(1.25rem, 3.5vw, 1.75rem);
     border-radius: var(--radius-md);
-    font-size: clamp(0.9375rem, 1.5vw + 0.25rem, 1.0625rem);
+    font-size: clamp(0.9375rem, 1.3vw + 0.25rem, 1.0625rem);
     transition: all var(--transition-base);
     box-shadow: var(--shadow-md);
     white-space: nowrap;
@@ -468,8 +511,8 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: clamp(2rem, 5vw, 3rem) 0;
-    gap: clamp(0.75rem, 2vw, 1rem);
+    margin: clamp(2rem, 4vw, 3rem) 0;
+    gap: clamp(0.75rem, 1.5vw, 1rem);
 }
 
 .responsive-img {
@@ -486,7 +529,7 @@ a:focus-visible {
 }
 
 .img-caption {
-    font-size: clamp(0.875rem, 1.5vw + 0.25rem, 0.9375rem);
+    font-size: clamp(0.875rem, 1.3vw + 0.25rem, 0.9375rem);
     color: var(--color-text-light);
     text-align: center;
     font-style: italic;
@@ -499,12 +542,12 @@ a:focus-visible {
    PROJECT GALLERY
    ============================================ */
 .project-gallery {
-    margin: clamp(3rem, 8vw, 5rem) 0;
+    margin: clamp(2.5rem, 6vw, 5rem) 0;
 }
 
 .gallery-heading {
     text-align: center;
-    margin-bottom: clamp(2rem, 6vw, 3rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
     font-size: clamp(1.75rem, 4vw + 0.5rem, 2.25rem);
     color: var(--color-text-dark);
 }
@@ -512,7 +555,7 @@ a:focus-visible {
 .gallery-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: clamp(1.5rem, 4vw, 2rem);
+    gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .gallery-item {
@@ -532,7 +575,7 @@ a:focus-visible {
 
 .gallery-img {
     width: 100%;
-    height: clamp(250px, 50vw, 450px);
+    height: clamp(250px, 45vw, 450px);
     object-fit: cover;
     transition: transform var(--transition-slow);
 }
@@ -542,8 +585,8 @@ a:focus-visible {
 }
 
 .gallery-caption {
-    padding: clamp(1rem, 3vw, 1.5rem);
-    font-size: clamp(0.9375rem, 1.5vw + 0.25rem, 1rem);
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.9375rem, 1.3vw + 0.25rem, 1rem);
     color: var(--color-text-medium);
     text-align: center;
     background: var(--color-bg-white);
@@ -564,13 +607,13 @@ a:focus-visible {
     background: var(--color-primary);
     color: var(--color-bg-white);
     font-weight: var(--font-weight-semibold);
-    padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1.5rem, 4vw, 2rem);
+    padding: clamp(0.75rem, 1.8vw, 0.875rem) clamp(1.5rem, 3.5vw, 2rem);
     border-radius: var(--radius-md);
     text-decoration: none;
-    font-size: clamp(1rem, 1.5vw + 0.25rem, 1.125rem);
+    font-size: clamp(1rem, 1.3vw + 0.25rem, 1.125rem);
     transition: all var(--transition-base);
     box-shadow: var(--shadow-md);
-    margin-top: clamp(2rem, 6vw, 3rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
     border: 2px solid transparent;
     min-height: 44px;
 }
@@ -592,19 +635,19 @@ a:focus-visible {
    ============================================ */
 .back-to-top {
     position: fixed;
-    bottom: clamp(1.5rem, 4vw, 2rem);
-    right: clamp(1.5rem, 4vw, 2rem);
+    bottom: clamp(1.25rem, 3vw, 2rem);
+    right: clamp(1.25rem, 3vw, 2rem);
     z-index: var(--z-dropdown);
     display: none;
     align-items: center;
     justify-content: center;
-    width: clamp(2.75rem, 5vw, 3.125rem);
-    height: clamp(2.75rem, 5vw, 3.125rem);
+    width: clamp(2.75rem, 4.5vw, 3.125rem);
+    height: clamp(2.75rem, 4.5vw, 3.125rem);
     border: none;
     border-radius: var(--radius-full);
     background: var(--color-primary);
     color: white;
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-size: clamp(1.125rem, 1.8vw, 1.375rem);
     cursor: pointer;
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-base);
@@ -636,14 +679,14 @@ a:focus-visible {
 .footer {
     border-top: 1px solid var(--color-border);
     background: var(--color-bg-white);
-    padding: clamp(1.5rem, 4vw, 2rem) 0;
+    padding: clamp(1.5rem, 3vw, 2rem) 0;
     text-align: center;
-    margin-top: clamp(3rem, 10vw, 6rem);
+    margin-top: clamp(3rem, 8vw, 6rem);
 }
 
 .footer p {
     margin: 0;
-    font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1rem);
+    font-size: clamp(0.875rem, 1.3vw + 0.25rem, 1rem);
     color: var(--color-text-light);
 }
 
@@ -654,57 +697,245 @@ a:focus-visible {
 /* Small Tablets (600px - 767px) */
 @media (min-width: 600px) {
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-        gap: clamp(1.25rem, 3vw, 1.75rem);
-    }
-}
-
-/* Tablets Portrait (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .header {
-        padding: clamp(1.25rem, 2.5vw, 1.5rem) 0;
-    }
-
-    .header-flex {
-        gap: clamp(1.5rem, 3vw, 2rem);
-    }
-
-    .page-title {
-        max-width: 90%;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
         gap: 1.5rem;
     }
 
-    .gallery-img {
-        height: clamp(280px, 35vw, 380px);
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .about-text {
+        flex: 1.2;
+    }
+
+    .about-image {
+        flex: 0.8;
+    }
+}
+
+/* ============================================
+   TABLET PORTRAIT (768px - 1023px) - OPTIMIZED
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Header Optimization */
+    .header {
+        padding: 1.25rem 0;
+    }
+
+    .header-flex {
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .header-left {
+        flex: 0 0 auto;
+    }
+
+    .header-center {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 0 var(--space-2);
+    }
+
+    .nav-list {
+        gap: 0.75rem;
+        justify-content: center;
+    }
+
+    .nav-list a {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.9375rem;
+    }
+
+    .header-right {
+        flex: 0 0 auto;
+        gap: 0.75rem;
+    }
+
+    .social-icons {
+        gap: 0.625rem;
+    }
+
+    .social-icons a {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1rem;
+    }
+
+    /* About Section Optimization */
+    .about-content {
+        flex-direction: row;
+        gap: 2.5rem;
+        align-items: flex-start;
+    }
+
+    .about-text {
+        flex: 1.3;
+    }
+
+    .about-image {
+        flex: 0.7;
+        position: sticky;
+        top: 6rem;
+    }
+
+    .about-image img {
+        max-width: 100%;
+    }
+
+    /* Page Title */
+    .page-title {
+        max-width: 90%;
+        font-size: 2rem;
+        margin: 1.5rem auto 2.5rem;
+    }
+
+    /* Sections */
+    .project-section {
+        margin: 3rem 0;
+    }
+
+    .section-content {
+        max-width: 100%;
+    }
+
+    /* Downloads Section */
+    .downloads-section {
+        padding: 2rem;
     }
 
     .btn-row {
         gap: 1.25rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .download-btn {
-        flex: 1 1 auto;
-        max-width: 300px;
+        flex: 0 1 auto;
+        min-width: 200px;
+        max-width: 280px;
+        padding: 0.8rem 1.5rem;
     }
-}
 
-/* Tablets Landscape & Small Laptops (1024px - 1279px) */
-@media (min-width: 1024px) {
+    /* Gallery Optimization */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--grid-gap);
+        gap: 1.75rem;
     }
 
     .gallery-img {
-        height: clamp(300px, 30vw, 400px);
+        height: 320px;
+    }
+
+    .gallery-caption {
+        padding: 1.25rem;
+        font-size: 0.9375rem;
+    }
+
+    /* Images & Figures */
+    .centered-figure {
+        margin: 2.5rem 0;
+    }
+
+    .responsive-img {
+        max-width: 85%;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
+    }
+
+    /* Typography adjustments */
+    p {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    li {
+        font-size: 1rem;
     }
 }
 
-/* Desktop (1280px and above) */
+/* ============================================
+   TABLET LANDSCAPE (1024px - 1279px) - OPTIMIZED
+   ============================================ */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    /* Header */
+    .header-flex {
+        gap: 2rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .nav-list a {
+        padding: 0.625rem 1.125rem;
+        font-size: 0.9375rem;
+    }
+
+    .social-icons a {
+        width: 2.375rem;
+        height: 2.375rem;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .about-text {
+        flex: 1.4;
+    }
+
+    .about-image {
+        flex: 0.6;
+        position: sticky;
+        top: 5.5rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .gallery-img {
+        height: 360px;
+    }
+
+    /* Downloads */
+    .btn-row {
+        gap: 1.5rem;
+    }
+
+    .download-btn {
+        min-width: 220px;
+        max-width: 300px;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+        bottom: 1.75rem;
+        right: 1.75rem;
+        width: 3.125rem;
+        height: 3.125rem;
+    }
+}
+
+/* ============================================
+   DESKTOP (1280px and above)
+   ============================================ */
 @media (min-width: 1280px) {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -713,9 +944,26 @@ a:focus-visible {
     .section-content {
         max-width: 95%;
     }
+
+    .about-content {
+        flex-direction: row;
+        gap: 3.5rem;
+    }
+
+    .about-text {
+        flex: 1.5;
+    }
+
+    .about-image {
+        flex: 0.5;
+        position: sticky;
+        top: 5rem;
+    }
 }
 
-/* Mobile (below 768px) */
+/* ============================================
+   MOBILE (below 768px)
+   ============================================ */
 @media (max-width: 767px) {
     .header {
         padding: var(--space-4) 0;
@@ -734,11 +982,22 @@ a:focus-visible {
     .nav-list {
         width: 100%;
         gap: var(--space-3);
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .header-right,
     .social-icons {
         justify-content: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-image {
+        order: -1;
     }
 
     .btn-row {
@@ -758,6 +1017,11 @@ a:focus-visible {
 
     .gallery-img {
         height: clamp(250px, 60vw, 350px);
+    }
+
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
     }
 }
 
@@ -799,6 +1063,12 @@ a:focus-visible {
     .gallery-img {
         height: clamp(220px, 70vw, 300px);
     }
+
+    .back-to-top {
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 1.125rem;
+    }
 }
 
 /* Extra Small (360px and below) */
@@ -820,7 +1090,72 @@ a:focus-visible {
     }
 }
 
-/* Landscape Orientation */
+/* ============================================
+   TABLET-SPECIFIC ORIENTATION FIXES
+   ============================================ */
+
+/* Tablet Portrait Orientation */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+    .header-flex {
+        flex-wrap: nowrap;
+    }
+
+    .nav-list {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.25rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-img {
+        height: 300px;
+    }
+}
+
+/* Tablet Landscape Orientation */
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+    .header {
+        padding: 1rem 0;
+    }
+
+    .main-content {
+        padding: 2rem 0;
+    }
+
+    .page-title {
+        margin: 1rem auto 1.5rem;
+    }
+
+    .project-section {
+        margin: 2rem 0;
+    }
+
+    .about-content {
+        gap: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .gallery-img {
+        height: 280px;
+    }
+
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+}
+
+/* Landscape Orientation (All Devices) */
 @media (max-height: 500px) and (orientation: landscape) {
     .header {
         padding: var(--space-2) 0;
@@ -836,6 +1171,49 @@ a:focus-visible {
         width: 2.5rem;
         height: 2.5rem;
     }
+
+    .page-title {
+        margin: 1rem auto 1.5rem;
+    }
+}
+
+/* ============================================
+   SPECIFIC TABLET DEVICE OPTIMIZATIONS
+   ============================================ */
+
+/* iPad (768px x 1024px) */
+@media (min-width: 768px) and (max-width: 768px) {
+    .nav-list a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* iPad Pro 11" (834px x 1194px) */
+@media (min-width: 834px) and (max-width: 834px) {
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* iPad Pro 12.9" (1024px x 1366px) */
+@media (min-width: 1024px) and (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        gap: 3rem;
+    }
 }
 
 /* ============================================
@@ -850,6 +1228,10 @@ a:focus-visible {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+
+    .back-to-top {
+        transition: opacity var(--transition-fast);
     }
 }
 
@@ -900,6 +1282,35 @@ a:focus-visible {
         min-width: 48px;
         min-height: 48px;
     }
+
+    /* Prevent hover effects on touch devices */
+    .gallery-item:hover {
+        transform: none;
+    }
+
+    .responsive-img:hover {
+        transform: none;
+    }
+}
+
+/* Tablet Touch Optimizations */
+@media (min-width: 768px) and (max-width: 1023px) and (hover: none) {
+    .nav-list a {
+        padding: 0.625rem 1rem;
+        min-height: 44px;
+    }
+
+    .social-icons a {
+        width: 2.5rem;
+        height: 2.5rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .back-to-top {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
 }
 
 /* ============================================
@@ -939,5 +1350,58 @@ a:focus-visible {
     li {
         font-size: 12pt;
         line-height: 1.5;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES FOR TABLET OPTIMIZATION
+   ============================================ */
+
+/* Hide on tablets */
+.hide-on-tablet {
+    display: block;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none !important;
+    }
+}
+
+/* Show only on tablets */
+.show-on-tablet {
+    display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .show-on-tablet {
+        display: block !important;
+    }
+}
+
+/* Tablet-specific spacing */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .tablet-spacing-sm {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .tablet-spacing-md {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .tablet-spacing-lg {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
 }
