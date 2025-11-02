@@ -805,19 +805,28 @@ a:focus-visible {
     /* Downloads Section */
     .downloads-section {
         padding: 2rem;
+        margin: 2.5rem 0;
     }
 
     .btn-row {
-        gap: 1.25rem;
+        gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
     }
 
     .download-btn {
         flex: 0 1 auto;
-        min-width: 200px;
-        max-width: 280px;
-        padding: 0.8rem 1.5rem;
+        min-width: 180px;
+        max-width: 260px;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+
+    .back-btn {
+        padding: 0.75rem 1.5rem;
+        margin-top: 2.5rem;
+        font-size: 1rem;
     }
 
     /* Gallery Optimization */
@@ -914,22 +923,39 @@ a:focus-visible {
         height: 360px;
     }
 
-    /* Downloads */
+    /* Downloads Section */
+    .downloads-section {
+        padding: 2.25rem;
+        margin: 3rem 0;
+    }
+
     .btn-row {
-        gap: 1.5rem;
+        gap: 1.25rem;
+        justify-content: center;
+        align-items: center;
     }
 
     .download-btn {
-        min-width: 220px;
-        max-width: 300px;
+        min-width: 200px;
+        max-width: 280px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
     }
 
-    /* Back to Top */
+    /* Back Button */
+    .back-btn {
+        padding: 0.8rem 1.75rem;
+        margin-top: 3rem;
+        font-size: 1.0625rem;
+    }
+
+    /* Back to Top Button */
     .back-to-top {
         bottom: 1.75rem;
         right: 1.75rem;
         width: 3.125rem;
         height: 3.125rem;
+        font-size: 1.25rem;
     }
 }
 
