@@ -510,28 +510,105 @@ ul {
    RESPONSIVE DESIGN - TABLETS
    ================================================ */
 
-@media (max-width: 900px) {
+/* ============================================
+   TABLET PORTRAIT (768px - 1023px) - OPTIMIZED
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Header Optimization */
+    .header {
+        padding: 1.25rem 0;
+    }
 
-    /* Adjust spacing for tablets */
     .header-flex {
-        flex-direction: column;
-        gap: var(--spacing-lg);
+        gap: 1.5rem;
+        flex-wrap: nowrap;
     }
 
-    :root {
-        --spacing-xxl: 3rem;
-        --spacing-xl: 2rem;
+    .nav-list {
+        gap: 0.75rem;
     }
 
-    /* Adjust gallery grid */
+    .nav-list a {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.9375rem;
+    }
+
+    .social-icons a {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1rem;
+    }
+
+    /* Back Button Spacing */
+    .btn-back {
+        padding: 0.75rem 1.5rem;
+        margin-top: 2.5rem;
+        font-size: 1rem;
+    }
+
+    /* Back to Top Button */
+    #backToTopBtn {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
+    }
+
+    /* Gallery Grid */
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: var(--spacing-lg);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
     }
 
-    /* Adjust section divider */
-    .section-divider {
-        width: 90%;
+    .gallery-img {
+        height: 300px;
+    }
+}
+
+/* ============================================
+   TABLET LANDSCAPE (1024px - 1279px) - OPTIMIZED
+   ============================================ */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* Header */
+    .header-flex {
+        gap: 2rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .nav-list a {
+        padding: 0.625rem 1.125rem;
+        font-size: 0.9375rem;
+    }
+
+    .social-icons a {
+        width: 2.375rem;
+        height: 2.375rem;
+    }
+
+    /* Back Button Spacing */
+    .btn-back {
+        padding: 0.8rem 1.75rem;
+        margin-top: 3rem;
+        font-size: 1.0625rem;
+    }
+
+    /* Back to Top Button */
+    #backToTopBtn {
+        bottom: 1.75rem;
+        right: 1.75rem;
+        width: 3.125rem;
+        height: 3.125rem;
+        font-size: 1.25rem;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 }
 
