@@ -1,8 +1,8 @@
 /* ============================================
-   DONFACK FORTUNE PORTFOLIO - ABOUT PAGE
+   DONFACK FORTUNE PORTFOLIO - ABOUT PAGE (TABLET-OPTIMIZED)
    File: about.css
    Author: Donfack Fortune
-   Description: Fully responsive about/contact page styles
+   Description: Fully responsive about/contact page with tablet optimization
    Last Updated: 2025
    ============================================ */
 
@@ -42,25 +42,15 @@
 
     /* Spacing Scale (8px base) */
     --space-1: 0.25rem;
-    /* 4px */
     --space-2: 0.5rem;
-    /* 8px */
     --space-3: 0.75rem;
-    /* 12px */
     --space-4: 1rem;
-    /* 16px */
     --space-5: 1.5rem;
-    /* 24px */
     --space-6: 2rem;
-    /* 32px */
     --space-7: 2.5rem;
-    /* 40px */
     --space-8: 3rem;
-    /* 48px */
     --space-10: 4rem;
-    /* 64px */
     --space-12: 6rem;
-    /* 96px */
 
     /* Layout */
     --container-max-width: 1280px;
@@ -197,7 +187,13 @@ strong {
 /* Responsive container padding */
 @media (min-width: 768px) {
     :root {
-        --container-padding: 3%;
+        --container-padding: 4%;
+    }
+}
+
+@media (min-width: 900px) {
+    :root {
+        --container-padding: 3.5%;
     }
 }
 
@@ -407,8 +403,6 @@ strong {
     color: var(--color-primary-dark);
     text-decoration-thickness: 2px;
 }
-
-
 
 @media (max-width: 767px) {
     .about-image {
@@ -691,11 +685,417 @@ strong {
 }
 
 /* ============================================
-   RESPONSIVE BREAKPOINTS
+   TABLET-SPECIFIC OPTIMIZATIONS (768px - 1024px)
    ============================================ */
 
-/* Tablet (768px and below) */
-@media (max-width: 768px) {
+/* Tablet Portrait (768px - 900px) */
+@media (min-width: 768px) and (max-width: 900px) {
+
+    /* Header Optimizations */
+    .header {
+        padding: var(--space-4) 0;
+    }
+
+    .header-wrapper {
+        gap: var(--space-5);
+        flex-wrap: nowrap;
+    }
+
+    .header-logo {
+        flex: 0 0 auto;
+        min-width: 150px;
+    }
+
+    .logo {
+        font-size: 1.375rem;
+    }
+
+    .header-nav {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .nav-list {
+        gap: 1.25rem;
+        flex-wrap: nowrap;
+    }
+
+    .nav-link {
+        padding: 0.625rem 1rem;
+        font-size: 0.9375rem;
+    }
+
+    .header-social {
+        flex: 0 0 auto;
+        gap: 0.875rem;
+    }
+
+    .social-link {
+        width: 2.375rem;
+        height: 2.375rem;
+        font-size: 1.0625rem;
+    }
+
+    /* Main content adjustments */
+    .main-content {
+        padding: 3.5rem 0;
+    }
+
+    /* About section optimization */
+    .about-section {
+        margin-bottom: 4.5rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.375rem;
+    }
+
+    .about-text p {
+        font-size: 1.0625rem;
+        line-height: 1.7;
+        margin-bottom: 1.375rem;
+    }
+
+    /* Location section */
+    .location-section {
+        margin-bottom: 3.5rem;
+    }
+
+    .location-info {
+        padding: 1.125rem 1.375rem;
+        font-size: 1.0625rem;
+        max-width: 100%;
+    }
+
+    .location-info i {
+        font-size: 1.375em;
+    }
+
+    /* Contact section */
+    .contact-section {
+        margin-bottom: 4.5rem;
+    }
+
+    .contact-wrapper {
+        max-width: 650px;
+    }
+
+    .section-title {
+        margin-bottom: 2.5rem;
+        font-size: 1.75rem;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.375rem;
+    }
+
+    .form-label {
+        font-size: 0.9375rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 0.875rem 1.125rem;
+        font-size: 0.9375rem;
+    }
+
+    .form-textarea {
+        min-height: 130px;
+    }
+
+    .submit-btn {
+        padding: 1.125rem 1.75rem;
+        font-size: 1.0625rem;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+        bottom: 1.75rem;
+        right: 1.75rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: var(--space-5) 0;
+    }
+}
+
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+    .header-wrapper {
+        gap: var(--space-2);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: var(--space-2);
+        width: 100%;
+    }
+
+    .nav-link {
+        text-align: center;
+        width: 100%;
+    }
+
+    .social-link {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.875rem;
+    }
+
+    .contact-form {
+        padding: var(--space-4);
+    }
+
+    .submit-btn {
+        padding: var(--space-3) var(--space-5);
+    }
+}
+
+/* Landscape orientation on tablets */
+@media (max-height: 500px) and (orientation: landscape) {
+    .header {
+        padding: var(--space-2) 0;
+    }
+
+    .main-content {
+        padding: var(--space-6) 0;
+    }
+
+    .about-section,
+    .contact-section {
+        margin-bottom: var(--space-8);
+    }
+
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .nav-link {
+        border: 2px solid transparent;
+    }
+
+    .nav-link.active,
+    .nav-link:hover,
+    .nav-link:focus {
+        border-color: var(--color-primary);
+    }
+
+    .form-input,
+    .form-textarea,
+    .contact-form {
+        border-width: 2px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+
+    .header,
+    .back-to-top,
+    .header-social,
+    .contact-form,
+    .location-section {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        box-shadow: none;
+        max-width: 100%;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    .footer {
+        border: none;
+        margin-top: var(--space-6);
+    }
+}
+
+padding: 1.75rem 0;
+margin-top: 4.5rem;
+}
+}
+
+/* Tablet Landscape (901px - 1024px) */
+@media (min-width: 901px) and (max-width: 1024px) {
+
+    /* Header fine-tuning */
+    .header {
+        padding: 1.375rem 0;
+    }
+
+    .header-wrapper {
+        gap: 1.75rem;
+    }
+
+    .logo {
+        font-size: 1.4375rem;
+    }
+
+    .nav-list {
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        padding: 0.625rem 1.125rem;
+        font-size: 0.9375rem;
+    }
+
+    .social-link {
+        width: 2.4375rem;
+        height: 2.4375rem;
+    }
+
+    /* Content spacing */
+    .main-content {
+        padding: 3.75rem 0;
+    }
+
+    .about-section {
+        margin-bottom: 5rem;
+    }
+
+    /* About section layout */
+    .about-content {
+        grid-template-columns: 1.75fr 1fr;
+        gap: 3rem;
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .about-text h2 {
+        font-size: 1.875rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: 1.0938rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Location section */
+    .location-section {
+        margin-bottom: 3.75rem;
+    }
+
+    .location-info {
+        padding: 1.25rem 1.5rem;
+        font-size: 1.0938rem;
+    }
+
+    /* Contact section */
+    .contact-section {
+        margin-bottom: 5rem;
+    }
+
+    .contact-wrapper {
+        max-width: 680px;
+    }
+
+    .section-title {
+        margin-bottom: 2.75rem;
+        font-size: 1.875rem;
+    }
+
+    .contact-form {
+        padding: 2.25rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 0.9375rem 1.1875rem;
+        font-size: 0.9688rem;
+    }
+
+    .form-textarea {
+        min-height: 140px;
+    }
+
+    .submit-btn {
+        padding: 1.1875rem 1.875rem;
+        font-size: 1.0938rem;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+        bottom: 1.875rem;
+        right: 1.875rem;
+        width: 3.0625rem;
+        height: 3.0625rem;
+    }
+}
+
+/* ============================================
+   STANDARD RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile and Small Tablets (below 768px) */
+@media (max-width: 767px) {
     :root {
         --space-10: 3rem;
         --space-12: 4rem;
@@ -729,6 +1129,11 @@ strong {
 
     .about-section {
         margin-bottom: var(--space-10);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
     }
 
     .contact-form {

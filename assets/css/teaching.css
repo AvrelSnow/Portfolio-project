@@ -1,8 +1,8 @@
 /* ============================================
-   DONFACK FORTUNE PORTFOLIO - TEACHING PAGE
+   DONFACK FORTUNE PORTFOLIO - TEACHING PAGE (TABLET-OPTIMIZED)
    File: teaching.css
    Author: Donfack Fortune
-   Description: Fully responsive teaching page styles
+   Description: Fully responsive teaching page with tablet optimization
    Last Updated: 2025
    ============================================ */
 
@@ -40,25 +40,15 @@
 
     /* Spacing Scale (8px base) */
     --space-1: 0.25rem;
-    /* 4px */
     --space-2: 0.5rem;
-    /* 8px */
     --space-3: 0.75rem;
-    /* 12px */
     --space-4: 1rem;
-    /* 16px */
     --space-5: 1.5rem;
-    /* 24px */
     --space-6: 2rem;
-    /* 32px */
     --space-7: 2.5rem;
-    /* 40px */
     --space-8: 3rem;
-    /* 48px */
     --space-10: 4rem;
-    /* 64px */
     --space-12: 6rem;
-    /* 96px */
 
     /* Layout */
     --container-max-width: 1280px;
@@ -184,7 +174,13 @@ a:focus-visible {
 /* Responsive container padding */
 @media (min-width: 768px) {
     :root {
-        --container-padding: 3%;
+        --container-padding: 4%;
+    }
+}
+
+@media (min-width: 900px) {
+    :root {
+        --container-padding: 3.5%;
     }
 }
 
@@ -525,8 +521,6 @@ a:focus-visible {
     transform: scale(1.05);
 }
 
-
-
 .gallery-image.loaded {
     opacity: 1;
 }
@@ -612,11 +606,239 @@ a:focus-visible {
 }
 
 /* ============================================
-   RESPONSIVE BREAKPOINTS
+   TABLET-SPECIFIC OPTIMIZATIONS (768px - 1024px)
    ============================================ */
 
-/* Tablet (768px and below) */
-@media (max-width: 768px) {
+/* Tablet Portrait (768px - 900px) */
+@media (min-width: 768px) and (max-width: 900px) {
+
+    /* Header Optimizations */
+    .header {
+        padding: var(--space-4) 0;
+    }
+
+    .header-wrapper {
+        gap: var(--space-5);
+        flex-wrap: nowrap;
+    }
+
+    .header-logo {
+        flex: 0 0 auto;
+        min-width: 150px;
+    }
+
+    .logo {
+        font-size: 1.375rem;
+    }
+
+    .header-nav {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .nav-list {
+        gap: 1.25rem;
+        flex-wrap: nowrap;
+    }
+
+    .nav-link {
+        padding: 0.625rem 1rem;
+        font-size: 0.9375rem;
+    }
+
+    .header-social {
+        flex: 0 0 auto;
+        gap: 0.875rem;
+    }
+
+    .social-link {
+        width: 2.375rem;
+        height: 2.375rem;
+        font-size: 1.0625rem;
+    }
+
+    /* Main content adjustments */
+    .main-content {
+        padding: 3.5rem 0;
+    }
+
+    .teaching-intro {
+        margin-bottom: 4.5rem;
+    }
+
+    .intro-text {
+        margin-bottom: 2.5rem;
+    }
+
+    .lead-text {
+        font-size: 1.25rem;
+        line-height: 1.65;
+    }
+
+    /* Course wrapper optimization */
+    .courses-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .course-group {
+        padding: 1.75rem;
+    }
+
+    .course-heading {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .course-list li {
+        font-size: 1rem;
+        margin-bottom: 0.875rem;
+    }
+
+    .philosophy-text {
+        margin-top: 2.5rem;
+        padding: 1.75rem;
+    }
+
+    /* Gallery grid optimization */
+    .teaching-gallery {
+        margin-bottom: 4.5rem;
+    }
+
+    .section-title {
+        margin-bottom: 2.5rem;
+        font-size: 1.75rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+    }
+
+    .gallery-item {
+        max-width: 100%;
+    }
+
+    .card-content {
+        padding: 1.375rem;
+    }
+
+    .card-text {
+        font-size: 1.0625rem;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+        bottom: 1.75rem;
+        right: 1.75rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 1.75rem 0;
+        margin-top: 4.5rem;
+    }
+}
+
+/* Tablet Landscape (901px - 1024px) */
+@media (min-width: 901px) and (max-width: 1024px) {
+
+    /* Header fine-tuning */
+    .header {
+        padding: 1.375rem 0;
+    }
+
+    .header-wrapper {
+        gap: 1.75rem;
+    }
+
+    .logo {
+        font-size: 1.4375rem;
+    }
+
+    .nav-list {
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        padding: 0.625rem 1.125rem;
+        font-size: 0.9375rem;
+    }
+
+    .social-link {
+        width: 2.4375rem;
+        height: 2.4375rem;
+    }
+
+    /* Content spacing */
+    .main-content {
+        padding: 3.75rem 0;
+    }
+
+    .teaching-intro {
+        margin-bottom: 5rem;
+    }
+
+    .lead-text {
+        font-size: 1.3125rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Course wrapper */
+    .courses-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.25rem;
+        max-width: 900px;
+        margin: 0 auto 2.75rem;
+    }
+
+    .course-group {
+        padding: 1.875rem;
+    }
+
+    .philosophy-text {
+        max-width: 900px;
+        margin: 2.75rem auto 0;
+        padding: 1.875rem;
+    }
+
+    /* Gallery optimization */
+    .section-title {
+        margin-bottom: 2.75rem;
+        font-size: 1.875rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.875rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        max-width: 100%;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+        bottom: 1.875rem;
+        right: 1.875rem;
+        width: 3.0625rem;
+        height: 3.0625rem;
+    }
+}
+
+/* ============================================
+   STANDARD RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile and Small Tablets (below 768px) */
+@media (max-width: 767px) {
     :root {
         --grid-gap: 1.5rem;
     }
@@ -662,6 +884,10 @@ a:focus-visible {
 
     .teaching-gallery {
         margin-bottom: var(--space-10);
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -758,7 +984,7 @@ a:focus-visible {
     }
 }
 
-/* Landscape orientation on mobile */
+/* Landscape orientation on tablets */
 @media (max-height: 500px) and (orientation: landscape) {
     .header {
         padding: var(--space-2) 0;
@@ -774,6 +1000,14 @@ a:focus-visible {
 
     .section-title {
         margin-bottom: var(--space-5);
+    }
+
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
     }
 }
 
