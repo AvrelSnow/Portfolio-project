@@ -1133,6 +1133,20 @@ a:focus-visible {
         padding-bottom: 0.25rem;
     }
 
+    /* Button Spacing */
+    .btn-row {
+        gap: 1rem;
+    }
+
+    .download-btn {
+        min-width: 170px;
+        max-width: 250px;
+    }
+
+    .back-btn {
+        margin-top: 2.5rem;
+    }
+
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1164,6 +1178,27 @@ a:focus-visible {
         gap: 2rem;
     }
 
+    /* Button Spacing */
+    .downloads-section {
+        padding: 1.75rem;
+        margin: 2rem 0;
+    }
+
+    .btn-row {
+        gap: 1.25rem;
+    }
+
+    .download-btn {
+        min-width: 190px;
+        max-width: 270px;
+        padding: 0.75rem 1.375rem;
+    }
+
+    .back-btn {
+        padding: 0.75rem 1.5rem;
+        margin-top: 2rem;
+    }
+
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
@@ -1178,6 +1213,7 @@ a:focus-visible {
         right: 1rem;
         width: 2.75rem;
         height: 2.75rem;
+        font-size: 1.125rem;
     }
 }
 
