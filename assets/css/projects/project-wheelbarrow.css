@@ -613,8 +613,126 @@ a:focus-visible {
     }
 }
 
+/* Tablet Portrait (768px - 1023px) - Optimized */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Header Optimization */
+    .header {
+        padding: 1.25rem 0;
+    }
+
+    .header-flex {
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .nav-list {
+        gap: 0.75rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.9375rem;
+    }
+
+    .social-link {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1rem;
+    }
+
+    /* Main Content */
+    .main-content {
+        padding: 3rem 0;
+    }
+
+    .page-title {
+        margin: 1.5rem auto 2.5rem;
+        font-size: 2rem;
+    }
+
+    .project-section {
+        margin: 3rem 0;
+    }
+
+    /* Back Button Spacing */
+    .back-btn {
+        padding: 0.75rem 1.5rem;
+        margin-top: 2.5rem;
+        font-size: 1rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
+    }
+
+    /* Validation Grid */
+    .validation-images-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+    }
+
+    /* Design Build Section */
+    .design-build-section {
+        gap: 2.5rem;
+    }
+}
+
+/* Tablet Landscape (1024px - 1279px) - Optimized */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* Header */
+    .header-flex {
+        gap: 2rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        padding: 0.625rem 1.125rem;
+        font-size: 0.9375rem;
+    }
+
+    .social-link {
+        width: 2.375rem;
+        height: 2.375rem;
+    }
+
+    /* Back Button Spacing */
+    .back-btn {
+        padding: 0.8rem 1.75rem;
+        margin-top: 3rem;
+        font-size: 1.0625rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        bottom: 1.75rem;
+        right: 1.75rem;
+        width: 3.125rem;
+        height: 3.125rem;
+        font-size: 1.25rem;
+    }
+
+    /* Validation Grid */
+    .validation-images-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    /* Design Build Section */
+    .design-build-section {
+        gap: 3rem;
+    }
+}
+
 /* Tablet (768px and below) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     :root {
         --grid-gap: 1.5rem;
     }
@@ -738,6 +856,72 @@ a:focus-visible {
     }
 }
 
+/* ============================================
+   TABLET-SPECIFIC ORIENTATION FIXES
+   ============================================ */
+
+/* Tablet Portrait Orientation */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+    .header-flex {
+        flex-wrap: nowrap;
+    }
+
+    .nav-list {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.25rem;
+    }
+
+    /* Button Spacing */
+    .back-btn {
+        padding: 0.75rem 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .validation-images-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet Landscape Orientation */
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+    .header {
+        padding: 1rem 0;
+    }
+
+    .main-content {
+        padding: 2rem 0;
+    }
+
+    .page-title {
+        margin: 1rem auto 1.5rem;
+    }
+
+    .project-section {
+        margin: 2rem 0;
+    }
+
+    /* Button Spacing */
+    .back-btn {
+        padding: 0.75rem 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 1.125rem;
+    }
+
+    .validation-images-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
 /* Landscape orientation on mobile */
 @media (max-height: 500px) and (orientation: landscape) {
     .header {
@@ -751,6 +935,73 @@ a:focus-visible {
     .page-title {
         margin-top: var(--space-3);
         margin-bottom: var(--space-5);
+    }
+
+    .back-to-top {
+        bottom: var(--space-3);
+        right: var(--space-3);
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-link {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .back-btn {
+        min-height: 48px;
+    }
+
+    .back-to-top {
+        min-width: 48px;
+        min-height: 48px;
+    }
+
+    /* Prevent hover effects on touch devices */
+    .validation-img:hover {
+        transform: none;
+    }
+}
+
+/* Tablet Touch Optimizations */
+@media (min-width: 768px) and (max-width: 1023px) and (hover: none) {
+    .nav-link {
+        padding: 0.625rem 1rem;
+        min-height: 44px;
+    }
+
+    .social-link {
+        width: 2.5rem;
+        height: 2.5rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .back-btn {
+        min-height: 48px;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .back-to-top {
+        width: 3.25rem;
+        height: 3.25rem;
+        min-width: 48px;
+        min-height: 48px;
     }
 }
 
