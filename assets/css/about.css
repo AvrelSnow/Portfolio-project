@@ -1166,28 +1166,6 @@ strong {
     }
 }
 
-/* Dark mode support (optional) */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-bg-white: #1a1a1a;
-        --color-bg-light: #2a2a2a;
-        --color-text-dark: #f0f0f0;
-        --color-text-medium: #d0d0d0;
-        --color-text-light: #a0a0a0;
-        --color-border: #3a3a3a;
-        --color-shadow: rgba(0, 0, 0, 0.3);
-    }
-
-    .form-input,
-    .form-textarea {
-        background: var(--color-bg-white);
-        color: var(--color-text-dark);
-    }
-
-    .about-image img {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    }
-}
 
 /* ============================================
    PRINT STYLES
