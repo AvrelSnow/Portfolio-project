@@ -2,301 +2,321 @@
 <html lang="en">
 
 <head>
-    <!-- ================================================
-         META TAGS & SEO
-         ================================================ -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Train Braking System Reverse Engineering - A railway engineering project by Donfack Fortune">
+        content="Train Braking System Reverse Engineering - A railway engineering project by Donfack Fortune for CC2200 and CC3300AC locomotives in Cameroon." />
     <meta name="keywords"
-        content="mechanical engineering, reverse engineering, train braking, railway systems, CAD, SolidWorks">
-    <meta name="author" content="Donfack Fortune">
+        content="reverse engineering, train braking, railway systems, mechanical engineering, CAD, SolidWorks, Cameroon" />
+    <meta name="author" content="Donfack Fortune" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Train Braking System Reverse Engineering | Donfack Fortune" />
+    <meta property="og:description"
+        content="Reverse engineering project for CC2200 and CC3300AC locomotive brake triangles" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="../assets/images/braking shoes of the CC2200.png" />
 
     <title>Reverse Engineering of Train Braking System | Donfack Fortune</title>
 
-    <!-- ================================================
-         EXTERNAL STYLESHEETS & FONTS
-         ================================================ -->
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Font Loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+            rel="stylesheet" />
+    </noscript>
 
-    <!-- Custom CSS - Link to your external stylesheet -->
-    <link rel="stylesheet" href="../assets/css/projects/project-train-braking-system.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/projects/project-train-braking-system.css" />
+
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </noscript>
 </head>
 
 <body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ================================================
-         HEADER & NAVIGATION
-         ================================================ -->
-    <header class="header">
-        <div class="container header-flex">
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-flex">
+                <!-- Logo -->
+                <div class="header-left">
+                    <h1 class="logo">
+                        <a href="../index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
+                    </h1>
+                </div>
 
-            <!-- Logo / Site Title -->
-            <div class="header-left">
-                <h1 class="logo">Donfack Fortune</h1>
+                <!-- Navigation -->
+                <nav class="header-center" aria-label="Main navigation" role="navigation">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link active" aria-current="page">Projects</a></li>
+                        <li><a href="../teaching.html" class="nav-link">Teaching</a></li>
+                        <li><a href="../about.html" class="nav-link">About</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Social Links -->
+                <div class="header-right" role="complementary" aria-label="Social media links">
+                    <div class="social-icons">
+                        <a href="https://grabcad.com/donfack.fortune-1"
+                            aria-label="Visit Donfack Fortune's GrabCAD profile" target="_blank"
+                            rel="noopener noreferrer" class="social-link">
+                            <span class="social-icon" aria-hidden="true">
+                                <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
+                                    <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
+                                        font-family="Arial">GC</text>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+                            aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank"
+                            rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <!-- Main Navigation Menu -->
-            <nav class="header-center" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="../index.html">Projects</a></li>
-                    <li><a href="../teaching.html">Teaching</a></li>
-                    <li><a href="../about.html">About</a></li>
-                </ul>
-            </nav>
-
-            <!-- Social Media Links -->
-            <div class="header-right social-icons">
-                <!-- GrabCAD Link -->
-                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD Profile" target="_blank"
-                    rel="noopener">
-                    <span class="fab fa-grabcad">
-                        <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-                            <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
-                                font-family="Arial, sans-serif">GC</text>
-                        </svg>
-                    </span>
-                </a>
-
-                <!-- LinkedIn Link -->
-                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
-                    aria-label="LinkedIn Profile" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-
         </div>
     </header>
 
-    <!-- ================================================
-         MAIN CONTENT AREA
-         ================================================ -->
-    <main class="main-content container">
+    <!-- Main Content -->
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
 
-        <!-- Project Page Title -->
-        <h2 class="page-title">Reverse Engineering of Train Braking Systems</h2>
-        <p class="project-year">2023</p>
+            <!-- Page Title -->
+            <h2 class="page-title">Reverse Engineering of Train Braking Systems</h2>
+            <p class="project-year">2023</p>
 
-        <!-- Section Divider -->
-        <hr class="section-divider">
+            <!-- Context Section -->
+            <section class="project-section" id="context" aria-labelledby="context-heading">
+                <div class="section-content">
+                    <h3 id="context-heading" class="section-heading">Context</h3>
+                    <p>
+                        For our work on the brake triangle, I was part of a team of four engineers tasked with
+                        reproducing new brake triangles compatible with the <strong>CC2200</strong> and
+                        <strong>CC3300AC</strong> locomotives. We were required to manufacture two different brake
+                        triangles to address the problem of stock shortages, as these locomotives were very old and
+                        their spare parts were no longer available on the market. It was therefore necessary to produce
+                        their components locally.
+                    </p>
+                    <p>
+                        The objective was to design a system that closely matched and remained fully compatible with
+                        these locomotives while ensuring acceptable durability and functional performance comparable to
+                        the original imported parts.
+                    </p>
+                    <p>
+                        As part of the project requirements, we transitioned from the older Shielded Metal Arc Welding
+                        (SMAW) method—commonly known as arc welding with coated electrodes—to more advanced welding
+                        techniques: <strong>MIG-MAG</strong> (Metal Inert Gas – Metal Active Gas). This shift aimed to
+                        improve weld quality, structural integrity, and compliance with the structural standards and
+                        regulations of the Cameroonian railway system.
+                    </p>
+                    <p>
+                        To facilitate this change, we were equipped with the <strong>Lincoln Electric Power MIG
+                            360MP</strong> and <strong>2 Fronius TransSteel 2700</strong>.
+                    </p>
+                    <p>
+                        My specific objective in this project was to produce detailed 2D diagrams and 3D models,
+                        ensuring that all dimensions and tolerances remained within acceptable limits. This was
+                        essential to guarantee that the brake triangles could be easily integrated into the locomotives
+                        and perform the same function as the reference components. The task was conducted as a reverse
+                        engineering project, taking into account existing designs, spatial constraints, functional
+                        requirements, and local material availability.
+                    </p>
+                </div>
+            </section>
 
-        <!-- ================================================
-             SECTION: PROJECT CONTEXT
-             ================================================ -->
-        <section class="project-section" id="context">
-            <div class="project-section-content">
-                <h3>Context</h3>
-                <p>
-                    For our work on the brake triangle, I was part of a team of four engineers tasked with reproducing
-                    new brake triangles compatible with the <strong>CC2200</strong> and <strong>CC3300AC</strong>
-                    locomotives. We were required to manufacture two different brake triangles to address the problem of
-                    stock shortages, as these locomotives were very old and their spare parts were no longer available
-                    on the market. It was therefore necessary to produce their components locally.
-                </p>
-                <p>
-                    The objective was to design a system that closely matched and remained fully compatible with these
-                    locomotives while ensuring acceptable durability and functional performance comparable to the
-                    original imported parts.
-                </p>
-                <p>
-                    As part of the project requirements, we transitioned from the older Shielded Metal Arc Welding
-                    (SMAW) method—commonly known as arc welding with coated electrodes—to more advanced welding
-                    techniques: <strong>MIG-MAG</strong> (Metal Inert Gas – Metal Active Gas). This shift aimed to
-                    improve weld quality, structural integrity, and compliance with the structural standards and
-                    regulations of the Cameroonian railway system.
-                </p>
-                <p>
-                    To facilitate this change, we were equipped with the <strong>Lincoln Electric Power MIG
-                        360MP</strong>
-                    and <strong>2 Fronius TransSteel 2700</strong>.
-                </p>
-                <p>
-                    My specific objective in this project was to produce detailed 2D diagrams and 3D models, ensuring
-                    that all dimensions and tolerances remained within acceptable limits. This was essential to
-                    guarantee that the brake triangles could be easily integrated into the locomotives and perform the
-                    same function as the reference components. The task was conducted as a reverse engineering project,
-                    taking into account existing designs, spatial constraints, functional requirements, and local
-                    material availability.
-                </p>
-            </div>
-        </section>
+            <!-- Technical Development Section -->
+            <section class="project-section" id="content" aria-labelledby="technical-heading">
+                <div class="section-content">
+                    <h3 id="technical-heading" class="section-heading">Technical Development</h3>
+                    <p>
+                        In this project, our team of four (consisting of Gille team lead, Mbella Jacques chief
+                        technician and his assistant Ricardo) produced two brake triangles: one for the
+                        <strong>CC2200</strong> locomotives and one for the <strong>CC3300-AC</strong> locomotives. Each
+                        brake triangle had distinct specifications, including different diameters and dimensions, which
+                        required careful planning and collaboration within the team.
+                    </p>
+                </div>
+            </section>
 
-        <!-- ================================================
-             SECTION: PROJECT CONTENT
-             ================================================ -->
-        <section class="project-section" id="content">
-            <div class="project-section-content">
-                <h3>Technical Development</h3>
-                <p>
-                    In this project, our team of four (consisting of Gille team lead, Mbella Jacques chief technician
-                    and his assistant Ricardo) produced two brake triangles: one for the <strong>CC2200</strong>
-                    locomotives and one for the <strong>CC3300-AC</strong> locomotives. Each brake triangle had distinct
-                    specifications, including different diameters and dimensions, which required careful planning and
-                    collaboration within the team.
-                </p>
+            <!-- Full-width subsections -->
+            <section class="project-section" aria-labelledby="cc3300-heading">
+                <div class="section-content">
+                    <h4 id="cc3300-heading" class="subsection-heading">CC3300 Brake Triangle Development</h4>
+                    <p>
+                        For the <strong>CC3300</strong>, we utilized UPN profiles, which we bent and cut into the
+                        required shapes. Our team added end caps to achieve the correct mass while maintaining the
+                        necessary diameter. Following this, we reproduced the front shoes. I was responsible for
+                        creating detailed 2D drawings and 3D models of the front shoes. Using calipers, measuring tapes,
+                        and other traditional reverse engineering methods, I ensured that these components were not only
+                        accurately reproducible but also fully manufacturable, in alignment with our project objectives.
+                    </p>
+                </div>
+            </section>
 
-                <h4>CC3300 Brake Triangle Development</h4>
-                <p>
-                    For the <strong>CC3300</strong>, we utilized UPN profiles, which we bent and cut into the required
-                    shapes. Our team added end caps to achieve the correct mass while maintaining the necessary
-                    diameter. Following this, we reproduced the front shoes. I was responsible for creating detailed 2D
-                    drawings and 3D models of the front shoes. Using calipers, measuring tapes, and other traditional
-                    reverse engineering methods, I ensured that these components were not only accurately reproducible
-                    but also fully manufacturable, in alignment with our project objectives.
-                </p>
+            <section class="project-section" aria-labelledby="cc3300ac-heading">
+                <div class="section-content">
+                    <h4 id="cc3300ac-heading" class="subsection-heading">CC3300-AC Brake Triangle Development</h4>
+                    <p>
+                        For the <strong>CC3300-AC</strong>, we machined rectangular iron bars and shaped them into
+                        circular forms, closely matching the existing brake triangles. By applying traditional reverse
+                        engineering techniques—including manual measurement, geometric analysis, precise dimensioning,
+                        and tolerance verification—I produced precise and manufacturable 2D drawings. This approach
+                        ensured that each assembly fit accurately and that the components could fully reproduce their
+                        intended function.
+                    </p>
+                </div>
+            </section>
 
-                <h4>CC3300-AC Brake Triangle Development</h4>
-                <p>
-                    For the <strong>CC3300-AC</strong>, we machined rectangular iron bars and shaped them into circular
-                    forms, closely matching the existing brake triangles. By applying traditional reverse engineering
-                    techniques—including manual measurement, geometric analysis, precise dimensioning, and tolerance
-                    verification—I produced precise and manufacturable 2D drawings. This approach ensured that each
-                    assembly fit accurately and that the components could fully reproduce their intended function.
-                </p>
+            <section class="project-section" aria-labelledby="collaboration-heading">
+                <div class="section-content">
+                    <h4 id="collaboration-heading" class="subsection-heading">Team Collaboration</h4>
+                    <p>
+                        During the project, I worked closely with my team. I helped in the organization of tasks. I also
+                        shared ideas and suggestions to help the project move forward (the ideas for the end caps were
+                        mine). By working together, we completed all the steps—from machining the raw material, welding
+                        the different components, to testing them—to ensure they matched the function and
+                        characteristics of the original brake triangles.
+                    </p>
+                </div>
+            </section>
 
-                <h4>Team Collaboration</h4>
-                <p>
-                    During the project, I worked closely with my team. I helped in the organization of tasks. I also
-                    shared ideas and suggestions to help the project move forward (the ideas for the end caps were
-                    mine). By working together, we completed all the steps—from machining the raw material, welding the
-                    different components, to testing them—to ensure they matched the function and characteristics of the
-                    original brake triangles.
-                </p>
-            </div>
-        </section>
-
-        <!-- ================================================
-             SECTION: MAIN PROJECT IMAGE
-             ================================================ -->
-        <section class="full-width-images">
-            <figure class="image-container">
-                <img src="../assets/images/braking shoes of the CC2200.png" alt="Braking Shoes of the CC2200 Locomotive"
-                    class="full-width-img">
-                <figcaption>Braking Shoes of the CC2200 Locomotive</figcaption>
-            </figure>
-        </section>
-
-        <!-- ================================================
-             SECTION: PROJECT GALLERY
-             ================================================ -->
-        <section class="project-gallery">
-            <div class="gallery-grid">
-
-                <figure class="gallery-item">
-                    <img src="../assets/images/TBS 1.jpg" alt="CC3300-AC brake triangle after successful journey"
-                        class="gallery-img">
-                    <figcaption>
-                        Image of the CC3300-AC brake triangle after it has successfully travelled from Douala to Yaounde
-                        passing by Esseka and back. 2023
-                    </figcaption>
+            <!-- Main Project Image -->
+            <section class="full-width-images" aria-labelledby="main-image-heading">
+                <h3 id="main-image-heading" class="section-heading">CAD Development</h3>
+                <figure class="validation-item">
+                    <img src="../assets/images/braking shoes of the CC2200.png"
+                        alt="Detailed CAD model of the braking shoes for CC2200 locomotive showing all dimensions and mounting points"
+                        class="validation-img" />
+                    <figcaption class="img-caption">Braking Shoes of the CC2200 Locomotive</figcaption>
                 </figure>
+            </section>
 
-                <figure class="gallery-item">
-                    <img src="../assets/images/BRAKING SHOES FOR CC_2200 LOCOMOTIVES.jpg" alt="CC_2200 Braking Shoes"
-                        class="gallery-img">
-                    <figcaption>Braking shoes for CC_2200 locomotives</figcaption>
-                </figure>
+            <!-- Project Gallery -->
+            <section class="full-width-images" aria-labelledby="gallery-heading">
+                <h3 id="gallery-heading" class="section-heading">Project Gallery</h3>
 
-            </div>
-        </section>
+                <div class="validation-images-grid">
+                    <figure class="validation-item">
+                        <img src="../assets/images/TBS 1.jpg"
+                            alt="CC3300-AC brake triangle assembly after successful field testing journey"
+                            class="validation-img" />
+                        <figcaption class="img-caption">CC3300-AC brake triangle after successfully travelling from
+                            Douala to Yaounde passing by Esseka and back (2023)</figcaption>
+                    </figure>
 
-        <!-- ================================================
-             SECTION: CONCLUSION
-             ================================================ -->
-        <section class="project-section" id="conclusion">
-            <div class="project-section-content">
-                <h3>Conclusion</h3>
-                <p>
-                    Through this project, I learned an important lesson about the value of collaboration between
-                    designers and manufacturers. In my experience, when working in a design office, it is easy to assume
-                    that theoretical work—such as 3D modeling and detailed drawings—is sufficient to produce a
-                    component. We sometimes think we can complete a design without consulting the manufacturer.
-                </p>
-                <p>
-                    However, this project demonstrated how critical the role of the manufacturer is. They not only help
-                    you understand appropriate tolerances based on the materials and machinery available but also enable
-                    you to complete the work more efficiently. For example, during the reproduction of the front shoes
-                    for the <strong>CC3300-AC</strong> locomotives, I initially applied tolerances that were not
-                    suitable for manufacturing because I assumed that their tools and capabilities were the same as
-                    those I had encountered in previous workplaces.
-                </p>
-                <p>
-                    This approach cost the team a significant amount of time, as we constantly had to review details and
-                    ensure that the dimensions were both acceptable and manufacturable. From this experience, I gained a
-                    deeper understanding of practical dimensioning techniques and learned how to work humbly and
-                    effectively with the manufacturer. By consulting them during the design process, we were able to
-                    reduce errors and save time.
-                </p>
-                <p class="note">
-                    <strong>Key Lesson:</strong> "If you want to go fast, go alone; if you want to go far, go together."
-                    In my case, especially, working alone often led to mistakes, whereas collaborating closely with the
-                    team and manufacturers resulted in fewer errors and faster, more accurate outcomes.
-                </p>
-            </div>
-        </section>
+                    <figure class="validation-item">
+                        <img src="../assets/images/BRAKING SHOES FOR CC_2200 LOCOMOTIVES.jpg"
+                            alt="Manufactured braking shoes for CC_2200 locomotives showing final assembly"
+                            class="validation-img" />
+                        <figcaption class="img-caption">Manufactured Braking Shoes for CC_2200 Locomotives</figcaption>
+                    </figure>
+                </div>
+            </section>
 
-        <!-- ================================================
-             BACK TO PROJECTS BUTTON
-             ================================================ -->
-        <a href="../index.html" class="btn btn-back">
-            <i class="fas fa-arrow-left"></i> Back to Projects
-        </a>
+            <!-- Conclusion Section -->
+            <section class="project-section" id="conclusion" aria-labelledby="conclusion-heading">
+                <div class="section-content">
+                    <h3 id="conclusion-heading" class="section-heading">Conclusion</h3>
+                    <p>
+                        Through this project, I learned an important lesson about the value of collaboration between
+                        designers and manufacturers. In my experience, when working in a design office, it is easy to
+                        assume that theoretical work—such as 3D modeling and detailed drawings—is sufficient to produce
+                        a component. We sometimes think we can complete a design without consulting the manufacturer.
+                    </p>
+                    <p>
+                        However, this project demonstrated how critical the role of the manufacturer is. They not only
+                        help you understand appropriate tolerances based on the materials and machinery available but
+                        also enable you to complete the work more efficiently. For example, during the reproduction of
+                        the front shoes for the <strong>CC3300-AC</strong> locomotives, I initially applied tolerances
+                        that were not suitable for manufacturing because I assumed that their tools and capabilities
+                        were the same as those I had encountered in previous workplaces.
+                    </p>
+                    <p>
+                        This approach cost the team a significant amount of time, as we constantly had to review details
+                        and ensure that the dimensions were both acceptable and manufacturable. From this experience, I
+                        gained a deeper understanding of practical dimensioning techniques and learned how to work
+                        humbly and effectively with the manufacturer. By consulting them during the design process, we
+                        were able to reduce errors and save time.
+                    </p>
 
+                    <h4 class="subsection-heading">Key Lesson</h4>
+                    <p>
+                        <strong>"If you want to go fast, go alone; if you want to go far, go together."</strong> In my
+                        case, especially, working alone often led to mistakes, whereas collaborating closely with the
+                        team and manufacturers resulted in fewer errors and faster, more accurate outcomes.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Back to Projects Button -->
+            <a href="../index.html" class="back-btn" aria-label="Return to projects page">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
+            </a>
+
+        </div>
     </main>
 
-    <!-- ================================================
-         FOOTER
-         ================================================ -->
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>&copy; 2025 Donfack Fortune. All rights reserved.</p>
+            <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ================================================
-         BACK TO TOP BUTTON
-         ================================================ -->
-    <button id="backToTopBtn" aria-label="Back to top" title="Back to Top">
-        <i class="fas fa-chevron-up"></i>
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
-    <!-- ================================================
-         JAVASCRIPT
-         ================================================ -->
+    <!-- Scripts -->
     <script>
-        // ==========================================
-        // Back to Top Button Functionality
-        // ==========================================
+        // Dynamic year update
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        const backToTopBtn = document.getElementById('backToTopBtn');
+        // Back to top button functionality
+        (function () {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            let isScrolling = false;
 
-        // Show button when user scrolls down 200px
-        window.addEventListener('scroll', function () {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        });
+            window.addEventListener('scroll', function () {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(function () {
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        backToTopBtn.classList.toggle('visible', scrollTop > 300);
+                        isScrolling = false;
+                    });
+                    isScrolling = true;
+                }
+            }, { passive: true });
 
-        // Smooth scroll to top when button is clicked
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            backToTopBtn.addEventListener('click', function () {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                window.scrollTo({
+                    top: 0,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
             });
-        });
+        })();
     </script>
-
 </body>
 
 </html>
