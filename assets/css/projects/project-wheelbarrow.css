@@ -485,14 +485,51 @@ a:focus-visible {
 .validation-item {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    background: var(--color-bg-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.validation-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.validation-item figcaption,
+.validation-item .img-caption {
+    padding: clamp(0.75rem, 2vw, 1rem);
+    /* Reduced padding */
+    font-size: clamp(0.875rem, 1.2vw + 0.25rem, 0.9375rem);
+    /* Slightly smaller font */
+    color: var(--color-text-medium);
+    text-align: center;
+    background: var(--color-bg-white);
+    line-height: 1.5;
+    /* Tighter line height */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.validation-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(1rem, 3vw, 1.5rem);
+    /* Reduced gap */
+    margin: var(--space-6) 0;
+    /* Reduced top/bottom margin */
 }
 
 .validation-img {
     width: 100%;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-    transition: transform var(--transition-base);
+    height: 250px;
+    /* Reduced from 350px */
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
 }
 
 .validation-img:hover {
@@ -615,6 +652,7 @@ a:focus-visible {
 
 /* Tablet Portrait (768px - 1023px) - Optimized */
 @media (min-width: 768px) and (max-width: 1023px) {
+
     /* Header Optimization */
     .header {
         padding: 1.25rem 0;
@@ -684,6 +722,7 @@ a:focus-visible {
 
 /* Tablet Landscape (1024px - 1279px) - Optimized */
 @media (min-width: 1024px) and (max-width: 1279px) {
+
     /* Header */
     .header-flex {
         gap: 2rem;
