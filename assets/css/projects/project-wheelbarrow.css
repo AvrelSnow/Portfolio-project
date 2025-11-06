@@ -436,7 +436,7 @@ a:focus-visible {
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
+    padding-bottom: 65%;
     /* 16:9 aspect ratio */
     background: var(--color-bg-light);
     border-radius: var(--radius-lg);
