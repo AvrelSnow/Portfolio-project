@@ -173,7 +173,7 @@ p {
     line-height: 1.75;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    max-width: 75ch;
+
 }
 
 strong,
@@ -424,6 +424,7 @@ a:focus-visible {
 .main-content {
     padding: clamp(2.5rem, 6vw, 4rem) 0;
     min-height: calc(100vh - 300px);
+
 }
 
 /* ============================================
@@ -443,6 +444,7 @@ a:focus-visible {
 
 .project-year {
     text-align: center;
+    margin: clamp(1.5rem, 3vw, 2rem) auto clamp(0.75rem, 1.5vw, 1rem);
     color: var(--color-text-medium);
     font-size: clamp(1rem, 1.5vw + 0.25rem, 1.125rem);
     margin-bottom: clamp(2rem, 4vw, 3rem);
@@ -560,7 +562,7 @@ a:focus-visible {
    ============================================ */
 .centered-figure,
 .image-container {
-    margin: clamp(2rem, 4vw, 3rem) 0;
+    margin: clamp(4.5vw, 4vw, 3rem) 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -600,31 +602,7 @@ figcaption {
     margin: clamp(2.5rem, 6vw, 4rem) 0;
 }
 
-/* ============================================
-   VIDEO CONTAINER - RESPONSIVE
-   ============================================ */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    /* 16:9 aspect ratio */
-    background: var(--color-bg-light);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    margin: clamp(2rem, 4vw, 3rem) 0;
-}
 
-.responsive-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: var(--radius-lg);
-    object-fit: contain;
-    background: #000;
-}
 
 /* ============================================
    PROJECT GALLERY - RESPONSIVE GRID
@@ -685,10 +663,26 @@ figcaption {
 .gallery-img,
 .validation-img {
     width: 100%;
-    height: clamp(250px, 40vw, 400px);
-    object-fit: cover;
+    height: auto;
+    /* Changed from fixed height */
+    min-height: 300px;
+    /* Minimum height for consistency */
+    object-fit: contain;
+    /* Changed from cover to contain */
     display: block;
     transition: transform var(--transition-slow);
+    background: white;
+    /* Add white background */
+}
+
+.full-width-images .validation-img {
+    height: auto;
+    min-height: 400px;
+    aspect-ratio: 297 / 210;
+    /* A4 landscape */
+    object-fit: contain;
+    background: #fafafa;
+    padding: clamp(1rem, 2vw, 2rem);
 }
 
 .gallery-item:hover .gallery-img,
@@ -1060,6 +1054,7 @@ figcaption {
     .gallery-grid,
     .validation-images-grid {
         grid-template-columns: repeat(2, 1fr);
+        align-items: center;
     }
 
     .section-content,
