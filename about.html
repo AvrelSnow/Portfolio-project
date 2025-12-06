@@ -194,7 +194,11 @@
         <div class="contact-wrapper">
           <h2 id="contact-heading" class="section-title">Get in Touch</h2>
 
-          <form class="contact-form" id="contactForm" novalidate>
+          <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+            novalidate>
+
+            <!-- Hidden Access Key -->
+            <input type="hidden" name="access_key" value="44492f21-ec03-450d-b90d-719d00db1fed">
 
             <!-- Name Field -->
             <div class="form-group">
@@ -237,7 +241,7 @@
 
             <!-- Success Message -->
             <div id="successMessage" class="success-message" role="status" aria-live="polite">
-              <i class="fas fa-check-circle" aria-hidden="true"></i> Message prepared! Your email client will open.
+              <i class="fas fa-check-circle" aria-hidden="true"></i> Message sent successfully!
             </div>
           </form>
         </div>
@@ -246,7 +250,7 @@
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer -->-redirect sent messages in t
   <footer class="footer" role="contentinfo">
     <div class="container">
       <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
