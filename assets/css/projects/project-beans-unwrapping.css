@@ -725,6 +725,7 @@ a:focus-visible {
 
 /* Tablet Portrait (768px - 1023px) - OPTIMIZED */
 @media (min-width: 768px) and (max-width: 1023px) {
+
     /* Header Optimization */
     .header {
         padding: 1.25rem 0;
@@ -821,6 +822,7 @@ a:focus-visible {
 
 /* Tablet Landscape (1024px - 1279px) - OPTIMIZED */
 @media (min-width: 1024px) and (max-width: 1279px) {
+
     /* Header */
     .header-flex {
         gap: 2rem;
