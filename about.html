@@ -182,23 +182,20 @@
         <div class="contact-wrapper">
           <h2 id="contact-heading" class="section-title">Get in Touch</h2>
 
-          <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST"
-            novalidate>
-
-            <!-- Hidden Access Key -->
-            <input type="hidden" name="access_key" value="44492f21-ec03-450d-b90d-719d00db1fed">
+          <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
             
-            <!-- Honeypot spam protection -->
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <!-- Hidden Fields -->
+            <input type="hidden" name="access_key" value="44492f21-ec03-450d-b90d-719d00db1fed">
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <input type="checkbox" name="botcheck" style="display: none;">
 
             <!-- Name Field -->
             <div class="form-group">
               <label for="name" class="form-label">
                 Name <span class="required" aria-label="required">*</span>
               </label>
-              <input type="text" id="name" name="name" class="form-input" required aria-required="true"
-                autocomplete="name" placeholder="Your full name" minlength="2" maxlength="100" />
-              <span class="error-message" id="name-error" role="alert"></span>
+              <input type="text" id="name" name="name" class="form-input" required 
+                placeholder="Your full name" minlength="2" maxlength="100" />
             </div>
 
             <!-- Email Field -->
@@ -206,10 +203,8 @@
               <label for="email" class="form-label">
                 Email <span class="required" aria-label="required">*</span>
               </label>
-              <input type="email" id="email" name="email" class="form-input" required aria-required="true"
-                autocomplete="email" placeholder="your.email@example.com"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
-              <span class="error-message" id="email-error" role="alert"></span>
+              <input type="email" id="email" name="email" class="form-input" required 
+                placeholder="your.email@example.com" />
             </div>
 
             <!-- Message Field -->
@@ -217,29 +212,19 @@
               <label for="message" class="form-label">
                 Message <span class="required" aria-label="required">*</span>
               </label>
-              <textarea id="message" name="message" class="form-textarea" rows="6" required aria-required="true"
+              <textarea id="message" name="message" class="form-textarea" rows="6" required 
                 placeholder="Your message here..." minlength="10" maxlength="1000"></textarea>
-              <span class="error-message" id="message-error" role="alert"></span>
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="submit-btn" id="submitBtn">
-              <span class="btn-text" id="btnText">Send Message</span>
-              <span class="btn-loader" id="btnLoader">
-                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...
-              </span>
-            </button>
-
-            <!-- Success Message -->
-            <div id="successMessage" class="success-message" role="status" aria-live="polite">
-              <i class="fas fa-check-circle" aria-hidden="true"></i> Message sent successfully!
-            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
           </form>
         </div>
       </section>
 
     </div>
   </main>
+  
   <!-- Pre-Footer -->
   <section class="pre-footer" role="complementary">
     <div class="container">
@@ -269,138 +254,6 @@
   <script>
     // Dynamic year update
     document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Form Validation & Submission
-    (function () {
-      const form = document.getElementById('contactForm');
-      const nameInput = document.getElementById('name');
-      const emailInput = document.getElementById('email');
-      const messageInput = document.getElementById('message');
-      const submitBtn = document.getElementById('submitBtn');
-      const btnText = document.getElementById('btnText');
-      const btnLoader = document.getElementById('btnLoader');
-      const successMessage = document.getElementById('successMessage');
-
-      // Validation rules
-      const validators = {
-        name: (value) => {
-          if (!value.trim()) return 'Name is required';
-          if (value.trim().length < 2) return 'Name must be at least 2 characters';
-          return '';
-        },
-        email: (value) => {
-          if (!value.trim()) return 'Email is required';
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(value)) return 'Please enter a valid email address';
-          return '';
-        },
-        message: (value) => {
-          if (!value.trim()) return 'Message is required';
-          if (value.trim().length < 10) return 'Message must be at least 10 characters';
-          return '';
-        }
-      };
-
-      // Show error
-      function showError(input, message) {
-        const errorElement = document.getElementById(`${input.id}-error`);
-        if (errorElement) {
-          errorElement.textContent = message;
-          errorElement.style.display = 'block';
-        }
-        input.setAttribute('aria-invalid', 'true');
-        input.classList.add('error');
-      }
-
-      // Clear error
-      function clearError(input) {
-        const errorElement = document.getElementById(`${input.id}-error`);
-        if (errorElement) {
-          errorElement.textContent = '';
-          errorElement.style.display = 'none';
-        }
-        input.setAttribute('aria-invalid', 'false');
-        input.classList.remove('error');
-      }
-
-      // Real-time validation
-      [nameInput, emailInput, messageInput].forEach(input => {
-        input.addEventListener('blur', function () {
-          const error = validators[this.id](this.value);
-          if (error) {
-            showError(this, error);
-          } else {
-            clearError(this);
-          }
-        });
-
-        input.addEventListener('input', function () {
-          if (this.getAttribute('aria-invalid') === 'true') {
-            clearError(this);
-          }
-        });
-      });
-
-      // Form submission with web3forms API
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        let isValid = true;
-        const fields = [
-          { input: nameInput, validator: validators.name },
-          { input: emailInput, validator: validators.email },
-          { input: messageInput, validator: validators.message }
-        ];
-
-        fields.forEach(({ input, validator }) => {
-          const error = validator(input.value);
-          if (error) {
-            showError(input, error);
-            isValid = false;
-          } else {
-            clearError(input);
-          }
-        });
-
-        if (!isValid) {
-          const firstError = fields.find(({ input, validator }) => validator(input.value) !== '');
-          if (firstError) {
-            firstError.input.focus();
-          }
-          return;
-        }
-
-        // Show loading state
-        btnText.style.display = 'none';
-        btnLoader.style.display = 'inline-flex';
-        submitBtn.disabled = true;
-
-        try {
-          const formData = new FormData(form);
-          
-          const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-          });
-
-          const data = await response.json();
-
-          if (data.success) {
-            successMessage.style.display = 'flex';
-            form.reset();
-            setTimeout(() => successMessage.style.display = 'none', 5000);
-          } else {
-            alert('Failed to send message. Please try again or email directly at fortunedonfack05@gmail.com');
-          }
-        } catch (error) {
-          alert('Network error. Please email me directly at fortunedonfack05@gmail.com');
-        } finally {
-          btnText.style.display = 'inline';
-          btnLoader.style.display = 'none';
-          submitBtn.disabled = false;
-        }
-      });
-    })();
 
     // Back to top button
     (function () {
