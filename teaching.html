@@ -222,60 +222,60 @@
     <div class="container">
 
       <p>fortunedonfack05@gmail.com</p>
-
+      <p>
+        <a href="path/to/your/cv.pdf" download="Mechanical_Engineering_CV.pdf" class="cv-download">
+          Mechanical engineering CV
+        </a>
+      </p>
       <p>237-699-415-955</p>
-
       <p>237-670-229-486</p>
 
-    </div>
-  </section>
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="container">
+          <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
+        </div>
+      </footer>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
-    </div>
-  </footer>
+      <!-- Back to Top Button -->
+      <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+      </button>
 
-  <!-- Back to Top Button -->
-  <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
-    <i class="fas fa-chevron-up" aria-hidden="true"></i>
-  </button>
+      <!-- Scripts -->
+      <script>
+        // Dynamic year update
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-  <!-- Scripts -->
-  <script>
-    // Dynamic year update
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Back to top button functionality
+        (function () {
+          const backToTopBtn = document.getElementById('backToTopBtn');
+          let isScrolling = false;
 
-    // Back to top button functionality
-    (function () {
-      const backToTopBtn = document.getElementById('backToTopBtn');
-      let isScrolling = false;
+          window.addEventListener('scroll', function () {
+            if (!isScrolling) {
+              window.requestAnimationFrame(function () {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                backToTopBtn.classList.toggle('visible', scrollTop > 300);
+                isScrolling = false;
+              });
+              isScrolling = true;
+            }
+          }, { passive: true });
 
-      window.addEventListener('scroll', function () {
-        if (!isScrolling) {
-          window.requestAnimationFrame(function () {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            backToTopBtn.classList.toggle('visible', scrollTop > 300);
-            isScrolling = false;
+          backToTopBtn.addEventListener('click', function () {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({
+              top: 0,
+              behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
           });
-          isScrolling = true;
-        }
-      }, { passive: true });
-
-      backToTopBtn.addEventListener('click', function () {
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        window.scrollTo({
-          top: 0,
-          behavior: prefersReducedMotion ? 'auto' : 'smooth'
-        });
-      });
-    })();
+        })();
 
 
 
 
-  </script>
+      </script>
 </body>
 
 </html>
