@@ -549,7 +549,7 @@ a:focus-visible {
     text-align: center;
     border-top: 0.5px solid var(--color-border);
     border-bottom: 0.5px solid var(--color-border);
-    margin-top: clamp(3rem, 10vw, 6rem);
+    margin-top: clamp(5rem, 10vw, 6rem);
     margin-bottom: 0;
     display: flex;
     justify-content: center;
@@ -561,9 +561,10 @@ a:focus-visible {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: clamp(2rem, 4vw, 4rem);
+    gap: clamp(1rem, 5vw, 1rem);
     width: 100%;
     flex-wrap: wrap;
+
 }
 
 .pre-footer p {
@@ -573,6 +574,7 @@ a:focus-visible {
     line-height: 1.4;
     transition: color var(--transition-base);
     white-space: nowrap;
+
 }
 
 .pre-footer p:hover {
@@ -586,31 +588,22 @@ a:focus-visible {
     padding-top: clamp(1.5rem, 4vw, 2rem);
 }
 
-.cv-download {
-    color: inherit;
-    text-decoration: underline;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-.cv-download:hover {
-    opacity: 0.7;
-}
-
 /* ============================================
    FOOTER
    ============================================ */
 .footer {
     border-top: 1px solid var(--color-border);
     background: var(--color-bg-white);
-    padding: var(--space-6) 0;
+    padding: clamp(1.5rem, 0vw, 2rem) 0;
     text-align: center;
-    margin-top: var(--space-12);
+    margin-top: clamp(3rem, 0.1vw);
+    display: flex;
+    width: 100%;
 }
 
 .footer p {
     margin: 0;
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
     color: var(--color-text-light);
     transition: color var(--transition-base);
 }
@@ -618,6 +611,7 @@ a:focus-visible {
 .footer p:hover {
     color: var(--color-primary);
 }
+
 
 /* ============================================
    BACK TO TOP BUTTON
