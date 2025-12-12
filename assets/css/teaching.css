@@ -554,6 +554,7 @@ a:focus-visible {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .pre-footer .container {
@@ -565,6 +566,7 @@ a:focus-visible {
     width: 100%;
     flex-wrap: wrap;
 
+
 }
 
 .pre-footer p {
@@ -574,11 +576,13 @@ a:focus-visible {
     line-height: 1.4;
     transition: color var(--transition-base);
     white-space: nowrap;
+    text-decoration-color: #0493f3;
 
 }
 
 .pre-footer p:hover {
     color: var(--color-primary);
+
 }
 
 /* Remove top border and margin from footer when after pre-footer */

@@ -648,10 +648,11 @@ strong {
 .pre-footer p {
     margin: 0;
     font-size: clamp(0.75rem, 1vw, 0.875rem);
-    color: var(--color-text-light);
+    color: #0493f3;
     line-height: 1.4;
     transition: color var(--transition-base);
     white-space: nowrap;
+
 }
 
 .pre-footer p:hover {
@@ -663,6 +664,17 @@ strong {
     border-top: none;
     margin-top: 0;
     padding-top: clamp(1.5rem, 4vw, 2rem);
+}
+
+.cv-download {
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.cv-download:hover {
+    opacity: 0.7;
 }
 
 
