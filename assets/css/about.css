@@ -648,11 +648,9 @@ strong {
 .pre-footer p {
     margin: 0;
     font-size: clamp(0.75rem, 1vw, 0.875rem);
-    color: #0493f3;
     line-height: 1.4;
     transition: color var(--transition-base);
     white-space: nowrap;
-
 }
 
 .pre-footer p:hover {
