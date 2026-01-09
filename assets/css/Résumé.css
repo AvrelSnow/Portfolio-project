@@ -1,0 +1,513 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header */
+header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0;
+}
+
+.header-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #999;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #333;
+}
+
+.has-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    min-width: 160px;
+    padding: 12px 0 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+    list-style: none;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 6px 0;
+    color: #ccc;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    transition: color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    color: #666;
+}
+
+/* Social Links */
+.header-social {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.social-link {
+    color: #999;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #333;
+}
+
+/* Resume Hero */
+.resume-hero {
+    background: #fff;
+    padding: 4rem 2rem 3rem;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.resume-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.resume-name {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #2d2d2d;
+    margin-bottom: 1rem;
+}
+
+.resume-location {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.resume-location p {
+    margin: 0.2rem 0;
+}
+
+.download-btn {
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 1.8rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-radius: 0;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    background: #333;
+}
+
+/* Resume Layout */
+.resume-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 4rem;
+}
+
+.resume-main {
+    min-width: 0;
+}
+
+.resume-sidebar {
+    min-width: 0;
+}
+
+/* Section Styling */
+.resume-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Resume Entry */
+.resume-entry {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.resume-entry:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.3rem;
+}
+
+.entry-date {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.entry-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.entry-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: normal;
+    margin-bottom: 0.8rem;
+}
+
+.entry-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+    line-height: 1.6;
+}
+
+.entry-details {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.3rem;
+}
+
+.entry-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.8rem;
+}
+
+.entry-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.entry-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2d2d2d;
+    font-weight: 400;
+}
+
+/* Simple Entry (Awards) */
+.resume-entry-simple {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.resume-entry-simple:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.resume-entry-simple .entry-date {
+    min-width: 60px;
+    font-weight: 400;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.resume-entry-simple .entry-description {
+    flex: 1;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Sidebar Skills */
+.skills-category {
+    margin-bottom: 1.8rem;
+}
+
+.category-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin-bottom: 0.6rem;
+}
+
+.category-content {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Certifications */
+.certifications-list {
+    list-style: none;
+    padding: 0;
+}
+
+.certifications-list li {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+    padding-left: 0;
+}
+
+/* Pre-footer */
+.pre-footer {
+    background: #f9f9f9;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.pre-footer p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background: #fff;
+    padding: 30px 40px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #999;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #333;
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .resume-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .resume-sidebar {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .has-dropdown .dropdown-menu {
+        display: none;
+    }
+
+    .resume-hero {
+        padding: 3rem 1.5rem 2rem;
+    }
+
+    .resume-hero-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .resume-name {
+        font-size: 2rem;
+    }
+
+    .resume-layout {
+        padding: 2rem 1.5rem;
+    }
+
+    .pre-footer {
+        padding: 40px 20px;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo h1.logo {
+        font-size: 20px;
+    }
+
+    .header-wrapper {
+        padding: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .resume-name {
+        font-size: 1.8rem;
+    }
+
+    .resume-location {
+        font-size: 0.9rem;
+    }
+
+    .download-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .resume-layout {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .resume-entry-simple {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .resume-entry-simple .entry-date {
+        min-width: auto;
+    }
+}

@@ -2,507 +2,344 @@
 <html lang="fr">
 
 <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Banana Pseudostem Shredding Machine - Sustainable agricultural waste valorization project by Donfack Fortune. Converting banana waste into valuable resources." />
-    <meta name="keywords"
-        content="banana shredder, agricultural machinery, waste valorization, mechanical design, Cameroon, sustainable agriculture" />
-    <meta name="author" content="Donfack Fortune" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Banana Pseudostem Shredding Machine | Donfack Fortune" />
-    <meta property="og:description" content="Innovative machine for valorizing banana agricultural waste in Cameroon" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="../assets/images/Machine-TOWE-3.jpg" />
-
+        content="Machine De Broyage Des Pseudo-Troncs De Bananiers - Projet de valorisation des déchets agricoles par Donfack Fortune">
+    <meta name="author" content="Donfack Fortune">
     <title>Machine De Broyage Des Pseudo-Troncs De Bananiers | Donfack Fortune</title>
 
-    <!-- DNS Prefetch & Preconnect -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Font Loading -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-            rel="stylesheet" />
-    </noscript>
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css" />
-
-    <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    </noscript>
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-
-    <style>
-        /* Critical CSS for above-the-fold content */
-        body {
-            margin: 0;
-            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-        }
-
-        .header {
-            background: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/Projects/project-banana-shredder.css">
 </head>
 
 <body>
-    <!-- Skip to Content -->
-    <a href="#main-content" class="skip-link"
-        style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;">Skip
-        to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header -->
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-flex">
-                <!-- Logo -->
-                <div class="header-left">
-                    <h1 class="logo">
-                        <a href="../index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
-                    </h1>
-                </div>
+    <header role="banner">
+        <div class="header-wrapper">
+            <div class="header-logo">
+                <h1 class="logo">
+                    <a href="../Home.html">Donfack Fortune</a>
+                </h1>
+            </div>
 
-                <!-- Navigation -->
-                <nav class="header-center" aria-label="Main navigation" role="navigation">
-                    <ul class="nav-list">
-                        <li><a href="../index.html" class="nav-link active" aria-current="page">Projects</a></li>
-                        <li><a href="../teaching.html" class="nav-link">Teaching</a></li>
-                        <li><a href="../about.html" class="nav-link">About</a></li>
-                    </ul>
-                </nav>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="../Home.html">Home</a></li>
+                    <li><a href="../Camrail.html">Camrail</a></li>
+                    <li class="has-dropdown">
+                        <a href="../Projects.html">Projects</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Projects.html#all" data-filter="all">All</a></li>
+                            <li><a href="../Projects.html#simulation-driven"
+                                    data-filter="simulation-driven">Simulation-Driven</a>
+                            </li>
+                            <li><a href="../Projects.html#sustainability"
+                                    data-filter="sustainability">Sustainability</a>
+                            </li>
+                            <li><a href="../Projects.html#mechanical" data-filter="mechanical">Mechanical Design</a>
+                            </li>
+                            <li><a href="../Projects.html#electronics" data-filter="electronics">Electronics</a></li>
+                            <li><a href="../Projects.html#user-centered" data-filter="user-centered">User-Centered</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="../Teaching.html">Teaching</a></li>
+                    <li><a href="../Résumé.html">Résumé</a></li>
+                </ul>
+            </nav>
 
-                <!-- Social Links -->
-                <div class="header-right" role="complementary" aria-label="Social media links">
-                    <div class="social-icons">
-                        <a href="https://grabcad.com/donfack.fortune-1"
-                            aria-label="Visit Donfack Fortune's GrabCAD profile" target="_blank"
-                            rel="noopener noreferrer" class="social-link">
-                            <span class="social-icon" aria-hidden="true">
-                                <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-                                    <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
-                                        font-family="Arial">GC</text>
-                                </svg>
-                            </span>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
-                            aria-label="Visit Donfack Fortune's LinkedIn profile" target="_blank"
-                            rel="noopener noreferrer" class="social-link">
-                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="header-social">
+                <a href="https://grabcad.com/donfack.fortune-1" target="_blank" rel="noopener noreferrer"
+                    class="social-link">
+                    <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
+                        <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
+                            font-family="Arial">GC</text>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" target="_blank"
+                    rel="noopener noreferrer" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content" id="main-content" role="main">
-        <div class="container">
+    <main id="main-content" role="main">
+        <h1 class="page-title">Machine De Broyage Des Pseudo-Troncs De Bananiers</h1>
 
-            <!-- Page Title -->
-            <h2 class="page-title">Machine De Broyage Des Pseudo-Troncs De Bananiers</h2>
+        <section class="project-hero">
+            <div class="image-wrapper">
+                <img src="/assets/images/Machine-TOWE-3.jpg" alt="Machine de broyage des pseudo-troncs de bananiers"
+                    class="hero-img clickable-img">
+                <div class="image-overlay">
+                    <span class="overlay-text">Machine de broyage des pseudo-troncs de bananiers avant les finitions et
+                        l'application de la peinture</span>
+                </div>
+            </div>
+        </section>
 
-            <!-- Context Section -->
-            <section class="project-section" aria-labelledby="context-heading">
-                <article class="section-content">
-                    <h3 id="context-heading" class="section-heading">CONTEXTE</h3>
-                    <p>
-                        Le Cameroun occupe une place stratégique dans l'industrie bananière mondiale, étant le premier
-                        producteur de bananes de la zone Afrique, Caraïbes et Pacifique, et le cinquième producteur
-                        mondial.
-                        Cette production croissante génère cependant d'importants volumes de résidus agricoles, en
-                        particulier les pseudo-troncs de bananiers. Ces résidus sont généralement abandonnés ou brûlés,
-                        ce
-                        qui entraîne pollution, émissions de gaz à effet de serre, et perte d'une ressource à fort
-                        potentiel. Pourtant, leur structure fibreuse et leur teneur en eau en font une matière première
-                        exploitable dans divers domaines : biogaz, compost, panneaux de particules, fibres textiles et
-                        emballages biodégradables.
-                    </p>
-                    <p>
-                        Ce projet avait pour objectif de concevoir un broyeur adapté aux conditions
-                        locales camerounaises afin de valoriser ces résidus agricoles et de réduire la dépendance aux
-                        équipements importés, souvent coûteux et peu adaptés aux réalités du terrain.
-                    </p>
-                    <p>
-                        J'ai eu l'opportunité d'encadrer ce projet aux côtés du Dr. Betene Achille (Professeur à
-                        l'Université de l'École Normale Supérieure de l'Enseignement Technique). Nous avons accompagné
-                        trois
-                        étudiants — M. Ondoa, Mme Tefeu et Mme Weka — dans le cadre de l'obtention de leur diplôme
-                        d'enseignant technique.
-                    </p>
-                    <p>
-                        Dans cette collaboration, le Dr. Betene s'est chargé de l'aspect pédagogique, tandis que j'étais
-                        responsable de l'encadrement technique. Ma mission consistait à accompagner les étudiants dans
-                        la
-                        compréhension et l'application des principes fondamentaux de la conception mécanique et agricole
-                        :
-                    </p>
-                    <ul>
-                        <li>Prise en compte des contraintes physiques et mécaniques;</li>
-                        <li>Dimensionnement et choix des composants;</li>
-                        <li>Respect des normes de sécurité et d'efficacité relatives aux machines agricoles.</li>
-                    </ul>
-                    <p>
-                        Mon accompagnement, réalisé sur une période de trois mois, leur a permis non seulement de
-                        finaliser une
-                        machine fonctionnelle, mais aussi de comprendre les défis liés à la conception d'un broyeur
-                        agricole,
-                        ainsi que les règles, normes et considérations mécaniques indispensables à ce type de projet.
-                    </p>
-                    <p>
-                        Grâce à ce travail, les étudiants ont pu intégrer à la fois la rigueur technique et la dimension
-                        pédagogique dans leur démarche, et développer une machine qui illustre parfaitement l'alliance
-                        entre
-                        innovation locale, valorisation des déchets agricoles et formation technique appliquée.
-                    </p>
-                </article>
-            </section>
+        <div class="project-content">
+            <section class="project-intro">
+                <div class="intro-columns">
+                    <article class="intro-column">
+                        <h2>Context</h2>
+                        <p>Le Cameroun occupe une place stratégique dans l'industrie bananière mondiale, étant le
+                            premier producteur de bananes de la zone Afrique, Caraïbes et Pacifique, et le cinquième
+                            producteur mondial.</p>
+                        <p>Ce projet avait pour objectif de concevoir un broyeur adapté aux conditions locales
+                            camerounaises afin de valoriser ces résidus agricoles et de réduire la dépendance aux
+                            équipements importés.</p>
+                        <p>J'ai eu l'opportunité d'encadrer ce projet aux côtés du <strong>Dr. Betene Achille</strong>.
+                            Ma mission
+                            consistait à accompagner les étudiants dans la compréhension et l'application des principes
+                            fondamentaux de la conception mécanique et agricole.</p>
+                    </article>
 
-            <!-- Downloads Section -->
-            <section class="project-section downloads-section" aria-labelledby="downloads-heading">
-                <div class="section-content">
-                    <h3 id="downloads-heading" class="section-heading">Téléchargements du Projet</h3>
-                    <div class="btn-row">
-                        <a href="/assets/images/zip/Manuscrit_Broyeur_TOWE_ok.zip"
-                            download="Manuscrit_Broyeur_TOWE_ok.zip" class="download-btn"
-                            aria-label="Télécharger la documentation du projet">
-                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
-                            <span>Documentation</span>
-                        </a>
-                        <a href="/assets/images/zip/2D-PLANS-FOR-BPSM.zip" download="2D-PLANS-FOR-BPSM.zip"
-                            class="download-btn" aria-label="Télécharger les dessins de fabrication">
-                            <i class="fas fa-drafting-compass" aria-hidden="true"></i>
-                            <span>Dessins de fabrication</span>
-                        </a>
-                        <a href="/assets/images/zip/Banana_Pseudostem_Shredding_machine.zip"
-                            download="Banana_Pseudostem_Shredding_machine.zip" class="download-btn"
-                            aria-label="Télécharger les fichiers du modèle 3D">
-                            <i class="fas fa-cube" aria-hidden="true"></i>
-                            <span>Modèle 3D</span>
-                        </a>
-                    </div>
+                    <article class="intro-column">
+                        <h2>Content</h2>
+                        <p>Nous avons commencé par identifier le besoin, puis nous l'avons validé avant de procéder à
+                            une analyse fonctionnelle technique.</p>
+                        <p>Notre choix de conception s'est porté sur un broyeur mono-disque à poulies. Il s'agit d'un
+                            système à transmission de puissance par poulies-courroie, intégrant plusieurs sous-ensembles
+                            fonctionnels.</p>
+                        <p>Le broyeur présente plusieurs avantages : conception simplifiée, transmission flexible,
+                            encombrement réduit, maintenance aisée et coût optimisé.</p>
+                    </article>
+
+                    <article class="intro-column">
+                        <h2>Conclusions</h2>
+                        <p>Dans ce projet, j'ai découvert que transmettre un savoir est bien plus complexe qu'il n'y
+                            paraît. Il ne suffit pas de donner des consignes : il faut s'assurer que chacun ait bien
+                            compris.</p>
+                        <p>Cette approche a montré qu'il n'est pas toujours indispensable d'avoir recours à de grandes
+                            machines-outils pour concevoir un prototype fonctionnel.</p>
+                        <p>Ce projet a été autant une réalisation technique qu'une expérience pédagogique, alliant
+                            conception mécanique, transmission des savoirs et valorisation des moyens accessibles
+                            localement.</p>
+                    </article>
                 </div>
             </section>
 
-            <!-- Technical Content Section -->
-            <section class="project-section" aria-labelledby="technical-heading">
-                <article class="section-content">
-                    <h2 id="technical-heading" class="section-heading">CONTENU TECHNIQUE</h2>
-                    <p>
-                        Nous avons tout d'abord commencé par identifier le besoin, puis nous l'avons validé avant de
-                        procéder à une analyse fonctionnelle technique.
-                        Ci-dessous figure le diagramme FAST correspondant.
-                    </p>
-
-                    <figure class="centered-figure">
-                        <img src="/assets/images/Diagramme-FAST-TOWE.jpg"
-                            alt="Diagramme FAST montrant l'analyse fonctionnelle du système de broyage"
-                            class="responsive-img" loading="lazy" width="800" height="600" />
-                        <figcaption class="img-caption">Diagramme FAST du système de broyage</figcaption>
-                    </figure>
-
-                    <p>
-                        Par la suite, notre choix de conception s'est porté sur un broyeur mono-disque à poulies.
-                        Il s'agit d'un système à transmission de puissance par poulies-courroie, intégrant plusieurs
-                        sous-ensembles fonctionnels.
-                    </p>
-                    <p>
-                        Le broyeur mono-disque à poulies présente plusieurs avantages par rapport aux autres solutions
-                        étudiées
-                        (voir document) :
-                    </p>
-                    <ul>
-                        <li>Conception simplifiée : la transmission par courroie réduit le nombre d'éléments rigides, ce
-                            qui
-                            facilite l'entretien.</li>
-                        <li>Transmission flexible : elle absorbe les désalignements et les chocs, limitant ainsi l'usure
-                            mécanique.</li>
-                        <li>Encombrement réduit : l'architecture verticale optimise l'alimentation gravitaire et
-                            l'occupation de l'espace au sol.</li>
-                        <li>Maintenance aisée : les composants sont accessibles, minimisant les temps d'intervention.
-                        </li>
-                        <li>Coût optimisé : l'utilisation de pièces standardisées, facilement disponibles sur le marché,
-                            réduit les coûts de fabrication et d'entretien.</li>
-                    </ul>
-
-                    <h3 class="subsection-heading">Description de fonctionnement</h3>
-                    <p>
-                        Le moteur électrique <strong>(1)</strong>, fixé sur le bâti <strong>(10)</strong>, transmet son
-                        mouvement de rotation à la poulie motrice <strong>(2)</strong>. Celle-ci entraîne, par
-                        l'intermédiaire
-                        de la courroie <strong>(3)</strong>, la poulie réceptrice <strong>(4)</strong>, assurant une
-                        transmission souple et limitant les à-coups.
-                    </p>
-                    <p>
-                        La poulie réceptrice <strong>(4)</strong>, solidaire de l'arbre horizontal <strong>(5)</strong>,
-                        communique sa rotation au disque à lames <strong>(7)</strong>. L'arbre, maintenu par les paliers
-                        <strong>(6 et 8)</strong>, garantit un mouvement stable et précis.
-                    </p>
-                    <p>
-                        En rotation rapide, le disque à lames <strong>(7)</strong>, placé au centre de la chambre de
-                        broyage
-                        <strong>(9)</strong>, fragmente les pseudo-troncs introduits par l'entrée <strong>(E)</strong>,
-                        grâce à un double effet de cisaillement et de force centrifuge.
-                    </p>
-                    <p>
-                        Enfin, la pâte fibreuse obtenue est évacuée par la sortie <strong>(S)</strong> et récupérée dans
-                        le bac
-                        <strong>(10)</strong>, supporté par la structure <strong>(9)</strong>.
-                    </p>
-
-                    <figure class="centered-figure">
-                        <img src="/assets/images/schema-cinematique-TOWE.jpg"
-                            alt="Schéma cinématique détaillé du broyeur mono-disque" class="responsive-img"
-                            loading="lazy" width="800" height="600" />
-                        <figcaption class="img-caption">Schéma cinématique du broyeur</figcaption>
-                    </figure>
-
-                    <h3 class="subsection-heading">Principe de broyage intégré</h3>
-                    <h4 class="subsection-subheading">Considérons d'abord l'essai de pendule pesant:</h4>
-                    <p>
-                        Un banc d'essai basé sur un pendule pesant a été conçu pour quantifier la force de cisaillement
-                        nécessaire au tranchage du pseudo-tronc de bananier à une profondeur donnée. La figure présente
-                        la schématisation paramétrée du dispositif, intégrant les principaux éléments mécaniques.
-                    </p>
-                    <p>
-                        Le système repose sur une barre rigide inextensible 3, articulée au point O via une charnière
-                        graduée 2, supportant un trancheur 4 de masse m. Lors du test, le pendule est écarté d'un angle
-                        α,
-                        correspondant à une hauteur de levée H, puis lâché sans vitesse initiale. La rotation induite
-                        permet
-                        d'impacter le pseudo-tronc 1 et simule le mécanisme de cisaillement par lame rotative.
-                    </p>
-
-                    <figure class="centered-figure">
-                        <img src="/assets/images/l'essai-de-la-pendule-pesant-TOWE.jpg"
-                            alt="Dispositif expérimental du pendule pesant pour mesurer la force de cisaillement"
-                            class="responsive-img" loading="lazy" width="800" height="600" />
-                        <figcaption class="img-caption">Dispositif d'essai de pendule pesant</figcaption>
-                    </figure>
-
-                    <h4 class="subsection-subheading">Hypothèses</h4>
-                    <p>Pour cette étude, on considère que:</p>
-                    <ul>
-                        <li>La barre 3 est rigide et inextensible, de longueur L = 500 mm</li>
-                        <li>Le trancheur, assimilé à une masse ponctuelle m = 1 kg, est affûté comme une lame de disque.
-                        </li>
-                        <li>Le pseudo-tronc de bananier est modélisé par un cylindre homogène de diamètre d<sub>st</sub>
-                            = 30 cm</li>
-                        <li>Les forces aérodynamiques et pertes mécaniques sont négligées.</li>
-                        <li>L'accélération de pesanteur est g = 10 m/s²</li>
-                    </ul>
-                    <p>Le système est étudié dans le plan (xOy) avec un repère cartésien.</p>
-
-                    <h4 class="subsection-subheading">Résultats de l'expérience</h4>
-                    <p>
-                        Le tableau montre qu'à partir de α = 80°, une pénétration nette de p = 5,5 cm est observée,
-                        indiquant que la force de tranchage minimale est atteinte à cette configuration.
-                        Le tableau synthétise l'essai de cisaillement. Les images illustrent les effets du trancheur
-                        sur le pseudo-tronc à différents angles.
-                    </p>
-
-                    <figure class="centered-figure">
-                        <img src="/assets/images/Resultat-essai-TOWE.jpg"
-                            alt="Tableau des résultats expérimentaux de l'essai de cisaillement" class="responsive-img"
-                            loading="lazy" width="800" height="600" />
-                        <figcaption class="img-caption">Résultats de l'essai de cisaillement</figcaption>
-                    </figure>
-
-                    <p><strong>Le principe de Broyage est représenté ci-après:</strong></p>
-                    <p>
-                        À l'approche du disque 7, le pseudo-tronc est désintégré en une pâte fibreuse sous l'effet
-                        combiné
-                        du cisaillement et de la force centrifuge.
-                    </p>
-
-                    <figure class="centered-figure">
-                        <img src="/assets/images/Principe-de-broyage-TOWE.jpg"
-                            alt="Schéma du principe de broyage par cisaillement et force centrifuge"
-                            class="responsive-img" loading="lazy" width="800" height="600" />
-                        <figcaption class="img-caption">Principe de broyage par cisaillement et force centrifuge
-                        </figcaption>
-                    </figure>
-
-                    <p>
-                        <strong>N.B:</strong> La détermination de la vitesse linéaire du trancheur, du travail de
-                        cisaillement et le choix des différents composants, etc., voir le document.
-                    </p>
-
-                    <h3 class="subsection-heading">CONCLUSION</h3>
-                    <p>
-                        Dans ce projet, nous avons commencé avec une vision et des objectifs clairs. Cependant, au fur
-                        et à
-                        mesure de l'avancement, j'ai découvert que transmettre un savoir est bien plus complexe qu'il
-                        n'y
-                        paraît. Il ne suffit pas de donner des consignes : il faut s'assurer que chacun ait bien compris
-                        ce
-                        qu'il faut faire. La capacité d'un étudiant à résoudre un problème par lui-même dépend avant
-                        tout de
-                        sa compréhension précise des tâches à accomplir.
-                    </p>
-                    <p>
-                        J'ai également compris que les éléments fondamentaux de la mécanique — tels que la physique
-                        appliquée, les choix de matériaux ou encore le dimensionnement — jouent un rôle déterminant. En
-                        effet, une erreur dans le dimensionnement se répercute directement sur la performance et la
-                        fiabilité de la machine.
-                    </p>
-                    <p>
-                        Nous avons travaillé avec des outils simples mais essentiels, tels que la meule, les disques de
-                        coupe, le poste à soudure, ainsi que des instruments de mesure comme le mètre et le pied à
-                        coulisse.
-                        Leur utilisation rigoureuse a permis de réaliser un travail précis et soigné. Ces outils ont
-                        également servi de support pédagogique pour que les étudiants comprennent clairement :
-                    </p>
-                    <ul>
-                        <li>pourquoi certaines coupes devaient être faites,</li>
-                        <li>pourquoi certains angles de soudure étaient choisis,</li>
-                        <li>et pourquoi l'utilisation d'un outil plutôt qu'un autre était nécessaire.</li>
-                    </ul>
-                    <p>
-                        Cette approche a montré qu'il n'est pas toujours indispensable d'avoir recours à de grandes
-                        machines-outils comme les fraiseuses ou les tours pour concevoir un prototype fonctionnel. Bien
-                        utilisées, les ressources locales et les outils de base suffisent à produire un résultat de
-                        qualité,
-                        tout en renforçant l'apprentissage pratique des bases de la mécanique.
-                    </p>
-                    <p>
-                        En somme, ce projet a été autant une réalisation technique qu'une expérience pédagogique,
-                        alliant
-                        conception mécanique, transmission des savoirs et valorisation des moyens accessibles
-                        localement.
-                    </p>
-                </article>
-            </section>
-            <!-- Main Project Image -->
-            <section class="full-width-images" aria-labelledby="main-image-heading">
-                <h3 id="main-image-heading" class="section-heading">Dessin 2D</h3>
-                <figure class="validation-item">
-                    <img src="/assets/images/Banana-Pseudo-shredder-machine-A2.jpg"
-                        alt="Detailed CAD model of the braking shoes for CC2200 locomotive showing all dimensions and mounting points"
-                        class="validation-img" />
-                    <figcaption class="img-caption">Banana Pseudo-shredder Machine</figcaption>
+            <section class="technical-drawings">
+                <figure class="drawing-figure">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/Banana-Pseudo-shredder-machine-A2.jpg"
+                            alt="Plans techniques détaillés de la machine" class="drawing-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">Plans techniques détaillés de la machine</span>
+                        </div>
+                    </div>
                 </figure>
             </section>
 
-
-            <!-- Gallery Section -->
-
-            <section class="project-gallery" aria-labelledby="gallery-heading">
-                <h2 id="gallery-heading" class="gallery-heading">Galerie du Projet</h2>
-                <div class="gallery-grid">
+            <section class="project-gallery">
+                <div class="gallery-container">
                     <article class="gallery-item">
-                        <img src="/assets/images/Machine-TOWE-2.jpg"
-                            alt="Système de transmission par courroie de la machine" class="gallery-img" width="600"
-                            height="400" />
-                        <p class="gallery-caption">
-                            Image de la Machine De Broyage Des Pseudo-Troncs De Bananiers dans le laboratoire de l'ecole
-                            Normale superieur d'enseignement technique avant peinture et finition.
-                        </p>
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Resultat-essai-TOWE.jpg" alt="Essai en laboratoire"
+                                class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Resultat de l'essai </span>
+                            </div>
+                        </div>
                     </article>
-
                     <article class="gallery-item">
-                        <img src="/assets/images/Machine-TOWE-3.jpg"
-                            alt="Système de transmission par courroie de la machine" class="gallery-img" width="600"
-                            height="400" />
-                        <p class="gallery-caption">
-                            Image de la Machine De Broyage Des Pseudo-Troncs De Bananiers dans le laboratoire de l'ecole
-                            Normale superieur d'enseignement technique avant peinture et finition.
-                        </p>
+                        <div class="image-wrapper">
+                            <img src="/assets/images/schema-cinematique-TOWE.jpg" alt="Schema cinématique de la machine"
+                                class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Schema cinématique de la machine</span>
+                            </div>
+                        </div>
                     </article>
-
                     <article class="gallery-item">
-                        <img src="/assets/images/Machine-TOWE-4.jpg"
-                            alt="Vue d'ensemble du prototype final de la machine" class="gallery-img" width="600"
-                            height="400" />
-                        <p class="gallery-caption">
-                            Image de la Machine De Broyage Des Pseudo-Troncs De Bananiers dans le laboratoire de l'ecole
-                            Normale superieur d'enseignement technique avant peinture et finition.
-                        </p>
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Principe-de-broyage-TOWE.jpg" alt="Principe de broyage"
+                                class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Principe de broyage</span>
+                            </div>
+                        </div>
                     </article>
-
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/l'essai-de-la-pendule-pesant-TOWE.jpg"
+                                alt="l'essai-de-la-pendule-pesant" class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">l'essai de la pendule pesant</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
+
+                <div class="hidden-rows">
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Diagramme-FAST-TOWE.jpg" alt="Diagramme FAST"
+                                class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Diagramme FAST</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/The Blade lock.jpg" alt="The Blade lock"
+                                class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">The Blade lock</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Shaft.jpg" alt="Shaft" class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Shaft</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Front plate.jpg" alt="Front plate"
+                                class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Front plate</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Frame.jpg" alt="Frame" class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Frame</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Blade.jpg" alt="Blade" class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Blade</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Blade Box Folded Plate.jpg" alt="Blade Box Folded Plate"
+                                class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Blade Box Folded Plate</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Blade box back plate.jpg" alt="Blade box back plate"
+                                class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Blade box back plate</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Banana Pseudostem shredding machine full BOM.jpg"
+                                alt="Banana Pseudostem shredding machine full BOM" class="gallery-img clickable-img">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Banana Pseudostem shredding machine full BOM</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <button class="see-more-btn" id="seeMoreBtn">See More</button>
             </section>
 
-            <!-- Back to Projects Button -->
-            <a href="../index.html" class="back-btn" aria-label="Retour à la page des projets">
-                <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                <span>Retour aux Projets</span>
-            </a>
+            <div id="fullscreenModal" class="fullscreen-modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="modalImg" alt="Full screen image">
+            </div>
 
+            <a href="../Projects.html" class="back-btn" aria-label="Return to projects page">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
+            </a>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <p>&copy; <span id="current-year">2025</span> Donfack Fortune. Tous droits réservés.</p>
-        </div>
+    <section class="pre-footer">
+        <p>fortunedonfack05@gmail.com</p>
+        <p>237-699-415-955</p>
+        <p>237-670-229-486</p>
+    </section>
+
+    <footer role="contentinfo">
+        <p>&copy; <span id="current-year">2025</span> Donfack Fortune. Tous droits réservés.</p>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTopBtn" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">
-        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    <button id="backToTopBtn" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Scripts -->
     <script>
-        // Dynamic year update
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Back to top button functionality
-        (function () {
-            const backToTopBtn = document.getElementById('backToTopBtn');
-            let isScrolling = false;
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        let isScrolling = false;
 
-            window.addEventListener('scroll', function () {
-                if (!isScrolling) {
-                    window.requestAnimationFrame(function () {
-                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                        backToTopBtn.classList.toggle('visible', scrollTop > 300);
-                        isScrolling = false;
-                    });
-                    isScrolling = true;
-                }
-            }, { passive: true });
-
-            backToTopBtn.addEventListener('click', function () {
-                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                window.scrollTo({
-                    top: 0,
-                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        window.addEventListener('scroll', function () {
+            if (!isScrolling) {
+                window.requestAnimationFrame(function () {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    backToTopBtn.classList.toggle('visible', scrollTop > 300);
+                    isScrolling = false;
                 });
-            });
-        })();
+                isScrolling = true;
+            }
+        }, { passive: true });
 
-        // Lazy load images with fade effect
-        (function () {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
-                img.addEventListener('load', function () {
-                    this.style.opacity = '1';
-                });
+        backToTopBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const seeMoreBtn = document.getElementById('seeMoreBtn');
+        const hiddenRows = document.querySelector('.hidden-rows');
+
+        seeMoreBtn.addEventListener('click', function () {
+            hiddenRows.classList.toggle('expanded');
+            seeMoreBtn.textContent = hiddenRows.classList.contains('expanded') ? 'See Less' : 'See More';
+        });
+
+        const modal = document.getElementById('fullscreenModal');
+        const modalImg = document.getElementById('modalImg');
+        const closeModal = document.querySelector('.close-modal');
+
+        document.querySelectorAll('.clickable-img').forEach(img => {
+            img.addEventListener('click', function () {
+                modal.style.display = 'flex';
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
             });
-        })();
+        });
+
+        closeModal.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
     </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
