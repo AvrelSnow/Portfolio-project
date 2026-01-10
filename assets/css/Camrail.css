@@ -265,14 +265,43 @@ nav a.active {
     line-height: 1.6;
 }
 
-.project-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
+.project-back-link {
+    max-width: 1200px;
+    align-items: center;
+    text-align: center;
+    margin: 40px auto 0;
 }
 
-.project-link:hover .project-image {
-    transform: scale(1.08);
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #999;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #333;
+}
+
+.back-link i {
+    font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+    .project-back-link {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-back-link {
+        padding: 0 20px;
+        margin: 30px auto 0;
+    }
 }
 
 
