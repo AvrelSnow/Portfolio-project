@@ -265,6 +265,17 @@ nav a.active {
     line-height: 1.6;
 }
 
+.project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-link:hover .project-image {
+    transform: scale(1.08);
+}
+
+
 /* Pre-Footer */
 .pre-footer {
     background: #f9f9f9;
