@@ -1,0 +1,441 @@
+/* ============================================
+   CAMRAIL PAGE STYLESHEET
+   Author: Donfack Fortune
+   ============================================ */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header */
+header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0;
+}
+
+.header-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: #999;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #333;
+}
+
+.header-social {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    color: #999;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #333;
+}
+
+/* Dropdown Menu */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    min-width: 160px;
+    padding: 12px 0 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+    list-style: none;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 6px 0;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    transition: color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    color: #666;
+}
+
+/* Hero Section */
+.camrail-hero {
+    max-width: 1200px;
+    margin: 60px auto 80px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.camrail-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.camrail-hero h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.camrail-hero p {
+    font-size: 18px;
+    color: #555;
+    font-weight: 400;
+}
+
+/* Overview Section */
+.camrail-overview {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.overview-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.overview-content p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.overview-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Work Samples Section */
+.work-samples {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.section-intro {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.samples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.sample-card {
+    background: #fff;
+}
+
+.sample-image-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.sample-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.sample-card:hover .sample-image {
+    transform: scale(1.05);
+}
+
+.sample-content {
+    padding: 20px 0;
+}
+
+.sample-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.sample-content p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Pre-Footer */
+.pre-footer {
+    background: #f9f9f9;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.pre-footer p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background: #fff;
+    padding: 30px 40px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer p {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #333;
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: #555;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+    .header-wrapper {
+        padding: 20px 30px;
+    }
+
+    .camrail-hero,
+    .camrail-overview,
+    .work-samples {
+        padding: 0 30px;
+    }
+
+    .samples-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .camrail-overview {
+        gap: 40px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .header-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    .camrail-hero {
+        margin: 40px auto 60px;
+        padding: 0 20px;
+    }
+
+    .camrail-logo {
+        width: 150px;
+    }
+
+    .camrail-hero h2 {
+        font-size: 24px;
+    }
+
+    .camrail-hero p {
+        font-size: 16px;
+    }
+
+    .camrail-overview {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+        margin-bottom: 60px;
+    }
+
+    .overview-content h3 {
+        font-size: 24px;
+    }
+
+    .work-samples {
+        padding: 0 20px;
+        margin: 60px auto;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .samples-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pre-footer {
+        padding: 40px 20px;
+    }
+
+    .has-dropdown .dropdown-menu {
+        display: none;
+    }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .camrail-logo {
+        width: 120px;
+    }
+
+    .camrail-hero h2 {
+        font-size: 20px;
+    }
+
+    .sample-image-wrapper {
+        height: 200px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .dropdown-menu {
+        transition: none;
+    }
+}

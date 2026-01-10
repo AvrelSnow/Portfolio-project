@@ -84,6 +84,18 @@ body {
   z-index: 100;
 }
 
+.experience-image {
+  width: 100%;
+  height: auto;
+  padding-top: 50px;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.experience-image:hover {
+  opacity: 0.8;
+}
+
 .skip-link:focus {
   top: 0;
 }
