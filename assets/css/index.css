@@ -87,7 +87,7 @@ body {
 .experience-image {
   width: 100%;
   height: auto;
-  padding-top: 50px;
+  padding-top: 1px;
   transition: opacity 0.3s;
   cursor: pointer;
 }
@@ -216,6 +216,7 @@ nav a.active {
 /* Experience Section */
 .experience {
   max-width: 1200px;
+  max-height: 1200px;
   margin: 30px auto;
   padding: 0 40px;
 }
@@ -253,7 +254,7 @@ nav a.active {
 .experience-image {
   width: 100%;
   height: auto;
-  padding-top: 50px;
+  padding-top: 130px;
 }
 
 .experience-content h3 {
@@ -280,7 +281,7 @@ nav a.active {
 /* Projects Grid */
 .projects-section {
   max-width: 1200px;
-  margin: 80px auto;
+  margin: 10px auto;
   padding: 0 40px;
 }
 
@@ -288,7 +289,7 @@ nav a.active {
   font-size: 32px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
   letter-spacing: -0.5px;
 }
 
@@ -328,7 +329,7 @@ nav a.active {
 }
 
 .project-content {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .project-title {

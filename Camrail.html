@@ -67,69 +67,284 @@
     </header>
 
     <main id="main-content" role="main">
-        <section class="camrail-hero">
+        <section class="company-hero">
             <div class="hero-content">
-                <img src="assets/images/Camrail_logo.png" alt="CAMRAIL logo" class="camrail-logo">
+                <img src="assets/images/Camrail_logo.png" alt="CAMRAIL logo" class="company-logo">
                 <h2>Senior Mechanical Engineer</h2>
-                <p>Cameroon Railway Company (CAMRAIL)</p>
             </div>
         </section>
 
-        <section class="camrail-overview">
-            <div class="overview-content">
-                <h3>About CAMRAIL</h3>
-                <p>Cameroon Railway Company (CAMRAIL) operates and maintains the national railway network, delivering
-                    safe and efficient freight and passenger rail transport across Cameroon. It connects major cities
-                    and economic corridors while enabling the movement of bulk goods such as minerals and agricultural
-                    products, supporting national trade, mobility, and industrial development.</p>
-            </div>
-            <div class="overview-image">
-                <img src="assets/images/Cameroon_railway_company.jpg" alt="Camrail" class="experience-image">
-            </div>
+        <section class="company-intro">
+            <p>During my time at CAMRAIL, I served as a mechanical engineer and 3D modeler, contributing to the
+                Compressor test bench optimization and the development of train braking systems.
+                The Compressor test bench optimization was a build-to-spec project, while the braking systems followed a
+                full development process involving multiple iterations, system integration, and the adaptation of new
+                technologies. This work demanded a high level of technical rigor, problem-solving, and close
+                collaboration within the team.
+                Operating at the edge of practical engineering constraints, the project challenged us to push existing
+                limits while ensuring safety, reliability, and performance. Knowing that our work directly supports
+                train drivers and serves millions of Cameroonians who rely on these trains every day is a source of deep
+                professional pride.
+                Below are a few examples of notable engineering challenges and solutions I contributed to during my time
+                on the team.</p>
         </section>
 
-        <section class="work-samples">
-            <h3 class="section-title">Work Samples</h3>
-            <p class="section-intro">See a few samples of my work below</p>
+        <section class="projects-container">
+            <article class="project-item">
+                <h3>Compressor test bench optimization</h3>
+                <p>
+                    At <strong>CAMRAIL</strong>, I worked on the <strong>optimization and reconfiguration of mechanical
+                        and pneumatic systems on intercity locomotives</strong>, focusing on aging models such as the
+                    BB1100, CC2200, CC3300, and CC2200, within the context of rolling stock and spare parts shortages.
+                    During one critical phase, while preparing locomotives for operational validation, we uncovered
+                    subtle incompatibilities in the <strong>locomotive compressor test bench</strong>—a crucial tool for
+                    preventive and corrective maintenance. To fully understand the problem and how it was addressed, it
+                    is necessary to first understand what the compressor does and how the test bench interfaces with it.
+                </p>
 
-            <div class="samples-grid">
-                <article class="sample-card">
-                    <div class="sample-image-wrapper">
-                        <img src="assets/images/camrail-sample-1.jpg" alt="Railway maintenance work"
-                            class="sample-image">
-                    </div>
-                    <div class="sample-content">
-                        <h4>Locomotive Maintenance & Analysis</h4>
-                        <p>Structural analysis and maintenance optimization for CC_3300_AC and CC_2200 locomotives.</p>
-                    </div>
-                </article>
+                <br>
+                <p>
+                    The locomotive compressor ensures air compression and oil circulation, which are essential for
+                    pneumatic systems like braking, control, and auxiliary operations. After significant mileage,
+                    compressors require inspection, oil changes, and cleaning. Testing on the bench is therefore
+                    critical to verify proper functioning, detect leaks, and ensure reliability before reinstallation in
+                    the locomotive. The existing bench, however, was limited to testing only BB1100 and CC2200
+                    compressors. Other models, such as CC3300, CC3300 AC, and CC2200, required fragmented and
+                    inefficient testing in separate locations, including water tests in the wash area and hydraulic
+                    tests in the garage, which introduced time loss, movement inefficiencies, traceability issues, and
+                    higher risk of errors.
+                </p>
+                <br>
+                <p>
+                    My role was to <strong>define and implement a new testing methodology</strong> to transform the
+                    bench into a versatile, modular, and universal system capable of performing pressurized air, water,
+                    and oil tests across multiple compressor types. This involved:
+                </p><br>
 
-                <article class="sample-card">
-                    <div class="sample-image-wrapper">
-                        <img src="assets/images/camrail-sample-2.jpg" alt="FEA simulation" class="sample-image">
-                    </div>
-                    <div class="sample-content">
-                        <h4>Finite Element Analysis</h4>
-                        <p>FEA studies to validate and optimize critical railway components and systems.</p>
-                    </div>
-                </article>
+                <ul style="padding-left: 30px;">
+                    <li><strong>3D Modeling and Design:</strong> I completed a full 3D model of the bench, including the
+                        main frame, mounting interfaces, and functional testing zones. The design accommodated
+                        compressors of widely varying sizes and weights, from compact BB1100 units to larger CC3300
+                        compressors.</li><br>
+                    <li><strong>Low-Cost Modular Frame:</strong> The frame was designed for compatibility with multiple
+                        compressors, ease of assembly and disassembly, reduced manufacturing costs, and sufficient
+                        mechanical rigidity to limit vibrations during testing.</li><br>
+                    <li><strong>Functional Analysis and Dynamic Constraints:</strong> I analyzed vibration
+                        characteristics, forces from air and fluid jets, and potential interactions between compressors
+                        and the bench structure to prevent instability or mechanical failure during testing.</li>
+                </ul>
+                <br>
+                <p>
+                    Beyond the test bench, I also addressed <strong>recurrent radiator overheating</strong> in
+                    locomotives. This issue arose due to aging fleet components, unavailability of original parts, and
+                    the integration of locally designed alternatives that disrupted airflow. My responsibilities
+                    included analyzing ventilation impacts, proposing pneumatic system modifications, integrating
+                    additional radiator ventilation devices, and ensuring the changes did not interfere with other
+                    mechanical or pneumatic systems.
+                </p>
 
-                <article class="sample-card">
-                    <div class="sample-image-wrapper">
-                        <img src="assets/images/camrail-sample-3.jpg" alt="Railway infrastructure" class="sample-image">
-                    </div>
-                    <div class="sample-content">
-                        <h4>Infrastructure Development</h4>
-                        <p>Design and implementation of mechanical systems for railway infrastructure projects.</p>
-                    </div>
-                </article>
-            </div>
-            <div class="project-back-link">
-                <a href="../index.html" class="back-link">
-                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
-                </a>
-            </div>
+            </article>
+
+            <article class="project-item">
+                <h3>Brake supports design</h3>
+                <p>
+                    During my time at CAMRAIL, I served as a technical contributor on the brake support design and
+                    adaptation project for BB1100 and CC3300 locomotives, where original components were no longer
+                    available due to supply chain constraints and obsolescence. Working in small technical teams, I
+                    confronted a technically challenging task that required us to build the metaphorical fighter jet
+                    while flying it. At CAMRAIL, I was tasked with designing and validating brake supports essential for
+                    safe braking operations under the demanding conditions of heavy freight transport. During my
+                    preliminary analysis, I uncovered an insidious incompatibility between the aging mechanical
+                    components and the performance requirements for modern operations. In these pneumatic braking
+                    systems, compressed air at 3.8 bars actuates brake cylinders that apply force through a lever
+                    mechanism to brake shoes pressing against the wheel's rolling surface. The brake support structure
+                    serves as the critical load path between the motorized actuator system and the locomotive's bogie
+                    frame. During my investigation, I found that our existing support showed three fundamental failure
+                    modes: excessive mechanical play caused by wear of axles and pivots reducing braking precision,
+                    fatigue of suspension springs from continuous vibrations leading to loss of rigidity, and corrosion
+                    of components from prolonged exposure to weather weakening structural integrity. I documented how
+                    these degradation mechanisms manifested as diminished braking effectiveness with longer stopping
+                    distances, increased risk of mechanical failure during critical braking events, and potentially
+                    catastrophic component breakdowns under load.
+                </p>
+                <br>
+                <p>Our experienced mechanical engineers in the workshop jumped to conclusions about what they thought
+                    was wrong, and rightfully so—they had solid understanding of how the system worked, having
+                    maintained these locomotives for years. I called the room to order, grabbed an empty cardboard box
+                    out of the workshop (for some reason, this is a theme with me), and started with a single question
+                    to the group: what are we actually observing? We were seeing premature wear and excessive deflection
+                    in the support structure, and my visual inspection revealed corrosion at weld joints while my
+                    dimensional measurements confirmed play in the pivot connections exceeded specification limits by
+                    300%. I called attention to the distinction between observing the symptoms and understanding the
+                    root causes, and I pushed through the rest of the exercise in what I call "low-gear problem-solving"
+                    while gathering insights from the engineers who were far more experienced with these systems than I.
+                    Soon I had a sprawling fault tree on the large, flattened cardboard box, and I circled what we
+                    agreed were the most probable failure mechanisms and brainstormed how I could "lay a trap" for the
+                    problem through systematic analysis.
+                    <br>
+                </p>
+                <br>
+                <p>
+                    After splitting the analysis work between team members, I got to work on the solution using
+                    SOLIDWORKS for 3D modeling and ANSYS for finite element analysis to design an optimized brake
+                    support that addressed all identified failure modes. I added gusset reinforcements at critical load
+                    paths to stiffen the structure and reduce deflection, with the support connecting the pneumatic
+                    motor assembly to the bogie frame to dissipate braking forces without transmitting undesirable
+                    stress concentrations to the bogie structure. I specified S235JR structural steel for the main
+                    support structure, selected for its adequate yield strength, good weldability for fabrication,
+                    resistance to fatigue under cyclic loading, and cost-effectiveness for rail applications. I refined
+                    the support geometry through iterative analysis to maximize stiffness while minimizing weight,
+                    distribute loads evenly across connection points, eliminate stress concentrations at weld joints,
+                    and provide adequate clearance for maintenance access. My comprehensive structural analysis
+                    validated the design showing adequate safety margins and predicted service life exceeding typical
+                    locomotive overhaul intervals.
+                </p>
+                <br>
+                <p>
+                    The manufacturing process I developed combined precision cutting of steel plate stock,
+                    fixture-assisted alignment for consistent weld joint geometry, MIG welding using qualified
+                    procedures, post-weld grinding and surface preparation, and protective coating for corrosion
+                    resistance. I designed the assembly to follow a systematic protocol with pressure testing, static
+                    load testing to 150% of design braking force, and dynamic testing under simulated braking cycles.
+                    With the optimized brake support I designed and installed, we achieved significant reduction in
+                    maintenance frequency due to reduced wear, improved braking response with tighter mechanical
+                    tolerances, extended component life through superior corrosion resistance, and enhanced safety with
+                    higher structural safety factors. Throughout this project, I applied methodical engineering analysis
+                    using SOLIDWORKS and ANSYS for mechanical design and collaborated closely with multidisciplinary
+                    teams including maintenance personnel, fabrication specialists, and operations staff. By taking a
+                    systematic, evidence-based approach—verifying observations before jumping to conclusions—I delivered
+                    a robust, cost-effective solution that improved locomotive reliability, operational safety, and
+                    maintenance efficiency under real-world industrial constraints. <STRONG>The key to my success was
+                        not just
+                        the technical tools, but the disciplined problem-solving methodology: observe carefully, analyze
+                        systematically, validate thoroughly, and always respect the expertise of those who work with the
+                        equipment every day.</STRONG>
+                </p>
+            </article>
         </section>
+
+        <section class="project-gallery">
+            <div class="gallery-container">
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/Braking support for locomotive BB1100 and CC3300AC full view.jpeg"
+                            alt="Braking support for locomotive BB1100 and CC3300AC full view"
+                            class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">Braking support for locomotive BB1100 and CC3300AC full
+                                view</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/intercity trains.jpeg" alt="intercity trains"
+                            class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">intercity trains</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/CC2500 Compressors.jpeg" alt="CC2500 Compressors"
+                            class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">CC2500 Compressors</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/CC3300 Compressors.jpeg" alt="CC3300 Compressors"
+                            class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">CC3300 Compressors</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/CC3300AC Compressors.jpeg" alt="CC3300AC Compressors"
+                            class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">CC3300AC Compressors</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="hidden-rows">
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/compressor test bench before optimisation-1.jpeg"
+                            alt="Compressor test bench before optimisation" class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">Compressor test bench before optimisation</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/compressor test bench before optimisation-2.jpeg"
+                            alt="Compressor test bench before optimisation" class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">Compressor test bench before optimisation</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/compressor test bench.jpeg" alt="Compressor test bench"
+                            class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">Compressor test bench</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/General Electrics Compressors.jpeg" alt="General Electrics Compressors"
+                            class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">General Electrics Compressors</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/Intercity trains wagons .jpeg" alt="Intercity trains wagons"
+                            class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">Intercity trains wagons</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/Braking support for locomotive BB1100 and CC3300AC.jpeg"
+                            alt="Braking support for locomotive BB1100 and CC3300AC" class="gallery-img clickable-img">
+                        <div class="image-overlay">
+                            <span class="overlay-text">Braking support for locomotive BB1100 and CC3300AC</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <button class="see-more-btn" id="seeMoreBtn">See More</button>
+        </section>
+
+        <div id="fullscreenModal" class="fullscreen-modal">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content" id="modalImg" alt="Full screen image">
+        </div>
+
+        <div class="back-link-wrapper">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
+            </a>
+        </div>
     </main>
 
     <section class="pre-footer" role="complementary">
@@ -169,6 +384,36 @@
                 top: 0,
                 behavior: prefersReducedMotion ? 'auto' : 'smooth'
             });
+        });
+
+        const seeMoreBtn = document.getElementById('seeMoreBtn');
+        const hiddenRows = document.querySelector('.hidden-rows');
+
+        seeMoreBtn.addEventListener('click', function () {
+            hiddenRows.classList.toggle('expanded');
+            seeMoreBtn.textContent = hiddenRows.classList.contains('expanded') ? 'See Less' : 'See More';
+        });
+
+        const modal = document.getElementById('fullscreenModal');
+        const modalImg = document.getElementById('modalImg');
+        const closeModal = document.querySelector('.close-modal');
+
+        document.querySelectorAll('.clickable-img').forEach(img => {
+            img.addEventListener('click', function () {
+                modal.style.display = 'flex';
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+            });
+        });
+
+        closeModal.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
 </body>
