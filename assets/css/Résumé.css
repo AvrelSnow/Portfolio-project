@@ -51,7 +51,6 @@ header {
     letter-spacing: -0.5px;
 }
 
-
 /* Navigation */
 nav ul {
     display: flex;
@@ -137,7 +136,7 @@ nav ul li a.active {
 /* Resume Hero */
 .resume-hero {
     background: #fff;
-    padding: 4rem 2rem 3rem;
+    padding: 3rem 2rem;
     text-align: left;
     border-bottom: 1px solid #e8e8e8;
 }
@@ -181,6 +180,52 @@ nav ul li a.active {
 
 .download-btn:hover {
     background: #333;
+}
+
+/* CV Toggle */
+.cv-toggle-container {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 1.5rem 2rem;
+}
+
+.cv-toggle-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.cv-toggle-btn {
+    background: #fff;
+    color: #666;
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cv-toggle-btn:hover {
+    color: #333;
+    border-color: #999;
+}
+
+.cv-toggle-btn.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.cv-content {
+    display: none;
+}
+
+.cv-content.active {
+    display: grid;
 }
 
 /* Resume Layout */
@@ -292,7 +337,7 @@ nav ul li a.active {
     font-weight: 400;
 }
 
-/* Simple Entry (Awards) */
+/* Simple Entry (Awards/Diplomas) */
 .resume-entry-simple {
     display: flex;
     gap: 2rem;
@@ -455,6 +500,16 @@ footer p {
         font-size: 2rem;
     }
 
+    .cv-toggle-container {
+        padding: 1.5rem 1.5rem;
+        flex-direction: column;
+    }
+
+    .cv-toggle-btn {
+        width: 100%;
+        text-align: center;
+    }
+
     .resume-layout {
         padding: 2rem 1.5rem;
     }
@@ -494,6 +549,15 @@ footer p {
 
     .download-btn {
         padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .cv-toggle-container {
+        padding: 1rem;
+    }
+
+    .cv-toggle-btn {
+        padding: 0.65rem 1.5rem;
         font-size: 0.85rem;
     }
 
