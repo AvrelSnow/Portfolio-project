@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -27,11 +26,10 @@ body {
     top: 0;
 }
 
-/* Header */
+/* ── Header ── */
 header {
     background: #fff;
     border-bottom: 1px solid #e0e0e0;
-    padding: 0;
 }
 
 .header-wrapper {
@@ -51,7 +49,6 @@ header {
     letter-spacing: -0.5px;
 }
 
-/* Navigation */
 nav ul {
     display: flex;
     list-style: none;
@@ -84,7 +81,6 @@ nav ul li a.active {
     background: transparent;
     min-width: 160px;
     padding: 12px 0 0;
-    margin: 0;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s;
@@ -96,17 +92,11 @@ nav ul li a.active {
     visibility: visible;
 }
 
-.dropdown-menu li {
-    padding: 0;
-    margin: 0;
-}
-
 .dropdown-menu li a {
     display: block;
     padding: 6px 0;
     color: #ccc;
     font-size: 13px;
-    font-weight: 400;
     text-align: center;
     transition: color 0.2s;
 }
@@ -115,7 +105,6 @@ nav ul li a.active {
     color: #666;
 }
 
-/* Social Links */
 .header-social {
     display: flex;
     gap: 20px;
@@ -133,57 +122,8 @@ nav ul li a.active {
     color: #333;
 }
 
-/* Resume Hero */
-.resume-hero {
-    background: #fff;
-    padding: 3rem 2rem;
-    text-align: left;
-    border-bottom: 1px solid #e8e8e8;
-}
-
-.resume-hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.resume-name {
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: #2d2d2d;
-    margin-bottom: 1rem;
-}
-
-.resume-location {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.8;
-}
-
-.resume-location p {
-    margin: 0.2rem 0;
-}
-
-.download-btn {
-    background: #000;
-    color: #fff;
-    padding: 0.75rem 1.8rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 400;
-    border-radius: 0;
-    transition: background 0.3s;
-    display: inline-block;
-}
-
-.download-btn:hover {
-    background: #333;
-}
-
-/* CV Toggle */
-.cv-toggle-container {
+/* ── Toggle Bar ── */
+.cv-toggle-bar {
     background: #fff;
     border-bottom: 1px solid #e8e8e8;
     padding: 1.5rem 2rem;
@@ -225,10 +165,57 @@ nav ul li a.active {
 }
 
 .cv-content.active {
-    display: grid;
+    display: block;
 }
 
-/* Resume Layout */
+/* ── Resume Hero ── */
+.resume-hero {
+    background: #fff;
+    padding: 3rem 2rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.resume-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.resume-name {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #2d2d2d;
+    margin-bottom: 1rem;
+}
+
+.resume-location {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.resume-location p {
+    margin: 0.2rem 0;
+}
+
+.download-btn {
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 1.8rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #333;
+}
+
+/* ── Resume Layout ── */
 .resume-layout {
     max-width: 1200px;
     margin: 0 auto;
@@ -246,7 +233,6 @@ nav ul li a.active {
     min-width: 0;
 }
 
-/* Section Styling */
 .resume-section {
     margin-bottom: 3rem;
 }
@@ -259,7 +245,6 @@ nav ul li a.active {
     letter-spacing: 0.5px;
 }
 
-/* Resume Entry */
 .resume-entry {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
@@ -281,7 +266,6 @@ nav ul li a.active {
 .entry-date {
     color: #666;
     font-size: 0.85rem;
-    font-weight: 400;
     margin-bottom: 0.5rem;
     display: block;
 }
@@ -297,7 +281,6 @@ nav ul li a.active {
 .entry-subtitle {
     font-size: 0.9rem;
     color: #666;
-    font-style: normal;
     margin-bottom: 0.8rem;
 }
 
@@ -329,15 +312,13 @@ nav ul li a.active {
     line-height: 1.6;
 }
 
-.entry-list li:before {
+.entry-list li::before {
     content: "•";
     position: absolute;
     left: 0;
     color: #2d2d2d;
-    font-weight: 400;
 }
 
-/* Simple Entry (Awards/Diplomas) */
 .resume-entry-simple {
     display: flex;
     gap: 2rem;
@@ -354,7 +335,6 @@ nav ul li a.active {
 
 .resume-entry-simple .entry-date {
     min-width: 60px;
-    font-weight: 400;
     color: #666;
     font-size: 0.85rem;
 }
@@ -366,7 +346,6 @@ nav ul li a.active {
     line-height: 1.6;
 }
 
-/* Sidebar Skills */
 .skills-category {
     margin-bottom: 1.8rem;
 }
@@ -384,7 +363,6 @@ nav ul li a.active {
     line-height: 1.7;
 }
 
-/* Certifications */
 .certifications-list {
     list-style: none;
     padding: 0;
@@ -395,10 +373,265 @@ nav ul li a.active {
     font-size: 0.9rem;
     line-height: 1.7;
     margin-bottom: 0.8rem;
-    padding-left: 0;
 }
 
-/* Pre-footer */
+/* ── Community Hero ── */
+.community-hero {
+    padding: 5rem 2rem 4rem;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+}
+
+.community-hero-content {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.community-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.community-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+}
+
+.community-sub {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* ── Pillars ── */
+.pillars {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 2rem;
+}
+
+.pillar-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.pillar-card--alt {
+    direction: rtl;
+}
+
+.pillar-card--alt>* {
+    direction: ltr;
+}
+
+.pillar-cover {
+    position: relative;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.pillar-cover img:first-child {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.pillar-card:hover .pillar-cover img:first-child {
+    transform: scale(1.01);
+}
+
+.pillar-logo-wrap {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+    background: #fff;
+}
+
+.pillar-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pillar-body {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pillar-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.pillar-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999;
+    border: 1px solid #e0e0e0;
+    padding: 0.25rem 0.65rem;
+}
+
+.pillar-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.pillar-desc {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.pillar-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+}
+
+.pillar-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1.3rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s;
+}
+
+.pillar-link--yt {
+    background: #000;
+    color: #fff;
+}
+
+.pillar-link--yt:hover {
+    background: #cc0000;
+}
+
+.pillar-link--li {
+    border: 1px solid #e0e0e0;
+    color: #333;
+}
+
+.pillar-link--li:hover {
+    border-color: #0077b5;
+    color: #0077b5;
+}
+
+/* ── Contact Section ── */
+.contact-section {
+    background: #f9f9f9;
+    border-top: 1px solid #e8e8e8;
+    padding: 5rem 2rem;
+}
+
+.contact-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.contact-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.contact-sub {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 460px;
+    margin: 0 auto 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 2rem 1rem;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.25s;
+}
+
+.contact-card:hover {
+    border-color: #333;
+    transform: translateY(-3px);
+}
+
+.contact-card i {
+    font-size: 1.3rem;
+    color: #2d2d2d;
+}
+
+.contact-card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.contact-card-value {
+    font-size: 0.82rem;
+    color: #555;
+    word-break: break-all;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ── Pre-footer / Footer ── */
 .pre-footer {
     background: #f9f9f9;
     padding: 60px 40px;
@@ -411,7 +644,6 @@ nav ul li a.active {
     margin-bottom: 10px;
 }
 
-/* Footer */
 footer {
     background: #fff;
     padding: 30px 40px;
@@ -420,12 +652,11 @@ footer {
 }
 
 footer p {
-    margin: 0;
     font-size: 14px;
     color: #999;
 }
 
-/* Back to Top Button */
+/* ── Back to Top ── */
 .back-to-top {
     position: fixed;
     bottom: 40px;
@@ -456,7 +687,7 @@ footer p {
     background: #555;
 }
 
-/* Responsive Design */
+/* ── Responsive ── */
 @media (max-width: 1024px) {
     .resume-layout {
         grid-template-columns: 1fr;
@@ -465,6 +696,20 @@ footer p {
 
     .resume-sidebar {
         order: 2;
+    }
+
+    .pillar-card,
+    .pillar-card--alt {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+
+    .pillar-cover {
+        height: 300px;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -487,6 +732,19 @@ footer p {
         display: none;
     }
 
+    .cv-toggle-bar {
+        padding: 1.5rem;
+    }
+
+    .cv-toggle-container {
+        flex-direction: column;
+    }
+
+    .cv-toggle-btn {
+        width: 100%;
+        text-align: center;
+    }
+
     .resume-hero {
         padding: 3rem 1.5rem 2rem;
     }
@@ -500,18 +758,24 @@ footer p {
         font-size: 2rem;
     }
 
-    .cv-toggle-container {
-        padding: 1.5rem 1.5rem;
-        flex-direction: column;
-    }
-
-    .cv-toggle-btn {
-        width: 100%;
-        text-align: center;
-    }
-
     .resume-layout {
         padding: 2rem 1.5rem;
+    }
+
+    .community-hero {
+        padding: 3rem 1.5rem;
+    }
+
+    .community-title {
+        font-size: 2.2rem;
+    }
+
+    .pillar-body {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-section {
+        padding: 3rem 1.5rem;
     }
 
     .pre-footer {
@@ -527,10 +791,6 @@ footer p {
 }
 
 @media (max-width: 480px) {
-    .header-logo h1.logo {
-        font-size: 20px;
-    }
-
     .header-wrapper {
         padding: 20px;
     }
@@ -543,17 +803,9 @@ footer p {
         font-size: 1.8rem;
     }
 
-    .resume-location {
-        font-size: 0.9rem;
-    }
-
     .download-btn {
         padding: 0.7rem 1.5rem;
         font-size: 0.85rem;
-    }
-
-    .cv-toggle-container {
-        padding: 1rem;
     }
 
     .cv-toggle-btn {
@@ -573,5 +825,21 @@ footer p {
 
     .resume-entry-simple .entry-date {
         min-width: auto;
+    }
+
+    .community-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-title {
+        font-size: 1.8rem;
+    }
+
+    .pillar-title {
+        font-size: 1.3rem;
     }
 }
