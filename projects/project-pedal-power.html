@@ -5,57 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Pedal Power Mobile Phone Charger - A sustainable human-powered energy solution designed by Donfack Fortune for communities with unreliable electricity access.">
+        content="Pedal Power Mobile Phone Charger (PPMPC) — human-powered charging station designed by Donfack Fortune for energy-scarce environments. FEA-validated weldment frame built for 5th to 95th percentile users. Prototype presented at HTTTC Science and Engineering Festival 2023.">
+    <meta name="keywords"
+        content="pedal power phone charger Cameroon, human-powered energy solution, FEA weldment design SolidWorks, sustainable energy engineering, HTTTC engineering project, Donfack Fortune">
     <meta name="author" content="Donfack Fortune">
-    <title>Pedal Power Mobile Phone Charger | Donfack Fortune</title>
+    <title>Pedal Power Mobile Phone Charger | Donfack Fortune — Mechanical Engineer &amp; Energy Specialist</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
     <link rel="stylesheet" href="../assets/css/projects/project-pedal-power.css">
 </head>
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header role="banner">
-        <div class="header-wrapper">
-            <div class="header-logo">
-                <h1 class="logo">
-                    <a href="../index.html">Donfack Fortune</a>
-                </h1>
+    <header class="header" role="banner">
+        <div class="container header-wrapper">
+            <div class="logo">
+                <a href="../index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
             </div>
-
-            <nav role="navigation">
+            <nav class="header-nav" aria-label="Main navigation" role="navigation">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../Camrail.html">Camrail</a></li>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../Camrail.html" class="nav-link">Camrail</a></li>
                     <li class="has-dropdown">
-                        <a href="../Projects.html">Projects</a>
+                        <a href="../Projects.html" class="nav-link active" aria-current="page">Projects</a>
                         <ul class="dropdown-menu">
-                            <li><a href="../Projects.html#all" data-filter="all">All</a></li>
-                            <li><a href="../Projects.html#simulation-driven"
-                                    data-filter="simulation-driven">Simulation-Driven</a>
-                            </li>
-                            <li><a href="../Projects.html#sustainability"
-                                    data-filter="sustainability">Sustainability</a>
-                            </li>
-                            <li><a href="../Projects.html#mechanical" data-filter="mechanical">Mechanical Design</a>
-                            </li>
-                            <li><a href="../Projects.html#electronics" data-filter="electronics">Electronics</a></li>
-                            <li><a href="../Projects.html#user-centered" data-filter="user-centered">User-Centered</a>
-                            </li>
+                            <li><a href="../Projects.html#all">All</a></li>
+                            <li><a href="../Projects.html#simulation-driven">Simulation-Driven</a></li>
+                            <li><a href="../Projects.html#sustainability">Sustainability</a></li>
+                            <li><a href="../Projects.html#mechanical">Mechanical Design</a></li>
+                            <li><a href="../Projects.html#electronics">Electronics</a></li>
+                            <li><a href="../Projects.html#user-centered">User-Centered</a></li>
                         </ul>
                     </li>
-                    <li><a href="../teaching.html">Teaching</a></li>
-                    <li><a href="../Résumé.html">Résumé</a></li>
+                    <li><a href="../teaching.html" class="nav-link">Teaching</a></li>
+                    <li><a href="../Résumé.html" class="nav-link">Résumé</a></li>
                 </ul>
             </nav>
-
-            <div class="header-social">
-                <a href="https://grabcad.com/donfack.fortune-1" target="_blank" rel="noopener noreferrer"
-                    class="social-link">
+            <div class="header-social" role="complementary" aria-label="Social media links">
+                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD profile" target="_blank"
+                    rel="noopener noreferrer" class="social-link">
                     <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
@@ -63,327 +57,386 @@
                             font-family="Arial">GC</text>
                     </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" target="_blank"
-                    rel="noopener noreferrer" class="social-link">
-                    <i class="fab fa-linkedin-in"></i>
+                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+                    aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </header>
 
     <main id="main-content" role="main">
-        <h1 class="page-title">Pedal Power Mobile Phone Charger</h1>
 
-        <section class="project-hero">
-            <div class="image-wrapper">
-                <img src="/assets/images/Pedal power mobile phone charger.png"
-                    alt="Pedal Power Mobile Phone Charger 3D CAD model" class="hero-img clickable-img">
-                <div class="image-overlay">
-                    <span class="overlay-text">Complete 3D CAD assembly of the human-powered mobile charging
-                        system</span>
+        <!-- Project Hero -->
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="container project-hero-inner">
+                <div class="project-hero-text">
+                    <p class="hero-eyebrow">Sustainability · User-Centered Design · 2023</p>
+                    <h1 class="project-title" id="project-title">Pedal Power Mobile<br>Phone Charger</h1>
+                    <p class="project-tagline">A human-powered charging station designed for energy-scarce environments
+                        — FEA-validated weldment frame, double-groove pulley transmission, and anthropometric sizing for
+                        5th to 95th percentile users.</p>
+                </div>
+                <div class="project-hero-image">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/Pedal power mobile phone charger.png"
+                            alt="Pedal Power Mobile Phone Charger — complete 3D CAD assembly"
+                            class="hero-img clickable-img" loading="eager">
+                        <div class="image-overlay" aria-hidden="true">
+                            <span class="overlay-text">Complete 3D CAD assembly</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- Quick Animation Section -->
-        <section class="quick-animation" aria-labelledby="animation-heading">
-            <div class="animation-content">
-                <h3 id="animation-heading" class="animation-heading">Quick Animation</h3>
-                <p>
-                    <a href="https://www.linkedin.com/posts/donfack-fortune-476904231_solidworks-keyshot-adobe-activity-7118455344791445504-MQvG"
-                        target="_blank" rel="noopener noreferrer" class="external-link"
-                        aria-label="View animated demonstration on LinkedIn">
-                        Quick animation of the PPMPC machine with a clear description of its functioning
-                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                    </a>
-                </p>
+
+        <!-- Project Metadata Bar -->
+        <section class="project-meta-bar" aria-label="Project details">
+            <div class="container project-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Year</span>
+                    <span class="meta-value">2023</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Project Leader · Lead Mechanical Designer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Institution</span>
+                    <span class="meta-value">HTTTC Douala</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">3 weeks</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">Sustainability · User-Centered · Electronics</span>
+                </div>
             </div>
         </section>
 
-        <div class="project-content">
-            <section class="project-intro">
-                <div class="intro-columns">
-                    <article class="intro-column">
-                        <h2>Context</h2>
-                        <p>I initiated the Pedal Power Mobile Phone Charger project to solve a problem I witnessed daily
-                            at the University of Douala—frequent power outages left students unable to charge their
-                            phones, disrupting research and communication. As project leader, I assembled a team of
-                            three engineering students at HTTTC to design and build a human-powered charging solution in
-                            just three weeks for the Science and Engineering Festival.</p>
-                        <p>We faced tight constraints: limited budget, no experience with weldment design or FEA, and
-                            the need to accommodate users from 5th to 95th percentile while keeping the device portable.
-                            We adopted Design for Manufacturing principles and the
-                            Empathize-Define-Ideate-Prototype-Test framework to guide our rapid development process.</p>
+        <hr class="section-divider">
+
+        <!-- Case Study Body -->
+        <div class="container project-body">
+
+            <!-- Three-column Case Study -->
+            <section class="case-study-columns" aria-labelledby="case-study-heading">
+                <h2 class="sr-only" id="case-study-heading">Project Case Study</h2>
+                <div class="columns-grid">
+
+                    <article class="case-column">
+                        <h2 class="case-column-title">The Problem</h2>
+                        <p>Frequent power outages at the University of Douala left students unable to charge their
+                            phones, disrupting research, communication, and daily academic life. The problem was not
+                            isolated — unreliable electricity is a daily constraint for communities across Cameroon.</p>
+                        <p>As project leader, I assembled a team of three engineering students at HTTTC and set a goal:
+                            design and build a <strong>human-powered charging solution</strong> in three weeks for the
+                            Science and Engineering Festival.</p>
+                        <p>The constraints were tight: limited budget, no team experience with weldment design or FEA,
+                            and a requirement to accommodate users from the 5th to 95th anthropometric percentile while
+                            keeping the device portable enough for field use.</p>
                     </article>
 
-                    <article class="intro-column">
-                        <h2>Content</h2>
-                        <p>I drove the mechanical design from concept to prototype, teaching myself advanced SolidWorks
-                            weldment techniques and FEA in one week to meet our deadline. The frame design consumed most
-                            of my attention—I iterated through countless sketches to optimize seat height, handlebar
-                            position, and pedal geometry for diverse users while integrating the power transmission
-                            system and electronic components within the structure.</p>
+                    <article class="case-column">
+                        <h2 class="case-column-title">The Approach</h2>
+                        <p>We adopted Design for Manufacturing principles and the Empathize-Define-Ideate-Prototype-Test
+                            framework. I taught myself advanced SolidWorks weldment techniques and FEA in one week to
+                            meet the deadline.</p>
+                        <p>Frame design consumed most of the engineering effort — I iterated through multiple
+                            configurations to optimise seat height, handlebar position, and pedal geometry for diverse
+                            users, while integrating a <strong>double-groove pulley power transmission system</strong>
+                            and all electronic components within the structure.</p>
                         <p>When FEA revealed stress concentrations at critical joints under 800+ N loading, I added
-                            strategic gusset reinforcements to prevent fatigue failure. I balanced competing demands by
-                            selecting hollow steel tubing for its strength-to-weight ratio, achieving our 40 kg
-                            portability target without compromising safety. Beyond technical work, I coordinated task
-                            distribution among teammates and facilitated design reviews where we collectively refined
-                            the CAD models and electronic layouts based on prototyping feedback.</p>
+                            strategic <strong>gusset reinforcements</strong> to prevent fatigue failure. Hollow steel
+                            tubing was selected for its strength-to-weight ratio, achieving a 40 kg portability target
+                            without compromising structural safety. Pulleys and belts were positioned externally for
+                            easy interchangeability.</p>
                     </article>
 
-                    <article class="intro-column">
-                        <h2>Conclusion</h2>
-                        <p>We successfully presented a working prototype at the HTTTC Festival, validating human-powered
-                            charging as viable for energy-scarce environments. This experience taught me that aggressive
-                            deadlines demand ruthless prioritization—mastering SolidWorks in one week meant focusing
-                            only on high-impact skills like weldment design and FEA while deferring less critical
-                            features.</p>
-                        <p>Leading an interdisciplinary team showed me that technical excellence alone isn't enough;
-                            clear communication and collaborative problem-solving proved equally critical. The
-                            simulation-driven design approach not only prevented structural failures but built
-                            confidence in our decisions, reducing costly physical iterations. Most importantly,
-                            optimizing for anthropometric diversity reinforced my commitment to accessible,
-                            user-centered engineering—a principle that now guides all my design work toward solutions
-                            that are both technically sound and socially impactful.</p>
+                    <article class="case-column">
+                        <h2 class="case-column-title">The Outcome</h2>
+                        <p>A working prototype was presented at the HTTTC Festival, validating human-powered charging as
+                            a viable solution for energy-scarce environments. The simulation-driven design approach
+                            prevented structural failures and built confidence in our decisions — reducing costly
+                            physical iterations.</p>
+                        <p>This project reinforced a principle I now apply across all design work: optimising for
+                            anthropometric diversity is not a constraint — it is the measure of a design's real-world
+                            value.</p>
+                        <p>Leading under aggressive deadlines also taught me that technical excellence alone is not
+                            enough. Clear task distribution, collaborative design reviews, and patient onboarding of
+                            teammates proved equally critical to delivering a working prototype in three weeks.</p>
                     </article>
+
                 </div>
             </section>
 
-            <section class="technical-drawings">
+            <!-- Animation Callout -->
+            <div class="animation-callout">
+                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                <span>See the PPMPC in action —</span>
+                <a href="https://www.linkedin.com/posts/donfack-fortune-476904231_solidworks-keyshot-adobe-activity-7118455344791445504-MQvG"
+                    target="_blank" rel="noopener noreferrer"
+                    aria-label="View animated demonstration of the Pedal Power Mobile Phone Charger on LinkedIn">
+                    Watch the animation on LinkedIn <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Technical Drawing -->
+            <section class="technical-drawing-section" aria-labelledby="drawing-title">
+                <p class="section-eyebrow">Technical Documentation</p>
+                <h2 class="project-section-title" id="drawing-title">Engineering Calculations</h2>
                 <figure class="drawing-figure">
-                    <div class="image-wrapper">
+                    <div class="image-wrapper drawing-wrapper">
                         <img src="/assets/images/calculation-pic-1.png"
-                            alt="Engineering calculations and power transmission analysis"
-                            class="drawing-img clickable-img">
-                        <div class="image-overlay">
-                            <span class="overlay-text">Engineering calculations showing power transmission and gear
-                                ratio optimization</span>
+                            alt="Engineering calculations — power transmission analysis and gear ratio optimisation for the pedal power charger"
+                            class="drawing-img clickable-img" loading="lazy">
+                        <div class="image-overlay" aria-hidden="true">
+                            <span class="overlay-text">Power transmission analysis and gear ratio optimisation</span>
                         </div>
                     </div>
                 </figure>
             </section>
 
-            <section class="project-gallery">
-                <div class="gallery-container">
+            <hr class="section-divider">
+
+            <!-- Gallery -->
+            <section class="project-gallery-section" aria-labelledby="gallery-title">
+                <p class="section-eyebrow">Project Gallery</p>
+                <h2 class="project-section-title" id="gallery-title">Design, Simulation &amp; Fabrication</h2>
+
+                <!-- First 4 always visible -->
+                <div class="gallery-grid" id="galleryGrid">
                     <article class="gallery-item">
                         <div class="image-wrapper">
-                            <img src="/assets/images/circuit-image.png" alt="Electrical circuit diagram"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Circuit diagram and electrical component layout</span>
-                            </div>
+                            <img src="/assets/images/circuit-image.png"
+                                alt="Electrical circuit diagram and component layout" class="gallery-img clickable-img"
+                                loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Circuit diagram and
+                                    electrical component layout</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/PPMPC-Full assembly.png"
                                 alt="Full assembly of the Pedal Power Mobile Phone Charger"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Full assembly of the Pedal Power Mobile Phone Charger</span>
-                            </div>
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Full CAD
+                                    assembly</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/PPMPC-Frame.png"
-                                alt="Frame of the Pedal Power Mobile Phone Charger" class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Frame of the Pedal Power Mobile Phone Charger</span>
-                            </div>
+                                alt="Frame structural design of the Pedal Power Mobile Phone Charger"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Frame structural
+                                    design</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/PPMPC-Exploded view.png"
-                                alt="Exploded view of the Pedal Power Mobile Phone Charger"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Exploded view of the Pedal Power Mobile Phone Charger</span>
-                            </div>
+                                alt="Exploded view showing all components of the Pedal Power Mobile Phone Charger"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Exploded view — all
+                                    components</span></div>
                         </div>
                     </article>
+                </div>
+
+                <!-- Remaining 10 behind Show More -->
+                <div class="gallery-hidden" id="galleryHidden">
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/the-design-simplification-for-the-fea-simulation.jpg"
-                                alt="Design simplification for FEA" class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Simplified CAD model for finite element analysis</span>
-                            </div>
+                                alt="Simplified CAD model prepared for finite element analysis"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Simplified model
+                                    for FEA</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
-                            <img src="/assets/images/charges on bicycle.jpg" alt="Charge on bicycle"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Charge on bicycle</span>
-                            </div>
+                            <img src="/assets/images/charges on bicycle.jpg"
+                                alt="Load conditions applied to the bicycle frame in FEA"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Load conditions on
+                                    frame</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
-                            <img src="/assets/images/support-description.png" alt="Support structure details"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Support structure showing critical load-bearing
-                                    components</span>
-                            </div>
+                            <img src="/assets/images/support-description.png"
+                                alt="Support structure showing critical load-bearing components"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Critical
+                                    load-bearing support structure</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
-                            <img src="/assets/images/Von-mises-stress.png" alt="Von Mises stress analysis"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Von Mises stress distribution confirming structural
-                                    integrity</span>
-                            </div>
+                            <img src="/assets/images/Von-mises-stress.png"
+                                alt="Von Mises stress distribution confirming structural integrity under 800N loading"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Von Mises stress —
+                                    FEA validation</span></div>
                         </div>
                     </article>
-
-                </div>
-
-                <div class="hidden-rows">
                     <article class="gallery-item">
                         <div class="image-wrapper">
-                            <img src="/assets/images/support-description-2.png" alt="Support structure alternate view"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Support structure - alternate perspective</span>
-                            </div>
+                            <img src="/assets/images/support-description-2.png"
+                                alt="Support structure — alternate perspective" class="gallery-img clickable-img"
+                                loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Support structure —
+                                    alternate view</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/real-one-ppmpc.273.png"
-                                alt="3d rendering of the pedal power mobile phone charger"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">3d rendering of the pedal power mobile phone charger-1</span>
-                            </div>
+                                alt="3D rendering of the pedal power mobile phone charger — view 1"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">3D render — view
+                                    1</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/real-one-ppmpc.274.png"
-                                alt="3d rendering of the pedal power mobile phone charger"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">3d rendering of the pedal power mobile phone charger-2</span>
-                            </div>
+                                alt="3D rendering of the pedal power mobile phone charger — view 2"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">3D render — view
+                                    2</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/real-one-ppmpc.275.png"
-                                alt="3d rendering of the pedal power mobile phone charger"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">3d rendering of the pedal power mobile phone charger-3</span>
-                            </div>
+                                alt="3D rendering of the pedal power mobile phone charger — view 3"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">3D render — view
+                                    3</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/images of rear mount of the pedal power project.png"
-                                alt="3d rendering of the pedal power mobile phone charger"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">3d drawing of the pedal power mobile phone charger</span>
-                            </div>
+                                alt="Rear mount assembly of the pedal power charger" class="gallery-img clickable-img"
+                                loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Rear mount
+                                    assembly</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/force exerted for the pedal project.png"
-                                alt="Force exerted for the pedal project" class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Force exerted for the pedal project</span>
-                            </div>
+                                alt="Force analysis diagram for the pedal mechanism" class="gallery-img clickable-img"
+                                loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Pedal force
+                                    analysis</span></div>
                         </div>
                     </article>
                 </div>
 
-                <button class="see-more-btn" id="seeMoreBtn">See More</button>
+                <div class="gallery-toggle-wrapper">
+                    <button class="btn btn-outline" id="galleryToggleBtn" aria-expanded="false">
+                        Show More Images <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                </div>
             </section>
 
-            <div id="fullscreenModal" class="fullscreen-modal">
-                <span class="close-modal">&times;</span>
-                <img class="modal-content" id="modalImg" alt="Full screen image">
-            </div>
-
-            <a href="../Projects.html" class="back-btn" aria-label="Return to projects page">
-                <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
-            </a>
         </div>
+
+        <!-- Fullscreen Modal -->
+        <div id="fullscreenModal" class="fullscreen-modal" role="dialog" aria-modal="true"
+            aria-label="Fullscreen image view">
+            <button class="close-modal" id="closeModal" aria-label="Close image">&times;</button>
+            <img class="modal-img" id="modalImg" alt="">
+        </div>
+
+        <!-- Project CTA -->
+        <section class="project-cta" aria-labelledby="project-cta-title">
+            <div class="container project-cta-inner">
+                <div>
+                    <h2 id="project-cta-title">Interested in this type of work?</h2>
+                    <p>I'm available for simulation-driven mechanical design, FEA consulting, and sustainable energy
+                        systems engineering.</p>
+                </div>
+                <div class="project-cta-actions">
+                    <a href="../index.html#contact" class="btn btn-primary">Let's Work Together</a>
+                    <a href="../Projects.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i> All Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <section class="pre-footer">
-        <p>fortunedonfack05@gmail.com</p>
-        <p>237-699-415-955</p>
-        <p>237-670-229-486</p>
-    </section>
-
-    <footer role="contentinfo">
+    <footer class="footer" role="contentinfo">
         <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
     </footer>
 
-    <button id="backToTopBtn" class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
+        // Back to top
         const backToTopBtn = document.getElementById('backToTopBtn');
         let isScrolling = false;
-
         window.addEventListener('scroll', function () {
             if (!isScrolling) {
                 window.requestAnimationFrame(function () {
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    backToTopBtn.classList.toggle('visible', scrollTop > 300);
+                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
                     isScrolling = false;
                 });
                 isScrolling = true;
             }
         }, { passive: true });
-
         backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         });
 
-        const seeMoreBtn = document.getElementById('seeMoreBtn');
-        const hiddenRows = document.querySelector('.hidden-rows');
-
-        seeMoreBtn.addEventListener('click', function () {
-            hiddenRows.classList.toggle('expanded');
-            seeMoreBtn.textContent = hiddenRows.classList.contains('expanded') ? 'See Less' : 'See More';
+        // Gallery toggle
+        const galleryToggleBtn = document.getElementById('galleryToggleBtn');
+        const galleryHidden = document.getElementById('galleryHidden');
+        galleryToggleBtn.addEventListener('click', function () {
+            const expanded = galleryHidden.classList.toggle('expanded');
+            this.setAttribute('aria-expanded', String(expanded));
+            this.innerHTML = expanded
+                ? 'Show Less <i class="fas fa-chevron-up" aria-hidden="true"></i>'
+                : 'Show More Images <i class="fas fa-chevron-down" aria-hidden="true"></i>';
         });
 
+        // Fullscreen modal
         const modal = document.getElementById('fullscreenModal');
         const modalImg = document.getElementById('modalImg');
-        const closeModal = document.querySelector('.close-modal');
+        const closeModalBtn = document.getElementById('closeModal');
 
         document.querySelectorAll('.clickable-img').forEach(img => {
             img.addEventListener('click', function () {
-                modal.style.display = 'flex';
                 modalImg.src = this.src;
                 modalImg.alt = this.alt;
+                modal.classList.add('active');
+                closeModalBtn.focus();
             });
         });
 
-        closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-
-        modal.addEventListener('click', function (e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
+        function closeModal() { modal.classList.remove('active'); }
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
         });
     </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+
 </body>
 
 </html>

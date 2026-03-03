@@ -5,57 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Beans Unwrapping Machine - Automated agricultural processing solution designed by Donfack Fortune for communities in Cameroon and Central Africa.">
+        content="Beans Unwrapping Machine (BUR) — automated double-groove pulley system designed by Donfack Fortune for small and medium farmers across Cameroon and Central Africa. 85%+ yield, portable, locally maintainable.">
+    <meta name="keywords"
+        content="beans unwrapping machine Cameroon, agricultural automation Central Africa, mechanical design SolidWorks, rural farming machine, Donfack Fortune engineering project">
     <meta name="author" content="Donfack Fortune">
-    <title>Beans Unwrapping Machine | Donfack Fortune</title>
+    <title>Beans Unwrapping Machine | Donfack Fortune — Mechanical Engineer &amp; Energy Specialist</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
     <link rel="stylesheet" href="../assets/css/projects/project-beans-unwrapping.css">
 </head>
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header role="banner">
-        <div class="header-wrapper">
-            <div class="header-logo">
-                <h1 class="logo">
-                    <a href="../index.html">Donfack Fortune</a>
-                </h1>
+    <header class="header" role="banner">
+        <div class="container header-wrapper">
+            <div class="logo">
+                <a href="../index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
             </div>
-
-            <nav role="navigation">
+            <nav class="header-nav" aria-label="Main navigation" role="navigation">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../Camrail.html">Camrail</a></li>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../Camrail.html" class="nav-link">Camrail</a></li>
                     <li class="has-dropdown">
-                        <a href="../Projects.html">Projects</a>
+                        <a href="../Projects.html" class="nav-link active" aria-current="page">Projects</a>
                         <ul class="dropdown-menu">
-                            <li><a href="../Projects.html#all" data-filter="all">All</a></li>
-                            <li><a href="../Projects.html#simulation-driven"
-                                    data-filter="simulation-driven">Simulation-Driven</a>
-                            </li>
-                            <li><a href="../Projects.html#sustainability"
-                                    data-filter="sustainability">Sustainability</a>
-                            </li>
-                            <li><a href="../Projects.html#mechanical" data-filter="mechanical">Mechanical Design</a>
-                            </li>
-                            <li><a href="../Projects.html#electronics" data-filter="electronics">Electronics</a></li>
-                            <li><a href="../Projects.html#user-centered" data-filter="user-centered">User-Centered</a>
-                            </li>
+                            <li><a href="../Projects.html#all">All</a></li>
+                            <li><a href="../Projects.html#simulation-driven">Simulation-Driven</a></li>
+                            <li><a href="../Projects.html#sustainability">Sustainability</a></li>
+                            <li><a href="../Projects.html#mechanical">Mechanical Design</a></li>
+                            <li><a href="../Projects.html#electronics">Electronics</a></li>
+                            <li><a href="../Projects.html#user-centered">User-Centered</a></li>
                         </ul>
                     </li>
-                    <li><a href="../teaching.html">Teaching</a></li>
-                    <li><a href="../Résumé.html">Résumé</a></li>
+                    <li><a href="../teaching.html" class="nav-link">Teaching</a></li>
+                    <li><a href="../Résumé.html" class="nav-link">Résumé</a></li>
                 </ul>
             </nav>
-
-            <div class="header-social">
-                <a href="https://grabcad.com/donfack.fortune-1" target="_blank" rel="noopener noreferrer"
-                    class="social-link">
+            <div class="header-social" role="complementary" aria-label="Social media links">
+                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD profile" target="_blank"
+                    rel="noopener noreferrer" class="social-link">
                     <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
@@ -63,274 +57,344 @@
                             font-family="Arial">GC</text>
                     </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" target="_blank"
-                    rel="noopener noreferrer" class="social-link">
-                    <i class="fab fa-linkedin-in"></i>
+                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+                    aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </header>
 
     <main id="main-content" role="main">
-        <h1 class="page-title">Beans Unwrapping Machine</h1>
 
-        <section class="project-hero">
-            <div class="image-wrapper">
-                <img src="/assets/images/Real-BUR.jpg" alt="Beans Unwrapping Machine" class="hero-img clickable-img">
-                <div class="image-overlay">
-                    <span class="overlay-text">Complete Beans Unwrapping Machine</span>
+        <!-- Project Hero -->
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="container project-hero-inner">
+                <div class="project-hero-text">
+                    <p class="hero-eyebrow">Sustainability · User-Centered Design · 2023</p>
+                    <h1 class="project-title" id="project-title">Beans Unwrapping<br>Machine</h1>
+                    <p class="project-tagline">An automated double-groove pulley system designed for small and medium
+                        farmers across Cameroon — portable, locally maintainable, and built to achieve 85%+ yield
+                        performance with minimal operator effort.</p>
+                </div>
+                <div class="project-hero-image">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/Real-BUR.jpg"
+                            alt="Beans Unwrapping Machine — complete assembled prototype" class="hero-img clickable-img"
+                            loading="eager">
+                        <div class="image-overlay" aria-hidden="true">
+                            <span class="overlay-text">Complete assembled prototype</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="quick-animation" aria-labelledby="animation-heading">
-            <div class="animation-content">
-                <h3 id="animation-heading" class="animation-heading">Quick Animation</h3>
-                <p>
-                    <a href="https://www.linkedin.com/posts/donfack-fortune-476904231_keyshot-renderlovers-rendering-activity-7109484314974633984-1GoQ"
-                        target="_blank" rel="noopener noreferrer" class="external-link"
-                        aria-label="View animated demonstration on LinkedIn">
-                        Quick animation of the BUR machine with a clear description of its functioning
-                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                    </a>
-                </p>
+        <!-- Project Metadata Bar -->
+        <section class="project-meta-bar" aria-label="Project details">
+            <div class="container project-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Year</span>
+                    <span class="meta-value">2023</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Lead Designer · Sole Engineer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">2 months</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Team</span>
+                    <span class="meta-value">Nepitimbaye · Grace · Tatsinda</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">Sustainability · User-Centered</span>
+                </div>
             </div>
         </section>
 
-        <div class="project-content">
-            <section class="project-intro">
-                <div class="intro-columns">
-                    <article class="intro-column">
-                        <h2>Context</h2>
+        <hr class="section-divider">
+
+        <!-- Case Study Body -->
+        <div class="container project-body">
+
+            <!-- Three-column Case Study -->
+            <section class="case-study-columns" aria-labelledby="case-study-heading">
+                <h2 class="sr-only" id="case-study-heading">Project Case Study</h2>
+                <div class="columns-grid">
+
+                    <article class="case-column">
+                        <h2 class="case-column-title">The Problem</h2>
                         <p>During a visit to Maroua in northern Cameroon, I observed local farmers manually unwrapping
-                            beans—a process so slow and labor-intensive that it severely limited production efficiency.
-                            This firsthand encounter with traditional agricultural methods sparked my decision to design
-                            an automated solution addressing the needs of small and medium enterprises across Central
-                            Africa.</p>
-                        <p>Working independently over two months, I sought to develop my machine design competency while
-                            creating a practical tool for communities facing these challenges. The project required
-                            balancing technical performance goals—achieving over 85% yield, reducing operator physical
-                            effort, and ensuring health and safety standards—with the reality of limited material
-                            availability and the need for straightforward maintenance in rural settings.</p>
+                            beans — a process so slow and labour-intensive that it severely limited production
+                            efficiency. This firsthand encounter with traditional agricultural methods made the need for
+                            an automated solution clear.</p>
+                        <p>Existing machinery was either unavailable locally or unaffordable for small and medium
+                            enterprises. The solution had to be designed specifically for the realities of rural Central
+                            Africa: limited material availability, no specialist maintenance infrastructure, and the
+                            need for portability to serve dispersed farming communities.</p>
+                        <p>The project required balancing strict performance targets — over 85% yield, significantly
+                            reduced operator effort, and health and safety compliance — against the hard constraints of
+                            local manufacturing and limited budget.</p>
                     </article>
 
-                    <article class="intro-column">
-                        <h2>Content</h2>
-                        <p>I led the entire research, ideation, and design process, developing competing prototypes
-                            before selecting the final configuration based on raw material availability, parallel motor
-                            positioning, and fan placement for optimal stability and reduced vibration. The shaft design
-                            became critical—I engineered variable-dimension blades mounted at 120-degree intervals with
-                            5cm spacing to ensure proper bean unwrapping without breaking, carefully calibrating
-                            rotation speed against the motor's driving force.</p>
-                        <p>Power transmission employed a double-groove pulley system connecting motor, shaft, and fan to
-                            partition driving force efficiently. When the specified 1.1kW motor proved unavailable, I
-                            adapted the design for an alternative motor while maintaining performance targets. I
-                            prioritized compact assembly through flexible CAD modeling, positioning the pulley and belt
-                            externally for easy interchangeability and providing direct shaft access for refinement and
-                            repair. Steel thickness selection balanced structural integrity against overall machine
-                            weight, a decision crucial for the portability farmers required.</p>
+                    <article class="case-column">
+                        <h2 class="case-column-title">The Approach</h2>
+                        <p>I developed competing prototype configurations before selecting the final design based on raw
+                            material availability, parallel motor positioning, and fan placement for optimal stability
+                            and reduced vibration.</p>
+                        <p>The shaft design became the critical engineering challenge. I engineered
+                            <strong>variable-dimension blades mounted at 120-degree intervals</strong> with 5 cm
+                            spacing, carefully calibrating rotation speed against motor driving force to unwrap beans
+                            without breaking them. Power transmission used a <strong>double-groove pulley
+                                system</strong> connecting motor, shaft, and fan to partition driving force efficiently.
+                        </p>
+                        <p>When the specified 1.1 kW motor proved unavailable, I adapted the design for an alternative
+                            motor while maintaining all performance targets. Steel thickness selection balanced
+                            structural integrity against machine weight — a critical decision for the portability
+                            farmers required. External pulley and belt positioning allowed easy interchangeability and
+                            direct shaft access for repair.</p>
                     </article>
 
-                    <article class="intro-column">
-                        <h2>Conclusion</h2>
-                        <p>This project fundamentally shaped my understanding of design for constrained environments.
-                            Working with Nepitimbaye, Grace, and Tatsinda taught me that technical excellence must
-                            accommodate real-world unpredictability—their perspectives on material substitution and
-                            component failure modes proved invaluable when ideal specifications couldn't be met.</p>
-                        <p>I learned a crucial lesson in team dynamics: as the project evolved from solo design to
-                            collaborative implementation, I discovered that the effort invested in communication and
-                            skill-building pays compounding dividends. Initially, I defaulted to executing small tasks
-                            myself rather than spending time explaining requirements. However, once I committed to
-                            thorough onboarding, the team operated increasingly autonomously, extrapolating from base
-                            principles to solve problems independently. This experience reinforced that "doing it
-                            yourself" is rarely optimal—setting teammates up for success through clear communication and
-                            patient teaching yields far better outcomes than shouldering every responsibility alone.</p>
-                    </article>
-                </div>
-            </section>
-
-            <section class="technical-drawings">
-                <figure class="drawing-figure">
-                    <div class="image-wrapper">
-                        <img src="/assets/images/Bur-Explanation-1.png" alt="BUR Detailed explanation-1"
-                            class="drawing-img clickable-img">
-                        <div class="image-overlay">
-                            <span class="overlay-text">Detailed explanation-1</span>
-                        </div>
-                    </div>
-                </figure>
-                <figure class="drawing-figure">
-                    <div class="image-wrapper">
-                        <img src="/assets/images/Bur-Explanation-2.png" alt="BUR Detailed explanation-2"
-                            class="drawing-img clickable-img">
-                        <div class="image-overlay">
-                            <span class="overlay-text">Detailed explanation-2</span>
-                        </div>
-                    </div>
-                </figure>
-            </section>
-
-            <section class="project-gallery">
-                <div class="gallery-container">
-                    <article class="gallery-item">
-                        <div class="image-wrapper">
-                            <img src="/assets/images/Kinematic-diagram-of-the-Bur.png" alt="Kinematic scheme"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Kinematic scheme of power transmission system</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="gallery-item">
-                        <div class="image-wrapper">
-                            <img src="/assets/images/Legend-of-the-Bur.png" alt="Component legend"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Kinematic scheme component legend</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="gallery-item">
-                        <div class="image-wrapper">
-                            <img src="/assets/images/BUR Frame.png" alt="2D Frame assembly"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Complete 2D Frame assembly </span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="gallery-item">
-                        <div class="image-wrapper">
-                            <img src="/assets/images/BUR Shaft.png" alt="2D shaft design detail"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Complete shaft 2D assembly</span>
-                            </div>
-                        </div>
+                    <article class="case-column">
+                        <h2 class="case-column-title">The Outcome</h2>
+                        <p>The project delivered a functional prototype meeting all primary performance targets. Working
+                            with Nepitimbaye, Grace, and Tatsinda taught me that technical excellence in constrained
+                            environments must accommodate real-world unpredictability — their perspectives on material
+                            substitution and component failure modes proved essential when ideal specifications could
+                            not be met.</p>
+                        <p>Beyond the machine itself, this project reshaped how I approach team leadership in
+                            engineering work. Initially I defaulted to executing small tasks myself rather than
+                            investing time explaining requirements. Once I committed to thorough onboarding, the team
+                            operated increasingly autonomously — extrapolating from base principles to solve problems
+                            independently.</p>
+                        <p>The lesson was clear: in engineering teams, doing it yourself is rarely optimal. Setting
+                            teammates up for success through patient communication yields far better outcomes than
+                            shouldering every responsibility alone.</p>
                     </article>
 
                 </div>
-
-                <div class="hidden-rows">
-                    <article class="gallery-item">
-                        <div class="image-wrapper">
-                            <img src="/assets/images/BUR-Render-2.jpg" alt="3D CAD assembly view 2"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Complete 3D CAD assembly - alternate perspective</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="gallery-item">
-                        <div class="image-wrapper">
-                            <img src="/assets/images/BUR-Render-1.jpg" alt="3D CAD assembly view 1"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Complete 3D CAD assembly - perspective view</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="gallery-item">
-                        <div class="image-wrapper">
-                            <img src="/assets/images/BUR-Render-3.jpg" alt="Shaft design detail"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Complete shaft 3D CAD assembly - alternate perspective</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="gallery-item">
-                        <div class="image-wrapper">
-                            <img src="/assets/images/Bur-test-and-validation.png" alt="Test and validation results"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">Performance testing and validation results</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-
-                <button class="see-more-btn" id="seeMoreBtn">See More</button>
             </section>
 
-            <div id="fullscreenModal" class="fullscreen-modal">
-                <span class="close-modal">&times;</span>
-                <img class="modal-content" id="modalImg" alt="Full screen image">
+            <!-- Animation Callout -->
+            <div class="animation-callout">
+                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                <span>See the BUR machine in action —</span>
+                <a href="https://www.linkedin.com/posts/donfack-fortune-476904231_keyshot-renderlovers-rendering-activity-7109484314974633984-1GoQ"
+                    target="_blank" rel="noopener noreferrer"
+                    aria-label="View animated demonstration of the BUR machine on LinkedIn">
+                    Watch the animation on LinkedIn <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
             </div>
 
-            <a href="../Projects.html" class="back-btn" aria-label="Return to projects page">
-                <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
-            </a>
+            <hr class="section-divider">
+
+            <!-- Technical Drawings — two drawings, side by side -->
+            <section class="technical-drawing-section" aria-labelledby="drawing-title">
+                <p class="section-eyebrow">Technical Documentation</p>
+                <h2 class="project-section-title" id="drawing-title">Engineering Drawings</h2>
+                <div class="drawing-grid">
+                    <figure class="drawing-figure">
+                        <div class="image-wrapper drawing-wrapper">
+                            <img src="/assets/images/Bur-Explanation-1.png"
+                                alt="BUR machine detailed explanation drawing 1 — component layout and assembly overview"
+                                class="drawing-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true">
+                                <span class="overlay-text">Component layout and assembly overview</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure class="drawing-figure">
+                        <div class="image-wrapper drawing-wrapper">
+                            <img src="/assets/images/Bur-Explanation-2.png"
+                                alt="BUR machine detailed explanation drawing 2 — power transmission and shaft assembly"
+                                class="drawing-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true">
+                                <span class="overlay-text">Power transmission and shaft assembly</span>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
+            <!-- Gallery -->
+            <section class="project-gallery-section" aria-labelledby="gallery-title">
+                <p class="section-eyebrow">Project Gallery</p>
+                <h2 class="project-section-title" id="gallery-title">Design &amp; Fabrication</h2>
+
+                <div class="gallery-grid" id="galleryGrid">
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Kinematic-diagram-of-the-Bur.png"
+                                alt="Kinematic scheme of the BUR power transmission system"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Kinematic scheme —
+                                    power transmission</span></div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Legend-of-the-Bur.png" alt="Kinematic scheme component legend"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Component
+                                    legend</span></div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/BUR Frame.png" alt="Complete 2D frame assembly drawing"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">2D frame
+                                    assembly</span></div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/BUR Shaft.png" alt="Complete 2D shaft assembly drawing"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">2D shaft
+                                    assembly</span></div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="gallery-hidden" id="galleryHidden">
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/BUR-Render-2.jpg" alt="3D CAD assembly — alternate perspective"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">3D CAD assembly —
+                                    alternate perspective</span></div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/BUR-Render-1.jpg" alt="3D CAD assembly — perspective view"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">3D CAD assembly —
+                                    perspective view</span></div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/BUR-Render-3.jpg"
+                                alt="Shaft 3D CAD assembly — alternate perspective" class="gallery-img clickable-img"
+                                loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Shaft 3D assembly —
+                                    alternate perspective</span></div>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="image-wrapper">
+                            <img src="/assets/images/Bur-test-and-validation.png"
+                                alt="Performance testing and validation results" class="gallery-img clickable-img"
+                                loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Performance testing
+                                    and validation</span></div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="gallery-toggle-wrapper">
+                    <button class="btn btn-outline" id="galleryToggleBtn" aria-expanded="false">
+                        Show More Images <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </section>
+
         </div>
+
+        <!-- Fullscreen Modal -->
+        <div id="fullscreenModal" class="fullscreen-modal" role="dialog" aria-modal="true"
+            aria-label="Fullscreen image view">
+            <button class="close-modal" id="closeModal" aria-label="Close image">&times;</button>
+            <img class="modal-img" id="modalImg" alt="">
+        </div>
+
+        <!-- Project CTA -->
+        <section class="project-cta" aria-labelledby="project-cta-title">
+            <div class="container project-cta-inner">
+                <div>
+                    <h2 id="project-cta-title">Interested in this type of work?</h2>
+                    <p>I design practical, locally-buildable machinery for agricultural and industrial applications
+                        across Central Africa. Available for design consulting and research collaboration.</p>
+                </div>
+                <div class="project-cta-actions">
+                    <a href="../index.html#contact" class="btn btn-primary">Let's Work Together</a>
+                    <a href="../Projects.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i> All Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <section class="pre-footer">
-        <p>fortunedonfack05@gmail.com</p>
-        <p>237-699-415-955</p>
-        <p>237-670-229-486</p>
-    </section>
-
-    <footer role="contentinfo">
+    <footer class="footer" role="contentinfo">
         <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
     </footer>
 
-    <button id="backToTopBtn" class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
+        // Back to top
         const backToTopBtn = document.getElementById('backToTopBtn');
         let isScrolling = false;
-
         window.addEventListener('scroll', function () {
             if (!isScrolling) {
                 window.requestAnimationFrame(function () {
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    backToTopBtn.classList.toggle('visible', scrollTop > 300);
+                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
                     isScrolling = false;
                 });
                 isScrolling = true;
             }
         }, { passive: true });
-
         backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         });
 
-        const seeMoreBtn = document.getElementById('seeMoreBtn');
-        const hiddenRows = document.querySelector('.hidden-rows');
-
-        seeMoreBtn.addEventListener('click', function () {
-            hiddenRows.classList.toggle('expanded');
-            seeMoreBtn.textContent = hiddenRows.classList.contains('expanded') ? 'See Less' : 'See More';
+        // Gallery toggle
+        const galleryToggleBtn = document.getElementById('galleryToggleBtn');
+        const galleryHidden = document.getElementById('galleryHidden');
+        galleryToggleBtn.addEventListener('click', function () {
+            const expanded = galleryHidden.classList.toggle('expanded');
+            this.setAttribute('aria-expanded', String(expanded));
+            this.innerHTML = expanded
+                ? 'Show Less <i class="fas fa-chevron-up" aria-hidden="true"></i>'
+                : 'Show More Images <i class="fas fa-chevron-down" aria-hidden="true"></i>';
         });
 
+        // Fullscreen modal
         const modal = document.getElementById('fullscreenModal');
         const modalImg = document.getElementById('modalImg');
-        const closeModal = document.querySelector('.close-modal');
+        const closeModalBtn = document.getElementById('closeModal');
 
         document.querySelectorAll('.clickable-img').forEach(img => {
             img.addEventListener('click', function () {
-                modal.style.display = 'flex';
                 modalImg.src = this.src;
                 modalImg.alt = this.alt;
+                modal.classList.add('active');
+                closeModalBtn.focus();
             });
         });
 
-        closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-
-        modal.addEventListener('click', function (e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
+        function closeModal() { modal.classList.remove('active'); }
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
         });
     </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+
 </body>
 
 </html>
