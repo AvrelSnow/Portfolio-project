@@ -1,463 +1,508 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ============================================
+   TEACHING PAGE STYLESHEET
+   Page-specific styles only.
+   Global resets, header, footer, .btn, and
+   .back-to-top are all handled by index.css.
+   ============================================ */
 
-body {
-    font-family: 'Lato', sans-serif;
-    line-height: 1.6;
-    color: #333;
+/* ── Hero ── */
+.teaching-hero {
+    padding: 72px 0 56px;
     background: #fff;
 }
 
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #000;
-    color: #fff;
-    padding: 8px;
-    text-decoration: none;
-    z-index: 100;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-/* Header */
-header {
-    background: #fff;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 0;
-}
-
-.header-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-}
-
-.logo a {
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-/* Navigation */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-}
-
-nav a {
-    color: #999;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 400;
-    transition: color 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-    color: #333;
-}
-
-.has-dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    min-width: 160px;
-    padding: 12px 0 0;
-    margin: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s;
-    list-style: none;
-}
-
-.has-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-}
-
-.dropdown-menu li {
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 6px 0;
-    color: #ccc;
-    text-decoration: none;
+.hero-eyebrow {
     font-size: 13px;
-    font-weight: 400;
-    text-align: center;
-    transition: color 0.2s;
-}
-
-.dropdown-menu a:hover {
-    color: #666;
-}
-
-/* Social Links */
-.header-social {
-    display: flex;
-    gap: 20px;
-}
-
-.social-link {
-    color: #999;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.social-link:hover {
-    color: #333;
-}
-
-/* Main Content */
-main {
-    background: #fff;
-}
-
-/* Teaching Introduction */
-.teaching-intro {
-    max-width: 900px;
-    margin: 0 auto 80px;
-    padding: 0 40px;
-}
-
-.intro-content {
-    width: 100%;
-}
-
-.intro-text {
-    margin-bottom: 60px;
-}
-
-.lead-text {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #555;
-    font-weight: 400;
-}
-
-/* Course Lists */
-.courses-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 60px;
-    margin-bottom: 60px;
-}
-
-.course-group {
-    padding: 0;
-}
-
-.course-heading {
-    font-size: 18px;
     font-weight: 700;
-    color: #333;
-    margin-bottom: 12px;
-}
-
-.course-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.course-list li {
-    margin-bottom: 8px;
-    color: #555;
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.course-list li:last-child {
-    margin-bottom: 0;
-}
-
-/* Philosophy Text */
-.philosophy-text {
-    margin-top: 60px;
-    padding: 0;
-}
-
-.philosophy-text p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #555;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999;
     margin-bottom: 20px;
 }
 
-.philosophy-text p:last-child {
-    margin-bottom: 0;
+.teaching-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
 }
 
-/* Teaching Gallery */
-.teaching-gallery {
+.teaching-title span {
+    color: #555;
+    font-weight: 300;
+}
+
+.teaching-subtitle {
+    font-size: 17px;
+    color: #666;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+/* ── Impact Stats Bar ── */
+.teaching-stats {
+    background: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 28px 0;
+}
+
+.stats-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 36px;
+}
+
+.stat-number {
+    font-size: 26px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #999;
+    text-align: center;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: #e0e0e0;
+    flex-shrink: 0;
+}
+
+/* ── Section Shared Styles ── */
+.section-divider {
     max-width: 1200px;
-    margin: 0 auto 80px;
-    padding: 0 40px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+.section-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 12px;
 }
 
 .section-title {
     font-size: 32px;
     font-weight: 700;
     color: #333;
-    margin-bottom: 40px;
     letter-spacing: -0.5px;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+/* ── Roles / Institutions ── */
+.teaching-roles {
+    padding: 72px 0;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.role-card {
+    border: 1.5px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: border-color 0.2s;
+}
+
+.role-card:hover {
+    border-color: #999;
+}
+
+.role-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.role-icon {
+    width: 40px;
+    height: 40px;
+    background: #f0f0f0;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #666;
+    font-size: 16px;
+}
+
+.role-institution {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+.role-title {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.role-date {
+    font-size: 12px;
+    font-weight: 700;
+    color: #bbb;
+    letter-spacing: 0.3px;
+}
+
+.role-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.role-courses {
+    list-style: none;
+    padding: 0;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 16px;
+}
+
+.role-courses li {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.5;
+    padding-left: 14px;
+    position: relative;
+}
+
+.role-courses li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #ccc;
+    font-weight: 300;
+}
+
+/* ── Teaching Philosophy ── */
+.teaching-philosophy {
+    padding: 72px 0;
+    background: #fff;
+}
+
+.philosophy-inner {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 80px;
+    align-items: start;
+}
+
+.philosophy-text .section-title {
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+.philosophy-text p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.philosophy-text p:last-child {
+    margin-bottom: 0;
+}
+
+.credentials-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.credentials-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.credentials-list i {
+    color: #999;
+    font-size: 14px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* ── Gallery ── */
+.teaching-gallery {
+    padding: 72px 0;
+    background: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 28px;
 }
 
-/* Gallery Cards */
 .gallery-item {
-    width: 100%;
-}
-
-.gallery-card {
-    background: #fff;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .image-wrapper {
     width: 100%;
-    height: 300px;
+    height: 280px;
     overflow: hidden;
-    background: #f5f5f5;
+    background: #e8e8e8;
+    border-radius: 4px;
 }
 
 .gallery-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
-.gallery-card:hover .gallery-image {
-    transform: scale(1.05);
+.gallery-item:hover .gallery-image {
+    transform: scale(1.04);
 }
 
-.card-content {
-    padding: 20px 0;
-}
-
-.card-text {
-    font-size: 15px;
-    font-weight: 400;
-    color: #333;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Pre-Footer */
-.pre-footer {
-    background: #f9f9f9;
-    padding: 60px 40px;
-    text-align: center;
-}
-
-.pre-footer p {
-    font-family: 'Lato', sans-serif;
+.gallery-caption {
+    font-size: 14px;
     color: #666;
-    font-size: 15px;
-    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-/* Footer */
-footer {
-    background: #fff;
-    padding: 30px 40px;
-    text-align: center;
+/* ── CTA ── */
+.teaching-cta {
+    padding: 72px 0;
     border-top: 1px solid #e0e0e0;
 }
 
-footer p {
-    font-family: 'Lato', sans-serif;
-    color: #999;
-    font-size: 14px;
+.teaching-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-/* Back to Top */
-.back-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background: #333;
-    color: #fff;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-    z-index: 1000;
+.teaching-cta h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
 }
 
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
+.teaching-cta p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 520px;
 }
 
-.back-to-top:hover {
-    background: #555;
+.teaching-cta-actions {
+    display: flex;
+    gap: 16px;
+    flex-shrink: 0;
 }
 
-/* Tablet */
+/* ── Tablet ── */
 @media (max-width: 1024px) {
-    .header-wrapper {
-        padding: 20px 30px;
+    .teaching-title {
+        font-size: 44px;
     }
 
-    .teaching-intro,
-    .teaching-gallery {
-        padding: 0 30px;
+    .roles-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .courses-wrapper {
-        gap: 50px;
+    .philosophy-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .stat-item {
+        padding: 8px 24px;
     }
 }
 
-/* Mobile */
+/* ── Mobile ── */
 @media (max-width: 768px) {
-    .header-wrapper {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+    .teaching-hero {
+        padding: 48px 0 40px;
     }
 
-    nav ul {
-        gap: 20px;
+    .teaching-title {
+        font-size: 34px;
     }
 
-    nav a {
-        font-size: 14px;
+    .teaching-subtitle {
+        font-size: 15px;
     }
 
-    .has-dropdown .dropdown-menu {
+    .stats-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+    }
+
+    .stat-divider {
         display: none;
     }
 
-    .teaching-intro,
-    .teaching-gallery {
-        padding: 0 20px;
-        margin-bottom: 60px;
+    .stat-item {
+        padding: 20px 16px;
+        border-bottom: 1px solid #e0e0e0;
+        align-items: flex-start;
     }
 
-    .intro-text {
-        margin-bottom: 40px;
+    .stat-item:nth-child(odd) {
+        border-right: 1px solid #e0e0e0;
     }
 
-    .courses-wrapper {
+    .stat-number {
+        font-size: 22px;
+    }
+
+    .teaching-roles {
+        padding: 48px 0;
+    }
+
+    .roles-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
-        margin-bottom: 40px;
+        gap: 20px;
     }
 
-    .philosophy-text {
-        margin-top: 40px;
+    .teaching-philosophy {
+        padding: 48px 0;
     }
 
     .section-title {
-        font-size: 24px;
-        margin-bottom: 30px;
+        font-size: 26px;
+    }
+
+    .teaching-gallery {
+        padding: 48px 0;
     }
 
     .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .image-wrapper {
-        height: 250px;
+        height: 240px;
     }
 
-    .pre-footer {
-        padding: 40px 20px;
+    .teaching-cta {
+        padding: 48px 0;
     }
 
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
+    .teaching-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+
+    .teaching-cta h2 {
+        font-size: 24px;
+    }
+
+    .teaching-cta-actions {
+        flex-wrap: wrap;
     }
 }
 
-/* Small Mobile */
+/* ── Small Mobile ── */
 @media (max-width: 480px) {
-    .logo a {
-        font-size: 20px;
+    .teaching-title {
+        font-size: 28px;
     }
 
-    nav ul {
-        gap: 15px;
+    .stats-list {
+        grid-template-columns: 1fr;
     }
 
-    .course-heading {
-        font-size: 16px;
+    .stat-item {
+        border-right: none !important;
+        border-bottom: 1px solid #e0e0e0;
+        align-items: center;
+        text-align: center;
     }
 
-    .section-title {
-        font-size: 22px;
+    .stat-item:last-child {
+        border-bottom: none;
     }
 
     .image-wrapper {
-        height: 200px;
+        height: 210px;
+    }
+
+    .role-card {
+        padding: 20px;
     }
 }
 
-/* Reduced Motion */
+/* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
 
-    .dropdown-menu {
+    .gallery-image,
+    .role-card {
         transition: none;
     }
 }
 
-/* Print */
+/* ── Print ── */
 @media print {
 
-    header,
-    .back-to-top,
-    .header-social {
+    .teaching-cta,
+    .back-to-top {
         display: none;
     }
 
-    .gallery-card {
-        page-break-inside: avoid;
+    .role-card {
+        break-inside: avoid;
+        border: 1px solid #ccc;
     }
 }
