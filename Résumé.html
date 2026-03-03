@@ -4,31 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Donfack Fortune - Résumé, professional experience, and community work.">
-  <title>Résumé | Donfack Fortune - Mechanical Engineer & Educator</title>
+  <meta name="description"
+    content="Résumé of Donfack Fortune — Mechanical Engineer, FEA specialist, SolidWorks CAD instructor, and energy systems analyst based in Cameroon. Senior Engineer at CAMRAIL. Available for consulting, freelance, and teaching engagements.">
+  <meta name="keywords"
+    content="mechanical engineer resume Cameroon, SolidWorks FEA specialist, CAD instructor Douala, CAMRAIL engineer, energy systems analyst Africa">
+  <title>Résumé | Donfack Fortune — Mechanical Engineer & Energy Specialist</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/Résumé.css">
 </head>
 
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header role="banner">
-    <div class="header-wrapper">
-      <div class="header-logo">
-        <h1 class="logo"><a href="index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a></h1>
+  <header class="header" role="banner">
+    <div class="container header-wrapper">
+      <div class="logo">
+        <a href="index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
       </div>
-      <nav aria-label="Main navigation" role="navigation">
+      <nav class="header-nav" aria-label="Main navigation" role="navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Camrail.html">Camrail</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="Camrail.html" class="nav-link">Camrail</a></li>
           <li class="has-dropdown">
-            <a href="Projects.html">Projects</a>
+            <a href="Projects.html" class="nav-link">Projects</a>
             <ul class="dropdown-menu">
               <li><a href="Projects.html#all">All</a></li>
               <li><a href="Projects.html#simulation-driven">Simulation-Driven</a></li>
@@ -38,19 +41,19 @@
               <li><a href="Projects.html#user-centered">User-Centered</a></li>
             </ul>
           </li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="Résumé.html" class="active" aria-current="page">Résumé</a></li>
+          <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+          <li><a href="Résumé.html" class="nav-link active" aria-current="page">Résumé</a></li>
         </ul>
       </nav>
       <div class="header-social" role="complementary" aria-label="Social media links">
-        <a href="https://grabcad.com/donfack.fortune-1" aria-label="Visit GrabCAD profile" target="_blank"
+        <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD profile" target="_blank"
           rel="noopener noreferrer" class="social-link">
           <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
             <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff" font-family="Arial">GC</text>
           </svg>
         </a>
-        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" aria-label="Visit LinkedIn profile"
+        <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" aria-label="LinkedIn profile"
           target="_blank" rel="noopener noreferrer" class="social-link">
           <i class="fab fa-linkedin-in" aria-hidden="true"></i>
         </a>
@@ -58,388 +61,553 @@
     </div>
   </header>
 
-  <div class="cv-toggle-bar">
-    <div class="cv-toggle-container">
-      <button class="cv-toggle-btn active" data-cv="mechanical">Mechanical Engineering</button>
-      <button class="cv-toggle-btn" data-cv="educator">Educator</button>
-      <button class="cv-toggle-btn" data-cv="community">Community &amp; Impact</button>
+  <!-- Toggle Bar -->
+  <div class="cv-toggle-bar" role="navigation" aria-label="CV track selector">
+    <div class="container cv-toggle-wrapper">
+      <p class="cv-toggle-intro">I work across three professional tracks — select the one most relevant to you.</p>
+      <div class="cv-toggle-container" role="tablist" aria-label="Résumé sections">
+        <button class="cv-toggle-btn active" data-cv="mechanical" role="tab" aria-selected="true"
+          aria-controls="mechanical-cv">
+          <i class="fas fa-cogs" aria-hidden="true"></i> Mechanical Engineering
+        </button>
+        <button class="cv-toggle-btn" data-cv="educator" role="tab" aria-selected="false" aria-controls="educator-cv">
+          <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Educator
+        </button>
+        <button class="cv-toggle-btn" data-cv="community" role="tab" aria-selected="false" aria-controls="community-cv">
+          <i class="fas fa-users" aria-hidden="true"></i> Community &amp; Impact
+        </button>
+      </div>
     </div>
   </div>
 
   <main id="main-content" role="main">
 
-    <!-- Mechanical Engineering CV -->
-    <div class="cv-content active" id="mechanical-cv">
-      <section class="resume-hero">
-        <div class="resume-hero-content">
-          <h1 class="resume-name">Donfack Fortune</h1>
-          <div class="resume-location">
-            <p>From Douala, Cameroon</p>
-            <p>Lives &amp; works in Dschang</p>
-            <p>fortunedonfack05@gmail.com</p>
+    <!-- ══════════════════════════════════
+         MECHANICAL ENGINEERING CV
+    ══════════════════════════════════ -->
+    <div class="cv-content active" id="mechanical-cv" role="tabpanel" aria-labelledby="tab-mechanical">
+
+      <section class="resume-hero" aria-labelledby="mech-name">
+        <div class="container resume-hero-inner">
+          <div class="resume-hero-text">
+            <p class="resume-eyebrow">Mechanical Engineer · FEA Specialist · Energy Specialist</p>
+            <h1 class="resume-name" id="mech-name">Donfack Fortune</h1>
+            <p class="resume-summary">Simulation-driven mechanical engineer with hands-on experience in FEA, CAD
+              modelling, and industrial systems design at CAMRAIL. Specialising in structural analysis, sustainable
+              machinery, and energy systems for Cameroon's growing industrial sector.</p>
+            <div class="resume-meta">
+              <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Dschang, Cameroon</span>
+              <span><i class="fas fa-envelope" aria-hidden="true"></i> fortunedonfack05@gmail.com</span>
+            </div>
           </div>
-          <a href="assets/images/zip/DONFACK FORTUNE - Mechanical Engineer.pdf" download class="download-btn">Download
-            Résumé</a>
+          <div class="resume-hero-actions">
+            <a href="assets/images/zip/DONFACK FORTUNE - Mechanical Engineer.pdf" download class="btn btn-primary">
+              <i class="fas fa-download" aria-hidden="true"></i> Download PDF
+            </a>
+            <a href="index.html#contact" class="btn btn-outline">Hire Me</a>
+          </div>
         </div>
       </section>
-      <div class="resume-layout">
+
+      <div class="container resume-layout">
         <div class="resume-main">
-          <section class="resume-section">
-            <h2 class="section-title">Education</h2>
+
+          <section class="resume-section" aria-labelledby="mech-edu-title">
+            <h2 class="resume-section-title" id="mech-edu-title">Education</h2>
             <article class="resume-entry">
-              <h3 class="entry-title">Higher Technical Teacher Training College (ENSET)</h3>
-              <p class="entry-details">Sep 2019 - Jun 2024</p>
-              <p class="entry-description">Master's degree in Mechanical Engineering</p>
-              <p class="entry-details">GPA: 3.52/5.0</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Master's in Mechanical Engineering</h3>
+                  <p class="entry-subtitle">Higher Technical Teacher Training College (ENSET), Douala</p>
+                </div>
+                <span class="entry-date">Sep 2022 – Jun 2024</span>
+              </div>
+              <p class="entry-detail">GPA: 3.52 / 5.0 &nbsp;·&nbsp; <strong>Honours College Graduate</strong></p>
             </article>
             <article class="resume-entry">
-              <h3 class="entry-title">Higher Technical Teacher Training College (ENSET)</h3>
-              <p class="entry-details">Sep 2019 - Jun 2022</p>
-              <p class="entry-description">Bachelor's degree in Mechanical Engineering, Mechanical Construction</p>
-              <p class="entry-details">GPA: 3.63/5.0 | Honors College</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Bachelor's in Mechanical Engineering — Mechanical Construction</h3>
+                  <p class="entry-subtitle">Higher Technical Teacher Training College (ENSET), Douala</p>
+                </div>
+                <span class="entry-date">Sep 2019 – Jun 2022</span>
+              </div>
+              <p class="entry-detail">GPA: 3.63 / 5.0 &nbsp;·&nbsp; <strong>Honours College Graduate</strong></p>
             </article>
           </section>
 
-          <section class="resume-section">
-            <h2 class="section-title">Selected Experiences</h2>
+          <section class="resume-section" aria-labelledby="mech-exp-title">
+            <h2 class="resume-section-title" id="mech-exp-title">Experience</h2>
+
             <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Apr 2025 - Jan 2026</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Cameroon Railway Company (CAMRAIL) — Mechanical Engineer</h3>
+                  <p class="entry-subtitle">Braking System Department, Douala</p>
+                </div>
+                <span class="entry-date">Apr 2021 – Aug 2021</span>
               </div>
-              <h3 class="entry-title">Formula SAE Car - Mechanical Design</h3>
-              <p class="entry-subtitle">Self-Employed - Personal Project, Douala</p>
+              <ul class="entry-list">
+                <li>Led intercity train initiatives creating 3D models and technical drawings using AutoCAD and
+                  SolidWorks, presented to Tech office for approval.</li>
+                <li>Mentored junior engineers optimising Rk7 sole holder and braking triangle using FEA and CFD,
+                  expanding system performance by <strong>35%</strong> on time and within budget.</li>
+              </ul>
+            </article>
+
+            <article class="resume-entry">
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Alu-Bassa Cameroon — Mechanical Designer</h3>
+                  <p class="entry-subtitle">Design Office, Douala</p>
+                </div>
+                <span class="entry-date">Nov 2023 – Aug 2024</span>
+              </div>
+              <ul class="entry-list">
+                <li>Spearheaded optimisation of five hydraulic press machines implementing DFM and GD&amp;T,
+                  streamlining two-phase to single-phase process, achieving <strong>30% efficiency gain</strong> and
+                  <strong>65% profit increase</strong>.
+                </li>
+                <li>Reduced project time by <strong>25%</strong> using FMEA and DFMEA during task monitoring and
+                  implementation.</li>
+              </ul>
+            </article>
+
+            <article class="resume-entry">
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Samara-Tech — Mechanical Engineer</h3>
+                  <p class="entry-subtitle">Revision Office, Douala</p>
+                </div>
+                <span class="entry-date">Jun 2023 – Aug 2023</span>
+              </div>
+              <ul class="entry-list">
+                <li>Researched new design and production techniques, presented weekly reports to manufacturing team
+                  using Excel data visualisation.</li>
+                <li>Reduced production errors below <strong>3%</strong> through quality assurance protocols, decreasing
+                  defect expenses by <strong>15%</strong>.</li>
+              </ul>
+            </article>
+
+            <article class="resume-entry">
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">University of Douala — Research Assistant</h3>
+                  <p class="entry-subtitle">Banana Pseudo-Tronc Shredding Machine, Mechanical Department</p>
+                </div>
+                <span class="entry-date">Apr 2025 – May 2025</span>
+              </div>
+              <ul class="entry-list">
+                <li>Supervised mechanical design and component sizing, integrating constraints analysis and safety
+                  standards optimised for Cameroonian operating conditions.</li>
+                <li>Provided technical leadership, mentoring team on agricultural machinery design for low-cost biomass
+                  waste valorisation.</li>
+              </ul>
+            </article>
+
+            <article class="resume-entry">
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">University of Douala — Research Assistant</h3>
+                  <p class="entry-subtitle">Electrical Department, System Testing and Design</p>
+                </div>
+                <span class="entry-date">Jan 2022 – Mar 2022</span>
+              </div>
+              <ul class="entry-list">
+                <li>Conducted rigorous testing on electrical systems using Arduino and Simulink MATLAB, resulting in
+                  <strong>20% efficiency increase</strong> for department applications.
+                </li>
+                <li>Spearheaded Pedal Power Mobile Phone Charger development, mitigating campus energy shortages by
+                  <strong>25%</strong>.
+                </li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="resume-section" aria-labelledby="mech-projects-title">
+            <h2 class="resume-section-title" id="mech-projects-title">Selected Projects</h2>
+
+            <article class="resume-entry">
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Formula SAE Car — Full Vehicle Design</h3>
+                  <p class="entry-subtitle">Personal Project · SolidWorks · ANSYS</p>
+                </div>
+                <span class="entry-date">Apr 2025 – Jan 2026</span>
+              </div>
               <ul class="entry-list">
                 <li>Completed full conceptual and mechanical design of FSAE vehicle including chassis, suspension,
                   steering, powertrain, and structural analysis ensuring Formula SAE compliance.</li>
-                <li>Performed detailed CAD modelling and simulation workflows (structural, dynamic, crash) to optimize
-                  weight distribution, stiffness, and manufacturability for prototyping.</li>
+                <li>Performed detailed CAD modelling and simulation workflows (structural, dynamic, crash) to optimise
+                  weight distribution, stiffness, and manufacturability.</li>
               </ul>
             </article>
+
             <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Sep 2025</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Motorised Wheelbarrow — User-Centred Design</h3>
+                  <p class="entry-subtitle">Personal Project · Fabrication · Electromechanical Integration</p>
+                </div>
+                <span class="entry-date">Sep 2025</span>
               </div>
-              <h3 class="entry-title">Motorized Wheelbarrow - Mechanical Design</h3>
-              <p class="entry-subtitle">Self-Employed - Personal Project, Douala</p>
               <ul class="entry-list">
-                <li>Led end-to-end development using hands-on fabrication (welding, cutting, assembly), optimizing
-                  ergonomics for users 1.50–1.90m, completed in three weeks without CAD.</li>
+                <li>Led end-to-end development using hands-on fabrication (welding, cutting, assembly), optimising
+                  ergonomics for users 1.50–1.90m, completed in three weeks.</li>
                 <li>Directed multidisciplinary team in mechanical-electrical integration, sourcing reconditioned
-                  e-scooter motor, delivering user-centered solution for construction and agriculture.</li>
+                  e-scooter motor for construction and agriculture applications.</li>
               </ul>
             </article>
+
             <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Apr 2025 - May 2025</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Beans Unwrapping Machine</h3>
+                  <p class="entry-subtitle">Personal Project · ANSYS Vibration Analysis</p>
+                </div>
+                <span class="entry-date">Mar 2022 – May 2022</span>
               </div>
-              <h3 class="entry-title">University of Douala - Research Assistant</h3>
-              <p class="entry-subtitle">Mechanical Department, Banana Pseudo Shredding Machine</p>
               <ul class="entry-list">
-                <li>Supervised mechanical design and component sizing, integrating constraints analysis and safety
-                  standards optimized for Cameroonian operating conditions.</li>
-                <li>Provided technical leadership, mentoring team on agricultural machinery design for low-cost biomass
-                  waste valorisation machine.</li>
-              </ul>
-            </article>
-            <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Nov 2023 - Aug 2023</p>
-              </div>
-              <h3 class="entry-title">Alu-Bassa Cameroon - Mechanical Designer</h3>
-              <p class="entry-subtitle">Design Office, Douala</p>
-              <ul class="entry-list">
-                <li>Spearheaded optimisation of five hydraulic press machines implementing DFM and GD&amp;T,
-                  streamlining two-phase to single-phase process, achieving 30% efficiency gain and 65% profit increase.
-                </li>
-                <li>Reduced project time by 25% using Failure Mode and Effect Analysis (FMEA) and DFMEA during task
-                  monitoring and implementation.</li>
-              </ul>
-            </article>
-            <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Jun 2023 - Aug 2023</p>
-              </div>
-              <h3 class="entry-title">Samara-tech - Mechanical Engineer</h3>
-              <p class="entry-subtitle">Revision Office, Douala</p>
-              <ul class="entry-list">
-                <li>Researched new design and production techniques, presented weekly reports to manufacturing team
-                  using Excel slicers after data cleaning and visualization.</li>
-                <li>Reduced production errors below 3% through quality assurance protocols and real-time monitoring,
-                  decreasing defect expenses by 15%.</li>
-              </ul>
-            </article>
-            <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Apr 2021 - Aug 2021</p>
-              </div>
-              <h3 class="entry-title">Cameroon Railway Company (CAMRAIL) - Mechanical Engineer</h3>
-              <p class="entry-subtitle">Braking System Department, Douala</p>
-              <ul class="entry-list">
-                <li>Led intercity train initiatives creating 3D and technical drawings using AutoCAD and SolidWorks,
-                  presenting to Tech office for approval.</li>
-                <li>Mentored junior engineers optimising Rk7 sole holder and braking triangle using FEA and CFD,
-                  expanding system performance by 35% on time and within budget.</li>
-              </ul>
-            </article>
-            <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Mar 2022 - May 2022</p>
-              </div>
-              <h3 class="entry-title">Beans Unwrapping Machine - Mechanical Design</h3>
-              <p class="entry-subtitle">Self-Employed - Personal Project, Maroua</p>
-              <ul class="entry-list">
-                <li>Designed and built high-speed, high-precision machine using parallel lathe and milling, achieving
-                  25% increase in bean production efficiency for local farmers.</li>
-                <li>Employed mechanical vibration analysis using ANSYS ensuring operational stability, minimizing
-                  breakdowns by 30%, reducing maintenance costs.</li>
-              </ul>
-            </article>
-            <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Jan 2022 - Mar 2022</p>
-              </div>
-              <h3 class="entry-title">University of Douala - Research Assistant</h3>
-              <p class="entry-subtitle">Electrical Department, System Testing and Design</p>
-              <ul class="entry-list">
-                <li>Conducted rigorous testing on electrical systems using Arduino and Simulink MATLAB, resulting in 20%
-                  efficiency increase for department applications.</li>
-                <li>Spearheaded Pedal Power Mobile Phone Charger (PPMPC) development, mitigating campus energy shortages
-                  by 25%, demonstrating leadership in sustainable engineering.</li>
-              </ul>
-            </article>
-            <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Feb 2022 - Mar 2022</p>
-              </div>
-              <h3 class="entry-title">Pedal-Powered Charger - Mechanical Design</h3>
-              <p class="entry-subtitle">ENSET Douala - Personal Project</p>
-              <ul class="entry-list">
-                <li>Led end-to-end development coordinating interdisciplinary team through research, CAD modelling,
-                  prototyping, and optimization for university energy scarcity.</li>
-                <li>Applied DFM, SolidWorks analysis, and user-centered design; validated performance through
-                  simulations exceeding 800N load capacity with structural optimization.</li>
+                <li>Designed and built high-precision machine achieving <strong>25% increase</strong> in bean production
+                  efficiency for local farmers.</li>
+                <li>Employed mechanical vibration analysis using ANSYS ensuring operational stability, minimising
+                  breakdowns by <strong>30%</strong>.</li>
               </ul>
             </article>
           </section>
 
-          <section class="resume-section">
-            <h2 class="section-title">Awards and Honors</h2>
-            <article class="resume-entry-simple">
-              <p class="entry-date">2025</p>
-              <p class="entry-description">Honors College Graduate - Master's in Technology</p>
-            </article>
-            <article class="resume-entry-simple">
-              <p class="entry-date">2024</p>
-              <p class="entry-description">Honors College Graduate - ENSET Douala</p>
-            </article>
-            <article class="resume-entry-simple">
-              <p class="entry-date">2022</p>
-              <p class="entry-description">Best Project Award - Third Place - ENSET Douala</p>
-            </article>
-            <article class="resume-entry-simple">
-              <p class="entry-date">2022</p>
-              <p class="entry-description">Honors College Graduate - ENSET Douala</p>
-            </article>
+          <section class="resume-section" aria-labelledby="mech-awards-title">
+            <h2 class="resume-section-title" id="mech-awards-title">Awards &amp; Honours</h2>
+            <div class="awards-list">
+              <div class="award-item">
+                <span class="award-year">2025</span>
+                <span class="award-desc">Honours College Graduate — Master's in Technology, ENSET Douala</span>
+              </div>
+              <div class="award-item">
+                <span class="award-year">2024</span>
+                <span class="award-desc">Honours College Graduate — ENSET Douala</span>
+              </div>
+              <div class="award-item">
+                <span class="award-year">2022</span>
+                <span class="award-desc">Best Project Award — Third Place, ENSET Douala</span>
+              </div>
+              <div class="award-item">
+                <span class="award-year">2022</span>
+                <span class="award-desc">Honours College Graduate — ENSET Douala</span>
+              </div>
+            </div>
           </section>
+
         </div>
 
-        <aside class="resume-sidebar">
-          <section class="resume-section">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-category">
-              <h3 class="category-title">Software:</h3>
-              <p class="category-content">SolidWorks, Onshape, MATLAB, AutoCAD Mechanical, Keyshot, ANSYS, Adobe
-                Premiere Pro, After Effects, Photoshop, Excel, Python</p>
+        <aside class="resume-sidebar" aria-label="Skills and certifications">
+
+          <section class="resume-section" aria-labelledby="mech-skills-title">
+            <h2 class="resume-section-title" id="mech-skills-title">Skills</h2>
+
+            <div class="skills-group">
+              <h3 class="skills-group-label">Software</h3>
+              <div class="skills-tags">
+                <span class="skill-tag">SolidWorks</span>
+                <span class="skill-tag">ANSYS</span>
+                <span class="skill-tag">AutoCAD</span>
+                <span class="skill-tag">Onshape</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">Keyshot</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Excel</span>
+              </div>
             </div>
-            <div class="skills-category">
-              <h3 class="category-title">Technical:</h3>
-              <p class="category-content">3D Design, CAD Modelling, Finite Element Analysis, Computational Fluid
-                Dynamics, GD&amp;T, FMEA, DFM, Additive Manufacturing, Mechanical Vibration Analysis</p>
+
+            <div class="skills-group">
+              <h3 class="skills-group-label">Technical</h3>
+              <div class="skills-tags">
+                <span class="skill-tag">FEA</span>
+                <span class="skill-tag">CFD</span>
+                <span class="skill-tag">CAD Modelling</span>
+                <span class="skill-tag">GD&amp;T</span>
+                <span class="skill-tag">FMEA</span>
+                <span class="skill-tag">DFM</span>
+                <span class="skill-tag">Additive Mfg</span>
+                <span class="skill-tag">Vibration Analysis</span>
+              </div>
             </div>
-            <div class="skills-category">
-              <h3 class="category-title">Laboratory:</h3>
-              <p class="category-content">3D Printers, mill, lathe, drills, saws, MIG welding, sheet metal tools, water
-                jet, laser cutter, metal casting</p>
+
+            <div class="skills-group">
+              <h3 class="skills-group-label">Workshop</h3>
+              <div class="skills-tags">
+                <span class="skill-tag">MIG Welding</span>
+                <span class="skill-tag">Lathe</span>
+                <span class="skill-tag">Mill</span>
+                <span class="skill-tag">Laser Cutter</span>
+                <span class="skill-tag">3D Printing</span>
+                <span class="skill-tag">Water Jet</span>
+              </div>
             </div>
           </section>
-          <section class="resume-section">
-            <h2 class="section-title">Certifications</h2>
-            <ul class="certifications-list">
-              <li>Certified Professional 3D Designer – UDEMY, SOLIDWORKS (2021)</li>
-              <li>Certified Professional 2D Drafter – UDEMY, AUTOCAD (2022)</li>
-              <li>GD&amp;T Specialist – UDEMY (2024)</li>
-              <li>Failure Mode and Effects Professional – AIGPE (2024)</li>
-              <li>Additive Manufacturing Certified – SOLIDWORKS (2024)</li>
-              <li>ANSYS Advanced User Certified – Ansys (2024)</li>
-              <li>MATLAB Professional – MATLAB (2024)</li>
+
+          <section class="resume-section" aria-labelledby="mech-cert-title">
+            <h2 class="resume-section-title" id="mech-cert-title">Certifications</h2>
+            <ul class="cert-list">
+              <li>
+                <span class="cert-year">2024</span>
+                <a href="https://www.solidworks.com/certifications" target="_blank" rel="noopener noreferrer"
+                  class="cert-name">Additive Manufacturing Certified — SOLIDWORKS</a>
+              </li>
+              <li>
+                <span class="cert-year">2024</span>
+                <a href="https://www.ansys.com/training-center/certifications" target="_blank" rel="noopener noreferrer"
+                  class="cert-name">Advanced User Certified — ANSYS</a>
+              </li>
+              <li>
+                <span class="cert-year">2024</span>
+                <a href="https://www.aigpe.com" target="_blank" rel="noopener noreferrer" class="cert-name">Failure Mode
+                  &amp; Effects Professional — AIGPE</a>
+              </li>
+              <li>
+                <span class="cert-year">2024</span>
+                <a href="https://www.mathworks.com/learn/certification.html" target="_blank" rel="noopener noreferrer"
+                  class="cert-name">MATLAB Professional — MathWorks</a>
+              </li>
+              <li>
+                <span class="cert-year">2024</span>
+                <a href="https://www.udemy.com" target="_blank" rel="noopener noreferrer" class="cert-name">GD&amp;T
+                  Specialist — UDEMY</a>
+              </li>
+              <li>
+                <span class="cert-year">2022</span>
+                <a href="https://www.udemy.com" target="_blank" rel="noopener noreferrer" class="cert-name">Certified
+                  Professional 2D Drafter — AutoCAD</a>
+              </li>
+              <li>
+                <span class="cert-year">2021</span>
+                <a href="https://www.solidworks.com/certifications" target="_blank" rel="noopener noreferrer"
+                  class="cert-name">Certified Professional 3D Designer — SOLIDWORKS</a>
+              </li>
             </ul>
           </section>
+
         </aside>
       </div>
     </div>
 
-    <!-- Educator CV -->
-    <div class="cv-content" id="educator-cv">
-      <section class="resume-hero">
-        <div class="resume-hero-content">
-          <h1 class="resume-name">Donfack Fortune</h1>
-          <div class="resume-location">
-            <p>From Douala, Cameroon</p>
-            <p>Lives &amp; works in Dschang</p>
-            <p>fortunedonfack05@gmail.com</p>
+    <!-- ══════════════════════════════════
+         EDUCATOR CV
+    ══════════════════════════════════ -->
+    <div class="cv-content" id="educator-cv" role="tabpanel" aria-labelledby="tab-educator">
+
+      <section class="resume-hero" aria-labelledby="edu-name">
+        <div class="container resume-hero-inner">
+          <div class="resume-hero-text">
+            <p class="resume-eyebrow">Technical Educator · CAD Trainer · Department Head</p>
+            <h1 class="resume-name" id="edu-name">Donfack Fortune</h1>
+            <p class="resume-summary">State-accredited technical educator and SolidWorks group leader with 12 courses
+              taught across secondary and university levels. Reaching 300+ students through classroom instruction, CAD
+              workshops, and structured mentorship programmes.</p>
+            <div class="resume-meta">
+              <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Dschang, Cameroon</span>
+              <span><i class="fas fa-envelope" aria-hidden="true"></i> fortunedonfack05@gmail.com</span>
+            </div>
           </div>
-          <a href="assets/images/zip/DONFACK FORTUNE- Educator.pdf" download class="download-btn">Download Résumé</a>
+          <div class="resume-hero-actions">
+            <a href="assets/images/zip/DONFACK FORTUNE- Educator.pdf" download class="btn btn-primary">
+              <i class="fas fa-download" aria-hidden="true"></i> Download PDF
+            </a>
+            <a href="index.html#contact" class="btn btn-outline">Book a Workshop</a>
+          </div>
         </div>
       </section>
-      <div class="resume-layout">
+
+      <div class="container resume-layout">
         <div class="resume-main">
-          <section class="resume-section">
-            <h2 class="section-title">Education</h2>
+
+          <section class="resume-section" aria-labelledby="edu-edu-title">
+            <h2 class="resume-section-title" id="edu-edu-title">Education</h2>
             <article class="resume-entry">
-              <h3 class="entry-title">Higher Technical Teacher Training College (ENSET)</h3>
-              <p class="entry-details">Sep 2022 - Jun 2024</p>
-              <p class="entry-description">Master's degree in Mechanical Engineering</p>
-              <p class="entry-details">GPA: 3.52/5.0 | Honors College</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Master's in Mechanical Engineering</h3>
+                  <p class="entry-subtitle">Higher Technical Teacher Training College (ENSET), Douala</p>
+                </div>
+                <span class="entry-date">Sep 2022 – Jun 2024</span>
+              </div>
+              <p class="entry-detail">GPA: 3.52 / 5.0 &nbsp;·&nbsp; <strong>Honours College Graduate</strong></p>
             </article>
             <article class="resume-entry">
-              <h3 class="entry-title">Higher Technical Teacher Training College (ENSET)</h3>
-              <p class="entry-details">Sep 2019 - Jun 2022</p>
-              <p class="entry-description">Bachelor's degree in Mechanical Engineering, Mechanical Construction</p>
-              <p class="entry-details">GPA: 3.63/5.0 | Honors College</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Bachelor's in Mechanical Engineering — Mechanical Construction</h3>
+                  <p class="entry-subtitle">Higher Technical Teacher Training College (ENSET), Douala</p>
+                </div>
+                <span class="entry-date">Sep 2019 – Jun 2022</span>
+              </div>
+              <p class="entry-detail">GPA: 3.63 / 5.0 &nbsp;·&nbsp; <strong>Honours College Graduate</strong></p>
             </article>
           </section>
 
-          <section class="resume-section">
-            <h2 class="section-title">Professional Experience</h2>
+          <section class="resume-section" aria-labelledby="edu-exp-title">
+            <h2 class="resume-section-title" id="edu-exp-title">Teaching Experience</h2>
+
             <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Nov 2024 - Present</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">Technical College Fongo-Tongo — Professor &amp; Department Head</h3>
+                  <p class="entry-subtitle">Head of Mathematics &amp; IT Department, Dschang</p>
+                </div>
+                <span class="entry-date">Nov 2024 – Present</span>
               </div>
-              <h3 class="entry-title">Technical College Fongo-Tongo - Professor</h3>
-              <p class="entry-subtitle">Head of the Mathematics and IT Department, Dschang</p>
               <ul class="entry-list">
-                <li>Lead the Mathematics and IT Department, overseeing 10+ teaching staff and coordinating curriculum
-                  delivery for 200+ secondary and technical students, ensuring alignment with national
-                  technical-education standards and assessment requirements.</li>
-                <li>Designed and implemented data-driven teaching strategies and digital learning tools (mathematics
-                  instruction, basic programming, and ICT literacy), contributing to improved student pass rates by 73%,
-                  curriculum coherence, and departmental instructional efficiency.</li>
+                <li>Lead the Mathematics and IT Department, overseeing <strong>10+ teaching staff</strong> and
+                  coordinating curriculum delivery for <strong>200+ students</strong>, ensuring alignment with national
+                  technical-education standards.</li>
+                <li>Implemented data-driven teaching strategies and digital learning tools, contributing to <strong>73%
+                    improvement</strong> in student pass rates, curriculum coherence, and departmental efficiency.</li>
               </ul>
             </article>
+
             <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Feb 2023 - Present</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">SOLIDWORKS User Group — Group Leader</h3>
+                  <p class="entry-subtitle">Dassault Systèmes, Douala City SWUG</p>
+                </div>
+                <span class="entry-date">Feb 2023 – Present</span>
               </div>
-              <h3 class="entry-title">SOLIDWORKS User Group - Group Leader</h3>
-              <p class="entry-subtitle">Dassault Systems, Douala</p>
               <ul class="entry-list">
-                <li>Lead and coordinate the Douala SOLIDWORKS User Group, organising 15+ technical workshops, 12+
-                  webinars, and certification-oriented sessions for 300+ students and professional engineers, promoting
-                  best practices in CAD, mechanical design, and product development.</li>
-                <li>Act as the primary liaison with Dassault Systems, supporting community growth, knowledge transfer,
-                  and certification pathways, and contributing to increased member engagement, skills development, and
-                  professional networking outcomes within the regional engineering ecosystem.</li>
+                <li>Lead Douala's official SolidWorks User Group, organising <strong>15+ technical workshops</strong>
+                  and <strong>12+ webinars</strong> for <strong>300+ students and professional engineers</strong>.</li>
+                <li>Primary liaison with Dassault Systèmes, supporting community growth, knowledge transfer, and
+                  certification pathways across the regional engineering ecosystem.</li>
               </ul>
             </article>
+
             <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Jan 2024 - Mar 2024</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">ENSET Douala — Assistant Professor</h3>
+                  <p class="entry-subtitle">Mechanical Engineering Department</p>
+                </div>
+                <span class="entry-date">Jan 2024 – Mar 2024</span>
               </div>
-              <h3 class="entry-title">Higher Technical Teachers Training College - Assistant Professor</h3>
-              <p class="entry-subtitle">Mechanical Engineering Department, Douala</p>
               <ul class="entry-list">
-                <li>Contributed to the delivery of 6 undergraduate-level modules (Product Engineering Processes, Design
-                  &amp; Manufacturing I, Toy Product Design, Introduction to Design, Global Engineering, Explorations in
-                  Mechanical Engineering), supporting teaching activities for 80+ engineering students.</li>
-                <li>Supported assessment and project-based learning by supervising 10+ student design projects,
-                  integrating CAD-driven workflows and manufacturability principles, resulting in improved project
-                  completion quality and technical reporting standards.</li>
+                <li>Delivered 6 undergraduate modules supporting <strong>80+ engineering students</strong>: Product
+                  Engineering Processes, Design &amp; Manufacturing I, Toy Product Design, Introduction to Design,
+                  Global Engineering, Explorations in Mechanical Engineering.</li>
+                <li>Supervised <strong>10+ student design projects</strong> integrating CAD-driven workflows and
+                  manufacturability principles.</li>
               </ul>
             </article>
           </section>
 
-          <section class="resume-section">
-            <h2 class="section-title">Mentoring</h2>
+          <section class="resume-section" aria-labelledby="edu-mentor-title">
+            <h2 class="resume-section-title" id="edu-mentor-title">Mentoring</h2>
             <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Feb 2023 - Present</p>
+              <div class="entry-row">
+                <div>
+                  <h3 class="entry-title">SOLIDWORKS User Group &amp; ENSET Douala</h3>
+                  <p class="entry-subtitle">Individual &amp; small-group mentoring</p>
+                </div>
+                <span class="entry-date">Jan 2024 – Present</span>
               </div>
-              <h3 class="entry-title">SOLIDWORKS User Group</h3>
-              <p class="entry-subtitle">Dassault Systems, Douala</p>
               <ul class="entry-list">
-                <li>Mentored 20+ undergraduate and technical-college students in mechanical design, CAD (SOLIDWORKS),
-                  mathematics, and career development, providing structured guidance on project execution, technical
-                  reporting, and certification pathways.</li>
-              </ul>
-            </article>
-            <article class="resume-entry">
-              <div class="entry-header">
-                <p class="entry-date">Jan 2024 - Mar 2024</p>
-              </div>
-              <h3 class="entry-title">Higher Technical Teachers Training College</h3>
-              <p class="entry-subtitle">Mechanical Engineering Department, Douala</p>
-              <ul class="entry-list">
-                <li>Provided one-to-one and small-group mentoring that supported academic progression, improved
-                  technical confidence, and successful participation in design projects, workshops, and professional
+                <li>Mentored <strong>20+ students</strong> in mechanical design, SolidWorks CAD, mathematics, and career
+                  development — providing structured guidance on project execution and certification pathways.</li>
+                <li>Supported academic progression, improved technical confidence, and participation in professional
                   engineering communities.</li>
               </ul>
             </article>
           </section>
 
-          <section class="resume-section">
-            <h2 class="section-title">Diplomas</h2>
-            <article class="resume-entry-simple">
-              <p class="entry-date">2024</p>
-              <p class="entry-description">State Accredited Educator Grade II - With Honours</p>
-            </article>
-            <article class="resume-entry-simple">
-              <p class="entry-date">2022</p>
-              <p class="entry-description">State Accredited Educator Grade I - With Honours</p>
-            </article>
+          <section class="resume-section" aria-labelledby="edu-diplomas-title">
+            <h2 class="resume-section-title" id="edu-diplomas-title">State Diplomas</h2>
+            <div class="awards-list">
+              <div class="award-item">
+                <span class="award-year">2024</span>
+                <span class="award-desc">State Accredited Educator Grade II — With Honours</span>
+              </div>
+              <div class="award-item">
+                <span class="award-year">2022</span>
+                <span class="award-desc">State Accredited Educator Grade I — With Honours</span>
+              </div>
+            </div>
           </section>
+
         </div>
 
-        <aside class="resume-sidebar">
-          <section class="resume-section">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-category">
-              <h3 class="category-title">Technical Proficiency:</h3>
-              <p class="category-content">SolidWorks, MATLAB, AutoCAD Mechanical, Keyshot, ANSYS, Adobe Premiere Pro,
-                After Effects, Photoshop, Excel, Python, Teams, Google Meet, Office, Virtual Assistance</p>
+        <aside class="resume-sidebar" aria-label="Teaching skills">
+          <section class="resume-section" aria-labelledby="edu-skills-title">
+            <h2 class="resume-section-title" id="edu-skills-title">Skills</h2>
+
+            <div class="skills-group">
+              <h3 class="skills-group-label">Technical</h3>
+              <div class="skills-tags">
+                <span class="skill-tag">SolidWorks</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">AutoCAD</span>
+                <span class="skill-tag">ANSYS</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Excel</span>
+              </div>
             </div>
-            <div class="skills-category">
-              <h3 class="category-title">Soft Skills:</h3>
-              <p class="category-content">Creativity, Multicultural Team Leadership, Curriculum Development, Student
-                Assessment, Educational Technology Integration</p>
+
+            <div class="skills-group">
+              <h3 class="skills-group-label">Teaching</h3>
+              <div class="skills-tags">
+                <span class="skill-tag">Curriculum Design</span>
+                <span class="skill-tag">Project-Based Learning</span>
+                <span class="skill-tag">Student Assessment</span>
+                <span class="skill-tag">Ed-Tech Integration</span>
+                <span class="skill-tag">Workshop Facilitation</span>
+              </div>
             </div>
-            <div class="skills-category">
-              <h3 class="category-title">Teaching Modules:</h3>
-              <p class="category-content">Product Engineering Processes, Design &amp; Manufacturing, Toy Product Design,
-                Introduction to Design, Global Engineering, Explorations in Mechanical Engineering, Mathematics, ICT
-                Literacy</p>
+
+            <div class="skills-group">
+              <h3 class="skills-group-label">Modules Taught</h3>
+              <div class="skills-tags">
+                <span class="skill-tag">Mathematics</span>
+                <span class="skill-tag">ICT Literacy</span>
+                <span class="skill-tag">Product Engineering</span>
+                <span class="skill-tag">Design &amp; Mfg</span>
+                <span class="skill-tag">Global Engineering</span>
+                <span class="skill-tag">Introduction to Design</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3 class="skills-group-label">Platforms</h3>
+              <div class="skills-tags">
+                <span class="skill-tag">MS Teams</span>
+                <span class="skill-tag">Google Meet</span>
+                <span class="skill-tag">Office 365</span>
+                <span class="skill-tag">Adobe Premiere</span>
+              </div>
             </div>
           </section>
         </aside>
       </div>
     </div>
 
-    <!-- Community & Impact Panel -->
-    <div class="cv-content" id="community-cv">
-      <section class="community-hero">
-        <div class="community-hero-content">
-          <p class="community-label">Beyond Engineering</p>
-          <h1 class="community-title">Community &amp; Impact</h1>
+    <!-- ══════════════════════════════════
+         COMMUNITY & IMPACT
+    ══════════════════════════════════ -->
+    <div class="cv-content" id="community-cv" role="tabpanel" aria-labelledby="tab-community">
+
+      <section class="community-hero" aria-labelledby="community-title">
+        <div class="container">
+          <p class="hero-eyebrow">Beyond Engineering</p>
+          <h1 class="community-title" id="community-title">Community &amp; Impact</h1>
           <p class="community-sub">Three platforms where I share knowledge, build communities, and drive change across
             Cameroon and beyond.</p>
         </div>
       </section>
 
-      <section class="pillars">
-        <article class="pillar-card">
+      <section class="pillars" aria-label="Community platforms">
+
+        <article class="pillar-card" aria-labelledby="pillar-4tun-title">
           <div class="pillar-cover">
-            <img src="assets/images/4TunHub Cover.png" alt="4Tun Learning Hub">
+            <img src="assets/images/4TunHub Cover.png" alt="4TunHub Learning Hub cover" loading="lazy">
             <div class="pillar-logo-wrap">
-              <img src="assets/images/4TunHub Logo.png" alt="4TunHub logo" class="pillar-logo">
+              <img src="assets/images/4TunHub Logo.png" alt="4TunHub logo" class="pillar-logo" loading="lazy">
             </div>
           </div>
           <div class="pillar-body">
@@ -447,11 +615,11 @@
               <span class="pillar-tag">Education</span>
               <span class="pillar-tag">Cameroon &amp; Abroad</span>
             </div>
-            <h2 class="pillar-title">4TunHub Learning Hub</h2>
+            <h2 class="pillar-title" id="pillar-4tun-title">4TunHub Learning Hub</h2>
             <p class="pillar-desc">4TunHub is an educational community platform dedicated to empowering students and
-              young professionals in Cameroon and across Africa. Through structured learning programs, tutorial content,
-              and mentorship sessions, I bridge the gap between academic theory and real-world engineering practice —
-              making quality technical education accessible to all.</p>
+              young professionals in Cameroon and across Africa. Through structured learning programmes, tutorial
+              content, and mentorship sessions, I bridge the gap between academic theory and real-world engineering
+              practice — making quality technical education accessible to all.</p>
             <div class="pillar-links">
               <a href="https://youtube.com/@4tunhub" target="_blank" rel="noopener noreferrer"
                 class="pillar-link pillar-link--yt">
@@ -465,13 +633,13 @@
           </div>
         </article>
 
-        <article class="pillar-card pillar-card--alt">
+        <article class="pillar-card pillar-card--alt" aria-labelledby="pillar-rem-title">
           <div class="pillar-cover">
             <img src="assets/images/Renewable Energy Mall & Engineering Reviews Cover.png"
-              alt="Renewable Energy Mall & Engineering Review">
+              alt="Renewable Energy Mall & Engineering Review cover" loading="lazy">
             <div class="pillar-logo-wrap">
               <img src="assets/images/Renewable Energy Mall & Engineering Reviews Logo.png" alt="REM logo"
-                class="pillar-logo">
+                class="pillar-logo" loading="lazy">
             </div>
           </div>
           <div class="pillar-body">
@@ -479,11 +647,11 @@
               <span class="pillar-tag">Renewable Energy</span>
               <span class="pillar-tag">Weekly Newsletter</span>
             </div>
-            <h2 class="pillar-title">Renewable Energy Mall &amp; Engineering Review</h2>
+            <h2 class="pillar-title" id="pillar-rem-title">Renewable Energy Mall &amp; Engineering Review</h2>
             <p class="pillar-desc">REM is a weekly newsletter and knowledge platform focused on renewable energy
               solutions, sustainable engineering, and green technology. Each edition curates the latest developments in
-              clean energy and environmental design — tailored for engineers, students, and
-              decision-makers committed to a sustainable future.</p>
+              clean energy and environmental design — tailored for engineers, students, and decision-makers committed to
+              a sustainable future.</p>
             <div class="pillar-links">
               <a href="https://donfackfortune.medium.com" target="_blank" rel="noopener noreferrer"
                 class="pillar-link pillar-link--yt">
@@ -497,13 +665,13 @@
           </div>
         </article>
 
-        <article class="pillar-card">
+        <article class="pillar-card" aria-labelledby="pillar-swug-title">
           <div class="pillar-cover">
             <img src="assets/images/Douala City Solidworks User Group Cover.png"
-              alt="Douala City SolidWorks User Group">
+              alt="Douala City SolidWorks User Group cover" loading="lazy">
             <div class="pillar-logo-wrap">
               <img src="assets/images/Douala City Solidworks User Group Logo.png"
-                alt="Douala City SolidWorks User Group logo" class="pillar-logo">
+                alt="Douala City SolidWorks User Group logo" class="pillar-logo" loading="lazy">
             </div>
           </div>
           <div class="pillar-body">
@@ -511,7 +679,7 @@
               <span class="pillar-tag">CAD &amp; Design</span>
               <span class="pillar-tag">Dassault Systèmes</span>
             </div>
-            <h2 class="pillar-title">Douala City SolidWorks User Group</h2>
+            <h2 class="pillar-title" id="pillar-swug-title">Douala City SolidWorks User Group</h2>
             <p class="pillar-desc">As Group Leader of DC-SWUG, I lead and coordinate Douala's official SolidWorks User
               Group under Dassault Systèmes. Through 15+ technical workshops, 12+ webinars, and certification-driven
               sessions, I connect 300+ engineering students and professionals — promoting best practices in CAD,
@@ -528,54 +696,28 @@
             </div>
           </div>
         </article>
+
       </section>
 
-      <section class="contact-section" id="contact">
-        <div class="contact-inner">
-          <p class="contact-label">Get in Touch</p>
-          <h2 class="contact-title">Let's work together</h2>
-          <p class="contact-sub">Whether you're looking to collaborate, invite me for a workshop, or simply connect —
-            I'd love to hear from you.</p>
-          <div class="contact-grid">
-            <a href="mailto:fortunedonfack05@gmail.com" class="contact-card">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              <span class="contact-card-label">Email</span>
-              <span class="contact-card-value">fortunedonfack05@gmail.com</span>
-            </a>
-            <a href="tel:+237699415955" class="contact-card">
-              <i class="fas fa-phone" aria-hidden="true"></i>
-              <span class="contact-card-label">Phone</span>
-              <span class="contact-card-value">+237 699 415 955</span>
-            </a>
-            <a href="tel:+237670229486" class="contact-card">
-              <i class="fas fa-phone" aria-hidden="true"></i>
-              <span class="contact-card-label">Alternate</span>
-              <span class="contact-card-value">+237 670 229 486</span>
-            </a>
-            <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" target="_blank"
-              rel="noopener noreferrer" class="contact-card">
-              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-              <span class="contact-card-label">LinkedIn</span>
-              <span class="contact-card-value">Donfack Fortune</span>
-            </a>
+      <section class="community-cta" aria-labelledby="community-cta-title">
+        <div class="container community-cta-inner">
+          <div>
+            <h2 id="community-cta-title">Want to collaborate or invite me for a workshop?</h2>
+            <p>Whether you're looking to partner, commission training, or simply connect — let's talk.</p>
           </div>
+          <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
         </div>
       </section>
+
     </div>
 
   </main>
 
-  <section class="pre-footer" role="complementary">
-    <p>fortunedonfack05@gmail.com</p>
-    <p>237-699-415-955</p>
-    <p>237-670-229-486</p>
-  </section>
-
-  <footer role="contentinfo">
+  <footer class="footer" role="contentinfo">
     <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
   </footer>
 
-  <button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+  <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
     <i class="fas fa-chevron-up" aria-hidden="true"></i>
   </button>
 
@@ -583,23 +725,38 @@
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
     const backToTopBtn = document.getElementById('backToTopBtn');
-    window.addEventListener('scroll', () => {
-      backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
+    let isScrolling = false;
+    window.addEventListener('scroll', function () {
+      if (!isScrolling) {
+        window.requestAnimationFrame(function () {
+          backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
+          isScrolling = false;
+        });
+        isScrolling = true;
+      }
     }, { passive: true });
-    backToTopBtn.addEventListener('click', () => {
+    backToTopBtn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     });
 
     const toggleBtns = document.querySelectorAll('.cv-toggle-btn');
-    const cvContents = document.querySelectorAll('.cv-content');
+    const cvPanels = document.querySelectorAll('.cv-content');
+
     toggleBtns.forEach(btn => {
       btn.addEventListener('click', function () {
         const cvType = this.getAttribute('data-cv');
-        toggleBtns.forEach(b => b.classList.remove('active'));
+
+        toggleBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
         this.classList.add('active');
-        cvContents.forEach(c => c.classList.remove('active'));
+        this.setAttribute('aria-selected', 'true');
+
+        cvPanels.forEach(p => p.classList.remove('active'));
         document.getElementById(cvType + '-cv').classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       });
     });
   </script>
