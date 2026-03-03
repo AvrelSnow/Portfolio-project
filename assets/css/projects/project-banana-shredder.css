@@ -1,565 +1,678 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ============================================
+   PROJECT PAGE STYLESHEET - SHARED TEMPLATE
+   ============================================
+   Applies to all projects/ sub-pages.
+   Requires ../assets/css/index.css loaded first.
+   Global reset, header, footer, .btn, .back-to-top,
+   .container, .section-divider all come from index.css.
+
+   Deploy to: assets/css/projects/project-page.css
+   ============================================
+   Design tokens (from index.css)
+   Font:       Lato 300 / 400 / 700 only
+   Text:       #333 primary  #555 secondary
+               #666 muted    #999 labels  #bbb faint
+   Background: #fff base     #f9f9f9 subtle
+   Border:     #e0e0e0
+   Radius:     4px
+   Transition: 0.2s standard  0.3s images
+   Spacing:    72px section   64px inner  48px mobile
+   ============================================ */
+
+
+/* -- Screen-reader only -------------------------*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-:root {
-    --primary-color: #2c3e50;
-    --accent-color: #3498db;
-    --text-color: #333;
-    --text-light: #666;
-    --bg-light: #f8f9fa;
-    --border-color: #e0e0e0;
-    --white: #ffffff;
-    --transition: all 0.3s ease;
-}
 
-body {
-    font-family: 'Lato', sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: var(--white);
-}
-
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 8px;
-    text-decoration: none;
-    z-index: 100;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-header {
-    background: #fff;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 0;
-}
-
-.header-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-}
-
-.logo a {
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 40px;
-    align-items: center;
-}
-
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    color: #999;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 400;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    color: #333;
-}
-
-.has-dropdown .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    min-width: 160px;
-    padding: 12px 0 0;
-    margin: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s;
-    list-style: none;
-}
-
-.has-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-}
-
-.dropdown-menu li {
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown-menu li a {
-    display: block;
-    padding: 6px 0;
-    color: #ccc;
-    font-size: 13px;
-    font-weight: 400;
-    text-align: center;
-    transition: color 0.2s;
-}
-
-.dropdown-menu li a:hover {
-    color: #666;
-}
-
-.header-social {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-link {
-    color: var(--text-color);
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    color: var(--accent-color);
-}
-
-main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-}
-
-.page-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
+/* =============================================
+   PROJECT HERO
+============================================= */
 .project-hero {
-    margin-bottom: 4rem;
-    display: flex;
-    justify-content: center;
+  padding: 72px 0 0;
+}
+
+.project-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding-bottom: 64px;
+}
+
+/* Eyebrow: 13px matches index.css .hero-eyebrow exactly */
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+/* Title: letter-spacing -1.5px matches index.css headline token */
+.project-title {
+  font-size: 52px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+/* Tagline: 17px 1.7 matches index.css .hero-sub */
+.project-tagline {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.project-hero-image {
+  width: 100%;
+}
+
+/* border-radius 4px matches system token */
+.project-hero-image .image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f5f5f5;
+  border-radius: 4px;
 }
 
 .hero-img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    display: block;
-    cursor: pointer;
-    margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.3s;
 }
 
-.project-content {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Hover on .image-wrapper: consistent with gallery and drawing hover */
+.project-hero-image .image-wrapper:hover .hero-img {
+  transform: scale(1.04);
 }
 
-.project-intro {
-    margin-bottom: 4rem;
+
+/* =============================================
+   PROJECT METADATA BAR
+============================================= */
+/* #f9f9f9 matches .credibility-bar and .contact-section */
+.project-meta-bar {
+  background: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 24px 0;
 }
 
-.intro-columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--text-color);
-    border-bottom: 1px solid var(--text-color);
-    padding: 2.5rem 0;
+.project-meta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 
-.intro-column {
-    padding: 0 2.5rem;
-    position: relative;
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px 32px;
+  border-right: 1px solid #e0e0e0;
+  flex: 1;
+  min-width: 140px;
 }
 
-.intro-column:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: var(--text-color);
+.meta-item:last-child {
+  border-right: none;
 }
 
-.intro-column h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
+.meta-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #bbb;
 }
 
-.intro-column p {
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    line-height: 1.7;
-    font-size: 0.95rem;
+.meta-value {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
 }
 
-.technical-drawings {
-    margin-bottom: 4rem;
+
+/* =============================================
+   PROJECT BODY
+============================================= */
+/* Symmetric: 64px top and bottom */
+.project-body {
+  padding: 64px 0;
 }
 
-.drawing-figure {
-    width: 100%;
+/* .section-eyebrow matches Camrail/Teaching/Resume convention */
+.section-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 12px;
+}
+
+/* 28px intentionally below global 32px section-title: sub-page hierarchy */
+.project-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 32px;
+}
+
+
+/* =============================================
+   CASE STUDY - THREE COLUMNS
+============================================= */
+.case-study-columns {
+  padding-bottom: 64px;
+}
+
+/* All borders use #e0e0e0 token - no dark borders in this design system */
+.columns-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.case-column {
+  padding: 40px 32px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.case-column:first-child {
+  padding-left: 0;
+}
+
+.case-column:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+/* Column title: uppercase label style, 1px #e0e0e0 border */
+.case-column-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 15px matches index.css standard body text size */
+.case-column p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.case-column p:last-child {
+  margin-bottom: 0;
+}
+
+.case-column strong {
+  font-weight: 700;
+  color: #333;
+}
+
+
+/* =============================================
+   TECHNICAL DRAWING
+============================================= */
+.technical-drawing-section {
+  padding: 64px 0;
+}
+
+/* Hover on .drawing-wrapper: consistent with gallery pattern */
+.drawing-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+  border-radius: 4px;
+  cursor: zoom-in;
 }
 
 .drawing-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    cursor: pointer;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s;
 }
 
-.image-wrapper {
-    position: relative;
-    overflow: hidden;
+.drawing-wrapper:hover .drawing-img {
+  transform: scale(1.02);
 }
 
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.3s ease;
-    pointer-events: none;
+
+/* =============================================
+   GALLERY
+============================================= */
+.project-gallery-section {
+  padding: 64px 0 0;
 }
 
-.overlay-text {
-    color: #000;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    padding: 0 1rem;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
-.image-wrapper:hover .image-overlay {
-    background-color: rgba(255, 255, 255, 0.9);
-    opacity: 1;
+/* visibility:hidden prevents SR tab-focus into hidden images */
+.gallery-hidden {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  margin-top: 0;
 }
 
-.project-gallery {
-    margin-bottom: 4rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+.gallery-hidden.expanded {
+  max-height: 3000px;
+  opacity: 1;
+  visibility: visible;
+  margin-top: 16px;
 }
 
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+.gallery-toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0 64px;
 }
 
 .gallery-item {
-    max-width: 600px;
-    overflow: hidden;
+  overflow: hidden;
+}
+
+/* Square aspect, border-radius 4px matches system token */
+.gallery-item .image-wrapper {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f5f5f5;
+  border-radius: 4px;
+  cursor: zoom-in;
 }
 
 .gallery-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
 }
 
-.hidden-rows {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
-    margin-top: 0;
+/* Uniform scale 1.04 across all image types */
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
 }
 
-.hidden-rows.expanded {
-    max-height: 2000px;
-    opacity: 1;
-    margin-top: 1.5rem;
+
+/* =============================================
+   IMAGE OVERLAY - shared across all image types
+============================================= */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
 }
 
-.see-more-btn {
-    display: block;
-    margin: 2.5rem auto 0;
-    padding: 0.875rem 2.5rem;
-    background: transparent;
-    color: var(--text-color);
-    border: 1px solid var(--text-color);
-    font-size: 0.95rem;
-    font-weight: 400;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Lato', sans-serif;
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: background 0.3s, opacity 0.3s;
+  pointer-events: none;
 }
 
-.see-more-btn:hover {
-    background: var(--text-color);
-    color: var(--white);
+/* font-weight 700: only available bold in loaded Lato subset */
+.overlay-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  padding: 0 20px;
+  line-height: 1.5;
 }
 
+.image-wrapper:hover .image-overlay {
+  background: rgba(255, 255, 255, 0.88);
+  opacity: 1;
+}
+
+
+/* =============================================
+   FULLSCREEN MODAL
+============================================= */
 .fullscreen-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    align-items: center;
-    justify-content: center;
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
+.fullscreen-modal.active {
+  display: flex;
 }
 
+.modal-img {
+  max-width: 92vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Lato 300 is an available weight - close button uses system tokens only */
 .close-modal {
-    position: absolute;
-    top: 2rem;
-    right: 3rem;
-    color: #fff;
-    font-size: 3rem;
-    font-weight: 300;
-    cursor: pointer;
-    transition: color 0.3s ease;
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  transition: color 0.2s;
 }
 
 .close-modal:hover {
-    color: #ccc;
+  color: #ccc;
 }
 
-.back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: var(--transition);
+.close-modal:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
 }
 
-.back-btn:hover {
-    background: var(--accent-color);
+
+/* =============================================
+   PROJECT CTA
+============================================= */
+/* #f9f9f9 matches .contact-section background token */
+.project-cta {
+  background: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+  padding: 72px 0;
 }
 
-.pre-footer {
-    background: #f9f9f9;
-    padding: 60px 40px;
-    text-align: center;
+.project-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.pre-footer p {
-    color: #666;
-    font-size: 15px;
-    margin-bottom: 10px;
+/* 28px / -0.5px matches .contact-text h2 sizing */
+.project-cta h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
 }
 
-footer {
-    background: #fff;
-    padding: 30px 40px;
-    text-align: center;
-    border-top: 1px solid #e0e0e0;
+/* 16px / 1.7 matches .contact-text p */
+.project-cta p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.7;
+  max-width: 480px;
 }
 
-footer p {
-    margin: 0;
-    font-size: 14px;
-    color: #999;
+.project-cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
-.back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    z-index: 40;
-}
 
-.back-to-top.visible {
-    display: flex;
-}
-
-.back-to-top:hover {
-    background: var(--accent-color);
-}
-
+/* =============================================
+   RESPONSIVE - TABLET  max 1024px
+============================================= */
 @media (max-width: 1024px) {
-    .intro-columns {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        border-top: none;
-        border-bottom: none;
-        padding: 0;
-    }
+  .project-title {
+    font-size: 40px;
+  }
 
-    .intro-column {
-        padding: 2rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
+  .project-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-bottom: 48px;
+  }
 
-    .intro-column:last-child {
-        border-bottom: none;
-    }
+  .project-hero-image .image-wrapper {
+    aspect-ratio: 16 / 9;
+  }
 
-    .intro-column:not(:last-child)::after {
-        display: none;
-    }
+  .project-tagline {
+    max-width: 100%;
+  }
 
-    .gallery-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .columns-grid {
+    grid-template-columns: 1fr;
+    border-bottom: none;
+  }
 
-    .hidden-rows {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .case-column {
+    padding: 32px 0;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
 
-    .page-title {
-        font-size: 2rem;
-    }
+  .case-column:first-child {
+    padding-left: 0;
+    padding-top: 32px;
+  }
+
+  .case-column:last-child {
+    padding-right: 0;
+    border-bottom: none;
+  }
+
+  .meta-item {
+    padding: 6px 20px;
+  }
+
+  .gallery-grid,
+  .gallery-hidden {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
+
+/* =============================================
+   RESPONSIVE - MOBILE  max 768px
+============================================= */
 @media (max-width: 768px) {
-    .header-wrapper {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
+  .project-hero {
+    padding: 48px 0 0;
+  }
 
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
-    }
+  .project-hero-inner {
+    gap: 28px;
+    padding-bottom: 36px;
+  }
 
-    nav a {
-        display: block;
-        padding: 0.5rem 0;
-    }
+  .project-title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
 
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        padding-left: 1rem;
-    }
+  .project-tagline {
+    font-size: 15px;
+  }
 
-    main {
-        padding: 2rem 1rem;
-    }
+  .project-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .page-title {
-        font-size: 1.75rem;
-        margin-bottom: 2rem;
-    }
+  .meta-item {
+    padding: 14px 16px;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
 
-    .hero-img {
-        max-width: 300px;
-    }
+  .meta-item:nth-child(odd) {
+    border-right: 1px solid #e0e0e0;
+  }
 
-    .intro-column {
-        padding: 1.5rem 0;
-    }
+  .meta-item:last-child {
+    border-bottom: none;
+  }
 
-    .intro-column h2 {
-        font-size: 1.15rem;
-    }
+  .project-body {
+    padding: 48px 0;
+  }
 
-    .gallery-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
+  .case-study-columns {
+    padding-bottom: 48px;
+  }
 
-    .hidden-rows {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .case-column {
+    padding: 24px 0;
+  }
 
-    .close-modal {
-        top: 1rem;
-        right: 1.5rem;
-        font-size: 2.5rem;
-    }
+  .technical-drawing-section {
+    padding: 48px 0;
+  }
 
-    .back-to-top {
-        width: 40px;
-        height: 40px;
-        bottom: 1rem;
-        right: 1rem;
-    }
+  .project-gallery-section {
+    padding: 48px 0 0;
+  }
+
+  .gallery-grid,
+  .gallery-hidden {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .project-cta {
+    padding: 48px 0;
+  }
+
+  .project-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .project-cta h2 {
+    font-size: 24px;
+  }
 }
 
+
+/* =============================================
+   RESPONSIVE - SMALL MOBILE  max 480px
+============================================= */
 @media (max-width: 480px) {
-    .header-wrapper {
-        padding: 0.75rem;
-    }
+  .project-title {
+    font-size: 26px;
+  }
 
-    .page-title {
-        font-size: 1.5rem;
-    }
+  .project-meta-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .hero-img {
-        max-width: 250px;
-    }
+  .meta-item {
+    border-right: none !important;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 0;
+  }
 
-    .intro-column h2 {
-        font-size: 1.1rem;
-    }
+  .meta-item:last-child {
+    border-bottom: none;
+  }
 
-    .intro-column p {
-        font-size: 0.9rem;
-    }
+  .gallery-grid,
+  .gallery-hidden {
+    grid-template-columns: 1fr;
+  }
 
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
+  .project-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
 
-    .hidden-rows {
-        grid-template-columns: 1fr;
-    }
+  .project-cta-actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
 
-    .back-btn {
-        width: 100%;
-        justify-content: center;
-    }
+
+/* =============================================
+   REDUCED MOTION - mirrors index.css pattern
+============================================= */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-img,
+  .drawing-img,
+  .gallery-img,
+  .image-overlay,
+  .gallery-hidden {
+    transition: none;
+  }
+}
+
+
+/* =============================================
+   PRINT
+============================================= */
+@media print {
+
+  .project-cta,
+  .gallery-toggle-wrapper,
+  .fullscreen-modal {
+    display: none;
+  }
+
+  .gallery-hidden {
+    max-height: none;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+  }
+
+  .case-column,
+  .gallery-item {
+    break-inside: avoid;
+  }
 }
