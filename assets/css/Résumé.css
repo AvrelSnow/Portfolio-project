@@ -591,6 +591,14 @@
         align-items: flex-start;
         gap: 16px;
     }
+
+    /* FIX H4: 4 buttons — switch to 2×2 grid at tablet width
+     prevents single orphaned button on second row */
+    .cv-toggle-container {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 8px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -658,7 +666,10 @@
 }
 
 @media (max-width: 480px) {
+
+    /* At 480px: revert to flex column — single full-width buttons */
     .cv-toggle-container {
+        display: flex;
         flex-direction: column;
     }
 
