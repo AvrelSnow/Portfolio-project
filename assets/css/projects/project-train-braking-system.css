@@ -1,493 +1,57 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ============================================
+   TRAIN BRAKING SYSTEM — PAGE-SPECIFIC CSS
+   ============================================
+   Contains ONLY rules unique to
+   project-train-braking-system.html.
 
-:root {
-    --primary-color: #2c3e50;
-    --accent-color: #3498db;
-    --text-color: #333;
-    --text-light: #666;
-    --bg-light: #f8f9fa;
-    --border-color: #e0e0e0;
-    --white: #ffffff;
-    --transition: all 0.3s ease;
-}
+   Load order in HTML:
+     1. index.css                        (reset, header, footer, .btn, .container)
+     2. project-page.css                 (all shared project page layout)
+     3. project-train-braking-system.css (this file — delta only)
 
-body {
-    font-family: 'Lato', sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: var(--white);
-}
+   Deploy to: assets/css/projects/project-train-braking-system.css
 
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 8px;
-    text-decoration: none;
-    z-index: 100;
-}
+   What this page does NOT have vs other project pages:
+     - No .animation-callout  (no LinkedIn animation link)
+     - No .drawing-grid       (no separate drawing section)
+     - No gallery toggle      (only 2 images, nothing to hide)
 
-.skip-link:focus {
-    top: 0;
-}
+   One delta vs the shared template:
+     A. .gallery-grid — 2-column layout
+        project-page.css defaults to repeat(4, 1fr).
+        With only 2 images, 4 columns would leave two
+        empty ghost cells and look broken.
+        2 columns fills the space correctly and gives
+        each image enough room to read at full detail.
+   ============================================ */
 
-header {
-    background: #fff;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 0;
-}
 
-.header-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 29px 40px;
-}
-
-.logo a {
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 40px;
-    align-items: center;
-}
-
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    color: #999;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 400;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    color: #333;
-}
-
-.has-dropdown .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    min-width: 160px;
-    padding: 12px 0 0;
-    margin: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s;
-    list-style: none;
-}
-
-.has-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-}
-
-.dropdown-menu li {
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown-menu li a {
-    display: block;
-    padding: 6px 0;
-    color: #ccc;
-    font-size: 13px;
-    font-weight: 400;
-    text-align: center;
-    transition: color 0.2s;
-}
-
-.dropdown-menu li a:hover {
-    color: #666;
-}
-
-.header-social {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-link {
-    color: var(--text-color);
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    color: var(--accent-color);
-}
-
-main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-}
-
-.page-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-.project-hero {
-    margin-bottom: 4rem;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-img {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    cursor: pointer;
-    margin: 0 auto;
-}
-
-.project-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-intro {
-    margin-bottom: 2rem;
-}
-
-.intro-columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--text-color);
-    border-bottom: 1px solid var(--text-color);
-    padding: 2.5rem 0;
-}
-
-.intro-column {
-    padding: 0 2.5rem;
-    position: relative;
-}
-
-.intro-column:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: var(--text-color);
-}
-
-.intro-column h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-}
-
-.intro-column p {
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    line-height: 1.7;
-    font-size: 0.95rem;
-}
-
-.image-wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.3s ease;
-    pointer-events: none;
-}
-
-.overlay-text {
-    color: #000;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    padding: 0 1rem;
-}
-
-.image-wrapper:hover .image-overlay {
-    background-color: rgba(255, 255, 255, 0.9);
-    opacity: 1;
-}
-
-.project-gallery {
-    margin-bottom: 4rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.gallery-container {
-    display: grid;
+/* ============================================
+   A. GALLERY GRID — 2-column override
+   ============================================
+   Scoped to this page only. Does not affect
+   any other project page.
+============================================ */
+.gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
 }
 
-.gallery-item {
-    max-width: 600px;
-    overflow: hidden;
+/* Aspect ratio: 4/3 landscape gives the drawings
+   and component photos room to show detail.
+   The square 1/1 default in project-page.css
+   would crop too aggressively on technical images. */
+.gallery-grid .gallery-item .image-wrapper {
+    aspect-ratio: 4 / 3;
 }
 
-.gallery-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    cursor: pointer;
-}
 
-.fullscreen-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-}
-
-.close-modal {
-    position: absolute;
-    top: 2rem;
-    right: 3rem;
-    color: #fff;
-    font-size: 3rem;
-    font-weight: 300;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close-modal:hover {
-    color: #ccc;
-}
-
-.back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.back-btn:hover {
-    background: var(--accent-color);
-}
-
-.pre-footer {
-    background: #f9f9f9;
-    padding: 60px 40px;
-    text-align: center;
-}
-
-.pre-footer p {
-    color: #666;
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-
-footer {
-    background: #fff;
-    padding: 30px 40px;
-    text-align: center;
-    border-top: 1px solid #e0e0e0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-    color: #999;
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    z-index: 40;
-}
-
-.back-to-top.visible {
-    display: flex;
-}
-
-.back-to-top:hover {
-    background: var(--accent-color);
-}
-
-@media (max-width: 1024px) {
-    .intro-columns {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        border-top: none;
-        border-bottom: none;
-        padding: 0;
-    }
-
-    .intro-column {
-        padding: 2rem 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .intro-column:last-child {
-        border-bottom: none;
-    }
-
-    .intro-column:not(:last-child)::after {
-        display: none;
-    }
-
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
-
-    .page-title {
-        font-size: 2rem;
-    }
-}
-
+/* ============================================
+   RESPONSIVE — TABLET  max-width: 1024px
+   ============================================
+   2 columns holds fine at tablet width.
+   Stack to 1 column only at mobile. */
 @media (max-width: 768px) {
-    .header-wrapper {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
-    }
-
-    nav a {
-        display: block;
-        padding: 0.5rem 0;
-    }
-
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        padding-left: 1rem;
-    }
-
-    main {
-        padding: 2rem 1rem;
-    }
-
-    .page-title {
-        font-size: 1.75rem;
-        margin-bottom: 2rem;
-    }
-
-    .hero-img {
-        max-width: 100%;
-    }
-
-    .intro-column {
-        padding: 1.5rem 0;
-    }
-
-    .intro-column h2 {
-        font-size: 1.15rem;
-    }
-
-    .gallery-container {
-        gap: 1rem;
-    }
-
-    .close-modal {
-        top: 1rem;
-        right: 1.5rem;
-        font-size: 2.5rem;
-    }
-
-    .back-to-top {
-        width: 40px;
-        height: 40px;
-        bottom: 1rem;
-        right: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-wrapper {
-        padding: 0.75rem;
-    }
-
-    .page-title {
-        font-size: 1.5rem;
-    }
-
-    .intro-column h2 {
-        font-size: 1.1rem;
-    }
-
-    .intro-column p {
-        font-size: 0.9rem;
-    }
-
-    .back-btn {
-        width: 100%;
-        justify-content: center;
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 }

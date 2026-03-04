@@ -5,57 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Motorised Wheelbarrow - A user-centered mechanical engineering project by Donfack Fortune">
+        content="Motorised Wheelbarrow — user-centred mechanical design project by Donfack Fortune. Reconditioned e-scooter motor integration, ergonomic handle system for users 1.5m to 1.9m, hands-on fabrication without CAD simulation. Built in three weeks for construction and farming use in Cameroon.">
+    <meta name="keywords"
+        content="motorised wheelbarrow Cameroon, user-centered mechanical design, electric wheelbarrow farming construction Africa, ergonomic engineering hands-on fabrication, Donfack Fortune project">
     <meta name="author" content="Donfack Fortune">
-    <title>Motorised Wheelbarrow | Donfack Fortune</title>
+    <title>Motorised Wheelbarrow | Donfack Fortune — Mechanical Engineer &amp; Energy Specialist</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
     <link rel="stylesheet" href="../assets/css/projects/project-wheelbarrow.css">
 </head>
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header role="banner">
-        <div class="header-wrapper">
-            <div class="header-logo">
-                <h1 class="logo">
-                    <a href="../index.html">Donfack Fortune</a>
-                </h1>
+    <header class="header" role="banner">
+        <div class="container header-wrapper">
+            <div class="logo">
+                <a href="../index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
             </div>
-
-            <nav role="navigation">
+            <nav class="header-nav" aria-label="Main navigation" role="navigation">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../Camrail.html">Camrail</a></li>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../Camrail.html" class="nav-link">Camrail</a></li>
                     <li class="has-dropdown">
-                        <a href="../Projects.html">Projects</a>
+                        <a href="../Projects.html" class="nav-link active" aria-current="page">Projects</a>
                         <ul class="dropdown-menu">
-                            <li><a href="../Projects.html#all" data-filter="all">All</a></li>
-                            <li><a href="../Projects.html#simulation-driven"
-                                    data-filter="simulation-driven">Simulation-Driven</a>
-                            </li>
-                            <li><a href="../Projects.html#sustainability"
-                                    data-filter="sustainability">Sustainability</a>
-                            </li>
-                            <li><a href="../Projects.html#mechanical" data-filter="mechanical">Mechanical Design</a>
-                            </li>
-                            <li><a href="../Projects.html#electronics" data-filter="electronics">Electronics</a></li>
-                            <li><a href="../Projects.html#user-centered" data-filter="user-centered">User-Centered</a>
-                            </li>
+                            <li><a href="../Projects.html#all">All</a></li>
+                            <li><a href="../Projects.html#simulation-driven">Simulation-Driven</a></li>
+                            <li><a href="../Projects.html#sustainability">Sustainability</a></li>
+                            <li><a href="../Projects.html#mechanical">Mechanical Design</a></li>
+                            <li><a href="../Projects.html#electronics">Electronics</a></li>
+                            <li><a href="../Projects.html#user-centered">User-Centered</a></li>
                         </ul>
                     </li>
-                    <li><a href="../teaching.html">Teaching</a></li>
-                    <li><a href="../Résumé.html">Résumé</a></li>
+                    <li><a href="../teaching.html" class="nav-link">Teaching</a></li>
+                    <li><a href="../Résumé.html" class="nav-link">Résumé</a></li>
                 </ul>
             </nav>
-
-            <div class="header-social">
-                <a href="https://grabcad.com/donfack.fortune-1" target="_blank" rel="noopener noreferrer"
-                    class="social-link">
+            <div class="header-social" role="complementary" aria-label="Social media links">
+                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD profile" target="_blank"
+                    rel="noopener noreferrer" class="social-link">
                     <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
@@ -63,241 +57,323 @@
                             font-family="Arial">GC</text>
                     </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" target="_blank"
-                    rel="noopener noreferrer" class="social-link">
-                    <i class="fab fa-linkedin-in"></i>
+                <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
+                    aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </header>
 
     <main id="main-content" role="main">
-        <h1 class="page-title">Motorised Wheelbarrow</h1>
 
-        <section class="project-hero">
-            <div class="image-wrapper">
-                <img src="/assets/images/WheelBarrow-2.jpg" alt="Motorised wheelbarrow showing complete assembly"
-                    class="hero-img clickable-img">
-                <div class="image-overlay">
-                    <span class="overlay-text">The motorised wheelbarrow designed for construction and farming in
-                        Cameroon</span>
+        <!-- Project Hero -->
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="container project-hero-inner">
+                <div class="project-hero-text">
+                    <p class="hero-eyebrow">User-Centered Design · Mechanical Design · 2022</p>
+                    <h1 class="project-title" id="project-title">Motorised<br>Wheelbarrow</h1>
+                    <p class="project-tagline">A hands-on motorised wheelbarrow built for construction and farming in
+                        Cameroon — reconditioned e-scooter motor, ergonomic handle system for users from 1.5 m to 1.9 m,
+                        designed and fabricated in three weeks without CAD simulation.</p>
+                </div>
+                <div class="project-hero-image">
+                    <div class="image-wrapper">
+                        <img src="/assets/images/WheelBarrow-2.jpg"
+                            alt="Motorised wheelbarrow — complete assembled unit designed for construction and farming in Cameroon"
+                            class="hero-img clickable-img" loading="eager">
+                        <div class="image-overlay" aria-hidden="true">
+                            <span class="overlay-text">Complete assembled motorised wheelbarrow</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <div class="project-content">
-            <section class="project-intro">
-                <div class="intro-columns">
-                    <article class="intro-column">
-                        <h2>Context</h2>
-                        <p>In Cameroon, wheelbarrows are essential for construction, farming, and market activities, but
-                            traditional models require heavy manual effort.</p>
-                        <p>Our goal was to design a motorised wheelbarrow that is easy to use, comfortable, and
-                            adaptable to users of different heights (1.5m to 1.9m), while working with limited resources
-                            and without relying on 3D modeling or simulations.</p>
-                        <p>We chose a reconditioned e-scooter motor with a pre-mounted wheel (~35-40cm), which was
-                            perfect for ergonomics and easier integration. It took three weeks to source a reliable
-                            motor within budget.</p>
+        <!-- Project Metadata Bar -->
+        <section class="project-meta-bar" aria-label="Project details">
+            <div class="container project-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Year</span>
+                    <span class="meta-value">2022</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Lead Designer · Mechanical Engineer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">3 weeks</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Collaborator</span>
+                    <span class="meta-value">Badou</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">User-Centered · Mechanical Design</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Case Study Body -->
+        <div class="container project-body">
+
+            <!-- Three-column Case Study -->
+            <section class="case-study-columns" aria-labelledby="case-study-heading">
+                <h2 class="sr-only" id="case-study-heading">Project Case Study</h2>
+                <div class="columns-grid">
+
+                    <article class="case-column">
+                        <h2 class="case-column-title">The Problem</h2>
+                        <p>In Cameroon, wheelbarrows are essential tools for construction sites, farming, and market
+                            activity. The problem is that traditional models require heavy and sustained manual effort —
+                            creating fatigue, limiting how long workers can operate, and excluding users with less
+                            upper-body strength.</p>
+                        <p>The brief was to design a motorised wheelbarrow that was easy to use, comfortable, and
+                            adaptable to users of different heights — from 1.5 m to 1.9 m — while working within a tight
+                            budget and without access to 3D modelling software or simulation tools.</p>
+                        <p>The motor selection itself became a three-week sourcing challenge. We needed a reliable,
+                            budget-compatible unit with the right wheel size for ergonomic integration. The solution was
+                            a reconditioned e-scooter motor with a pre-mounted wheel of approximately 35–40 cm — ideal
+                            for the height range and simpler to integrate mechanically than a bare motor requiring a
+                            separate wheel build.</p>
                     </article>
 
-                    <article class="intro-column">
-                        <h2>Content</h2>
-                        <p>This project was purely hands-on engineering: welding, cutting, and assembling the frame
-                            without CAD or simulations—just experience, measurement, and iterative thinking.</p>
-                        <p>Key design considerations included: battery and oil tank placement for accessibility; wheel
-                            and handle configuration for users from 1.5m to 1.9m; and motor integration with handles
-                            positioned for intuitive operation.</p>
-                        <p>Collaboration was essential. When <strong>Badou</strong> suggested an adjustable "elevator"
-                            system for shorter users, budget constraints required a creative solution: larger wheels
-                            that raised the user slightly, balancing comfort and cost.</p>
+                    <article class="case-column">
+                        <h2 class="case-column-title">The Approach</h2>
+                        <p>This project was purely hands-on engineering: welding, cutting, and assembling the frame from
+                            experience, measurement, and iterative thinking — with no CAD models or FEA runs to fall
+                            back on. Every decision had to be made physically, validated by trial, and corrected in the
+                            workshop.</p>
+                        <p>Key design decisions included: battery and oil tank placement for easy access during
+                            operation and maintenance; handle geometry and positioning for users from 1.5 m to 1.9 m;
+                            and motor mounting with handles positioned for intuitive and comfortable control.</p>
+                        <p>When <strong>Badou</strong> proposed an adjustable elevator mechanism to accommodate shorter
+                            users, budget constraints made the original concept unviable. The solution was an increase
+                            in wheel diameter — raising the entire frame by a small amount to bring shorter users into a
+                            comfortable operating posture without adding complex adjustable components. A constraint
+                            became a design principle.</p>
                     </article>
 
-                    <article class="intro-column">
-                        <h2>Conclusions</h2>
-                        <p>The motorised wheelbarrow was successfully completed in three weeks, supporting male users
-                            (1.75-1.90m) and female users (1.50-1.90m) comfortably.</p>
-                        <p>This hands-on approach proved faster than creating 3D models and simulations, which could
-                            have taken 4-6 weeks longer given our resources.</p>
-                        <p>Key lessons learned: not all projects need CAD; collaboration ensures functional, inclusive
-                            designs; ergonomics are essential for usability; and resourcefulness drives innovation under
-                            budget constraints.</p>
+                    <article class="case-column">
+                        <h2 class="case-column-title">The Outcome</h2>
+                        <p>The motorised wheelbarrow was completed in three weeks and validated for comfortable use by
+                            male users (1.75–1.90 m) and female users (1.50–1.90 m). The motor integration performed as
+                            intended — reducing operator effort and extending practical working duration significantly
+                            compared to a standard manual wheelbarrow.</p>
+                        <p>The most important lesson was about the appropriate scope of engineering tools. Not every
+                            project requires CAD or simulation: this design, built from measurement and iterative
+                            fabrication, was delivered in three weeks. A simulation-driven approach for the same brief
+                            would have added four to six weeks without proportional benefit to the outcome.</p>
+                        <p>Collaboration proved equally important — Badou's ergonomic challenge directly improved the
+                            final design. Budget constraints that seemed like setbacks produced a simpler, more robust
+                            solution than the original proposal. Resourcefulness under constraint is not a compromise —
+                            it is a design skill.</p>
                     </article>
+
                 </div>
             </section>
 
-            <section class="project-gallery">
-                <div class="gallery-container">
+            <hr class="section-divider">
+
+            <!-- Gallery — 8 visible images + 1 hidden video -->
+            <section class="project-gallery-section" aria-labelledby="gallery-title">
+                <p class="section-eyebrow">Project Gallery</p>
+                <h2 class="project-section-title" id="gallery-title">Design &amp; Fabrication</h2>
+
+                <div class="gallery-grid" id="galleryGrid">
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/WHEELBARROW FULL 2D ASSEMBLY.png"
-                                alt="Complete 2d model of the motorised wheelbarrow" class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">The Motorised Wheelbarrow</span>
-                            </div>
+                                alt="Complete 2D assembly drawing of the motorised wheelbarrow"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Full 2D assembly
+                                    drawing</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/WHEELBARROW ASSEMBLY- WHEEL,SHAFT AND DRIVING ORGANE..png"
-                                alt="Wheelbarrow structure" class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">The Wheelbarrow's Structure</span>
-                            </div>
+                                alt="Wheelbarrow wheel, shaft, and driving organ assembly drawing"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Wheel, shaft and
+                                    driving organ assembly</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
-                            <img src="/assets/images/WHEELBARROW ASSEMBLY - CHASSIS.png" alt="Wheelbarrow's chassis"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">The Chassis</span>
-                            </div>
+                            <img src="/assets/images/WHEELBARROW ASSEMBLY - CHASSIS.png"
+                                alt="Wheelbarrow chassis assembly drawing" class="gallery-img clickable-img"
+                                loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Chassis
+                                    assembly</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/Wheelbarow motor exploded view.bmp"
-                                alt="The motorised wheelbarrow exploded view" class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">The motorised wheelbarrow exploded view</span>
-                            </div>
+                                alt="Motorised wheelbarrow motor assembly exploded view"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Motor assembly —
+                                    exploded view</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/Wheelbarrow 3d model.jpg"
-                                alt="3D model of the motorised wheelbarrow" class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">3D model</span>
-                            </div>
+                                alt="3D model of the motorised wheelbarrow — full assembly perspective"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">3D model — full
+                                    assembly</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/Wheelbarrow 3d model-zoomed.jpg"
-                                alt="3D model of the motorised wheelbarrow" class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">3D model zoomed</span>
-                            </div>
+                                alt="3D model of the motorised wheelbarrow — detail view"
+                                class="gallery-img clickable-img" loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">3D model — detail
+                                    view</span></div>
                         </div>
                     </article>
-
-
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/Wheelbarow motor components-2.bmp"
-                                alt="3D model of the motorised wheelbarrow motor components"
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">3D model of the motorised wheelbarrow motor components</span>
-                            </div>
+                                alt="Motor components — 3D model view 2" class="gallery-img clickable-img"
+                                loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Motor components —
+                                    view 2</span></div>
                         </div>
                     </article>
                     <article class="gallery-item">
                         <div class="image-wrapper">
                             <img src="/assets/images/Wheelbarow motor components-1.bmp"
-                                alt="3D model of the motorised wheelbarrow motor components "
-                                class="gallery-img clickable-img">
-                            <div class="image-overlay">
-                                <span class="overlay-text">3D model of the motorised wheelbarrow motor components</span>
-                            </div>
+                                alt="Motor components — 3D model view 1" class="gallery-img clickable-img"
+                                loading="lazy">
+                            <div class="image-overlay" aria-hidden="true"><span class="overlay-text">Motor components —
+                                    view 1</span></div>
                         </div>
                     </article>
                 </div>
 
-                <div class="hidden-rows">
+                <!-- Hidden: one video item spanning full width -->
+                <div class="gallery-hidden" id="galleryHidden">
                     <article class="gallery-item video-item">
                         <div class="image-wrapper">
-                            <video controls class="gallery-img" poster="/assets/images/WheelBarrow-2.jpg"
-                                preload="metadata">
+                            <!-- No clickable-img class: video has native controls and must not trigger the image modal -->
+                            <video class="gallery-video" controls poster="/assets/images/WheelBarrow-2.jpg"
+                                preload="metadata"
+                                aria-label="Demonstration video of the motorised wheelbarrow in operation">
                                 <source src="../assets/images/videos/WheelBarrow-1.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-
                         </div>
                     </article>
                 </div>
 
-                <button class="see-more-btn" id="seeMoreBtn">See More</button>
+                <div class="gallery-toggle-wrapper">
+                    <button class="btn btn-outline" id="galleryToggleBtn" aria-expanded="false">
+                        Show Video <i class="fas fa-play" aria-hidden="true"></i>
+                    </button>
+                </div>
             </section>
 
-            <div id="fullscreenModal" class="fullscreen-modal">
-                <span class="close-modal">&times;</span>
-                <img class="modal-content" id="modalImg" alt="Full screen image">
-            </div>
-
-            <a href="../Projects.html" class="back-btn" aria-label="Return to projects page">
-                <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
-            </a>
         </div>
+
+        <!-- Fullscreen Modal — images only, video excluded by design -->
+        <div id="fullscreenModal" class="fullscreen-modal" role="dialog" aria-modal="true"
+            aria-label="Fullscreen image view">
+            <button class="close-modal" id="closeModal" aria-label="Close image">&times;</button>
+            <img class="modal-img" id="modalImg" alt="">
+        </div>
+
+        <!-- Project CTA -->
+        <section class="project-cta" aria-labelledby="project-cta-title">
+            <div class="container project-cta-inner">
+                <div>
+                    <h2 id="project-cta-title">Interested in this type of work?</h2>
+                    <p>I design user-centred mechanical solutions for real working conditions — combining hands-on
+                        fabrication, ergonomic thinking, and creative problem-solving under resource constraints.</p>
+                </div>
+                <div class="project-cta-actions">
+                    <a href="../index.html#contact" class="btn btn-primary">Let's Work Together</a>
+                    <a href="../Projects.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i> All Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <section class="pre-footer">
-        <p>fortunedonfack05@gmail.com</p>
-        <p>237-699-415-955</p>
-        <p>237-670-229-486</p>
-    </section>
-
-    <footer role="contentinfo">
-        <p>&copy; <span id="current-year">2025</span> Donfack Fortune. Tous droits réservés.</p>
+    <footer class="footer" role="contentinfo">
+        <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
     </footer>
 
-    <button id="backToTopBtn" class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
+        // Back to top
         const backToTopBtn = document.getElementById('backToTopBtn');
         let isScrolling = false;
-
         window.addEventListener('scroll', function () {
             if (!isScrolling) {
                 window.requestAnimationFrame(function () {
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    backToTopBtn.classList.toggle('visible', scrollTop > 300);
+                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
                     isScrolling = false;
                 });
                 isScrolling = true;
             }
         }, { passive: true });
-
         backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         });
 
-        const seeMoreBtn = document.getElementById('seeMoreBtn');
-        const hiddenRows = document.querySelector('.hidden-rows');
-
-        seeMoreBtn.addEventListener('click', function () {
-            hiddenRows.classList.toggle('expanded');
-            seeMoreBtn.textContent = hiddenRows.classList.contains('expanded') ? 'See Less' : 'See More';
+        // Gallery toggle — reveals video, not more images
+        const galleryToggleBtn = document.getElementById('galleryToggleBtn');
+        const galleryHidden = document.getElementById('galleryHidden');
+        galleryToggleBtn.addEventListener('click', function () {
+            const expanded = galleryHidden.classList.toggle('expanded');
+            this.setAttribute('aria-expanded', String(expanded));
+            this.innerHTML = expanded
+                ? 'Hide Video <i class="fas fa-chevron-up" aria-hidden="true"></i>'
+                : 'Show Video <i class="fas fa-play" aria-hidden="true"></i>';
+            // Pause video when hidden
+            if (!expanded) {
+                const video = galleryHidden.querySelector('video');
+                if (video) video.pause();
+            }
         });
 
+        // Fullscreen modal — IMG elements only (video excluded: no clickable-img class)
         const modal = document.getElementById('fullscreenModal');
         const modalImg = document.getElementById('modalImg');
-        const closeModal = document.querySelector('.close-modal');
+        const closeModalBtn = document.getElementById('closeModal');
 
         document.querySelectorAll('.clickable-img').forEach(img => {
             img.addEventListener('click', function () {
-                modal.style.display = 'flex';
                 modalImg.src = this.src;
                 modalImg.alt = this.alt;
+                modal.classList.add('active');
+                closeModalBtn.focus();
             });
         });
 
-        closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-
-        modal.addEventListener('click', function (e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
+        function closeModal() { modal.classList.remove('active'); }
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
         });
     </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+
 </body>
 
 </html>

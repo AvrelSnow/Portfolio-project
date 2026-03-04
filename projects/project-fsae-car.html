@@ -5,64 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Formula FSAE Car Design - Comprehensive engineering project by Donfack Fortune covering chassis design, aerodynamics, crash analysis, and Formula SAE compliance.">
+        content="Formula FSAE Car Design — complete solo engineering project by Donfack Fortune covering chassis, aerodynamics, crash analysis, suspension, powertrain, braking, and steering in full compliance with Formula SAE competition rules. Concept to simulation.">
     <meta name="keywords"
-        content="FSAE, Formula SAE, car design, chassis design, aerodynamics, FEA, crash analysis, mechanical engineering">
+        content="FSAE Formula SAE car design, chassis FEA aerodynamics simulation, mechanical engineering solo project SolidWorks, Donfack Fortune FSAE Cameroon">
     <meta name="author" content="Donfack Fortune">
     <meta property="og:title" content="Formula FSAE Car Design | Donfack Fortune">
     <meta property="og:description"
-        content="Comprehensive FSAE car engineering project including chassis, aerodynamics, and crash analysis">
+        content="Complete FSAE race car engineering — chassis, aerodynamics, crash analysis, suspension, powertrain, braking, and steering. Solo project from concept to simulation.">
     <meta property="og:type" content="article">
     <meta property="og:image" content="../assets/images/Fsae-car-image.jpg">
-    <title>Formula FSAE Car Design | Donfack Fortune - Mechanical Engineer & Educator</title>
+    <title>Formula FSAE Car Design | Donfack Fortune — Mechanical Engineer &amp; Educator</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/projects/project-fsae-car.css">
-
+    <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
 </head>
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header role="banner">
-        <div class="header-wrapper">
-            <div class="header-logo">
-                <h1 class="logo">
-                    <a href="../index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
-                </h1>
+    <!-- HEADER: .header class required for index.css rules -->
+    <header class="header" role="banner">
+        <div class="container header-wrapper">
+            <div class="logo">
+                <a href="../index.html" aria-label="Donfack Fortune - Home">Donfack Fortune</a>
             </div>
-
-            <nav aria-label="Main navigation" role="navigation">
+            <nav class="header-nav" aria-label="Main navigation" role="navigation">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../Camrail.html">Camrail</a></li>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../Camrail.html" class="nav-link">Camrail</a></li>
                     <li class="has-dropdown">
-                        <a href="../Projects.html">Projects</a>
+                        <a href="../Projects.html" class="nav-link active" aria-current="page">Projects</a>
                         <ul class="dropdown-menu">
-                            <li><a href="../Projects.html#all" data-filter="all">All</a></li>
-                            <li><a href="../Projects.html#simulation-driven"
-                                    data-filter="simulation-driven">Simulation-Driven</a>
-                            </li>
-                            <li><a href="../Projects.html#sustainability"
-                                    data-filter="sustainability">Sustainability</a>
-                            </li>
-                            <li><a href="../Projects.html#mechanical" data-filter="mechanical">Mechanical Design</a>
-                            </li>
-                            <li><a href="../Projects.html#electronics" data-filter="electronics">Electronics</a></li>
-                            <li><a href="../Projects.html#user-centered" data-filter="user-centered">User-Centered</a>
-                            </li>
+                            <li><a href="../Projects.html#all">All</a></li>
+                            <li><a href="../Projects.html#simulation-driven">Simulation-Driven</a></li>
+                            <li><a href="../Projects.html#sustainability">Sustainability</a></li>
+                            <li><a href="../Projects.html#mechanical">Mechanical Design</a></li>
+                            <li><a href="../Projects.html#electronics">Electronics</a></li>
+                            <li><a href="../Projects.html#user-centered">User-Centered</a></li>
                         </ul>
                     </li>
-                    <li><a href="../teaching.html">Teaching</a></li>
-                    <li><a href="../Résumé.html">Résumé</a></li>
+                    <li><a href="../teaching.html" class="nav-link">Teaching</a></li>
+                    <li><a href="../Résumé.html" class="nav-link">Résumé</a></li>
                 </ul>
             </nav>
-
             <div class="header-social" role="complementary" aria-label="Social media links">
-                <a href="https://grabcad.com/donfack.fortune-1" aria-label="Visit GrabCAD profile" target="_blank"
+                <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD profile" target="_blank"
                     rel="noopener noreferrer" class="social-link">
                     <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +64,7 @@
                     </svg>
                 </a>
                 <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
-                    aria-label="Visit LinkedIn profile" target="_blank" rel="noopener noreferrer" class="social-link">
+                    aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer" class="social-link">
                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
             </div>
@@ -81,152 +73,243 @@
 
     <main id="main-content" role="main">
 
-        <section class="projects-hero">
-            <h1 class="projects-page-title">FORMULA FSAE CAR DESIGN</h1>
+        <!-- =============================================
+         HERO — FIX H1 + H5
+         Hero image now rendered (was in OG only).
+         Title wrapped in .container for alignment.
+         .fsae-hero sets vertical padding only.
+    ================================================ -->
+        <section class="fsae-hero" aria-labelledby="fsae-title">
+            <div class="container fsae-hero-inner">
+                <div class="fsae-hero-text">
+                    <!-- FIX M2: eyebrow surfaces year, scope, category as scannable metadata -->
+                    <p class="hero-eyebrow">Simulation-Driven · Mechanical Design · 2023 · Solo Project</p>
+                    <h1 class="fsae-page-title" id="fsae-title">Formula FSAE<br>Car Design</h1>
+                    <!-- FIX M1: reframed to outcome-first, active voice, specific scope -->
+                    <p class="fsae-hero-tagline">Eight sub-systems designed in full compliance with Formula SAE
+                        competition rules — chassis, aerodynamics, crash analysis, suspension, powertrain, braking, and
+                        steering — taken from concept to simulation as an independent solo project.</p>
+                </div>
+                <div class="fsae-hero-image">
+                    <!-- FIX H1: hero image now rendered on the page (was in OG tag only) -->
+                    <div class="image-wrapper">
+                        <img src="../assets/images/Fsae-car-image.jpg"
+                            alt="Formula FSAE race car — complete 3D CAD model showing chassis, aerodynamic body, and suspension geometry"
+                            class="fsae-hero-img" loading="eager">
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="all-projects-section">
-            <div class="project-overview">
-                <p>
-                    This project involved the complete design and development of a Formula SAE (FSAE) race car,
-                    carried out entirely from scratch in full compliance with Formula SAE competition rules and
-                    regulations.
-                    The scope covered every major phase of the vehicle design process — including structural 3D
-                    modeling, aerodynamic optimization, safety analysis, and regulatory validation — ensuring both
-                    performance efficiency and adherence to international standards.
-                </p>
-                <p>
-                    This was a solo project, demonstrating my ability to independently manage complex engineering
-                    tasks from concept to simulation.
-                    Due to limited funding, the physical fabrication of the prototype was not completed; however,
-                    all design and analytical stages were executed with precision and professional rigor.
-                </p>
+        <!-- Project Metadata Bar — FIX M2: visible credentials above fold -->
+        <section class="project-meta-bar" aria-label="Project details">
+            <div class="container project-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Year</span>
+                    <span class="meta-value">2023</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Scope</span>
+                    <span class="meta-value">Solo Project</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Sub-systems</span>
+                    <span class="meta-value">8 modules designed</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools</span>
+                    <span class="meta-value">SolidWorks · FEA · CFD</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">Simulation-Driven · Mechanical Design</span>
+                </div>
             </div>
+        </section>
 
-            <div class="projects-gallery">
+        <hr class="section-divider">
 
-                <article class="project-card">
-                    <a href="fsae-rules-compliance.html" class="project-link">
-                        <div class="project-image-wrapper">
-                            <img src="../assets/images/fsae-rules.jpg"
-                                alt="FSAE Car Rules Compliance - Complete vehicle design meeting competition standards"
-                                class="project-image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Design Based on Formula SAE Rules</h3>
-                        </div>
+        <!-- Project Overview + Card Hub -->
+        <section class="fsae-hub" aria-label="FSAE project sub-systems">
+            <div class="container">
+
+                <!-- FIX M1: outcome-first, active prose, no self-assessment -->
+                <div class="fsae-overview">
+                    <p>This project covers the complete design and development of a Formula SAE race car from scratch,
+                        in full compliance with Formula SAE competition rules and regulations. Every major system was
+                        addressed — structural 3D modelling, aerodynamic optimisation, crash safety analysis, and
+                        regulatory validation — with each sub-system documented as an independent module below.</p>
+                    <p>The entire project was carried out solo. Due to limited funding, physical fabrication was not
+                        completed; all design and analytical stages were executed in simulation with professional
+                        rigour. The eight modules represent a complete engineering design record for a competition-ready
+                        vehicle.</p>
+                </div>
+
+                <!-- FIX M3: section label above card grid -->
+                <div class="fsae-modules-header">
+                    <h2 class="fsae-modules-title">Sub-systems Explored</h2>
+                    <p class="fsae-modules-subtitle">Select a module to explore the design process, decisions, and
+                        simulation results for each sub-system.</p>
+                </div>
+
+                <!-- FIX M5: <ul> instead of <div role="list"> — native semantics -->
+                <ul class="fsae-cards" aria-label="FSAE project modules">
+
+                    <li class="fsae-card">
+                        <a href="fsae-rules-compliance.html" class="fsae-card-link">
+                            <div class="fsae-card-image-wrapper">
+                                <img src="../assets/images/fsae-rules.jpg"
+                                    alt="FSAE rules compliance — complete vehicle design meeting Formula SAE competition standards"
+                                    class="fsae-card-image" loading="lazy">
+                            </div>
+                            <div class="fsae-card-body">
+                                <!-- FIX M4: arrow span added, animated on hover via CSS -->
+                                <h3 class="fsae-card-title">
+                                    Design Based on Formula SAE Rules
+                                    <span class="fsae-card-arrow" aria-hidden="true">→</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="fsae-card">
+                        <a href="fsae-chassis-design.html" class="fsae-card-link">
+                            <div class="fsae-card-image-wrapper">
+                                <img src="../assets/images/fsae-chassis.jpg"
+                                    alt="FSAE chassis design — structural frame engineering and optimisation"
+                                    class="fsae-card-image" loading="lazy">
+                            </div>
+                            <div class="fsae-card-body">
+                                <h3 class="fsae-card-title">
+                                    Chassis Design and Optimisation
+                                    <span class="fsae-card-arrow" aria-hidden="true">→</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="fsae-card">
+                        <a href="fsae-crash-analysis.html" class="fsae-card-link">
+                            <div class="fsae-card-image-wrapper">
+                                <img src="../assets/images/fsae-crash.jpg"
+                                    alt="FSAE crash analysis — safety simulation and impact testing"
+                                    class="fsae-card-image" loading="lazy">
+                            </div>
+                            <div class="fsae-card-body">
+                                <h3 class="fsae-card-title">
+                                    Crash Analysis
+                                    <span class="fsae-card-arrow" aria-hidden="true">→</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="fsae-card">
+                        <a href="fsae-aerodynamics.html" class="fsae-card-link">
+                            <div class="fsae-card-image-wrapper">
+                                <img src="../assets/images/fsae-aero.jpg"
+                                    alt="FSAE aerodynamic simulation — CFD analysis and downforce optimisation"
+                                    class="fsae-card-image" loading="lazy">
+                            </div>
+                            <div class="fsae-card-body">
+                                <h3 class="fsae-card-title">
+                                    Aerodynamic Simulation
+                                    <span class="fsae-card-arrow" aria-hidden="true">→</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="fsae-card">
+                        <a href="fsae-suspension.html" class="fsae-card-link">
+                            <div class="fsae-card-image-wrapper">
+                                <img src="../assets/images/fsae-suspension.jpg"
+                                    alt="FSAE suspension system — double wishbone design and kinematics"
+                                    class="fsae-card-image" loading="lazy">
+                            </div>
+                            <div class="fsae-card-body">
+                                <h3 class="fsae-card-title">
+                                    Suspension System Design
+                                    <span class="fsae-card-arrow" aria-hidden="true">→</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="fsae-card">
+                        <a href="fsae-powertrain.html" class="fsae-card-link">
+                            <div class="fsae-card-image-wrapper">
+                                <img src="../assets/images/fsae-powertrain.jpg"
+                                    alt="FSAE powertrain integration — engine and transmission packaging"
+                                    class="fsae-card-image" loading="lazy">
+                            </div>
+                            <div class="fsae-card-body">
+                                <h3 class="fsae-card-title">
+                                    Powertrain Integration
+                                    <span class="fsae-card-arrow" aria-hidden="true">→</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="fsae-card">
+                        <a href="fsae-braking.html" class="fsae-card-link">
+                            <div class="fsae-card-image-wrapper">
+                                <img src="../assets/images/fsae-braking.jpg"
+                                    alt="FSAE braking system — hydraulic brake design and balance analysis"
+                                    class="fsae-card-image" loading="lazy">
+                            </div>
+                            <div class="fsae-card-body">
+                                <h3 class="fsae-card-title">
+                                    Braking System Design
+                                    <span class="fsae-card-arrow" aria-hidden="true">→</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="fsae-card">
+                        <a href="fsae-steering.html" class="fsae-card-link">
+                            <div class="fsae-card-image-wrapper">
+                                <img src="../assets/images/fsae-steering.jpg"
+                                    alt="FSAE steering system — rack and pinion mechanism and Ackermann geometry"
+                                    class="fsae-card-image" loading="lazy">
+                            </div>
+                            <div class="fsae-card-body">
+                                <h3 class="fsae-card-title">
+                                    Steering System Design
+                                    <span class="fsae-card-arrow" aria-hidden="true">→</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul><!-- /.fsae-cards -->
+
+            </div><!-- /.container -->
+        </section>
+
+        <!-- FIX H2: Project CTA — was absent, now present matching all other project pages -->
+        <section class="project-cta" aria-labelledby="fsae-cta-title">
+            <div class="container project-cta-inner">
+                <div>
+                    <h2 id="fsae-cta-title">Interested in this type of work?</h2>
+                    <p>I design and simulate complete mechanical systems independently — from regulatory compliance
+                        through structural analysis, aerodynamics, and drivetrain integration. Available for consulting,
+                        contract, and collaborative projects.</p>
+                </div>
+                <div class="project-cta-actions">
+                    <a href="../index.html#contact" class="btn btn-primary">Let's Work Together</a>
+                    <a href="../Projects.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i> All Projects
                     </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="fsae-chassis-design.html" class="project-link">
-                        <div class="project-image-wrapper">
-                            <img src="../assets/images/fsae-chassis.jpg"
-                                alt="FSAE Car Chassis Design - Structural frame engineering and optimization"
-                                class="project-image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Chassis Design and Optimization</h3>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="fsae-crash-analysis.html" class="project-link">
-                        <div class="project-image-wrapper">
-                            <img src="../assets/images/fsae-crash.jpg"
-                                alt="FSAE Car Crash Analysis - Safety simulation and impact testing"
-                                class="project-image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Crash Analysis</h3>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="fsae-aerodynamics.html" class="project-link">
-                        <div class="project-image-wrapper">
-                            <img src="../assets/images/fsae-aero.jpg"
-                                alt="FSAE Car Aerodynamics - CFD simulation and wind tunnel analysis"
-                                class="project-image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Aerodynamic Simulation</h3>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="fsae-suspension.html" class="project-link">
-                        <div class="project-image-wrapper">
-                            <img src="../assets/images/fsae-suspension.jpg"
-                                alt="FSAE Car Suspension System - Double wishbone design and kinematics"
-                                class="project-image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Suspension System Design</h3>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="fsae-powertrain.html" class="project-link">
-                        <div class="project-image-wrapper">
-                            <img src="../assets/images/fsae-powertrain.jpg"
-                                alt="FSAE Car Powertrain - Engine and transmission integration" class="project-image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Powertrain Integration</h3>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="fsae-braking.html" class="project-link">
-                        <div class="project-image-wrapper">
-                            <img src="../assets/images/fsae-braking.jpg"
-                                alt="FSAE Car Braking System - Hydraulic brake design and analysis"
-                                class="project-image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Braking System Design</h3>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="fsae-steering.html" class="project-link">
-                        <div class="project-image-wrapper">
-                            <img src="../assets/images/fsae-steering.jpg"
-                                alt="FSAE Car Steering System - Rack and pinion steering mechanism"
-                                class="project-image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Steering System Design</h3>
-                        </div>
-                    </a>
-                </article>
-
+                </div>
             </div>
-
-            <div class="project-back-link">
-                <a href="../Projects.html" class="back-link">
-                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
-                </a>
-            </div>
-
         </section>
 
     </main>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <section class="pre-footer" role="complementary">
-        <p>fortunedonfack05@gmail.com</p>
-        <p>237-699-415-955</p>
-        <p>237-670-229-486</p>
-    </section>
 
-    <footer role="contentinfo">
+    <footer class="footer" role="contentinfo">
         <p>&copy; <span id="current-year">2025</span> Donfack Fortune. All rights reserved.</p>
     </footer>
 
@@ -239,26 +322,20 @@
 
         const backToTopBtn = document.getElementById('backToTopBtn');
         let isScrolling = false;
-
         window.addEventListener('scroll', function () {
             if (!isScrolling) {
                 window.requestAnimationFrame(function () {
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    backToTopBtn.classList.toggle('visible', scrollTop > 300);
+                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
                     isScrolling = false;
                 });
                 isScrolling = true;
             }
         }, { passive: true });
-
         backToTopBtn.addEventListener('click', function () {
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            window.scrollTo({
-                top: 0,
-                behavior: prefersReducedMotion ? 'auto' : 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         });
     </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 

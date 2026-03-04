@@ -1,572 +1,404 @@
 /* ============================================
-   FSAE CAR PROJECT PAGE STYLESHEET
-   Author: Donfack Fortune
-   Complete standalone styles
+   FORMULA FSAE CAR — PAGE-SPECIFIC CSS
+   ============================================
+   Contains ONLY rules unique to
+   project-fsae-car.html.
+
+   Load order in HTML:
+     1. index.css              (reset, header, footer, .btn, .container)
+     2. project-fsae-car.css   (this file — all hub-page layout)
+
+   NOTE: project-page.css is NOT loaded here.
+   project-page.css is the case-study template
+   (hero split, meta-bar, columns-grid, gallery).
+   This page is a HUB linking to 8 sub-pages.
+   All layout rules live here.
+
+   Deploy to: assets/css/projects/project-fsae-car.css
+
+   Sections:
+     A. Hub hero — title + image split layout
+     B. Hub section wrapper + overview text
+     C. Modules header (section label above cards)
+     D. Cards grid
+     E. Individual card + focus + hover affordance
+     F. Responsive breakpoints
+     G. Reduced motion
+     H. Print styles
    ============================================ */
 
-/* Reset and Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-}
+/* ============================================
+   A. HUB HERO
+   ============================================
+   FIX H5: vertical padding only on .fsae-hero.
+   Horizontal alignment is handled by .container
+   inside, matching every other element on page.
 
-body {
-    font-family: 'Lato', -apple-system, sans-serif;
-    line-height: 1.6;
-    color: #333;
+   FIX H1: two-column split — text left, car
+   image right — matching the case-study hero
+   pattern so the car appears above the fold.
+============================================ */
+.fsae-hero {
+    padding: 56px 0 48px;
     background: #fff;
 }
 
-/* Skip Link */
-.skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    background: #000;
-    color: #fff;
-    padding: 8px 16px;
-    text-decoration: none;
-    z-index: 1000;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-/* Header */
-header {
-    background: #fff;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 0;
-}
-
-.header-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+.fsae-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
     align-items: center;
-    padding: 20px 40px;
 }
 
-.header-logo {
-    margin: 0;
-}
-
-.logo {
-    margin: 0;
-}
-
-.logo a {
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-/* Navigation */
-nav ul {
-    list-style: none;
+.fsae-hero-text {
     display: flex;
-    gap: 40px;
-    margin: 0;
-}
-
-nav li {
-    position: relative;
-}
-
-nav a {
-    color: #999;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 400;
-    transition: color 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-    color: #333;
-}
-
-/* Dropdown Menu */
-.has-dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    min-width: 160px;
-    padding: 12px 0 0;
-    margin: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s;
-    list-style: none;
-}
-
-.has-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-}
-
-.dropdown-menu li {
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 6px 0;
-    color: #ccc;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 400;
-    text-align: center;
-    transition: color 0.2s;
-}
-
-.dropdown-menu a:hover {
-    color: #666;
-}
-
-/* Header Social */
-.header-social {
-    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-.social-link {
+/* Eyebrow: year + scope + category — scannable metadata above fold */
+.hero-eyebrow {
+    font-size: 12px;
+    font-weight: 400;
     color: #999;
-    font-size: 18px;
-    transition: color 0.3s;
-    text-decoration: none;
-}
-
-.social-link:hover {
-    color: #333;
-}
-
-.social-link svg {
-    display: block;
-}
-
-.social-link i {
-    display: block;
-}
-
-/* Main Content */
-main {
-    min-height: 60vh;
-}
-
-/* Projects Hero */
-.projects-hero {
-    padding: 40px 40px 20px;
-    text-align: center;
-    background: #fff;
-}
-
-.projects-page-title {
-    font-size: 56px;
-    font-weight: 300;
-    color: #333;
-    letter-spacing: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     margin: 0;
 }
 
-/* Project Overview Section */
-.all-projects-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px 40px 60px;
+/* FIX H5: title uses existing project-page.css class name for consistency */
+.fsae-page-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin: 0;
 }
 
-.project-overview {
-    max-width: 900px;
-    margin: 0 auto 60px;
+.fsae-hero-tagline {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.75;
+    margin: 0;
+    max-width: 520px;
 }
 
-.project-overview p {
+/* Hero image: right column */
+.fsae-hero-image .image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.fsae-hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ============================================
+   B. HUB SECTION WRAPPER + OVERVIEW
+   ============================================
+   FIX L1: top padding added (was 0, only bottom).
+   Overview prose constrained for readability.
+============================================ */
+.fsae-hub {
+    padding: 64px 0 80px;
+}
+
+.fsae-overview {
+    max-width: 860px;
+    margin: 0 auto 56px;
+}
+
+.fsae-overview p {
     color: #555;
     font-size: 15px;
     line-height: 1.8;
     margin-bottom: 20px;
 }
 
-.project-overview p:last-child {
+.fsae-overview p:last-child {
     margin-bottom: 0;
 }
 
-/* Projects Gallery - 4 Column Grid */
-.projects-gallery {
+
+/* ============================================
+   C. MODULES HEADER — FIX M3
+   ============================================
+   Section label above the card grid so visitors
+   know what they are browsing before they scroll
+   into the cards. Previously absent.
+============================================ */
+.fsae-modules-header {
+    margin-bottom: 40px;
+    border-top: 1px solid #333;
+    padding-top: 32px;
+}
+
+.fsae-modules-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+}
+
+.fsae-modules-subtitle {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* ============================================
+   D. CARDS GRID — FIX M5
+   ============================================
+   <ul> instead of <div role="list"> — native list
+   semantics, no ARIA attributes needed on parent.
+   list-style and padding reset since <ul> has
+   browser defaults.
+============================================ */
+.fsae-cards {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 64px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    margin-bottom: 60px;
 }
 
-/* Project Card */
-.project-card {
+
+/* ============================================
+   E. INDIVIDUAL CARD
+   ============================================
+   FIX H3: aspect-ratio replaces fixed height.
+   FIX H4: :focus-visible ring on card link.
+   FIX M4: arrow affordance on card title hover.
+============================================ */
+.fsae-card {
+    /* <li> reset */
+    list-style: none;
     background: #fff;
     overflow: hidden;
 }
 
-.project-link {
+.fsae-card-link {
+    display: block;
     text-decoration: none;
     color: inherit;
-    display: block;
+    /* FIX H4: ensure focus ring is contained cleanly */
+    border-radius: 2px;
 }
 
-.project-image-wrapper {
+/* FIX H4: WCAG 2.1 SC 2.4.7 — visible keyboard focus indicator */
+.fsae-card-link:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 4px;
+}
+
+.fsae-card-image-wrapper {
     width: 100%;
-    height: 200px;
+    /* FIX H3: aspect-ratio instead of height:200px.
+     Shape stays constant at all breakpoints. */
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: #f5f5f5;
 }
 
-.project-image {
+.fsae-card-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-.project-link:hover .project-image {
+.fsae-card-link:hover .fsae-card-image {
     transform: scale(1.05);
 }
 
-.project-content {
-    padding: 20px 0;
+.fsae-card-body {
+    padding: 18px 0 4px;
 }
 
-.project-title {
-    font-size: 16px;
+.fsae-card-title {
+    font-size: 14px;
     font-weight: 400;
     color: #333;
     line-height: 1.5;
     margin: 0;
-}
-
-/* Back Link */
-.project-back-link {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #666;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.3s;
-}
-
-.back-link:hover {
-    color: #333;
-}
-
-.back-link i {
-    font-size: 14px;
-}
-
-/* Pre-Footer */
-.pre-footer {
-    background: #f9f9f9;
-    padding: 60px 40px;
-    text-align: center;
-}
-
-.pre-footer p {
-    font-family: 'Lato', sans-serif;
-    color: #666;
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-
-.pre-footer p:last-child {
-    margin-bottom: 0;
-}
-
-/* Footer */
-footer {
-    background: #fff;
-    padding: 30px 40px;
-    text-align: center;
-    border-top: 1px solid #e0e0e0;
-}
-
-footer p {
-    font-family: 'Lato', sans-serif;
-    color: #999;
-    font-size: 14px;
-    margin: 0;
-}
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background: #333;
-    color: #fff;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-    z-index: 1000;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
 }
 
-.back-to-top.visible {
+/* FIX M4: arrow affordance — slides in on hover, invisible at rest */
+.fsae-card-arrow {
+    font-size: 14px;
+    color: #999;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.fsae-card-link:hover .fsae-card-arrow,
+.fsae-card-link:focus-visible .fsae-card-arrow {
     opacity: 1;
-    visibility: visible;
+    transform: translateX(0);
 }
 
-.back-to-top:hover {
-    background: #555;
-}
 
-.back-to-top i {
-    font-size: 16px;
-}
+/* ============================================
+   F. RESPONSIVE BREAKPOINTS
+   ============================================
+   FIX L2: correct section labels — F / F / F
+   (all under section F, clearly differentiated)
+============================================ */
 
-/* Tablet - 3 Columns */
+/* F-i. TABLET — max-width: 1024px */
 @media (max-width: 1024px) {
-    .header-wrapper {
-        padding: 20px 30px;
+    .fsae-hero {
+        padding: 40px 0 36px;
     }
 
-    .projects-hero {
-        padding: 30px 30px 15px;
+    .fsae-hero-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
     }
 
-    .projects-page-title {
-        font-size: 42px;
-        letter-spacing: 8px;
+    .fsae-page-title {
+        font-size: 38px;
     }
 
-    .all-projects-section {
-        padding: 30px 30px 50px;
-    }
-
-    .project-overview {
-        margin-bottom: 50px;
-    }
-
-    .projects-gallery {
+    .fsae-cards {
         grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        margin-bottom: 50px;
+        gap: 24px;
     }
 
-    .project-image-wrapper {
-        height: 180px;
-    }
-
-    .pre-footer {
-        padding: 50px 30px;
-    }
-
-    footer {
-        padding: 25px 30px;
+    .fsae-modules-header {
+        margin-bottom: 32px;
     }
 }
 
-/* Mobile - 2 Columns */
+/* F-ii. MOBILE — max-width: 768px */
 @media (max-width: 768px) {
-    .header-wrapper {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+    .fsae-hero {
+        padding: 32px 0 28px;
     }
 
-    nav ul {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
+    /* Stack hero to single column on mobile */
+    .fsae-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 
-    nav a {
+    /* Image moves below title on mobile */
+    .fsae-hero-image {
+        order: 1;
+    }
+
+    .fsae-hero-text {
+        order: 0;
+        gap: 16px;
+    }
+
+    .fsae-page-title {
+        font-size: 30px;
+        letter-spacing: -0.5px;
+    }
+
+    .fsae-hero-tagline {
         font-size: 14px;
     }
 
-    .has-dropdown .dropdown-menu {
-        display: none;
+    .fsae-hub {
+        padding: 48px 0 60px;
     }
 
-    .projects-hero {
-        padding: 25px 20px 12px;
-    }
-
-    .projects-page-title {
-        font-size: 32px;
-        letter-spacing: 6px;
-    }
-
-    .all-projects-section {
-        padding: 25px 20px 40px;
-    }
-
-    .project-overview {
-        margin-bottom: 40px;
-    }
-
-    .project-overview p {
+    .fsae-overview p {
         font-size: 14px;
-        margin-bottom: 15px;
     }
 
-    .projects-gallery {
+    .fsae-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        margin-bottom: 48px;
+    }
+}
+
+/* F-iii. SMALL MOBILE — max-width: 480px */
+@media (max-width: 480px) {
+    .fsae-page-title {
+        font-size: 26px;
+    }
+
+    .fsae-overview p {
+        font-size: 13px;
+    }
+
+    .fsae-cards {
+        grid-template-columns: 1fr;
+        gap: 24px;
         margin-bottom: 40px;
     }
 
-    .project-image-wrapper {
-        height: 160px;
-    }
-
-    .project-title {
-        font-size: 15px;
-    }
-
-    .project-back-link {
-        margin-top: 30px;
-    }
-
-    .pre-footer {
-        padding: 40px 20px;
-    }
-
-    footer {
-        padding: 25px 20px;
-    }
-
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
+    /* At single column, image is taller — bump aspect ratio */
+    .fsae-card-image-wrapper {
+        aspect-ratio: 16 / 9;
     }
 }
 
-/* Small Mobile - 1 Column */
-@media (max-width: 480px) {
-    .logo a {
-        font-size: 20px;
-    }
 
-    nav ul {
-        gap: 15px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
-
-    .projects-page-title {
-        font-size: 28px;
-        letter-spacing: 4px;
-    }
-
-    .all-projects-section {
-        padding: 20px 20px 35px;
-    }
-
-    .project-overview {
-        margin-bottom: 35px;
-    }
-
-    .project-overview p {
-        font-size: 13px;
-    }
-
-    .projects-gallery {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        margin-bottom: 35px;
-    }
-
-    .project-image-wrapper {
-        height: 220px;
-    }
-
-    .project-title {
-        font-size: 14px;
-    }
-
-    .back-link {
-        font-size: 14px;
-    }
-
-    .back-to-top {
-        width: 40px;
-        height: 40px;
-    }
-
-    .back-to-top i {
-        font-size: 14px;
-    }
-}
-
-/* Reduced Motion */
+/* ============================================
+   G. REDUCED MOTION
+============================================ */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
 
-    .dropdown-menu {
+    .fsae-card-image,
+    .fsae-card-arrow {
         transition: none;
     }
 }
 
-/* Print Styles */
+
+/* ============================================
+   H. PRINT STYLES
+============================================ */
 @media print {
-
-    .header-social,
-    .back-to-top,
-    .back-link {
-        display: none;
-    }
-
-    .projects-hero {
+    .fsae-hero {
         padding: 10px 0;
     }
 
-    .projects-page-title {
-        font-size: 36px;
-        letter-spacing: 4px;
+    .fsae-page-title {
+        font-size: 32px;
+        letter-spacing: 0;
     }
 
-    .projects-gallery {
+    .fsae-hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .fsae-hero-image {
+        display: none;
+    }
+
+    .fsae-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 
-    .project-card {
+    .fsae-card {
         page-break-inside: avoid;
+    }
+
+    .fsae-card-arrow {
+        display: none;
     }
 }
