@@ -9,19 +9,10 @@
     align-items: center;
 }
 
-.hero-eyebrow {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 20px;
-}
-
 .camrail-title {
     font-size: 48px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-primary);
     line-height: 1.1;
     letter-spacing: -1.5px;
     margin-bottom: 20px;
@@ -29,7 +20,7 @@
 
 .camrail-intro {
     font-size: 16px;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.8;
     max-width: 560px;
     margin-bottom: 40px;
@@ -47,18 +38,21 @@
 }
 
 .stat-number {
+    font-family: var(--font-mono);
     font-size: 22px;
-    font-weight: 700;
-    color: #333;
-    letter-spacing: -0.5px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    font-feature-settings: 'tnum' 1;
 }
 
 .stat-label {
+    font-family: var(--font-mono);
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: #bbb;
+    color: var(--text-tertiary);
 }
 
 .camrail-logo-img {
@@ -67,30 +61,6 @@
     height: auto;
     display: block;
     margin: 0 auto;
-}
-
-.section-divider {
-    max-width: 1200px;
-    margin: 0 auto;
-    border: none;
-    border-top: 1px solid #e0e0e0;
-}
-
-.section-eyebrow {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #bbb;
-    margin-bottom: 12px;
-}
-
-.section-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #333;
-    letter-spacing: -0.5px;
-    margin-bottom: 32px;
 }
 
 .company-intro-section {
@@ -106,7 +76,7 @@
 
 .intro-body p {
     font-size: 16px;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.8;
 }
 
@@ -127,17 +97,18 @@
 }
 
 .case-study-number {
+    font-family: var(--font-mono);
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2px;
-    color: #bbb;
+    color: var(--accent);
     flex-shrink: 0;
 }
 
 .case-study-title {
     font-size: 26px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-primary);
     letter-spacing: -0.3px;
 }
 
@@ -156,22 +127,23 @@
 }
 
 .cs-block-label {
+    font-family: var(--font-mono);
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #999;
+    color: var(--accent);
 }
 
 .cs-block p {
     font-size: 15px;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.9;
 }
 
 .cs-block em {
     font-style: italic;
-    color: #444;
+    color: var(--text-secondary);
 }
 
 .cs-list {
@@ -184,7 +156,7 @@
 
 .cs-list li {
     font-size: 15px;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.8;
     padding-left: 20px;
     position: relative;
@@ -194,25 +166,25 @@
     content: '—';
     position: absolute;
     left: 0;
-    color: #ccc;
+    color: var(--border);
     font-weight: 300;
 }
 
 .cs-list li strong {
-    color: #333;
+    color: var(--text-primary);
     font-weight: 700;
 }
 
 .case-study-divider {
     border: none;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border);
     margin: 0;
 }
 
 .camrail-gallery {
     padding: 64px 0;
-    background: #f9f9f9;
-    border-top: 1px solid #e0e0e0;
+    background: var(--accent-faint);
+    border-top: 1px solid var(--border);
 }
 
 .gallery-grid {
@@ -229,7 +201,7 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    transition: max-height var(--dur-slower) var(--ease-out), opacity var(--dur-slow) var(--ease-out), margin-top var(--dur-slow) var(--ease-out);
 }
 
 .gallery-hidden.expanded {
@@ -240,14 +212,14 @@
 
 .gallery-item {
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: var(--radius-md);
 }
 
 .image-wrapper {
     position: relative;
     overflow: hidden;
     aspect-ratio: 1;
-    background: #eee;
+    background: var(--surface);
 }
 
 .gallery-img {
@@ -256,7 +228,7 @@
     object-fit: cover;
     display: block;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .gallery-item:hover .gallery-img {
@@ -271,7 +243,9 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition-property: background-color, opacity;
+    transition-duration: var(--dur-slow);
+    transition-timing-function: var(--ease-out);
     pointer-events: none;
 }
 
@@ -283,7 +257,7 @@
 .overlay-text {
     font-size: 12px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-primary);
     text-align: center;
     padding: 0 12px;
     letter-spacing: 0.2px;
@@ -295,54 +269,23 @@
     margin-top: 28px;
 }
 
-.fullscreen-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.95);
-    align-items: center;
-    justify-content: center;
-}
-
-.fullscreen-modal.active {
-    display: flex;
-}
-
+/* Fullscreen modal — base (.fullscreen-modal + .close-modal) is in
+   index.css; only the image element and focus offset are page-local. */
 .modal-content {
     max-width: 90vw;
     max-height: 90vh;
     object-fit: contain;
-    border-radius: 2px;
-}
-
-.close-modal {
-    position: absolute;
-    top: 24px;
-    right: 32px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2.5rem;
-    font-weight: 300;
-    cursor: pointer;
-    line-height: 1;
-    transition: color 0.2s;
-    padding: 4px 8px;
-}
-
-.close-modal:hover {
-    color: #ccc;
+    border-radius: var(--radius-sm);
 }
 
 .close-modal:focus-visible {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--white);
     outline-offset: 4px;
 }
 
 .camrail-cta {
     padding: 72px 0;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border);
 }
 
 .camrail-cta-inner {
@@ -355,14 +298,14 @@
 .camrail-cta h2 {
     font-size: 28px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-primary);
     letter-spacing: -0.5px;
     margin-bottom: 8px;
 }
 
 .camrail-cta p {
     font-size: 15px;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 

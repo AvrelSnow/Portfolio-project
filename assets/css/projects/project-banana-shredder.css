@@ -7,14 +7,14 @@
    .back-to-top, .container, .section-divider
    all come from index.css - not repeated here.
 
-   Deploy to: assets/css/projects/project-page.css
    Design tokens (index.css)
-   Font      Lato 300/400/700 only
-   Text      #333 #555 #666 #999 #bbb
-   BG        #fff / #f9f9f9
-   Border    1px solid #e0e0e0
-   Radius    4px
-   Timing    0.3s images / 0.2s UI
+   Font      Inter (body) + JetBrains Mono (labels/measurements)
+   Text      var(--text-primary/secondary/tertiary/quaternary)
+   Accent    var(--accent) for eyebrows, labels, measurements
+   BG        var(--white) / var(--accent-faint)
+   Border    1px solid var(--border)
+   Radius    var(--radius-sm/md)
+   Timing    var(--dur-slow) images / var(--dur-base) UI
 ============================================ */
 
 
@@ -53,21 +53,12 @@
   padding-bottom: 64px;
 }
 
-/* FIX 2: was 12px - index.css .hero-eyebrow is 13px */
-.hero-eyebrow {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #999;
-  margin-bottom: 20px;
-}
+/* .hero-eyebrow inherits index.css (accent JetBrains Mono) — no override here */
 
-/* FIX 3: was -2px - index.css headline token is -1.5px */
 .project-title {
   font-size: 52px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
   line-height: 1.05;
   letter-spacing: -1.5px;
   margin-bottom: 24px;
@@ -76,7 +67,7 @@
 /* FIX 4: was 16px/1.8 - index.css .hero-sub is 17px/1.7 */
 .project-tagline {
   font-size: 17px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.7;
   max-width: 520px;
 }
@@ -90,18 +81,18 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #f5f5f5;
-  border-radius: 4px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
 }
 
-/* FIX 6: was 0.5s - index.css image transition is 0.3s */
+/* FIX 6: was var(--dur-slower) - index.css image transition is var(--dur-slow) */
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   cursor: zoom-in;
-  transition: transform 0.3s;
+  transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .project-hero-image .image-wrapper:hover .hero-img {
@@ -113,9 +104,9 @@
    PROJECT METADATA BAR
 ============================================ */
 .project-meta-bar {
-  background: #f9f9f9;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  background: var(--accent-faint);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   padding: 24px 0;
 }
 
@@ -130,7 +121,7 @@
   flex-direction: column;
   gap: 5px;
   padding: 6px 32px;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid var(--border);
   flex: 1;
   min-width: 140px;
 }
@@ -145,16 +136,17 @@
 }
 
 .meta-label {
+  font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #bbb;
+  color: var(--text-tertiary);
 }
 
 .meta-value {
   font-size: 14px;
-  color: #333;
+  color: var(--text-primary);
   line-height: 1.4;
 }
 
@@ -167,19 +159,10 @@
   padding: 64px 0;
 }
 
-.section-eyebrow {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #bbb;
-  margin-bottom: 12px;
-}
-
 .project-section-title {
   font-size: 28px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
   letter-spacing: -0.5px;
   margin-bottom: 32px;
 }
@@ -192,20 +175,20 @@
   padding-bottom: 64px;
 }
 
-/* FIX 8: was border-top: 1px solid #333 - #333 borders exist nowhere in system */
+/* FIX 8: was border-top: 1px solid var(--text-primary) - var(--text-primary) borders exist nowhere in system */
 .columns-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 2px solid #333;
+  border-top: 2px solid var(--text-primary);
   /* FIX 4: strong top anchor for case study section */
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border);
 }
 
 /* FIX 9: was padding: 40px 40px 40px 0 (0 left on all cols as base)
    Now symmetric padding, overridden only for edge columns */
 .case-column {
   padding: 40px 32px;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid var(--border);
 }
 
 .case-column:first-child {
@@ -218,23 +201,24 @@
 }
 
 /* FIX 10: was display:inline-block which made border-bottom only span text width.
-   FIX 11: was border-bottom:2px solid #333 - now 1px #e0e0e0 matches system.
-   FIX 12: was color:#333 - now #999 reads as a label not a heading */
+   FIX 11: was border-bottom:2px solid var(--text-primary) - now 1px var(--border) matches system.
+   FIX 12: was color:var(--text-primary) - now var(--text-tertiary) reads as a label not a heading */
 .case-column-title {
+  font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #333;
+  color: var(--accent);
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border);
 }
 
 /* FIX 13: was 14px - index.css standard body is 15px */
 .case-column p {
   font-size: 15px;
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.9;
   margin-bottom: 16px;
 }
@@ -245,7 +229,7 @@
 
 .case-column strong {
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
 }
 
 
@@ -261,12 +245,12 @@
   margin: 0;
 }
 
-/* border-radius: 4px matches system token */
+/* border-radius: var(--radius-md) matches system token */
 .drawing-wrapper {
   width: 100%;
   overflow: hidden;
-  background: #f5f5f5;
-  border-radius: 4px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
   cursor: zoom-in;
 }
 
@@ -274,7 +258,7 @@
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s;
+  transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .drawing-wrapper:hover .drawing-img {
@@ -304,7 +288,7 @@
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition: max-height var(--dur-slower) var(--ease-out), opacity var(--dur-slow) var(--ease-out);
   margin-top: 0;
 }
 
@@ -325,12 +309,12 @@
   overflow: hidden;
 }
 
-/* border-radius: 4px added - was missing, now matches system token */
+/* border-radius: var(--radius-md) added - was missing, now matches system token */
 .gallery-item .image-wrapper {
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #f5f5f5;
-  border-radius: 4px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
   cursor: zoom-in;
 }
 
@@ -339,7 +323,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s;
+  transition: transform var(--dur-slow);
 }
 
 .gallery-item:hover .gallery-img {
@@ -363,7 +347,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: background 0.3s, opacity 0.3s;
+  transition: background var(--dur-slow), opacity var(--dur-slow);
   pointer-events: none;
 }
 
@@ -371,7 +355,7 @@
 .overlay-text {
   font-size: 13px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
   text-align: center;
   padding: 0 20px;
   line-height: 1.5;
@@ -384,51 +368,19 @@
 
 
 /* ============================================
-   FULLSCREEN MODAL
+   FULLSCREEN MODAL — page-local pieces
+   (.fullscreen-modal + .close-modal base in index.css)
 ============================================ */
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-}
-
-.fullscreen-modal.active {
-  display: flex;
-}
-
 .modal-img {
   max-width: 92vw;
   max-height: 90vh;
   object-fit: contain;
   display: block;
-  border-radius: 4px;
-}
-
-.close-modal {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 40px;
-  font-weight: 300;
-  cursor: pointer;
-  line-height: 1;
-  padding: 4px 8px;
-  transition: color 0.2s;
-}
-
-.close-modal:hover {
-  color: #ccc;
+  border-radius: var(--radius-md);
 }
 
 .close-modal:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid var(--white);
   outline-offset: 3px;
 }
 
@@ -436,10 +388,10 @@
 /* ============================================
    PROJECT CTA
 ============================================ */
-/* FIX: was background:#fff - #f9f9f9 matches .contact-section token */
+/* FIX: was background:var(--white) - var(--accent-faint) matches .contact-section token */
 .project-cta {
-  background: #f9f9f9;
-  border-top: 1px solid #e0e0e0;
+  background: var(--accent-faint);
+  border-top: 1px solid var(--border);
   padding: 72px 0;
 }
 
@@ -453,14 +405,14 @@
 .project-cta h2 {
   font-size: 28px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
   letter-spacing: -0.5px;
   margin-bottom: 10px;
 }
 
 .project-cta p {
   font-size: 16px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.7;
   max-width: 480px;
 }
@@ -503,7 +455,7 @@
   .case-column {
     padding: 32px 0;
     border-right: none;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border);
   }
 
   .case-column:first-child {
@@ -574,12 +526,12 @@
   .meta-item {
     padding: 14px 16px;
     border-right: none;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border);
     min-width: 0;
   }
 
   .meta-item:nth-child(odd) {
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid var(--border);
   }
 
   .meta-item:first-child {
@@ -646,7 +598,7 @@
 
   .meta-item {
     border-right: none !important;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border);
     padding: 12px 0;
   }
 

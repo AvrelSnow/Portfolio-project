@@ -11,72 +11,12 @@
 
    Deploy to: assets/css/projects/project-pedal-power.css
 
-   One addition vs the shared template:
-     A. .animation-callout — LinkedIn animation link strip
+   This page has no unique styling beyond the shared
+   system: it uses index.css (design system, incl.
+   .animation-callout) + project-page.css (shared
+   project layout). A single technical drawing is
+   handled by the shared .drawing-wrapper.
 
-   Note: This page has a single technical drawing,
-   so no .drawing-grid rule is needed here.
-   The shared .drawing-wrapper in project-page.css
-   handles it fully.
+   Kept as a linked file so page markup and future
+   page-specific rules have a home.
    ============================================ */
-
-
-/* ============================================
-   A. ANIMATION CALLOUT
-   ============================================
-   Sits between the case study columns and the
-   first section-divider. Styled as a quiet
-   inline strip so it does not interrupt the
-   vertical rhythm of the page.
-
-   Identical in structure to project-beans-unwrapping.css.
-   Duplicated here (not imported) so each page
-   CSS file is self-contained and independently
-   deployable.
-============================================ */
-.animation-callout {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 0 0;
-    font-size: 14px;
-    color: #999;
-    flex-wrap: wrap;
-}
-
-.animation-callout i {
-    font-size: 16px;
-    color: #bbb;
-}
-
-/* Matches .lane-link arrow-gap hover pattern from index.css */
-.animation-callout a {
-    font-size: 14px;
-    font-weight: 700;
-    color: #333;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: gap 0.2s;
-}
-
-.animation-callout a:hover {
-    gap: 10px;
-}
-
-.animation-callout a i {
-    font-size: 11px;
-    color: #333;
-}
-
-
-/* ============================================
-   RESPONSIVE — MOBILE  max-width: 768px
-============================================ */
-@media (max-width: 768px) {
-    .animation-callout {
-        gap: 8px;
-        font-size: 13px;
-    }
-}

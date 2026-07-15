@@ -1,51 +1,43 @@
 /* ============================================
    TEACHING PAGE STYLESHEET
-   Page-specific styles only.
-   Global resets, header, footer, .btn, and
-   .back-to-top are all handled by index.css.
+   Page-specific styles only. Global resets,
+   header, footer, .btn, .section-title,
+   .section-divider, .hero-eyebrow and
+   .back-to-top come from index.css so this page
+   shares one design language with the portfolio.
    ============================================ */
 
 /* ── Hero ── */
 .teaching-hero {
     padding: 72px 0 56px;
-    background: #fff;
-}
-
-.hero-eyebrow {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 20px;
 }
 
 .teaching-title {
-    font-size: 52px;
+    font-size: var(--text-5xl);
     font-weight: 700;
-    color: #333;
+    color: var(--text-primary);
     line-height: 1.1;
     letter-spacing: -1.5px;
     margin-bottom: 24px;
 }
 
 .teaching-title span {
-    color: #555;
+    color: var(--text-tertiary);
     font-weight: 300;
 }
 
 .teaching-subtitle {
-    font-size: 17px;
-    color: #666;
-    line-height: 1.7;
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+    line-height: 1.75;
     max-width: 600px;
 }
 
-/* ── Impact Stats Bar ── */
+/* ── Impact Stats Bar — mono/accent signature to match .data ── */
 .teaching-stats {
-    background: #f9f9f9;
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
+    background: var(--accent-faint);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
     padding: 28px 0;
 }
 
@@ -62,58 +54,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     padding: 8px 36px;
 }
 
 .stat-number {
+    font-family: var(--font-mono);
     font-size: 26px;
-    font-weight: 700;
-    color: #333;
-    letter-spacing: -0.5px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.02em;
     line-height: 1;
+    font-feature-settings: 'tnum' 1;
 }
 
 .stat-label {
+    font-family: var(--font-mono);
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: #999;
+    color: var(--text-tertiary);
     text-align: center;
 }
 
 .stat-divider {
     width: 1px;
     height: 40px;
-    background: #e0e0e0;
+    background: var(--border);
     flex-shrink: 0;
-}
-
-/* ── Section Shared Styles ── */
-.section-divider {
-    max-width: 1200px;
-    margin: 0 auto;
-    border: none;
-    border-top: 1px solid #e0e0e0;
-}
-
-.section-eyebrow {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #bbb;
-    margin-bottom: 12px;
-}
-
-.section-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #333;
-    letter-spacing: -0.5px;
-    margin-bottom: 40px;
-    line-height: 1.2;
 }
 
 /* ── Roles / Institutions ── */
@@ -128,17 +97,21 @@
 }
 
 .role-card {
-    border: 1.5px solid #e0e0e0;
-    border-radius: 6px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
     padding: 28px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    transition: border-color 0.2s;
+    background: var(--white);
+    transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out),
+        border-color var(--dur-base) var(--ease-out);
 }
 
 .role-card:hover {
-    border-color: #999;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border);
 }
 
 .role-header {
@@ -150,41 +123,43 @@
 .role-icon {
     width: 40px;
     height: 40px;
-    background: #f0f0f0;
-    border-radius: 6px;
+    background: var(--accent-subtle);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: #666;
+    color: var(--accent);
     font-size: 16px;
 }
 
 .role-institution {
     font-size: 15px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-primary);
     line-height: 1.3;
     margin-bottom: 4px;
+    letter-spacing: -0.01em;
 }
 
 .role-title {
     font-size: 13px;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.4;
     margin-bottom: 4px;
 }
 
 .role-date {
+    font-family: var(--font-mono);
     font-size: 12px;
-    font-weight: 700;
-    color: #bbb;
-    letter-spacing: 0.3px;
+    font-weight: 500;
+    color: var(--text-quaternary);
+    letter-spacing: -0.01em;
 }
 
 .role-desc {
     font-size: 14px;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.8;
 }
 
@@ -195,13 +170,13 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid var(--border-light);
     padding-top: 16px;
 }
 
 .role-courses li {
     font-size: 13px;
-    color: #777;
+    color: var(--text-tertiary);
     line-height: 1.5;
     padding-left: 14px;
     position: relative;
@@ -211,14 +186,14 @@
     content: '—';
     position: absolute;
     left: 0;
-    color: #ccc;
+    color: var(--accent);
     font-weight: 300;
 }
 
 /* ── Teaching Philosophy ── */
 .teaching-philosophy {
     padding: 72px 0;
-    background: #fff;
+    background: var(--white);
 }
 
 .philosophy-inner {
@@ -230,12 +205,12 @@
 
 .philosophy-text .section-title {
     margin-bottom: 24px;
-    font-size: 28px;
+    font-size: var(--text-2xl);
 }
 
 .philosophy-text p {
     font-size: 15px;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.9;
     margin-bottom: 18px;
 }
@@ -257,12 +232,12 @@
     align-items: flex-start;
     gap: 12px;
     font-size: 14px;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
 .credentials-list i {
-    color: #999;
+    color: var(--accent);
     font-size: 14px;
     margin-top: 2px;
     flex-shrink: 0;
@@ -271,8 +246,8 @@
 /* ── Gallery ── */
 .teaching-gallery {
     padding: 72px 0;
-    background: #f9f9f9;
-    border-top: 1px solid #e0e0e0;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
 }
 
 .gallery-grid {
@@ -291,8 +266,8 @@
     width: 100%;
     height: 280px;
     overflow: hidden;
-    background: #e8e8e8;
-    border-radius: 4px;
+    background: var(--surface);
+    border-radius: var(--radius-md);
 }
 
 .gallery-image {
@@ -300,7 +275,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease;
+    transition: transform var(--dur-slower) var(--ease-out);
 }
 
 .gallery-item:hover .gallery-image {
@@ -309,14 +284,14 @@
 
 .gallery-caption {
     font-size: 14px;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
 /* ── CTA ── */
 .teaching-cta {
     padding: 72px 0;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border);
 }
 
 .teaching-cta-inner {
@@ -327,16 +302,17 @@
 }
 
 .teaching-cta h2 {
-    font-size: 28px;
+    font-size: var(--text-2xl);
     font-weight: 700;
-    color: #333;
+    color: var(--text-primary);
     letter-spacing: -0.5px;
     margin-bottom: 8px;
+    line-height: 1.2;
 }
 
 .teaching-cta p {
     font-size: 15px;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.6;
     max-width: 520px;
 }
@@ -350,7 +326,7 @@
 /* ── Tablet ── */
 @media (max-width: 1024px) {
     .teaching-title {
-        font-size: 44px;
+        font-size: var(--text-4xl);
     }
 
     .roles-grid {
@@ -393,12 +369,12 @@
 
     .stat-item {
         padding: 20px 16px;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid var(--border);
         align-items: flex-start;
     }
 
     .stat-item:nth-child(odd) {
-        border-right: 1px solid #e0e0e0;
+        border-right: 1px solid var(--border);
     }
 
     .stat-number {
@@ -416,10 +392,6 @@
 
     .teaching-philosophy {
         padding: 48px 0;
-    }
-
-    .section-title {
-        font-size: 26px;
     }
 
     .teaching-gallery {
@@ -446,7 +418,7 @@
     }
 
     .teaching-cta h2 {
-        font-size: 24px;
+        font-size: var(--text-xl);
     }
 
     .teaching-cta-actions {
@@ -466,7 +438,7 @@
 
     .stat-item {
         border-right: none !important;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid var(--border);
         align-items: center;
         text-align: center;
     }
@@ -503,6 +475,6 @@
 
     .role-card {
         break-inside: avoid;
-        border: 1px solid #ccc;
+        border: 1px solid var(--border);
     }
 }

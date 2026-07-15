@@ -12,7 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/Projects.css">
@@ -50,12 +50,7 @@
             <div class="header-social" role="complementary" aria-label="Social media links">
                 <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD profile" target="_blank"
                     rel="noopener noreferrer" class="social-link">
-                    <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-                        <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff"
-                            font-family="Arial">GC</text>
-                    </svg>
+                    <i class="fas fa-cube" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231"
                     aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer" class="social-link">
@@ -94,7 +89,7 @@
             <div class="container">
                 <div class="projects-gallery" id="projectsGallery">
 
-                    <article class="project-card" data-category="sustainability mechanical simulation-driven all">
+                    <article class="project-card" data-category="all sustainability mechanical">
                         <a href="projects/project-banana-shredder.html" class="project-link">
                             <div class="project-image-wrapper">
                                 <img src="assets/images/Machine-TOWE-3.jpg" alt="Banana Pseudostem Shredding Machine"
@@ -110,7 +105,7 @@
                         </a>
                     </article>
 
-                    <article class="project-card" data-category="mechanical simulation-driven all user-centered">
+                    <article class="project-card" data-category="all simulation-driven">
                         <a href="projects/project-fsae-car.html" class="project-link">
                             <div class="project-image-wrapper">
                                 <img src="assets/images/Fsae-car-image.jpg" alt="Formula FSAE Car Design"
@@ -126,7 +121,7 @@
                         </a>
                     </article>
 
-                    <article class="project-card" data-category="mechanical simulation-driven all user-centered">
+                    <article class="project-card" data-category="all mechanical user-centered">
                         <a href="projects/project-wheelbarrow.html" class="project-link">
                             <div class="project-image-wrapper">
                                 <img src="assets/images/WheelBarrow-2.jpg" alt="Motorised Wheelbarrow"
@@ -142,8 +137,7 @@
                         </a>
                     </article>
 
-                    <article class="project-card"
-                        data-category="mechanical simulation-driven all user-centered electronics">
+                    <article class="project-card" data-category="all electronics sustainability">
                         <a href="projects/project-pedal-power.html" class="project-link">
                             <div class="project-image-wrapper">
                                 <img src="assets/images/Pedal power mobile phone charger.png"
@@ -159,7 +153,7 @@
                         </a>
                     </article>
 
-                    <article class="project-card" data-category="mechanical simulation-driven all sustainability">
+                    <article class="project-card" data-category="all user-centered mechanical">
                         <a href="projects/project-beans-unwrapping.html" class="project-link">
                             <div class="project-image-wrapper">
                                 <img src="assets/images/Real-BUR.jpg" alt="Beans Unwrapping Machine"
@@ -168,14 +162,14 @@
                             <div class="project-content">
                                 <h2 class="project-title">Beans Unwrapping Machine</h2>
                                 <div class="project-meta">
-                                    <span class="project-tag">Sustainability</span>
+                                    <span class="project-tag">User-Centered</span>
                                     <span class="project-year">2022</span>
                                 </div>
                             </div>
                         </a>
                     </article>
 
-                    <article class="project-card" data-category="mechanical simulation-driven all">
+                    <article class="project-card" data-category="all simulation-driven">
                         <a href="projects/project-train-braking-system.html" class="project-link">
                             <div class="project-image-wrapper">
                                 <img src="assets/images/CC3300-AC-LOCOMOTIVE.jpg"
@@ -256,10 +250,19 @@
 
                 let visible = 0;
                 projectCards.forEach(card => {
-                    const cats = card.getAttribute('data-category').trim();
-                    const show = filter === 'all' || cats.split(/\s+/).includes(filter);
-                    card.style.display = show ? 'block' : 'none';
-                    if (show) visible++;
+                    const cats = card.getAttribute('data-category').trim().split(/\s+/);
+                    const show = filter === 'all' || cats.includes(filter);
+                    card.classList.remove('card-enter');
+                    if (show) {
+                        card.style.display = '';
+                        card.style.animationDelay = (visible * 45) + 'ms';
+                        void card.offsetWidth; /* reflow so the animation re-triggers */
+                        card.classList.add('card-enter');
+                        visible++;
+                    } else {
+                        card.style.display = 'none';
+                        card.style.animationDelay = '';
+                    }
                 });
 
                 noResults.hidden = visible > 0;

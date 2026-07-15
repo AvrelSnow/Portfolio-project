@@ -10,9 +10,11 @@
     content="mechanical engineer Cameroon, energy specialist Africa, renewable energy Cameroon, SolidWorks CAD training Douala, freelance mechanical engineer Africa, technical educator Cameroon, FEA simulation services">
   <title>Donfack Fortune | Mechanical Engineer & Energy Specialist — Cameroon</title>
 
+  <!-- Typography: Inter (body/display) + JetBrains Mono (measured data only) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/index.css">
 </head>
@@ -49,10 +51,7 @@
       <div class="header-social" role="complementary" aria-label="Social media links">
         <a href="https://grabcad.com/donfack.fortune-1" aria-label="GrabCAD profile" target="_blank"
           rel="noopener noreferrer" class="social-link">
-          <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" />
-            <text x="16" y="21" text-anchor="middle" font-size="10" fill="#fff" font-family="Arial">GC</text>
-          </svg>
+          <i class="fas fa-cube" aria-hidden="true"></i>
         </a>
         <a href="https://www.linkedin.com/in/donfack-fortune-%F0%9F%93%8C-476904231" aria-label="LinkedIn profile"
           target="_blank" rel="noopener noreferrer" class="social-link">
@@ -69,7 +68,7 @@
         <div class="hero-text">
           <p class="hero-eyebrow">Mechanical Engineer · Energy Specialist · Technical Educator</p>
           <h1 class="hero-headline">I Design. I Innovate.<br><span><strong>I Teach.</strong></span></h1>
-          <p class="hero-sub">I’m a Mechanical Engineer and Energy Specialist based in Cameroon — I build real
+          <p class="hero-sub">I'm a Mechanical Engineer and Energy Specialist based in Cameroon — I build real
             solutions, explore sustainable systems, and train the engineers who will carry it forward.</p>
           <div class="hero-ctas">
             <a href="Projects.html" class="btn btn-primary">View My Projects</a>
@@ -86,11 +85,11 @@
     <section class="credibility-bar" aria-label="Affiliations and credentials">
       <div class="container">
         <ul class="cred-list">
-          <li><i aria-hidden="true"></i> Senior Engineer · CAMRAIL</li>
-          <li><i aria-hidden="true"></i> Renewable Energy Analyst · REM Newsletter</li>
-          <li><i aria-hidden="true"></i> Lecturer · ENSET Douala &amp; Univ. of Dschang</li>
-          <li><i aria-hidden="true"></i> 6+ Engineering Projects</li>
-          <li><i aria-hidden="true"></i> SOLIDWORKS User Group Facilitator</li>
+          <li>Senior Engineer · CAMRAIL</li>
+          <li>Renewable Energy Analyst · REM Newsletter</li>
+          <li>Lecturer · ENSET Douala &amp; Univ. of Dschang</li>
+          <li><span class="data">6+</span> Engineering Projects</li>
+          <li>SOLIDWORKS User Group Facilitator</li>
         </ul>
       </div>
     </section>
@@ -139,13 +138,11 @@
           <div class="experience-content">
             <img src="assets/images/Camrail_logo.png" alt="Camrail logo" class="camrail-logo">
             <h2 id="exp-title">Senior Mechanical Engineer</h2>
-            <p>CAMRAIL manages the technical and commercial operation of Cameroon's 1,010-kilometer rail network,
+            <p>CAMRAIL manages the technical and commercial operation of Cameroon's <span class="data">1,010 km</span> rail network,
               linking the Port of Douala to northern regions and landlocked neighbours like Chad. In 2026, I am
-              contributing to a 319 billion FCFA modernisation plan covering 560+ km of track and new-generation
-              locomotive integration — one of the most significant infrastructure investments in the country's history.
-            </p>
-            <a href="Camrail.html" class="btn btn-outline" style="margin-top:24px; display:inline-block;">View Full
-              Experience</a>
+              contributing to a <span class="data">319 billion FCFA</span> modernisation plan covering <span class="data">560+ km</span> of track and new-generation
+              locomotive integration — one of the most significant infrastructure investments in the country's history.</p>
+            <a href="Camrail.html" class="btn btn-outline" style="margin-top:24px;">View Full Experience</a>
           </div>
         </div>
       </div>
@@ -153,11 +150,29 @@
 
     <hr class="section-divider">
 
+    <!-- RECENT PROJECTS — Featured grid: FSAE as flagship -->
     <section class="projects-section" aria-labelledby="recent-projects-title">
       <div class="container">
         <h2 class="section-title" id="recent-projects-title">Recent Projects <span class="section-label">(2025
             onward)</span></h2>
-        <div class="projects-grid">
+        <div class="projects-grid projects-grid--featured">
+
+          <!-- FLAGSHIP: FSAE Car Design — spans full left column -->
+          <article class="project-card project-card--featured">
+            <a href="projects/project-fsae-car.html" class="project-link">
+              <span class="project-featured-label">Flagship Project</span>
+              <div class="project-image-wrapper">
+                <img src="assets/images/Fsae-car-image.jpg" alt="Formula FSAE Car Design — solo 8-subsystem simulation-driven build"
+                  class="project-image" loading="lazy">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Formula FSAE Car Design</h3>
+                <span class="project-tag">Simulation-Driven</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Standard cards — stacked right -->
           <article class="project-card">
             <a href="projects/project-wheelbarrow.html" class="project-link">
               <div class="project-image-wrapper">
@@ -167,18 +182,6 @@
               <div class="project-content">
                 <h3 class="project-title">Motorised Wheelbarrow</h3>
                 <span class="project-tag">Mechanical Design</span>
-              </div>
-            </a>
-          </article>
-          <article class="project-card">
-            <a href="projects/project-fsae-car.html" class="project-link">
-              <div class="project-image-wrapper">
-                <img src="assets/images/Fsae-car-image.jpg" alt="Formula FSAE Car Design" class="project-image"
-                  loading="lazy">
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Formula FSAE Car Design</h3>
-                <span class="project-tag">Simulation-Driven</span>
               </div>
             </a>
           </article>
@@ -198,11 +201,25 @@
       </div>
     </section>
 
+    <!-- OLDER PROJECTS — standard 3-col grid, brake RE first (highest technical depth) -->
     <section class="projects-section" aria-labelledby="older-projects-title">
       <div class="container">
         <h2 class="section-title" id="older-projects-title">Older Projects <span
             class="section-label">(2022–2024)</span></h2>
         <div class="projects-grid">
+          <article class="project-card">
+            <a href="projects/project-train-braking-system.html" class="project-link">
+              <div class="project-image-wrapper">
+                <img src="assets/images/CC3300-AC-LOCOMOTIVE.jpg"
+                  alt="Reverse Engineering the Train Braking System of CC_3300_AC and CC_2200 locomotives"
+                  class="project-image" loading="lazy">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Reverse Engineering: CC_3300_AC &amp; CC_2200 Train Braking System</h3>
+                <span class="project-tag">Simulation-Driven</span>
+              </div>
+            </a>
+          </article>
           <article class="project-card">
             <a href="projects/project-pedal-power.html" class="project-link">
               <div class="project-image-wrapper">
@@ -227,19 +244,6 @@
               </div>
             </a>
           </article>
-          <article class="project-card">
-            <a href="projects/project-train-braking-system.html" class="project-link">
-              <div class="project-image-wrapper">
-                <img src="assets/images/CC3300-AC-LOCOMOTIVE.jpg"
-                  alt="Reverse Engineering the Train Braking System of CC_3300_AC and CC_2200 locomotives"
-                  class="project-image" loading="lazy">
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Reverse Engineering: CC_3300_AC &amp; CC_2200 Train Braking System</h3>
-                <span class="project-tag">Simulation-Driven</span>
-              </div>
-            </a>
-          </article>
         </div>
         <div class="all-projects-cta">
           <a href="Projects.html" class="btn btn-outline">View All Projects</a>
@@ -257,7 +261,6 @@
 
           <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm"
             novalidate>
-            <!-- Web3Forms access key -->
             <input type="hidden" name="access_key" value="44492f21-ec03-450d-b90d-719d00db1fed">
 
             <div class="form-row">
@@ -323,11 +326,7 @@
           </a>
           <a href="https://grabcad.com/donfack.fortune-1" target="_blank" rel="noopener noreferrer"
             class="contact-detail-link">
-            <svg viewBox="0 0 32 32" width="16" height="16" fill="currentColor"
-              style="vertical-align:middle; margin-right:6px;">
-              <rect x="2" y="8" width="28" height="16" rx="3" fill="currentColor" /><text x="16" y="21"
-                text-anchor="middle" font-size="10" fill="#fff" font-family="Arial">GC</text>
-            </svg>
+            <i class="fas fa-cube" aria-hidden="true"></i>
             GrabCAD Portfolio
           </a>
           <a href="Résumé.html" class="contact-detail-link">

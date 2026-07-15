@@ -11,59 +11,14 @@
 
    Deploy to: assets/css/projects/project-beans-unwrapping.css
 
-   Two additions vs the shared template:
-     A. .animation-callout  — LinkedIn animation link strip
-     B. .drawing-grid       — 2-column layout for two drawings
+   One addition vs the shared template:
+     .drawing-grid — 2-column layout for two drawings
+   (.animation-callout is now shared in index.css)
    ============================================ */
 
 
 /* ============================================
-   A. ANIMATION CALLOUT
-   ============================================
-   Unique to this page. Sits between the case
-   study columns and the section-divider.
-   Styled as a quiet inline strip — not a full
-   section — so it does not break page rhythm.
-============================================ */
-.animation-callout {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 0 0;
-    font-size: 14px;
-    color: #999;
-    flex-wrap: wrap;
-}
-
-.animation-callout i {
-    font-size: 16px;
-    color: #bbb;
-}
-
-/* Link: matches .lane-link arrow pattern from index.css */
-.animation-callout a {
-    font-size: 14px;
-    font-weight: 700;
-    color: #333;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: gap 0.2s;
-}
-
-.animation-callout a:hover {
-    gap: 10px;
-}
-
-.animation-callout a i {
-    font-size: 11px;
-    color: #333;
-}
-
-
-/* ============================================
-   B. DRAWING GRID — two drawings side by side
+   DRAWING GRID — two drawings side by side
    ============================================
    The beans page has two explanation drawings.
    The shared .drawing-wrapper handles the
@@ -91,16 +46,5 @@
     .drawing-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-}
-
-
-/* ============================================
-   RESPONSIVE — MOBILE  max-width: 768px
-============================================ */
-@media (max-width: 768px) {
-    .animation-callout {
-        gap: 8px;
-        font-size: 13px;
     }
 }
