@@ -1046,6 +1046,15 @@ body {
   object-position: center 38%;
 }
 
+/* Shredder (flagship): the hopper — the machine's identifying feature —
+   sits at the top of frame, and the floor below it is workshop clutter.
+   Centre-cropping clipped the hopper and kept the concrete. Biasing high
+   holds the hopper and belt drive in both the tall flagship slot and the
+   wide gallery card. */
+.project-image[src*="Machine-TOWE-3"] {
+  object-position: center 18%;
+}
+
 /* Only the featured card zooms. It carries no registration marks, so the
    zoom is its single "there is more here" signal.
    Standard cards deliberately DON'T zoom: their marks are struck onto the
