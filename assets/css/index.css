@@ -90,8 +90,16 @@
    token (eyebrows, labels, links, focus rings, buttons, shadows, motifs)
    with zero component changes. Neutrals, type, spacing and layout stay
    constant: the discipline holds, only the identity shifts. Each hue is
-   muted and considered so it still reads as the same family.
-   Mechanical is the base steel blue (no class needed). */
+   muted and considered so it still reads as the same family. */
+
+/* Mechanical — the base Oxidized Steel Blue. It carries no overrides on
+   purpose: this domain IS the portfolio's default hue, and duplicating
+   the values here would only let them drift from :root. The class still
+   exists so every project declares its domain the same way, and so the
+   Mechanical motif and stamp scope exactly like every other domain. */
+.theme-mechanical {
+  /* intentionally empty — inherits the base accent tokens */
+}
 
 /* Simulation — indigo: computation, FEA, analysis */
 .theme-simulation {
@@ -163,6 +171,7 @@
    and the shared case-study template hero). Pure CSS, no assets, no
    motion cost. An unthemed page gets no motif at all. */
 
+.theme-mechanical .project-hero,
 .theme-simulation .fsae-hero,
 .theme-simulation .project-hero,
 .theme-energy .project-hero {
@@ -170,11 +179,27 @@
   overflow: hidden;
 }
 
+.theme-mechanical .project-hero-inner,
 .theme-simulation .fsae-hero-inner,
 .theme-simulation .project-hero-inner,
 .theme-energy .project-hero-inner {
   position: relative;
   z-index: 1;
+}
+
+/* Mechanical — the orthogonal drafting grid: the drawing board the home
+   hero opens on, carried onto the machines that were drawn on it. */
+.theme-mechanical .project-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(var(--accent-rgb), 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-rgb), 0.09) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 78% 92% at 78% 8%, black 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse 78% 92% at 78% 8%, black 0%, transparent 70%);
 }
 
 /* Simulation — a triangular FEA mesh: the project sits on the analysis
