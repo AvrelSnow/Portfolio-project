@@ -157,17 +157,44 @@
 
 /* === DOMAIN MOTIFS ===
    Each domain leaves one quiet mark behind its hero, drawn in its own
-   hue via --accent-rgb. Scoped to the theme class so a shared template
-   hero only carries the motif of the domain it belongs to.
-   (Simulation's FEA mesh lives with the FSAE hub hero it was drawn for.)
+   hue via --accent-rgb and faded out so it never competes with content.
+   A motif belongs to the DOMAIN, not a page: it is scoped to the theme
+   class and covers both hero types a project may use (the FSAE hub hero
+   and the shared case-study template hero). Pure CSS, no assets, no
+   motion cost. An unthemed page gets no motif at all. */
 
-   Energy — concentric rings radiating from the machine: generation and
-   transfer propagating outward. */
+.theme-simulation .fsae-hero,
+.theme-simulation .project-hero,
 .theme-energy .project-hero {
   position: relative;
   overflow: hidden;
 }
 
+.theme-simulation .fsae-hero-inner,
+.theme-simulation .project-hero-inner,
+.theme-energy .project-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Simulation — a triangular FEA mesh: the project sits on the analysis
+   it was built from. Three line sets at 0°/±60° form the isometric mesh. */
+.theme-simulation .fsae-hero::before,
+.theme-simulation .project-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(60deg, rgba(var(--accent-rgb), 0.10) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(-60deg, rgba(var(--accent-rgb), 0.10) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(0deg, rgba(var(--accent-rgb), 0.10) 0 1px, transparent 1px 36px);
+  -webkit-mask-image: radial-gradient(ellipse 75% 90% at 78% 8%, black 0%, transparent 68%);
+  mask-image: radial-gradient(ellipse 75% 90% at 78% 8%, black 0%, transparent 68%);
+}
+
+/* Energy — concentric rings radiating from the machine: generation and
+   transfer propagating outward. */
 .theme-energy .project-hero::before {
   content: '';
   position: absolute;
@@ -179,11 +206,6 @@
       transparent 1px 46px);
   -webkit-mask-image: radial-gradient(ellipse 80% 95% at 78% 46%, black 0%, transparent 72%);
   mask-image: radial-gradient(ellipse 80% 95% at 78% 46%, black 0%, transparent 72%);
-}
-
-.theme-energy .project-hero-inner {
-  position: relative;
-  z-index: 1;
 }
 
 

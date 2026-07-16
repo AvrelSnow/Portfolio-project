@@ -42,35 +42,15 @@
 .fsae-hero {
     padding: 56px 0 48px;
     background: var(--white);
-    position: relative;
-    overflow: hidden;
 }
 
-/* Simulation domain motif — a faint triangular FEA mesh behind the hero.
-   The project literally sits on the analysis it was built from. Three
-   line sets at 0°/±60° form the isometric mesh; it inherits the domain
-   hue via --accent-rgb and fades out radially so it never competes with
-   the content. Pure CSS, no asset, no motion cost. */
-.fsae-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-        repeating-linear-gradient(60deg, rgba(var(--accent-rgb), 0.10) 0 1px, transparent 1px 42px),
-        repeating-linear-gradient(-60deg, rgba(var(--accent-rgb), 0.10) 0 1px, transparent 1px 42px),
-        repeating-linear-gradient(0deg, rgba(var(--accent-rgb), 0.10) 0 1px, transparent 1px 36px);
-    -webkit-mask-image: radial-gradient(ellipse 75% 90% at 78% 8%, black 0%, transparent 68%);
-    mask-image: radial-gradient(ellipse 75% 90% at 78% 8%, black 0%, transparent 68%);
-}
+/* The Simulation FEA-mesh motif is a domain motif — see index.css */
 
 .fsae-hero-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 64px;
     align-items: center;
-    position: relative;
-    z-index: 1;
 }
 
 .fsae-hero-text {
