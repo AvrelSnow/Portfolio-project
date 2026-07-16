@@ -1026,6 +1026,26 @@ body {
   transition: transform var(--dur-slower) var(--ease-out);
 }
 
+/* Focal points — art direction, not decoration.
+   These photographs are tall portraits (0.75–0.80) being cropped into
+   landscape cards (~1.48). object-position defaults to centre, which keeps
+   the vertical middle and throws the subject away. Each value below was
+   read off the actual photograph. Keyed on the filename so the focal point
+   follows the image everywhere it appears (home grid + Projects gallery)
+   without touching markup.
+
+   Locomotive: subject sits high; the lower ~40% of the frame is empty
+   workshop floor. Centre-cropping decapitated the cab and kept concrete. */
+.project-image[src*="CC3300-AC-LOCOMOTIVE"] {
+  object-position: center 25%;
+}
+
+/* Pedal charger: the black cabinet is the thing that says "charger";
+   centre-cropping cut its top edge off. */
+.project-image[src*="Pedal power"] {
+  object-position: center 38%;
+}
+
 /* Only the featured card zooms. It carries no registration marks, so the
    zoom is its single "there is more here" signal.
    Standard cards deliberately DON'T zoom: their marks are struck onto the
