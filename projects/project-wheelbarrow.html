@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
     <link rel="stylesheet" href="../assets/css/projects/project-wheelbarrow.css">
+    <script src="../assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -312,62 +313,24 @@
         <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Back to top
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        let isScrolling = false;
-        window.addEventListener('scroll', function () {
-            if (!isScrolling) {
-                window.requestAnimationFrame(function () {
-                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
-                    isScrolling = false;
-                });
-                isScrolling = true;
-            }
-        }, { passive: true });
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        });
-
-        // Gallery toggle — reveals video, not more images
-        const galleryToggleBtn = document.getElementById('galleryToggleBtn');
-        const galleryHidden = document.getElementById('galleryHidden');
-        galleryToggleBtn.addEventListener('click', function () {
-            const expanded = galleryHidden.classList.toggle('expanded');
-            this.setAttribute('aria-expanded', String(expanded));
-            this.innerHTML = expanded
-                ? 'Hide Video <i class="fas fa-chevron-up" aria-hidden="true"></i>'
-                : 'Show Video <i class="fas fa-play" aria-hidden="true"></i>';
-            // Pause video when hidden
-            if (!expanded) {
-                const video = galleryHidden.querySelector('video');
-                if (video) video.pause();
-            }
-        });
-
-        // Fullscreen modal — IMG elements only (video excluded: no clickable-img class)
-        const modal = document.getElementById('fullscreenModal');
-        const modalImg = document.getElementById('modalImg');
-        const closeModalBtn = document.getElementById('closeModal');
-
-        document.querySelectorAll('.clickable-img').forEach(img => {
-            img.addEventListener('click', function () {
-                modalImg.src = this.src;
-                modalImg.alt = this.alt;
-                modal.classList.add('active');
-                closeModalBtn.focus();
-            });
-        });
-
-        function closeModal() { modal.classList.remove('active'); }
-        closeModalBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-        });
-    </script>
+  <script>
+    // Video show/hide (page-specific; modal + back-to-top live in main.js)
+    const galleryToggleBtn = document.getElementById('galleryToggleBtn');
+    const galleryHidden = document.getElementById('galleryHidden');
+    if (galleryToggleBtn && galleryHidden) {
+      galleryToggleBtn.addEventListener('click', function () {
+        const expanded = galleryHidden.classList.toggle('expanded');
+        this.setAttribute('aria-expanded', String(expanded));
+        this.innerHTML = expanded
+          ? 'Hide Video <i class="fas fa-chevron-up" aria-hidden="true"></i>'
+          : 'Show Video <i class="fas fa-play" aria-hidden="true"></i>';
+        if (!expanded) {
+          const video = galleryHidden.querySelector('video');
+          if (video) video.pause();
+        }
+      });
+    }
+  </script>
 
 </body>
 

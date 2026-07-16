@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/Projects.css">
+    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -72,7 +73,7 @@
         </section>
 
         <section class="projects-filter" aria-label="Filter projects by category">
-            <div class="container">
+            <div class="container filter-bar">
                 <nav class="filter-nav" aria-label="Project category filters">
                     <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
                     <button class="filter-btn" data-filter="simulation-driven"
@@ -82,6 +83,11 @@
                     <button class="filter-btn" data-filter="electronics" aria-pressed="false">Electronics</button>
                     <button class="filter-btn" data-filter="user-centered" aria-pressed="false">User-Centered</button>
                 </nav>
+                <p class="filter-count" aria-live="polite">
+                    <span class="filter-count-num" id="filterCount">06</span><span
+                        class="filter-count-total">/06</span>
+                    <span class="filter-count-label">Projects</span>
+                </p>
             </div>
         </section>
 
@@ -92,6 +98,7 @@
                     <article class="project-card" data-category="all sustainability mechanical">
                         <a href="projects/project-banana-shredder.html" class="project-link">
                             <div class="project-image-wrapper">
+                                <span class="plate-index" aria-hidden="true">01</span>
                                 <img src="assets/images/Machine-TOWE-3.jpg" alt="Banana Pseudostem Shredding Machine"
                                     class="project-image" loading="lazy">
                             </div>
@@ -108,6 +115,7 @@
                     <article class="project-card" data-category="all simulation-driven">
                         <a href="projects/project-fsae-car.html" class="project-link">
                             <div class="project-image-wrapper">
+                                <span class="plate-index" aria-hidden="true">02</span>
                                 <img src="assets/images/Fsae-car-image.jpg" alt="Formula FSAE Car Design"
                                     class="project-image" loading="lazy">
                             </div>
@@ -124,6 +132,7 @@
                     <article class="project-card" data-category="all mechanical user-centered">
                         <a href="projects/project-wheelbarrow.html" class="project-link">
                             <div class="project-image-wrapper">
+                                <span class="plate-index" aria-hidden="true">03</span>
                                 <img src="assets/images/WheelBarrow-2.jpg" alt="Motorised Wheelbarrow"
                                     class="project-image" loading="lazy">
                             </div>
@@ -140,6 +149,7 @@
                     <article class="project-card" data-category="all electronics sustainability">
                         <a href="projects/project-pedal-power.html" class="project-link">
                             <div class="project-image-wrapper">
+                                <span class="plate-index" aria-hidden="true">04</span>
                                 <img src="assets/images/Pedal power mobile phone charger.png"
                                     alt="Pedal Power Mobile Phone Charger" class="project-image" loading="lazy">
                             </div>
@@ -156,6 +166,7 @@
                     <article class="project-card" data-category="all user-centered mechanical">
                         <a href="projects/project-beans-unwrapping.html" class="project-link">
                             <div class="project-image-wrapper">
+                                <span class="plate-index" aria-hidden="true">05</span>
                                 <img src="assets/images/Real-BUR.jpg" alt="Beans Unwrapping Machine"
                                     class="project-image" loading="lazy">
                             </div>
@@ -172,6 +183,7 @@
                     <article class="project-card" data-category="all simulation-driven">
                         <a href="projects/project-train-braking-system.html" class="project-link">
                             <div class="project-image-wrapper">
+                                <span class="plate-index" aria-hidden="true">06</span>
                                 <img src="assets/images/CC3300-AC-LOCOMOTIVE.jpg"
                                     alt="Reverse Engineering — CC3300-AC and CC2200 Train Braking System"
                                     class="project-image" loading="lazy">
@@ -215,27 +227,11 @@
     </button>
 
     <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        let isScrolling = false;
-        window.addEventListener('scroll', function () {
-            if (!isScrolling) {
-                window.requestAnimationFrame(function () {
-                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
-                    isScrolling = false;
-                });
-                isScrolling = true;
-            }
-        }, { passive: true });
-
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        });
-
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
         const noResults = document.getElementById('noResults');
+        const filterCount = document.getElementById('filterCount');
+        const pad2 = n => String(n).padStart(2, '0');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function () {
@@ -266,6 +262,7 @@
                 });
 
                 noResults.hidden = visible > 0;
+                if (filterCount) filterCount.textContent = pad2(visible);
 
                 window.history.replaceState(null, '', '#' + filter);
             });

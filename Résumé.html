@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/Résumé.css">
+    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -1002,23 +1003,6 @@
   </button>
 
   <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    let isScrolling = false;
-    window.addEventListener('scroll', function () {
-      if (!isScrolling) {
-        window.requestAnimationFrame(function () {
-          backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
-          isScrolling = false;
-        });
-        isScrolling = true;
-      }
-    }, { passive: true });
-    backToTopBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-    });
-
     const toggleBtns = document.querySelectorAll('.cv-toggle-btn');
     const cvPanels = document.querySelectorAll('.cv-content');
 

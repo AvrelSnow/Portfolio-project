@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
     <link rel="stylesheet" href="../assets/css/projects/project-train-braking-system.css">
+    <script src="../assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -248,46 +249,6 @@
         <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Back to top
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        let isScrolling = false;
-        window.addEventListener('scroll', function () {
-            if (!isScrolling) {
-                window.requestAnimationFrame(function () {
-                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
-                    isScrolling = false;
-                });
-                isScrolling = true;
-            }
-        }, { passive: true });
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        });
-
-        // Fullscreen modal
-        const modal = document.getElementById('fullscreenModal');
-        const modalImg = document.getElementById('modalImg');
-        const closeModalBtn = document.getElementById('closeModal');
-
-        document.querySelectorAll('.clickable-img').forEach(img => {
-            img.addEventListener('click', function () {
-                modalImg.src = this.src;
-                modalImg.alt = this.alt;
-                modal.classList.add('active');
-                closeModalBtn.focus();
-            });
-        });
-
-        function closeModal() { modal.classList.remove('active'); }
-        closeModalBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-        });
-    </script>
 
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-energy">
 
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
     <link rel="stylesheet" href="../assets/css/projects/project-pedal-power.css">
+    <script src="../assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -66,6 +67,11 @@
         <section class="project-hero" aria-labelledby="project-title">
             <div class="container project-hero-inner">
                 <div class="project-hero-text">
+                    <p class="project-domain">
+                        <span class="project-domain-glyph" aria-hidden="true"></span>
+                        <span class="project-domain-name">Energy</span>
+                        <span class="project-domain-note">Human-Powered Generation</span>
+                    </p>
                     <p class="hero-eyebrow">Sustainability · User-Centered Design · 2023</p>
                     <h1 class="project-title" id="project-title">Pedal Power Mobile<br>Phone Charger</h1>
                     <p class="project-tagline">A human-powered charging station designed for energy-scarce environments
@@ -380,57 +386,20 @@
         <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Back to top
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        let isScrolling = false;
-        window.addEventListener('scroll', function () {
-            if (!isScrolling) {
-                window.requestAnimationFrame(function () {
-                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
-                    isScrolling = false;
-                });
-                isScrolling = true;
-            }
-        }, { passive: true });
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        });
-
-        // Gallery toggle
-        const galleryToggleBtn = document.getElementById('galleryToggleBtn');
-        const galleryHidden = document.getElementById('galleryHidden');
-        galleryToggleBtn.addEventListener('click', function () {
-            const expanded = galleryHidden.classList.toggle('expanded');
-            this.setAttribute('aria-expanded', String(expanded));
-            this.innerHTML = expanded
-                ? 'Show Less <i class="fas fa-chevron-up" aria-hidden="true"></i>'
-                : 'Show More Images <i class="fas fa-chevron-down" aria-hidden="true"></i>';
-        });
-
-        // Fullscreen modal
-        const modal = document.getElementById('fullscreenModal');
-        const modalImg = document.getElementById('modalImg');
-        const closeModalBtn = document.getElementById('closeModal');
-
-        document.querySelectorAll('.clickable-img').forEach(img => {
-            img.addEventListener('click', function () {
-                modalImg.src = this.src;
-                modalImg.alt = this.alt;
-                modal.classList.add('active');
-                closeModalBtn.focus();
-            });
-        });
-
-        function closeModal() { modal.classList.remove('active'); }
-        closeModalBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-        });
-    </script>
+  <script>
+    // Gallery show/hide (page-specific; modal + back-to-top live in main.js)
+    const galleryToggleBtn = document.getElementById('galleryToggleBtn');
+    const galleryHidden = document.getElementById('galleryHidden');
+    if (galleryToggleBtn && galleryHidden) {
+      galleryToggleBtn.addEventListener('click', function () {
+        const expanded = galleryHidden.classList.toggle('expanded');
+        this.setAttribute('aria-expanded', String(expanded));
+        this.innerHTML = expanded
+          ? 'Show Less <i class="fas fa-chevron-up" aria-hidden="true"></i>'
+          : 'Show More Images <i class="fas fa-chevron-down" aria-hidden="true"></i>';
+      });
+    }
+  </script>
 
 </body>
 

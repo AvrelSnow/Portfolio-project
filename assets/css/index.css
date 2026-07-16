@@ -12,12 +12,17 @@
    ============================================================ */
 
 :root {
-  /* --- Color: Accent (5-token derivation from one hue) --- */
+  /* --- Color: Accent (5-token derivation from one hue) ---
+     The base hue is Oxidized Steel Blue — the Mechanical domain and the
+     portfolio's default. Individual project pages re-tint these tokens
+     to their own domain via a .theme-* class (see PROJECT DOMAIN THEMES),
+     and every accent-driven component follows automatically. */
   --accent:        #1A6B8A;
   --accent-hover:  #155A73;
   --accent-light:  #2494B8;
   --accent-subtle: #EBF4F8;
   --accent-faint:  #F5FAFB;
+  --accent-rgb:    26, 107, 138;   /* same hue, for translucent tints/motifs */
 
   /* --- Color: Neutrals (no pure black/white — fatigue reduction) --- */
   --text-primary:    #1A1A1A;
@@ -66,7 +71,7 @@
      controls. Keep the set small so elevation reads consistently. */
   --shadow-md:     0 8px 28px rgba(0, 0, 0, 0.06);                       /* card / surface hover */
   --shadow-lg:     0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04); /* dropdowns, floating badges */
-  --shadow-accent: 0 4px 12px rgba(26, 107, 138, 0.25);                  /* raised accent buttons */
+  --shadow-accent: 0 4px 12px rgba(var(--accent-rgb), 0.25);             /* raised accent buttons — follows the domain hue */
 
   /* --- Motion: one shared easing + duration scale ---
      Every transition/animation draws from these. Keep the set small
@@ -76,6 +81,109 @@
   --dur-base:   200ms;  /* standard: buttons, hovers, cards, colors */
   --dur-slow:   300ms;  /* images, overlays, back-to-top */
   --dur-slower: 400ms;  /* larger reveals: gallery expand, filter/hero entrance */
+}
+
+
+/* === PROJECT DOMAIN THEMES ===
+   One identity per project — same system, re-tinted. A project page adds
+   a .theme-* class to <html>; these overrides re-tint every accent-driven
+   token (eyebrows, labels, links, focus rings, buttons, shadows, motifs)
+   with zero component changes. Neutrals, type, spacing and layout stay
+   constant: the discipline holds, only the identity shifts. Each hue is
+   muted and considered so it still reads as the same family.
+   Mechanical is the base steel blue (no class needed). */
+
+/* Simulation — indigo: computation, FEA, analysis */
+.theme-simulation {
+  --accent:        #4A50A8;
+  --accent-hover:  #3C4290;
+  --accent-light:  #6E74C8;
+  --accent-subtle: #ECEDF9;
+  --accent-faint:  #F5F6FC;
+  --accent-rgb:    74, 80, 168;
+}
+
+/* Energy — emerald: renewable generation, transfer, storage */
+.theme-energy {
+  --accent:        #2A7A57;
+  --accent-hover:  #216245;
+  --accent-light:  #4FA37C;
+  --accent-subtle: #E9F4EE;
+  --accent-faint:  #F4FAF7;
+  --accent-rgb:    42, 122, 87;
+}
+
+
+/* === DOMAIN IDENTITY STAMP ===
+   A project's nameplate: mono, tinted by whichever domain theme is
+   active, with a small solid node. Shared by every project page. */
+
+.project-domain {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.project-domain-glyph {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.project-domain-note {
+  color: var(--text-quaternary);
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+}
+
+/* The case-study template hero is margin-driven, so the stamp carries
+   its own spacing there. (The FSAE hub hero is a flex column — its gap
+   already spaces the stamp, so it must not add a margin too.) */
+.project-hero-text .project-domain {
+  margin-bottom: 14px;
+}
+
+
+/* === DOMAIN MOTIFS ===
+   Each domain leaves one quiet mark behind its hero, drawn in its own
+   hue via --accent-rgb. Scoped to the theme class so a shared template
+   hero only carries the motif of the domain it belongs to.
+   (Simulation's FEA mesh lives with the FSAE hub hero it was drawn for.)
+
+   Energy — concentric rings radiating from the machine: generation and
+   transfer propagating outward. */
+.theme-energy .project-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-energy .project-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-radial-gradient(circle at 78% 46%,
+      rgba(var(--accent-rgb), 0.10) 0 1px,
+      transparent 1px 46px);
+  -webkit-mask-image: radial-gradient(ellipse 80% 95% at 78% 46%, black 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 80% 95% at 78% 46%, black 0%, transparent 72%);
+}
+
+.theme-energy .project-hero-inner {
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -92,6 +200,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  /* Anchor jumps clear the sticky header instead of landing under it */
+  scroll-padding-top: 84px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -173,6 +283,13 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   background: rgba(250, 250, 250, 0.92);
+  transition: box-shadow var(--dur-slow) var(--ease-out);
+}
+
+/* Once the page moves beneath it, the header lifts — a quiet cue for
+   "you are no longer at the top". Class toggled from main.js. */
+.header.scrolled {
+  box-shadow: var(--shadow-md);
 }
 
 .header-wrapper {
@@ -216,7 +333,9 @@ body {
   color: var(--text-primary);
 }
 
-.nav-link.active::after {
+/* The accent rule under a link is drawn, not stamped — it draws in
+   from the left on hover, and stays drawn on the current page. */
+.nav-link::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -225,11 +344,45 @@ body {
   height: 2px;
   background: var(--accent);
   border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link.active::after {
+  transform: scaleX(1);
 }
 
 /* Dropdown */
 .has-dropdown {
   position: relative;
+}
+
+/* A drawn chevron signals the menu; it pivots upward while open.
+   Pure CSS — no icon font dependency in the nav. */
+.has-dropdown > .nav-link {
+  padding-right: 15px;
+}
+
+.has-dropdown > .nav-link::before {
+  content: '';
+  position: absolute;
+  right: 1px;
+  top: 42%;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.has-dropdown:hover > .nav-link::before,
+.has-dropdown:focus-within > .nav-link::before {
+  transform: rotate(225deg);
+  top: 48%;
 }
 
 .dropdown-menu {
@@ -250,7 +403,8 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
-.has-dropdown:hover .dropdown-menu {
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -290,11 +444,57 @@ body {
 }
 
 
-/* === HERO === */
+/* === HERO — "the drawing board" ===
+   A faint drafting grid sits behind the intro, fading out radially —
+   the engineer's CAD canvas rather than a decorated banner. Pure CSS,
+   zero assets, zero motion cost. */
 
 .hero {
   padding: 72px 0 64px;
   background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--accent-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent-subtle) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(ellipse 80% 95% at 70% 0%, black 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 80% 95% at 70% 0%, black 0%, transparent 72%);
+  pointer-events: none;
+}
+
+/* Quiet scroll cue — a hairline and a word, nothing more */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-cue-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-quaternary);
+}
+
+.scroll-cue-line {
+  width: 1px;
+  height: 26px;
+  background: linear-gradient(to bottom, var(--border), transparent);
 }
 
 .hero-inner {
@@ -302,6 +502,7 @@ body {
   grid-template-columns: 1fr 340px;
   gap: 60px;
   align-items: center;
+  position: relative;
 }
 
 .hero-eyebrow {
@@ -323,16 +524,16 @@ body {
   margin-bottom: 24px;
 }
 
-/* "I Teach." — lighter weight for contrast. 
-   The HTML has <strong> inside <span>, so we override 
-   the bold explicitly to get the weight drop we want. */
-.hero-headline span {
+/* "I Teach." drops to a light weight — the contrast carries the line.
+   Each full stop is set in accent: three engineered statements,
+   punctuated in steel blue. The quietest possible signature. */
+.hero-headline-quiet {
   color: var(--text-tertiary);
   font-weight: 300;
 }
 
-.hero-headline span strong {
-  font-weight: 300;
+.hero-dot {
+  color: var(--accent);
 }
 
 .hero-sub {
@@ -349,6 +550,16 @@ body {
   flex-wrap: wrap;
 }
 
+/* Portrait as FIG. 01 — framed like a technical drawing: corner
+   registration marks and a mono caption with measured coordinates. */
+.hero-portrait {
+  margin: 0;
+}
+
+.portrait-frame {
+  position: relative;
+}
+
 .portrait-img {
   width: 100%;
   height: 380px;
@@ -357,6 +568,34 @@ body {
   border-radius: var(--radius-sm);
   display: block;
   filter: grayscale(10%);
+}
+
+.frame-mark {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 0 solid var(--accent);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.frame-mark--tl { top: -7px;    left: -7px;   border-top-width: 1px;    border-left-width: 1px; }
+.frame-mark--tr { top: -7px;    right: -7px;  border-top-width: 1px;    border-right-width: 1px; }
+.frame-mark--bl { bottom: -7px; left: -7px;   border-bottom-width: 1px; border-left-width: 1px; }
+.frame-mark--br { bottom: -7px; right: -7px;  border-bottom-width: 1px; border-right-width: 1px; }
+
+.portrait-caption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-quaternary);
+  margin-top: 14px;
+}
+
+.portrait-caption .data {
+  font-size: 10px;
 }
 
 
@@ -455,6 +694,16 @@ body {
 
 .cred-list .data {
   font-size: var(--text-sm);
+}
+
+/* Spec-sheet numbering — quiet mono indices, drafting-table register */
+.cred-index {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--accent);
+  opacity: 0.55;
+  letter-spacing: 0.5px;
 }
 
 
@@ -692,6 +941,7 @@ body {
   overflow: hidden;
   background: var(--surface);
   border-radius: var(--radius-md) var(--radius-md) 0 0;
+  position: relative;
 }
 
 .project-image {
@@ -702,7 +952,48 @@ body {
 }
 
 .project-link:hover .project-image {
-  transform: scale(1.04);
+  transform: scale(1.03);
+}
+
+/* Registration marks — on hover the frame is "drawn" onto the image
+   (top-right + bottom-left), the same drafting gesture as FIG. 01.
+   The signal: this is an inspectable technical artifact, not a photo.
+   Pure CSS, two pseudo-elements, no markup; featured card opts out. */
+.project-card:not(.project-card--featured) .project-image-wrapper::before,
+.project-card:not(.project-card--featured) .project-image-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 0 solid var(--white);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.project-card:not(.project-card--featured) .project-image-wrapper::before {
+  top: 12px;
+  right: 12px;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+  transform: translate(-5px, 5px);
+}
+
+.project-card:not(.project-card--featured) .project-image-wrapper::after {
+  bottom: 12px;
+  left: 12px;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+  transform: translate(5px, -5px);
+}
+
+.project-card:not(.project-card--featured):hover .project-image-wrapper::before,
+.project-card:not(.project-card--featured):hover .project-image-wrapper::after {
+  opacity: 0.85;
+  transform: translate(0, 0);
 }
 
 .project-content {
@@ -716,6 +1007,12 @@ body {
   line-height: 1.45;
   margin-bottom: 8px;
   letter-spacing: -0.01em;
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+/* Title activates in accent on hover — the card reads as "openable" */
+.project-card:not(.project-card--featured) .project-link:hover .project-title {
+  color: var(--accent);
 }
 
 /* Tags: mono face, accent tint — not generic gray pills */
@@ -1126,7 +1423,6 @@ body {
 
 @media (prefers-reduced-motion: no-preference) {
 
-  .hero-inner,
   .camrail-hero-inner,
   .resume-hero-inner,
   .fsae-hero-inner,
@@ -1135,6 +1431,85 @@ body {
   .teaching-hero .container {
     animation: heroEnter var(--dur-slower) var(--ease-out) both;
   }
+
+  /* Home hero enters in reading order — eyebrow, headline, prose,
+     actions, then the figure. Motion narrates the hierarchy. */
+  .hero .hero-eyebrow,
+  .hero .hero-headline,
+  .hero .hero-sub,
+  .hero .hero-ctas,
+  .hero .hero-portrait,
+  .hero .hero-scroll-cue {
+    animation: heroEnter var(--dur-slower) var(--ease-out) both;
+  }
+
+  .hero .hero-headline   { animation-delay: 70ms; }
+  .hero .hero-sub        { animation-delay: 140ms; }
+  .hero .hero-ctas       { animation-delay: 210ms; }
+  .hero .hero-portrait   { animation-delay: 300ms; }
+  .hero .hero-scroll-cue { animation-delay: 600ms; }
+
+  /* Section transitions — the scroll narrative.
+     A section arrives as ONE quiet unit (a single opacity fade — no
+     per-child flicker), lifting a few pixels into place. The class
+     pair is applied from main.js only when IntersectionObserver is
+     available and motion is allowed, so content is never hidden
+     without JS. Same vocabulary as the hero: fade + short rise. */
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(9px);
+    transition: opacity var(--dur-slower) var(--ease-out),
+      transform var(--dur-slower) var(--ease-out);
+  }
+
+  .section-reveal.section-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Within that fade, the cards of a grid settle in a short cascade —
+     the eye is led across the work in sequence. Transform only (the
+     section owns the single fade), so it stays flicker-free and cheap.
+     Text-only sections keep the plain unit rise above: the variation
+     between "block" and "cascade" is itself the rhythm. */
+  .section-reveal :is(
+      .lanes-grid,
+      .projects-grid,
+      .projects-grid--featured,
+      .projects-gallery,
+      .roles-grid,
+      .gallery-grid,
+      .fsae-cards,
+      .columns-grid,
+      .cred-list,
+      .stats-list,
+      .camrail-stats) > * {
+    transform: translateY(16px);
+    transition: transform var(--dur-slower) var(--ease-out);
+  }
+
+  .section-reveal.section-in :is(
+      .lanes-grid,
+      .projects-grid,
+      .projects-grid--featured,
+      .projects-gallery,
+      .roles-grid,
+      .gallery-grid,
+      .fsae-cards,
+      .columns-grid,
+      .cred-list,
+      .stats-list,
+      .camrail-stats) > * {
+    transform: none;
+  }
+
+  /* Capped cascade — the tail is bounded so large grids never drag. */
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(1) { transition-delay: 0ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(2) { transition-delay: 55ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(3) { transition-delay: 110ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(4) { transition-delay: 165ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(5) { transition-delay: 205ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(n+6) { transition-delay: 240ms; }
 }
 
 
@@ -1203,6 +1578,11 @@ body {
     padding: 14px 20px;
   }
 
+  /* Stacked mobile header is taller — anchor jumps clear it too */
+  html {
+    scroll-padding-top: 150px;
+  }
+
   .header-nav ul {
     gap: 20px;
   }
@@ -1250,6 +1630,20 @@ body {
     margin: 0 auto;
   }
 
+  /* Circular portrait: registration marks retire, caption centres */
+  .frame-mark {
+    display: none;
+  }
+
+  .portrait-caption {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .hero-scroll-cue {
+    display: none;
+  }
+
   .hero-text {
     order: 1;
     text-align: center;
@@ -1258,7 +1652,8 @@ body {
   .hero-portrait {
     order: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-sub {

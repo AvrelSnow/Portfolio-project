@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/Camrail.css">
+    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -400,59 +401,20 @@
         <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        let isScrolling = false;
-        window.addEventListener('scroll', function () {
-            if (!isScrolling) {
-                window.requestAnimationFrame(function () {
-                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
-                    isScrolling = false;
-                });
-                isScrolling = true;
-            }
-        }, { passive: true });
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        });
-
-        const galleryToggleBtn = document.getElementById('galleryToggleBtn');
-        const galleryHidden = document.getElementById('galleryHidden');
-        galleryToggleBtn.addEventListener('click', function () {
-            const expanded = galleryHidden.classList.toggle('expanded');
-            this.setAttribute('aria-expanded', expanded);
-            this.innerHTML = expanded
-                ? 'Show Less <i class="fas fa-chevron-up" aria-hidden="true"></i>'
-                : 'Show More Images <i class="fas fa-chevron-down" aria-hidden="true"></i>';
-        });
-
-        const modal = document.getElementById('fullscreenModal');
-        const modalImg = document.getElementById('modalImg');
-        const closeModalBtn = document.getElementById('closeModal');
-
-        document.querySelectorAll('.clickable-img').forEach(img => {
-            img.addEventListener('click', function () {
-                modalImg.src = this.src;
-                modalImg.alt = this.alt;
-                modal.classList.add('active');
-                closeModalBtn.focus();
-            });
-        });
-
-        function closeModal() {
-            modal.classList.remove('active');
-        }
-
-        closeModalBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', function (e) {
-            if (e.target === modal) closeModal();
-        });
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-        });
-    </script>
+  <script>
+    // Gallery show/hide (page-specific; modal + back-to-top live in main.js)
+    const galleryToggleBtn = document.getElementById('galleryToggleBtn');
+    const galleryHidden = document.getElementById('galleryHidden');
+    if (galleryToggleBtn && galleryHidden) {
+      galleryToggleBtn.addEventListener('click', function () {
+        const expanded = galleryHidden.classList.toggle('expanded');
+        this.setAttribute('aria-expanded', String(expanded));
+        this.innerHTML = expanded
+          ? 'Show Less <i class="fas fa-chevron-up" aria-hidden="true"></i>'
+          : 'Show More Images <i class="fas fa-chevron-down" aria-hidden="true"></i>';
+      });
+    }
+  </script>
 
 </body>
 

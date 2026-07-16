@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-simulation">
 
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/projects/project-fsae-car.css">
     <link rel="stylesheet" href="../assets/css/projects/project-banana-shredder.css">
+    <script src="../assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -77,6 +78,11 @@
         <section class="fsae-hero" aria-labelledby="fsae-title">
             <div class="container fsae-hero-inner">
                 <div class="fsae-hero-text">
+                    <p class="project-domain">
+                        <span class="project-domain-glyph" aria-hidden="true"></span>
+                        <span class="project-domain-name">Simulation</span>
+                        <span class="project-domain-note">FEA &amp; Analysis</span>
+                    </p>
                     <!-- FIX M2: eyebrow surfaces year, scope, category as scannable metadata -->
                     <p class="hero-eyebrow">Simulation-Driven · Mechanical Design · 2023 · Solo Project</p>
                     <h1 class="fsae-page-title" id="fsae-title">Formula FSAE<br>Car Design</h1>
@@ -312,24 +318,6 @@
         <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        let isScrolling = false;
-        window.addEventListener('scroll', function () {
-            if (!isScrolling) {
-                window.requestAnimationFrame(function () {
-                    backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
-                    isScrolling = false;
-                });
-                isScrolling = true;
-            }
-        }, { passive: true });
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        });
-    </script>
     <script defer src="/_vercel/insights/script.js"></script>
 
 </body>

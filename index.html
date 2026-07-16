@@ -8,7 +8,7 @@
     content="Donfack Fortune — Mechanical Engineer, Energy Specialist & Technical Educator based in Cameroon. Available for engineering consulting, renewable energy projects, CAD/FEA freelance work, and technical training.">
   <meta name="keywords"
     content="mechanical engineer Cameroon, energy specialist Africa, renewable energy Cameroon, SolidWorks CAD training Douala, freelance mechanical engineer Africa, technical educator Cameroon, FEA simulation services">
-  <title>Donfack Fortune | Mechanical Engineer & Energy Specialist — Cameroon</title>
+  <title>Donfack Fortune | Mechanical Engineer,Educator & Energy Specialist — Cameroon</title>
 
   <!-- Typography: Inter (body/display) + JetBrains Mono (measured data only) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/index.css">
+    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -67,29 +68,43 @@
       <div class="container hero-inner">
         <div class="hero-text">
           <p class="hero-eyebrow">Mechanical Engineer · Energy Specialist · Technical Educator</p>
-          <h1 class="hero-headline">I Design. I Innovate.<br><span><strong>I Teach.</strong></span></h1>
-          <p class="hero-sub">I'm a Mechanical Engineer and Energy Specialist based in Cameroon — I build real
+          <h1 class="hero-headline">I Design<span class="hero-dot">.</span> I Innovate<span
+              class="hero-dot">.</span><br><span class="hero-headline-quiet">I Teach<span
+                class="hero-dot">.</span></span></h1>
+          <p class="hero-sub">I'm a Mechanical Engineer,Educator and Energy Specialist based in Cameroon — I build real
             solutions, explore sustainable systems, and train the engineers who will carry it forward.</p>
           <div class="hero-ctas">
             <a href="Projects.html" class="btn btn-primary">View My Projects</a>
             <a href="#work-with-me" class="btn btn-secondary">Work With Me</a>
           </div>
         </div>
-        <div class="hero-portrait">
-          <img src="assets/images/Donfack_Fortune_portrait.jpeg"
-            alt="Donfack Fortune, Mechanical Engineer and Energy Specialist" class="portrait-img">
-        </div>
+        <figure class="hero-portrait">
+          <div class="portrait-frame">
+            <img src="assets/images/Donfack_Fortune_portrait.jpeg"
+              alt="Donfack Fortune, Mechanical Engineer and Energy Specialist" class="portrait-img">
+            <span class="frame-mark frame-mark--tl" aria-hidden="true"></span>
+            <span class="frame-mark frame-mark--tr" aria-hidden="true"></span>
+            <span class="frame-mark frame-mark--bl" aria-hidden="true"></span>
+            <span class="frame-mark frame-mark--br" aria-hidden="true"></span>
+          </div>
+          <figcaption class="portrait-caption">FIG. 01 — DOUALA, CAMEROON · <span class="data">4°03′N
+              9°42′E</span></figcaption>
+        </figure>
+      </div>
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <span class="scroll-cue-label">Scroll</span>
+        <span class="scroll-cue-line"></span>
       </div>
     </section>
 
     <section class="credibility-bar" aria-label="Affiliations and credentials">
       <div class="container">
         <ul class="cred-list">
-          <li>Senior Engineer · CAMRAIL</li>
-          <li>Renewable Energy Analyst · REM Newsletter</li>
-          <li>Lecturer · ENSET Douala &amp; Univ. of Dschang</li>
-          <li><span class="data">6+</span> Engineering Projects</li>
-          <li>SOLIDWORKS User Group Facilitator</li>
+          <li><span class="cred-index" aria-hidden="true">01</span>Senior Engineer · CAMRAIL</li>
+          <li><span class="cred-index" aria-hidden="true">02</span>Renewable Energy Analyst · REM Newsletter</li>
+          <li><span class="cred-index" aria-hidden="true">03</span>Lecturer · ENSET Douala &amp; Univ. of Dschang</li>
+          <li><span class="cred-index" aria-hidden="true">04</span><span class="data">6+</span> Engineering Projects</li>
+          <li><span class="cred-index" aria-hidden="true">05</span>SOLIDWORKS User Group Facilitator</li>
         </ul>
       </div>
     </section>
@@ -348,24 +363,6 @@
   </button>
 
   <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    let isScrolling = false;
-    window.addEventListener('scroll', function () {
-      if (!isScrolling) {
-        window.requestAnimationFrame(function () {
-          backToTopBtn.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 300);
-          isScrolling = false;
-        });
-        isScrolling = true;
-      }
-    }, { passive: true });
-
-    backToTopBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-    });
-
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', async function (e) {
