@@ -1560,6 +1560,55 @@ body {
 }
 
 
+/* === TOUCH TARGETS ===
+   On touch pointers (and at mobile widths) the primary controls grow to
+   a comfortable tap size. Where a control is a line of text, the hit area
+   is expanded with an invisible pseudo-element instead of padding — the
+   target grows without moving a single pixel of layout, so nothing is
+   redesigned to achieve it. Expansions are sized to stay inside each
+   control's surrounding gap, so neighbouring hit areas never overlap. */
+
+@media (max-width: 768px), (pointer: coarse) {
+
+  /* Arrow links: 22px → 44px (the paragraph above clears it by 24px) */
+  .lane-link {
+    position: relative;
+  }
+
+  .lane-link::after {
+    content: '';
+    position: absolute;
+    inset: -11px 0;
+  }
+
+  /* Contact links: 24px → 40px (stacked with an 18px gap, so 8px each
+     side is the most that can be added without hit areas colliding) */
+  .contact-detail-link {
+    position: relative;
+  }
+
+  .contact-detail-link::after {
+    content: '';
+    position: absolute;
+    inset: -8px 0;
+  }
+
+  /* Icon links: a real 44×44 box; the glyph itself is untouched. The
+     row gap tightens to keep the header's visual rhythm unchanged. */
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .header-social {
+    gap: 2px;
+  }
+}
+
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
