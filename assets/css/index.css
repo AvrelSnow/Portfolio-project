@@ -692,9 +692,12 @@ body {
   color: var(--white);
 }
 
+/* One elevation language: every surface that rises, rises 2px. -1px sat
+   below the perceptual threshold — movement you can't see communicates
+   nothing, it's only habit. */
 .btn-primary:hover {
   background: var(--accent-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-accent);
 }
 
@@ -728,7 +731,7 @@ body {
 
 .btn-whatsapp:hover {
   background: #1ebe5a;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 
@@ -918,20 +921,24 @@ body {
   align-items: center;
 }
 
+/* This image is a link to the Camrail page, so its hover says the one
+   thing that matters — "this surface opens" — in the same elevation
+   language every other interactive surface uses. It used to dim to 0.88
+   and scale 1%, which answered no question and degraded the photograph. */
 .experience-image {
   width: 100%;
   height: auto;
   display: block;
   border-radius: var(--radius-sm);
-  transition-property: opacity, transform;
-  transition-duration: var(--dur-slow);
+  transition-property: transform, box-shadow;
+  transition-duration: var(--dur-base);
   transition-timing-function: var(--ease-out);
   cursor: pointer;
 }
 
 .experience-image:hover {
-  opacity: 0.88;
-  transform: scale(1.01);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .camrail-logo {
@@ -1019,7 +1026,14 @@ body {
   transition: transform var(--dur-slower) var(--ease-out);
 }
 
-.project-link:hover .project-image {
+/* Only the featured card zooms. It carries no registration marks, so the
+   zoom is its single "there is more here" signal.
+   Standard cards deliberately DON'T zoom: their marks are struck onto the
+   frame, and a frame drawn onto a moving image is incoherent — the
+   artifact must hold still while you inspect it. The marks say
+   "inspectable", the lift says "elevates", the title says "link". Three
+   signals, three meanings. The zoom only repeated what they already said. */
+.project-card--featured .project-link:hover .project-image {
   transform: scale(1.03);
 }
 
