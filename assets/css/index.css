@@ -492,9 +492,13 @@ body {
 
 
 /* === HERO — "the drawing board" ===
-   A faint drafting grid sits behind the intro, fading out radially —
-   the engineer's CAD canvas rather than a decorated banner. Pure CSS,
-   zero assets, zero motion cost. */
+   Not a background: a working environment, built in two layers.
+   (1) construction lines — the engineer's CAD canvas, and
+   (2) nodes — a mark at every crossing, the vertices of the drawing.
+   It is alive because it gets DRAWN, not because it loops: the sheet is
+   laid down and the nodes are struck once, on arrival, then it rests.
+   Perpetual motion would be decoration and would never let the GPU idle.
+   Pure CSS, zero assets, two composited fades. */
 
 .hero {
   padding: 72px 0 64px;
@@ -503,6 +507,7 @@ body {
   overflow: hidden;
 }
 
+/* Layer 1 — construction lines */
 .hero::before {
   content: '';
   position: absolute;
@@ -512,6 +517,22 @@ body {
     linear-gradient(90deg, var(--accent-subtle) 1px, transparent 1px);
   background-size: 44px 44px;
   opacity: 0.55;
+  -webkit-mask-image: radial-gradient(ellipse 80% 95% at 70% 0%, black 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 80% 95% at 70% 0%, black 0%, transparent 72%);
+  pointer-events: none;
+}
+
+/* Layer 2 — nodes. Each dot is centred on a line crossing (the tile is
+   offset by half a cell), so they read as the drawing's vertices rather
+   than as floating particles. */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(var(--accent-rgb), 0.20) 1.3px, transparent 1.5px);
+  background-size: 44px 44px;
+  background-position: -22px -22px;
   -webkit-mask-image: radial-gradient(ellipse 80% 95% at 70% 0%, black 0%, transparent 72%);
   mask-image: radial-gradient(ellipse 80% 95% at 70% 0%, black 0%, transparent 72%);
   pointer-events: none;
@@ -1468,6 +1489,19 @@ body {
   }
 }
 
+/* The environment is drawn, not faded in as decoration: the sheet's
+   construction lines are laid down first, then the nodes are struck at
+   the crossings. Two opacity fades — nothing loops, nothing repeats. */
+@keyframes envLines {
+  from { opacity: 0; }
+  to   { opacity: 0.55; }
+}
+
+@keyframes envNodes {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: no-preference) {
 
   .camrail-hero-inner,
@@ -1495,6 +1529,17 @@ body {
   .hero .hero-ctas       { animation-delay: 210ms; }
   .hero .hero-portrait   { animation-delay: 300ms; }
   .hero .hero-scroll-cue { animation-delay: 600ms; }
+
+  /* The board is set while you read: the lines arrive under the content
+     over a longer beat (it sits behind, so it moves slower — depth read
+     as timing), and the nodes are struck once the lines exist. */
+  .hero::before {
+    animation: envLines 900ms var(--ease-out) both;
+  }
+
+  .hero::after {
+    animation: envNodes 700ms var(--ease-out) 420ms both;
+  }
 
   /* Section transitions — the scroll narrative.
      A section arrives as ONE quiet unit (a single opacity fade — no
