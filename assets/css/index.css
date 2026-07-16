@@ -69,9 +69,13 @@
   /* --- Elevation: one shared shadow scale ---
      Neutral shadows for surfaces; accent shadow for raised accent
      controls. Keep the set small so elevation reads consistently. */
-  --shadow-md:     0 8px 28px rgba(0, 0, 0, 0.06);                       /* card / surface hover */
-  --shadow-lg:     0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04); /* dropdowns, floating badges */
-  --shadow-accent: 0 4px 12px rgba(var(--accent-rgb), 0.25);             /* raised accent buttons — follows the domain hue */
+  /* Two layers, because real light casts two: a tight contact shadow that
+     grounds the object, and a wide diffuse one that gives it height. A
+     single blur reads as a sticker; the contact layer is what makes it sit
+     on the page. Nobody notices it — they just believe it. */
+  --shadow-md:     0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 28px rgba(0, 0, 0, 0.06);   /* card / surface hover */
+  --shadow-lg:     0 2px 8px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.08);   /* dropdowns, floating badges */
+  --shadow-accent: 0 1px 2px rgba(var(--accent-rgb), 0.12), 0 4px 12px rgba(var(--accent-rgb), 0.25); /* raised accent buttons — follows the domain hue */
 
   /* --- Motion: one shared easing + duration scale ---
      Every transition/animation draws from these. Keep the set small
@@ -583,12 +587,18 @@ body {
   margin-bottom: 20px;
 }
 
+/* Tracking is set in em, not px, so it scales with the type. Fixed px
+   tracking silently tightens as the headline shrinks — at 56px, -2px reads
+   as -0.036em, but at the 28px mobile size it became -0.054em: 50% tighter,
+   exactly backwards, since small type wants MORE room, not less. One em
+   value tracks correctly at every size and makes the responsive
+   letter-spacing overrides unnecessary. */
 .hero-headline {
   font-size: var(--text-5xl);
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.08;
-  letter-spacing: -2px;
+  letter-spacing: -0.035em;
   margin-bottom: 24px;
 }
 
@@ -780,11 +790,13 @@ body {
 
 /* === SECTION FURNITURE === */
 
+/* em tracking: this heading scales 32 -> 24 -> 20px across breakpoints, and
+   a fixed -0.5px would have tightened to -0.025em at the smallest size. */
 .section-title {
   font-size: var(--text-3xl);
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.015em;
   margin-bottom: 40px;
   line-height: 1.2;
 }
@@ -1602,32 +1614,33 @@ body {
     transform: none;
   }
 
-  /* Within that fade, the cards of a grid settle in a short cascade —
-     the eye is led across the work in sequence. Transform only (the
-     section owns the single fade), so it stays flicker-free and cheap.
-     Text-only sections keep the plain unit rise above: the variation
-     between "block" and "cascade" is itself the rhythm. */
-  .section-reveal :is(
-      .lanes-grid,
-      .projects-grid,
-      .projects-grid--featured,
-      .projects-gallery,
-      .roles-grid,
-      .gallery-grid,
-      .fsae-cards,
-      .columns-grid,
-      .cred-list,
-      .stats-list,
-      .camrail-stats) > * {
-    transform: translateY(16px);
-    transition: transform var(--dur-slower) var(--ease-out);
+  /* Within that fade, the cards of a grid settle in a short cascade — the
+     eye is led across the work in sequence. Transform only (the section owns
+     the single fade), so it stays flicker-free and cheap.
+
+     This is an ANIMATION, not a transition, and that distinction matters: a
+     transition here would occupy each card's `transition` property and beat
+     the cards' own hover rules on specificity — their shadows would snap in
+     instead of fading, and their lift would run at the cascade's duration
+     rather than their own. An animation leaves `transition` untouched, so a
+     card's entrance and its hover stay independent.
+
+     .projects-gallery is deliberately absent: that grid's entrance belongs to
+     the filter (.card-enter), and two animations cannot own one element. */
+  @keyframes cardSettle {
+    from {
+      transform: translateY(16px);
+    }
+
+    to {
+      transform: translateY(0);
+    }
   }
 
   .section-reveal.section-in :is(
       .lanes-grid,
       .projects-grid,
       .projects-grid--featured,
-      .projects-gallery,
       .roles-grid,
       .gallery-grid,
       .fsae-cards,
@@ -1635,16 +1648,37 @@ body {
       .cred-list,
       .stats-list,
       .camrail-stats) > * {
-    transform: none;
+    animation: cardSettle var(--dur-slower) var(--ease-out) both;
   }
 
   /* Capped cascade — the tail is bounded so large grids never drag. */
-  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(1) { transition-delay: 0ms; }
-  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(2) { transition-delay: 55ms; }
-  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(3) { transition-delay: 110ms; }
-  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(4) { transition-delay: 165ms; }
-  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(5) { transition-delay: 205ms; }
-  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .projects-gallery, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(n+6) { transition-delay: 240ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(1) { animation-delay: 0ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(2) { animation-delay: 55ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(3) { animation-delay: 110ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(4) { animation-delay: 165ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(5) { animation-delay: 205ms; }
+  .section-reveal.section-in :is(.lanes-grid, .projects-grid, .projects-grid--featured, .roles-grid, .gallery-grid, .fsae-cards, .columns-grid, .cred-list, .stats-list, .camrail-stats) > *:nth-child(n+6) { animation-delay: 240ms; }
+}
+
+
+/* === HOVER TIMING — asymmetric ===
+   Entering and leaving a control should not take the same time. The response
+   to your pointer arriving wants to feel immediate; the settle after it
+   leaves wants to be unhurried — nothing should snap away from you.
+   CSS gives this for free: the base rule's duration governs the EXIT, and
+   the :hover rule's duration governs the ENTRY. So every interactive surface
+   answers in --dur-fast and releases in its own (slower) base duration.
+   It is ~50ms. Nobody will ever notice it; they will only notice that the
+   thing feels responsive without feeling twitchy. */
+
+.btn:hover,
+.lane-card:hover,
+.project-card:hover,
+.experience-image:hover,
+.back-to-top:hover,
+.social-link:hover,
+.nav-link:hover {
+  transition-duration: var(--dur-fast);
 }
 
 
@@ -1801,9 +1835,9 @@ body {
     gap: 28px;
   }
 
+  /* No letter-spacing override needed — the em tracking scales itself. */
   .hero-headline {
     font-size: 34px;
-    letter-spacing: -1.5px;
   }
 
   .portrait-img {
