@@ -105,4 +105,123 @@
       if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
   }
+
+  /* ============================================================
+     ANIMATED COUNTERS
+     ------------------------------------------------------------
+     One reusable system for every numeric statistic on the site.
+
+     Opting in
+       - any .stat-number             (these ARE stat displays)
+       - any element with [data-count] (opt-in for anything else)
+
+     The final value is read from the element's own text, so the markup stays
+     the single source of truth — there is no number duplicated in an
+     attribute that can drift. Everything around the number is preserved:
+
+       "1,010 km"   -> counts to 1010, keeps the comma grouping and " km"
+       "319B FCFA"  -> counts to 319,  keeps "B FCFA"
+       "5,500+"     -> counts to 5500, keeps "+"
+       "73%"        -> counts to 73,   keeps "%"
+       "4.9/5"      -> counts to 4.9,  keeps 1 decimal and "/5"
+       "Grade II"   -> no digits, left alone
+
+     Progressive enhancement: the real value is already in the HTML, so with
+     no JS (or if this throws) the statistic simply reads normally.
+     ============================================================ */
+  (function initCounters() {
+    var els = document.querySelectorAll('.stat-number, [data-count]');
+    if (!els.length) return;
+
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    /* Without IntersectionObserver, or with reduced motion, the numbers are
+       already correct in the DOM — leave them exactly as they are. */
+    if (reduced || !('IntersectionObserver' in window)) return;
+
+    var DURATION = 1400; /* consistent for every counter, small or large */
+    /* Mirrors --ease-out (cubic-bezier(.16,1,.3,1)): fast start, long settle. */
+    function easeOut(t) { return 1 - Math.pow(1 - t, 4); }
+
+    var targets = [];
+
+    els.forEach(function (el) {
+      /* Claim each element once. The authored number is read from textContent,
+         which this system also writes — so a second pass over an element that
+         is mid-count would parse "505 km" and adopt 505 as the target forever.
+         The claim makes initCounters() idempotent. */
+      if (el.__counter) return;
+
+      var raw = el.textContent.trim();
+      /* prefix | number (digits, commas, decimal point) | suffix */
+      var m = raw.match(/^(\D*?)([\d][\d,]*(?:\.\d+)?)(.*)$/s);
+      if (!m) return;                       /* e.g. "Grade II" — nothing to count */
+
+      var numStr = m[2];
+      var value = parseFloat(numStr.replace(/,/g, ''));
+      if (!isFinite(value)) return;
+
+      var dot = numStr.indexOf('.');
+      targets.push({
+        el: el,
+        prefix: m[1],
+        suffix: m[3],
+        value: value,
+        decimals: dot === -1 ? 0 : numStr.length - dot - 1,
+        grouped: numStr.indexOf(',') !== -1,
+        raw: raw,
+        done: false
+      });
+    });
+
+    if (!targets.length) return;
+
+    function render(t, v) {
+      var n = t.decimals ? v.toFixed(t.decimals) : String(Math.round(v));
+      if (t.grouped) {
+        var parts = n.split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        n = parts.join('.');
+      }
+      t.el.textContent = t.prefix + n + t.suffix;
+    }
+
+    function run(t) {
+      if (t.done) return;
+      t.done = true;
+      /* Zero out here, not at init: the reset and the animation that undoes it
+         now share a fate. If this function never runs — background tab, no rAF,
+         a throw upstream — the authored number is still sitting in the DOM,
+         untouched. Never destroy a value you aren't certain you can restore. */
+      render(t, 0);
+      /* null, not 0: rAF timestamps are document-timeline relative and a first
+         frame at exactly 0 is legal. A falsy check would fail to latch it and
+         re-origin the animation on the next frame. */
+      var start = null;
+      function frame(now) {
+        if (start === null) start = now;
+        var p = Math.min((now - start) / DURATION, 1);
+        render(t, t.value * easeOut(p));
+        if (p < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          t.el.textContent = t.raw;   /* land on the authored string, exactly */
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var t = entry.target.__counter;
+        io.unobserve(entry.target);   /* one-shot: no leaks, no re-runs */
+        if (t) run(t);
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+
+    targets.forEach(function (t) {
+      t.el.__counter = t;
+      io.observe(t.el);
+    });
+  })();
 })();
