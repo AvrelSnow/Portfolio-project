@@ -295,6 +295,16 @@ body {
 }
 
 
+/* <picture> is only a format-selection wrapper — it must not become a box.
+   Without this it generates an inline element between the image and its
+   sized container, and any `height: 100%` on the image resolves against an
+   auto-height parent instead of the wrapper. display:contents removes it
+   from the box tree so the image lays out exactly as a direct child. */
+picture {
+  display: contents;
+}
+
+
 /* === LAYOUT === */
 
 .container {
