@@ -1692,6 +1692,55 @@ picture {
 }
 
 
+/* === PILL TOGGLE — shared component ===
+   The Projects category filter and the Résumé CV-track selector are the same
+   control: a pill group that selects one subset of the page. They had drifted
+   apart (weight 700 vs 600, letter-spacing 0.3px vs 0.01em, padding 9px vs
+   8px) — the same thing rendered two ways. One definition, both instances.
+   Page-specific responsive sizing stays with each page. */
+
+.filter-btn,
+.cv-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text-tertiary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+  transition-property: color, border-color, background-color, box-shadow;
+  transition-duration: var(--dur-base);
+  transition-timing-function: var(--ease-out);
+}
+
+.filter-btn:hover,
+.cv-toggle-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-faint);
+}
+
+.filter-btn.active,
+.cv-toggle-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+  box-shadow: var(--shadow-accent);
+}
+
+/* Asymmetric hover, same as every other control */
+.filter-btn:hover,
+.cv-toggle-btn:hover {
+  transition-duration: var(--dur-fast);
+}
+
+
 /* === TOUCH TARGETS ===
    On touch pointers (and at mobile widths) the primary controls grow to
    a comfortable tap size. Where a control is a line of text, the hit area

@@ -23,10 +23,19 @@
     flex-wrap: wrap;
 }
 
+/* Helper line, in the portfolio's own voice. It used to be italic sans —
+   the only italic in the entire site, which read as an apology. Mono is how
+   this design system speaks meta/instrument text (eyebrows, measurements,
+   the filter count), so the line now matches. Sentence case, not uppercase:
+   it is a sentence, not a label. */
 .cv-toggle-intro {
-    font-size: 13px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
     color: var(--text-tertiary);
-    font-style: italic;
+    margin: 0;
+    max-width: 40ch;
     flex-shrink: 0;
 }
 
@@ -36,36 +45,7 @@
     flex-wrap: wrap;
 }
 
-.cv-toggle-btn {
-    background: transparent;
-    color: var(--text-tertiary);
-    border: 1.5px solid var(--border);
-    padding: 9px 20px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    cursor: pointer;
-    border-radius: var(--radius-pill);
-    transition-property: color, border-color, background-color, box-shadow;
-    transition-duration: var(--dur-base);
-    transition-timing-function: var(--ease-out);
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.cv-toggle-btn:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: var(--accent-faint);
-}
-
-.cv-toggle-btn.active {
-    background: var(--accent);
-    color: var(--white);
-    border-color: var(--accent);
-    box-shadow: var(--shadow-accent);
-}
+/* .cv-toggle-btn base/hover/active is the shared pill toggle in index.css */
 
 .cv-toggle-btn:focus-visible {
     outline: 2px solid var(--accent);

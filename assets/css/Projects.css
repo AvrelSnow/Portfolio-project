@@ -78,33 +78,9 @@
     color: var(--text-tertiary);
 }
 
-.filter-btn {
-    background: transparent;
-    border: 1.5px solid var(--border);
-    color: var(--text-tertiary);
-    font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    padding: 8px 20px;
-    cursor: pointer;
-    border-radius: var(--radius-pill);
-    transition: color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out),
-        background-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
-}
-
-.filter-btn:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: var(--accent-faint);
-}
-
-.filter-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--white);
-    box-shadow: var(--shadow-accent);
-}
+/* .filter-btn base/hover/active is the shared pill toggle in index.css —
+   the same control as the Résumé CV-track selector. Only this page's
+   responsive sizing lives here (see RESPONSIVE below). */
 
 /* ── Gallery — cards inherit .project-card from index.css ── */
 .all-projects-section {
