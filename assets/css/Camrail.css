@@ -2,11 +2,21 @@
     padding: 72px 0 60px;
 }
 
+/* 340px to match the home and teaching hero portraits — the figure itself is
+   the shared FIG. treatment from index.css, reused rather than reimplemented. */
 .camrail-hero-inner {
     display: grid;
-    grid-template-columns: 1fr 240px;
+    grid-template-columns: 1fr 340px;
     gap: 60px;
     align-items: center;
+}
+
+/* This photograph is a 0.56 phone frame dropped into a 0.895 slot, so cover
+   keeps only ~63% of its height. Left at the shared `top` anchor the crop
+   spends its budget on workshop ceiling; biasing to 18% centres the hard hat
+   and face. Read off the photograph, not guessed. */
+.portrait-img[src*="My Image 3"] {
+    object-position: center 18%;
 }
 
 .camrail-title {
@@ -53,14 +63,6 @@
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: var(--text-tertiary);
-}
-
-.camrail-logo-img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
 }
 
 .company-intro-section {
@@ -335,14 +337,27 @@
         padding: 48px 0 40px;
     }
 
+    /* Same collapse as the other heroes: portrait leads, text centres. */
     .camrail-hero-inner {
         grid-template-columns: 1fr;
         gap: 32px;
     }
 
-    .camrail-logo-img {
-        max-width: 140px;
-        margin: 0;
+    .camrail-hero-text {
+        order: 1;
+        text-align: center;
+    }
+
+    .camrail-hero .hero-portrait {
+        order: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .camrail-intro,
+    .camrail-stats {
+        justify-content: center;
     }
 
     .camrail-title {
