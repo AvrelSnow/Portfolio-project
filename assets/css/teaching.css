@@ -7,9 +7,20 @@
    shares one design language with the portfolio.
    ============================================ */
 
-/* ── Hero ── */
+/* ── Hero ──
+   Two-column split mirroring the home hero: text left, portrait right. The
+   figure itself (.hero-portrait / .portrait-frame / .portrait-img /
+   .frame-mark / .portrait-caption) is the shared FIG. treatment from
+   index.css — reused, not reimplemented, so both portraits stay identical. */
 .teaching-hero {
     padding: 72px 0 56px;
+}
+
+.teaching-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 60px;
+    align-items: center;
 }
 
 .teaching-title {
@@ -325,6 +336,10 @@
 
 /* ── Tablet ── */
 @media (max-width: 1024px) {
+    .teaching-hero-inner {
+        gap: 40px;
+    }
+
     .teaching-title {
         font-size: var(--text-4xl);
     }
@@ -347,6 +362,31 @@
 @media (max-width: 768px) {
     .teaching-hero {
         padding: 48px 0 40px;
+    }
+
+    /* Same collapse as the home hero: the portrait leads, the text follows
+       and centres. index.css already turns .portrait-img into a 160px circle
+       and retires the registration marks at this width. */
+    .teaching-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .teaching-hero-text {
+        order: 1;
+        text-align: center;
+    }
+
+    .teaching-hero .hero-portrait {
+        order: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teaching-subtitle {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .teaching-title {
