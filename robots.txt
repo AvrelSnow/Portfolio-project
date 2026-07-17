@@ -1,0 +1,7 @@
+# https://www.donfackfortune.com
+User-agent: *
+Allow: /
+
+# Traditional + AI crawlers are welcome: this is a public portfolio and
+# discoverability in AI answer engines is intended.
+Sitemap: https://www.donfackfortune.com/sitemap.xml

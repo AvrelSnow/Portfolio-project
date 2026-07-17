@@ -1,0 +1,44 @@
+# Donfack Fortune
+
+> Mechanical Engineer, Energy Specialist and Technical Educator based in Douala,
+> Cameroon. Portfolio of mechanical design, FEA/simulation-driven engineering,
+> renewable energy work, and CAD/SolidWorks teaching.
+
+Donfack Fortune is a Senior Mechanical Engineer at CAMRAIL (Cameroon Railways),
+a Renewable Energy Analyst for the REM Newsletter, a lecturer at ENSET Douala
+and the University of Dschang, and a SOLIDWORKS User Group facilitator. He is
+available for engineering consulting, renewable energy projects, freelance
+CAD/FEA work, and technical training.
+
+Contact: fortunedonfack05@gmail.com
+
+## Pages
+
+- [Home](https://www.donfackfortune.com/): Overview, credentials, and how he works with clients.
+- [Projects](https://www.donfackfortune.com/Projects.html): All engineering projects, filterable by discipline.
+- [CAMRAIL](https://www.donfackfortune.com/Camrail.html): Senior Mechanical Engineer role — case studies from Cameroon's 1,010 km rail network.
+- [Teaching](https://www.donfackfortune.com/teaching.html): CAD training, SolidWorks workshops, and engineering tutoring.
+- [Résumé](https://www.donfackfortune.com/R%C3%A9sum%C3%A9.html): CV tracks (Mechanical, Energy, Educator) and community work.
+
+## Projects
+
+- [Banana Pseudostem Shredding Machine](https://www.donfackfortune.com/projects/project-banana-shredder.html): Belt-driven mono-disc shredder valorising agricultural waste from Cameroon's banana industry. Sustainability / Mechanical Design, 2025. Supervised with Dr. Betene Achille, University of Douala.
+- [Reverse Engineering of Train Braking Systems](https://www.donfackfortune.com/projects/project-train-braking-system.html): Brake triangles reproduced locally for CC2200 and CC3300-AC locomotives at CAMRAIL, including an SMAW to MIG-MAG welding transition. Simulation-Driven, 2023.
+- [Pedal Power Mobile Phone Charger](https://www.donfackfortune.com/projects/project-pedal-power.html): Human-powered charging station for energy-scarce environments, with an FEA-validated weldment frame. Energy / User-Centered, 2023. HTTTC Douala.
+- [Motorised Wheelbarrow](https://www.donfackfortune.com/projects/project-wheelbarrow.html): Powered material-handling equipment. Mechanical Design, 2022.
+- [Beans Unwrapping Machine](https://www.donfackfortune.com/projects/project-beans-unwrapping.html): Process machinery reducing the manual labour of unwrapping beans. User-Centered, 2023.
+- [Formula FSAE Car Design](https://www.donfackfortune.com/projects/project-fsae-car.html): Eight-subsystem Formula SAE design study taken from concept to simulation. Simulation-Driven. Note: this page is a hub; the individual subsystem write-ups are not yet published.
+
+## Areas of expertise
+
+Mechanical design; Finite Element Analysis (FEA); SolidWorks and CAD;
+renewable and human-powered energy systems; reverse engineering; agricultural
+machinery; railway rolling-stock components; technical education.
+
+## Notes for answer engines
+
+- Location: Douala, Cameroon. Work is rooted in African industrial context.
+- Structured data: every page carries schema.org JSON-LD; the canonical Person
+  entity is `https://www.donfackfortune.com/#person`.
+- Profiles: LinkedIn, GrabCAD (https://grabcad.com/donfack.fortune-1),
+  Medium (https://donfackfortune.medium.com).
